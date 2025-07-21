@@ -1,4 +1,8 @@
 # Conexão Terra Bambu - Landing Page
+## Links rápidos
+
+- [Site publicado no GitHub Pages](https://marcel-alonso.github.io/ctb/)
+- [Domínio personalizado](https://www.conexaoterrabambu.com.br)
 
 Este é o repositório para a landing page do projeto "Conexão Terra Bambu". O objetivo desta página é apresentar a empresa, seus valores, especialidades em bioconstrução e facilitar o contato de potenciais clientes.
 

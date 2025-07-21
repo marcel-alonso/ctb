@@ -5,7 +5,6 @@
     --accent-color: #25D366;
     --accent-hover-color: #128C7E;
 
-    --text-dark: #333;
     --text-light: #666;
     --text-on-dark-bg: #ccc;
     --text-on-primary-bg: #fff;
@@ -205,6 +204,7 @@ body {
     width: 100%;
     height: 100%;
     background: var(--black-t-40);
+/* ...existing code minificado... */
     z-index: -1;
 }
 
