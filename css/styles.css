@@ -462,7 +462,8 @@ body {
     margin: 0;
     padding: 0;
 }
-.imagine-bg-video {
+.imagine-bg-video,
+.imagine-bg-image {
     position: absolute;
     top: 0;
     left: 0;
