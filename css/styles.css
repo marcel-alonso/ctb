@@ -473,6 +473,11 @@ body {
     object-fit: cover;
     z-index: 1;
     filter: brightness(0.45) saturate(1.1) contrast(1.08);
+    transition: transform 1.5s ease-out;
+}
+
+.imagine-banner.active .imagine-bg-image {
+    transform: scale(1.1);
 }
 .imagine-banner-content {
     position: relative;
