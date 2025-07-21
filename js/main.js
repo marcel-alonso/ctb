@@ -90,6 +90,24 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
 
+    // Intersection Observer para o efeito de zoom no banner
+    const imagineBanner = document.querySelector('.imagine-banner');
+    const zoomObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                imagineBanner.classList.add('active');
+            } else {
+                imagineBanner.classList.remove('active');
+            }
+        });
+    }, {
+        threshold: 0.1 // Ativa quando 10% do banner estiver visível
+    });
+
+    if (imagineBanner) {
+        zoomObserver.observe(imagineBanner);
+    }
+
     // WhatsApp tracking (optional)
     const whatsappButtons = document.querySelectorAll('a[href*="wa.me"]');
     whatsappButtons.forEach(button => {
