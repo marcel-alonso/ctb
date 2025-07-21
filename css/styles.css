@@ -458,10 +458,27 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
     margin: 0;
     padding: 0;
+    background-image: url('../assets/images/hero.webp');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
 }
+
+.imagine-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Overlay escuro para legibilidade */
+    z-index: 1;
+}
+
 .imagine-bg-video,
 .imagine-bg-image {
     position: absolute;
