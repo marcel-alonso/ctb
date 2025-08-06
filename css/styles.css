@@ -1,56 +1,52 @@
-/* Reset, Variáveis e Estilos Base */
+/* Base Theme */
 :root {
-    --primary-color: #4a7c59;
-    --primary-dark-color: #2c5530;
-    --accent-color: #25D366;
-    --accent-hover-color: #128C7E;
-
-    --text-light: #666;
-    --text-on-dark-bg: #ccc;
-    --text-on-primary-bg: #fff;
-
-    --bg-light: #f8f9fa;
-    --bg-dark: #1a1a1a;
-    --white: #fff;
-    --white-t-95: rgba(255, 255, 255, 0.95);
-    --black-t-40: rgba(0, 0, 0, 0.4);
-
-    --font-primary: 'Poppins', sans-serif;
-    --header-height: 92px; /* Aprox. 60px logo + 2rem padding */
-
-    --border-radius: 15px;
-    --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.1);
-    --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.15);
+    --primary: #4a7c59;
+    --primary-dark: #2c5530;
+    --accent: #25D366;
+    --accent-dark: #128C7E;
+    --text: #666;
+    --text-light: #ccc;
+    --text-on-dark: #fff;
+    --surface: #f8f9fa;
+    --surface-dark: #1a1a1a;
+    --overlay: rgb(0 0 0/.4);
+    --overlay-light: rgb(255 255 255/.95);
+    --font: 'Poppins',system-ui;
+    --radius: 15px;
+    --shadow: 0 5px 15px rgb(0 0 0/.1);
+    --shadow-lg: 0 10px 25px rgb(0 0 0/.15);
+    --header: 92px
 }
 
-* {
-    margin: 0;
-    padding: 0;
+/* Reset & Base */
+*,::before,::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0
 }
 
 html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%
 }
 
-/* Melhora de acessibilidade: Respeita a preferência do usuário por movimento reduzido */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior: auto
+    }
+    *,::before,::after {
+        animation-duration: .01ms!important;
+        animation-iteration-count: 1!important;
+        transition-duration: .01ms!important;
+        scroll-behavior: auto!important
+    }
 }
 
 body {
-    font-family: var(--font-primary);
-    line-height: 1.6;
-    color: var(--text-dark);
-    /* overflow-x: hidden; foi removido. É melhor encontrar e corrigir o elemento que causa o overflow horizontal do que escondê-lo. Se o problema persistir, esta linha pode ser reativada temporariamente. */
+    font: 400 1rem/1.6 var(--font);
+    color: var(--text);
+    text-rendering: optimizeSpeed
 }
 
 .container {
@@ -62,21 +58,18 @@ body {
 /* Header */
 .header {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    inset: 0 0 auto;
     background: transparent;
     z-index: 1000;
-    padding: 1rem 0; /* 1rem = 16px. 16+16+50(logo) = 82px */
-    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    padding-block: 1rem;
+    transition: .4s;
 }
 
-/* Estilo do header quando a página é rolada (adicionar classe .scrolled via JS) */
 .header.scrolled {
-    background: var(--white-t-95);
-    -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+    background: var(--overlay-light);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    box-shadow: var(--shadow-light);
+    box-shadow: var(--shadow);
 }
 
 .header .container {
@@ -208,46 +201,40 @@ body {
 }
 
 .hero-title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font: 700 clamp(2rem,8vw,3.5rem)/1.2 var(--font);
+    margin-block-end: 1rem;
+    filter: drop-shadow(2px 2px 4px rgb(0 0 0/.5));
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font: 400 clamp(1.1rem,4vw,1.5rem)/1.4 var(--font);
+    margin-block-end: 2rem;
+    opacity: .9;
+    filter: drop-shadow(1px 1px 2px rgb(0 0 0/.5));
 }
 
 .cta-button {
     display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: var(--accent-color);
-    color: var(--text-dark); /* Alterado para --text-dark para melhor contraste com --accent-color */
-    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25); /* Removido pois o texto agora é escuro */
-    padding: 1rem 2rem;
+    place-items: center;
+    gap: .5rem;
+    padding: clamp(.8rem,2.5vw,1rem) clamp(1.5rem,5vw,2rem);
+    background: var(--accent);
+    color: var(--text);
+    font: 600 clamp(1rem,2.5vw,1.1rem) var(--font);
     text-decoration: none;
-    border-radius: 50px; /* Mantido pois é um estilo específico do botão */
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    justify-content: center; /* Garante o alinhamento do ícone e texto */
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    border-radius: 50px;
+    transition: .3s;
+    box-shadow: 0 4px 15px rgb(37 211 102/.3);
 }
 
-.cta-button:hover, .cta-button:focus-visible {
-    background: var(--accent-hover-color);
+.cta-button:is(:hover,:focus-visible) {
+    background: var(--accent-dark);
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    box-shadow: 0 6px 20px rgb(37 211 102/.4);
 }
 
 .cta-button i {
-    font-size: 1.2em; /* Deixa o ícone um pouco maior que o texto */
+    font-size: 1.2em;
     line-height: 1;
 }
 
@@ -277,22 +264,22 @@ body {
 }
 
 .benefits-grid {
-    display: flex;
-    flex-flow: wrap;
-    place-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 350px));
+    justify-content: center;
     gap: 2rem;
     margin-block-start: 3rem;
+    container-type: inline-size
 }
 
 .benefit-card {
-    flex: 1 1 300px;
-    max-width: 350px;
-    background: var(--white);
+    background: var(--text-on-dark);
     padding: 2rem;
-    border-radius: var(--border-radius);
+    border-radius: var(--radius);
     text-align: center;
-    box-shadow: var(--shadow-light);
-    transition: transform .3s, box-shadow .3s;
+    box-shadow: var(--shadow);
+    transition: .3s;
+    container-type: inline-size
 }
 
 .benefit-card:hover {
@@ -748,26 +735,39 @@ body {
     }
 }
 
-/* Animações (controladas por JS com Intersection Observer) */
-.animated-item,
-.benefit-card,
-.specialty-card {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
+/* Optimized Animations */
+@media(prefers-reduced-motion:no-preference) {
+    .animated-item,
+    .benefit-card,
+    .specialty-card {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: .4s cubic-bezier(.4,0,.2,1);
+        will-change: transform,opacity
+    }
 
-.animated-item.visible,
-.benefit-card.visible,
-.specialty-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+    .animated-item.visible,
+    .benefit-card.visible,
+    .specialty-card.visible {
+        opacity: 1;
+        transform: translateY(0)
+    }
 
-/* Animação do ícone do menu mobile (classe .active adicionada via JS) */
-.mobile-menu-toggle.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-.mobile-menu-toggle.active span:nth-child(2) { opacity: 0; }
-.mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    .mobile-menu-toggle.active span {
+        transition: .3s cubic-bezier(.4,0,.2,1);
+        will-change: transform,opacity
+    }
+
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg)
+    }
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0
+    }
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg)
+    }
+}
 
 /* Keyframe animation for the pulse effect */
 @keyframes pulse {
