@@ -168,6 +168,48 @@
             </div>
         </article>
 
+        <!-- Sistema de Comentários -->
+        <section class="comments-section">
+            <div class="container">
+                <h2 class="section-title">Comentários</h2>
+                
+                <div id="comments-list">
+                    <!-- Comentários serão carregados via JavaScript -->
+                </div>
+
+                <form id="comment-form" class="comment-form">
+                    <h3>Deixe seu comentário</h3>
+                    <div class="form-group">
+                        <label for="comment-name">Nome</label>
+                        <input type="text" id="comment-name" name="author" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment-email">E-mail</label>
+                        <input type="email" id="comment-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment-content">Comentário</label>
+                        <textarea id="comment-content" name="content" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="button button-primary">Enviar Comentário</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter__content">
+                    <h2>Receba Novidades</h2>
+                    <p>Inscreva-se para receber dicas e atualizações sobre bioconstrução.</p>
+                    <form id="newsletter-form" class="newsletter__form">
+                        <input type="email" name="email" placeholder="Seu melhor e-mail" required>
+                        <button type="submit" class="button button-primary">Inscrever</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
         <!-- Seção de Posts Relacionados -->
         <section class="related-posts">
             <div class="container">
