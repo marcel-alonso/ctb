@@ -1,10 +1,29 @@
 # Conexão Terra Bambu - Landing Page
-## Links rápidos
+
+## 📱 Links Rápidos
 
 - [Site publicado no GitHub Pages](https://marcel-alonso.github.io/ctb/)
 - [Domínio personalizado](https://www.conexaoterrabambu.com.br)
 
-Este é o repositório para a landing page do projeto "Conexão Terra Bambu". O objetivo desta página é apresentar a empresa, seus valores, especialidades em bioconstrução e facilitar o contato de potenciais clientes.
+## 🌱 Blog
+
+Acesse nosso conteúdo sobre bioconstrução e vida sustentável:
+
+### Posts Disponíveis:
+1. [Como Começar sua Casa Sustentável](blog/como-comecar-casa-sustentavel.html)
+   - Um guia completo para iniciar sua jornada na bioconstrução
+   - Data: 15 de Janeiro de 2024
+   - Categoria: Guia Básico
+
+2. [Benefícios do Bambu na Construção](blog/beneficios-bambu-construcao.html)
+   - Descubra as vantagens deste material versátil e sustentável
+   - Data: 10 de Janeiro de 2024
+   - Categoria: Materiais
+
+3. [Tintas Naturais: Cores que Respiram](blog/tintas-naturais-cores-que-respiram.html)
+   - Aprenda sobre alternativas saudáveis para colorir sua casa
+   - Data: 5 de Janeiro de 2024
+   - Categoria: DIY
 
 ## 🎯 Objetivo
 
@@ -16,8 +35,18 @@ A página foi projetada para ser uma ferramenta de marketing digital direta e ef
 
 ## ✨ Funcionalidades
 
+### Landing Page
 -   **Design Responsivo:** A página se adapta a diferentes tamanhos de tela, como desktops, tablets e celulares.
 -   **Animações de Scroll:** Elementos surgem suavemente na tela conforme o usuário rola a página, criando uma experiência de navegação mais dinâmica.
+
+### Blog
+-   **CMS baseado em Markdown:** Sistema simples e eficiente para gerenciamento de conteúdo
+-   **SEO Otimizado:** Meta tags, dados estruturados e URLs amigáveis
+-   **Design Responsivo:** Layout adaptável para todas as telas
+-   **Categorias:** Filtros para organizar o conteúdo
+-   **Posts Relacionados:** Sugestões de leitura relacionada
+-   **Newsletter:** Captura de leads interessados em conteúdo
+-   **Compartilhamento Social:** Meta tags otimizadas para redes sociais
 -   **Botão Flutuante do WhatsApp:** Um botão de contato sempre visível para facilitar a comunicação instantânea.
 
 ## 🛠️ Tecnologias Utilizadas

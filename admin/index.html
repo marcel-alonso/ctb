@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Conexão Terra Bambu</title>
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/admin.css">
+    
+    <!-- Editor Markdown -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+</head>
+<body class="admin-page">
+    <header class="admin-header">
+        <div class="container">
+            <div class="admin-header__content">
+                <a href="../" class="logo">
+                    <img src="../assets/images/logo-minimal.webp" alt="Logotipo Conexão Terra Bambu" class="logo-emblem" width="40" height="40">
+                    <span class="admin-title">Painel Administrativo</span>
+                </a>
+                <nav class="admin-nav">
+                    <a href="#" class="active" data-view="posts">Posts</a>
+                    <a href="#" data-view="new">Novo Post</a>
+                    <a href="#" data-view="media">Mídia</a>
+                    <a href="#" data-view="config">Configurações</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <div class="container">
+            <!-- Lista de Posts -->
+            <section class="admin-view" id="posts-view">
+                <div class="admin-toolbar">
+                    <h2>Posts</h2>
+                    <div class="toolbar-actions">
+                        <input type="search" placeholder="Buscar posts..." class="search-input">
+                        <select class="filter-select">
+                            <option value="">Todas as categorias</option>
+                            <option value="guia-basico">Guia Básico</option>
+                            <option value="materiais">Materiais</option>
+                            <option value="diy">DIY</option>
+                        </select>
+                        <button class="button button-primary" id="new-post-btn">Novo Post</button>
+                    </div>
+                </div>
+
+                <div class="posts-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Categoria</th>
+                                <th>Data</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="posts-list">
+                            <!-- Posts serão carregados via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Editor de Post -->
+            <section class="admin-view hidden" id="editor-view">
+                <div class="admin-toolbar">
+                    <h2>Novo Post</h2>
+                    <div class="toolbar-actions">
+                        <button class="button" id="preview-btn">Visualizar</button>
+                        <button class="button button-primary" id="save-btn">Salvar</button>
+                    </div>
+                </div>
+
+                <form id="post-form" class="post-editor">
+                    <div class="editor-grid">
+                        <div class="editor-main">
+                            <div class="form-group">
+                                <label for="title">Título</label>
+                                <input type="text" id="title" name="title" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="content">Conteúdo</label>
+                                <textarea id="content" name="content"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="editor-sidebar">
+                            <div class="sidebar-section">
+                                <h3>Publicação</h3>
+                                <div class="form-group">
+                                    <label for="status">Status</label>
+                                    <select id="status" name="status">
+                                        <option value="draft">Rascunho</option>
+                                        <option value="published">Publicado</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="date">Data</label>
+                                    <input type="datetime-local" id="date" name="date">
+                                </div>
+                            </div>
+
+                            <div class="sidebar-section">
+                                <h3>Categoria</h3>
+                                <div class="form-group">
+                                    <select id="category" name="category">
+                                        <option value="guia-basico">Guia Básico</option>
+                                        <option value="materiais">Materiais</option>
+                                        <option value="diy">DIY</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="sidebar-section">
+                                <h3>Imagem de Capa</h3>
+                                <div class="cover-image-upload">
+                                    <input type="file" id="cover-image" name="cover-image" accept="image/*">
+                                    <div class="image-preview"></div>
+                                </div>
+                            </div>
+
+                            <div class="sidebar-section">
+                                <h3>SEO</h3>
+                                <div class="form-group">
+                                    <label for="excerpt">Resumo</label>
+                                    <textarea id="excerpt" name="excerpt" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="slug">URL amigável</label>
+                                    <input type="text" id="slug" name="slug">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Upload de Mídia -->
+            <section class="admin-view hidden" id="media-view">
+                <div class="admin-toolbar">
+                    <h2>Biblioteca de Mídia</h2>
+                    <div class="toolbar-actions">
+                        <button class="button button-primary" id="upload-btn">Upload</button>
+                    </div>
+                </div>
+
+                <div class="media-grid" id="media-list">
+                    <!-- Arquivos de mídia serão carregados via JavaScript -->
+                </div>
+            </section>
+
+            <!-- Configurações -->
+            <section class="admin-view hidden" id="config-view">
+                <div class="admin-toolbar">
+                    <h2>Configurações</h2>
+                    <div class="toolbar-actions">
+                        <button class="button button-primary" id="save-config-btn">Salvar</button>
+                    </div>
+                </div>
+
+                <form id="config-form" class="config-form">
+                    <div class="form-section">
+                        <h3>Geral</h3>
+                        <div class="form-group">
+                            <label for="site-title">Título do Site</label>
+                            <input type="text" id="site-title" name="site-title">
+                        </div>
+                        <div class="form-group">
+                            <label for="site-description">Descrição</label>
+                            <textarea id="site-description" name="site-description"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>SEO</h3>
+                        <div class="form-group">
+                            <label for="meta-keywords">Palavras-chave</label>
+                            <input type="text" id="meta-keywords" name="meta-keywords">
+                            <small>Separe as palavras-chave com vírgulas</small>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Redes Sociais</h3>
+                        <div class="form-group">
+                            <label for="social-instagram">Instagram</label>
+                            <input type="url" id="social-instagram" name="social-instagram">
+                        </div>
+                        <div class="form-group">
+                            <label for="social-facebook">Facebook</label>
+                            <input type="url" id="social-facebook" name="social-facebook">
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal de Preview -->
+    <div class="modal" id="preview-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Preview do Post</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe id="preview-frame"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/admin.js" type="module"></script>
+</body>
+</html>
