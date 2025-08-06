@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Conexão Terra Bambu - Bioconstrução Sustentável</title>
 <meta name="description" content="Construa o lar dos seus sonhos em harmonia com a natureza. Bioconstrução com bambu, taipa de mão e materiais naturais. Especialistas em construção sustentável no interior de SP.">
+<!-- CSS Crítico -->
+<link rel="preload" href="css/styles.css" as="style">
+<link rel="preload" href="css/faq.css" as="style">
+<link rel="preload" href="css/accessibility.css" as="style">
+
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/faq.css">
 <link rel="stylesheet" href="css/accessibility.css">
@@ -23,18 +28,22 @@
 <meta name="twitter:description" content="Construa o lar dos seus sonhos em harmonia com a natureza. Bioconstrução com bambu, taipa de mão e materiais naturais.">
 <meta name="twitter:image" content="https://conexaoterrabambu.com.br/assets/images/img-compartilhamento.webp">
 
-<!-- Otimização de Performance: Carregamento assíncrono de fontes e ícones -->
-<!-- 1. Preconnect para os servidores de fontes para acelerar o handshake -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- Otimização de Performance: Carregamento otimizado de fontes e ícones -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
-<!-- 2. Carrega o CSS das fontes e dos ícones de forma não-bloqueante -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<!-- Pré-carregamento dos recursos críticos -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" as="style">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+<link rel="preload" href="assets/images/hero.webp" as="image">
 
-<!-- 3. Fallback para caso o JavaScript esteja desabilitado -->
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"></noscript>
-<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+<!-- Carregamento das fontes e ícones -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+<!-- Fontes adicionais carregadas de forma assíncrona -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
 <link rel="icon" href="assets/images/favicon.png" type="image/png">
 </head>
@@ -43,8 +52,8 @@
 <header class="header">
 <div class="container">
 <div class="logo">
-<img src="assets/images/logo-minimal.webp" alt="Emblema Conexão Terra Bambu" class="logo-emblem" loading="lazy">
-<img src="assets/images/logo-texto.webp" alt="Conexão Terra Bambu" class="logo-text" loading="lazy">
+<img src="assets/images/logo-minimal.webp" alt="Emblema Conexão Terra Bambu" class="logo-emblem" width="48" height="48" fetchpriority="high">
+<img src="assets/images/logo-texto.webp" alt="Conexão Terra Bambu" class="logo-text" width="200" height="48" fetchpriority="high">
 </div>
 <nav class="nav" id="main-nav">
 <a href="#sobre">Sobre</a>
@@ -62,7 +71,9 @@
 <!-- Hero Section -->
 <section class="hero">
 <div class="hero-background">
-<video src="assets/videos/imagine.webm" autoplay loop muted playsinline aria-hidden="true" class="imagine-bg-video"></video>
+<video autoplay loop muted playsinline aria-hidden="true" class="imagine-bg-video" poster="assets/images/hero.webp">
+    <source src="assets/videos/imagine.webm" type="video/webm">
+</video>
 </div>
 <div class="hero-content">
 <div class="container">
@@ -110,7 +121,7 @@
 
 <!-- Faixa Imagine seu espaço ideal -->
 <section class="imagine-banner">
-<img src="assets/images/hero.webp" alt="Ambiente de bioconstrução com bambu" class="imagine-bg-image" loading="lazy">
+<img src="assets/images/hero.webp" alt="Ambiente de bioconstrução com bambu" class="imagine-bg-image" width="1920" height="1080" fetchpriority="high">
 <div class="imagine-banner-content">
 <h2>A saúde do nosso corpo e da mente são reflexos diretos da saúde do nosso&nbsp;lar.</h2>
 <p>Cansado do convencional, sonha com um ambiente único, saudável e em ressonância com a natureza? A Conexão Terra Bambu materializa seu projeto.</p>
