@@ -1,21 +1,26 @@
-/* Base Theme */
+/* Reset, Variáveis e Estilos Base */
 :root {
-    --primary: #4a7c59;
-    --primary-dark: #2c5530;
-    --accent: #25D366;
-    --accent-dark: #128C7E;
-    --text: #666;
-    --text-light: #ccc;
-    --text-on-dark: #fff;
-    --surface: #f8f9fa;
-    --surface-dark: #1a1a1a;
-    --overlay: rgb(0 0 0/.4);
-    --overlay-light: rgb(255 255 255/.95);
-    --font: 'Poppins',system-ui;
-    --radius: 15px;
-    --shadow: 0 5px 15px rgb(0 0 0/.1);
-    --shadow-lg: 0 10px 25px rgb(0 0 0/.15);
-    --header: 92px
+    --primary-color: #4a7c59;
+    --primary-dark-color: #2c5530;
+    --accent-color: #25D366;
+    --accent-hover-color: #128C7E;
+
+    --text-light: #666;
+    --text-on-dark-bg: #ccc;
+    --text-on-primary-bg: #fff;
+
+    --bg-light: #f8f9fa;
+    --bg-dark: #1a1a1a;
+    --white: #fff;
+    --white-t-95: rgba(255, 255, 255, 0.95);
+    --black-t-40: rgba(0, 0, 0, 0.4);
+
+    --font-primary: 'Poppins', sans-serif;
+    --header-height: 92px; /* Aprox. 60px logo + 2rem padding */
+
+    --border-radius: 15px;
+    --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Reset & Base */
@@ -58,18 +63,20 @@ body {
 /* Header */
 .header {
     position: fixed;
-    inset: 0 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
     background: transparent;
     z-index: 1000;
-    padding-block: 1rem;
-    transition: .4s;
+    padding: 1rem 0;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .header.scrolled {
-    background: var(--overlay-light);
+    background: var(--white-t-95);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-light);
 }
 
 .header .container {
@@ -201,36 +208,41 @@ body {
 }
 
 .hero-title {
-    font: 700 clamp(2rem,8vw,3.5rem)/1.2 var(--font);
-    margin-block-end: 1rem;
-    filter: drop-shadow(2px 2px 4px rgb(0 0 0/.5));
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
-    font: 400 clamp(1.1rem,4vw,1.5rem)/1.4 var(--font);
-    margin-block-end: 2rem;
-    opacity: .9;
-    filter: drop-shadow(1px 1px 2px rgb(0 0 0/.5));
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .cta-button {
     display: inline-flex;
-    place-items: center;
-    gap: .5rem;
-    padding: clamp(.8rem,2.5vw,1rem) clamp(1.5rem,5vw,2rem);
-    background: var(--accent);
-    color: var(--text);
-    font: 600 clamp(1rem,2.5vw,1.1rem) var(--font);
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent-color);
+    color: var(--text-dark);
+    padding: 1rem 2rem;
     text-decoration: none;
     border-radius: 50px;
-    transition: .3s;
-    box-shadow: 0 4px 15px rgb(37 211 102/.3);
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
 }
 
-.cta-button:is(:hover,:focus-visible) {
-    background: var(--accent-dark);
+.cta-button:hover, .cta-button:focus-visible {
+    background: var(--accent-hover-color);
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgb(37 211 102/.4);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
 }
 
 .cta-button i {
