@@ -1,5 +1,22 @@
 # Allow all user agents to crawl the site
 User-agent: *
 Allow: /
+Sitemap: https://conexaoterrabambu.com.br/sitemap.xml
+
+# Permissões específicas
+Allow: /*.js
+Allow: /*.css
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.webp
+Allow: /*.svg
+Allow: /*.gif
+Allow: /*.webm
+
+# Bloquear acesso a arquivos desnecessários
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /node_modules/
+Disallow: /.vscode/
 
 Sitemap: https://msabinobr.github.io/ctb/sitemap.xml
