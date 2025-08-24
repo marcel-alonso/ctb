@@ -45,8 +45,6 @@ function createPostCard(post) {
                         src="${post.coverImage}" 
                         alt="${post.title}"
                         class="post-card__img"
-                        width="600"
-                        height="375"
                         loading="lazy"
                     >
                 </div>

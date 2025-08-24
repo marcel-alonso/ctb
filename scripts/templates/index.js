@@ -63,13 +63,9 @@ module.exports = function indexTemplate({ posts, categories }) {
                 <a href="../#especialidades">Especialidades</a>
                 <a href="../#contato">Contato</a>
                 <a href="../blog" aria-current="page">Blog</a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <!-- Hero do Blog -->
-        <section class="blog-hero">
+                    <nav class="nav" id="nav">
+                        <!-- Navegação removida para foco no logo e CTA -->
+                    </nav>
             <div class="container">
                 <h1 class="blog-hero__title">Blog</h1>
                 <p class="blog-hero__subtitle">Explorando os caminhos da bioconstrução e da vida sustentável</p>

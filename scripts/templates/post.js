@@ -77,7 +77,9 @@ module.exports = function postTemplate(post) {
                 <a href="../#especialidades">Especialidades</a>
                 <a href="../#contato">Contato</a>
                 <a href="../blog">Blog</a>
-            </nav>
+                <nav class="nav" id="nav">
+                    <!-- Navegação removida para foco no logo e leitura do conteúdo -->
+                </nav>
         </div>
     </header>
 

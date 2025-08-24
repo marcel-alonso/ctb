@@ -1,16 +1,6 @@
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const nav = document.querySelector('.nav');
-
-    if (mobileMenuToggle && nav) { // Verifica se os elementos existem
-        mobileMenuToggle.addEventListener('click', function() {
-            const isActive = nav.classList.toggle('active');
-            this.classList.toggle('active');
-            this.setAttribute('aria-expanded', isActive);
-        });
-    }
+    // Mobile menu removed: no mobile menu toggle or nav in simplified header
 
     // Smooth scrolling for anchor links
     const links = document.querySelectorAll('a[href^="#"]');
@@ -65,6 +55,36 @@ document.addEventListener('DOMContentLoaded', function() {
                 header.classList.remove('scrolled');
             }
         });
+    }
+
+    // Mostrar botão do WhatsApp quando seção #sobre (Soluções) estiver visível
+    const whatsappBtn = document.querySelector('.whatsapp-float');
+    const sobreSection = document.querySelector('#sobre');
+    const WHATSAPP_SHOW_DELAY = 600; // ms
+    let whatsappTimeout = null;
+
+    if (whatsappBtn && sobreSection && 'IntersectionObserver' in window) {
+        const sobreObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Aguarda um pequeno delay antes de exibir
+                    whatsappTimeout = setTimeout(() => {
+                        whatsappBtn.classList.add('visible');
+                    }, WHATSAPP_SHOW_DELAY);
+                } else {
+                    if (whatsappTimeout) {
+                        clearTimeout(whatsappTimeout);
+                        whatsappTimeout = null;
+                    }
+                    whatsappBtn.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.35 }); // quando ~35% da seção estiver visível
+
+        sobreObserver.observe(sobreSection);
+    } else if (whatsappBtn) {
+        // Fallback: exibe o botão após um delay simples se IntersectionObserver não suportado
+        setTimeout(() => whatsappBtn.classList.add('visible'), 1200);
     }
 
     // Intersection Observer for animations
@@ -137,4 +157,41 @@ document.addEventListener('DOMContentLoaded', function() {
         lazyImages.forEach(img => imageObserver.observe(img));
     }
     */
+
+    /* ===== Media transitions: fade-in media when they enter the viewport ===== */
+    (function(){
+      try {
+        const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReduced) return;
+
+        const targets = [];
+        const heroBg = document.querySelector('.hero-background');
+        const heroImg = document.querySelector('.imagine-bg-image');
+
+        if (heroBg) {
+          heroBg.classList.add('media-fade-in');
+          targets.push(heroBg);
+        }
+        if (heroImg) {
+          heroImg.classList.add('media-fade-in');
+          targets.push(heroImg);
+        }
+
+        if (targets.length === 0) return;
+
+        const io = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              obs.unobserve(entry.target); // anima uma vez
+            }
+          });
+        }, { threshold: 0.2, rootMargin: '0px 0px -10% 0px' });
+
+        targets.forEach(t => io.observe(t));
+      } catch (e) {
+        // fail silently; não é crítico
+        console.error('media transitions init failed', e);
+      }
+    })();
 });
