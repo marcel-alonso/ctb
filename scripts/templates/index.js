@@ -34,9 +34,9 @@ module.exports = function indexTemplate({ posts, categories }) {
         "publisher": {
             "@type": "Organization",
             "name": "Conexão Terra Bambu",
-            "logo": {
+                "logo": {
                 "@type": "ImageObject",
-                "url": "https://conexaoterrabambu.com.br/assets/images/logo-minimal.webp"
+                "url": "https://conexaoterrabambu.com.br/assets/images/logo_only.png"
             }
         }
     }
@@ -47,8 +47,8 @@ module.exports = function indexTemplate({ posts, categories }) {
     <header class="header scrolled">
         <div class="container">
             <a href="../" class="logo">
-                <img src="../assets/images/logo-minimal.webp" alt="Logotipo Conexão Terra Bambu" class="logo-emblem" width="60" height="60">
-                <img src="../assets/images/logo-texto.webp" alt="Conexão Terra Bambu" class="logo-text" width="auto" height="21">
+                <img src="../assets/images/logo_only.png" alt="Logotipo Conexão Terra Bambu" class="logo-emblem">
+                <img src="../assets/images/text_horizontal.png" alt="Conexão Terra Bambu" class="logo-text">
             </a>
             
             <button class="mobile-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav">

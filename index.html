@@ -47,15 +47,15 @@
 <!-- Fontes adicionais carregadas de forma assíncrona -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
-<link rel="icon" href="assets/images/favicon.png" type="image/png">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
 <!-- Header -->
 <header class="header">
 <div class="container">
 <div class="logo">
-<img src="assets/images/logo-minimal.webp" alt="Emblema Conexão Terra Bambu" class="logo-emblem" width="48" height="48" fetchpriority="high">
-<img src="assets/images/logo-texto.webp" alt="Conexão Terra Bambu" class="logo-text" width="200" height="48" fetchpriority="high">
+<img src="assets/images/logo_only.png" alt="Emblema Conexão Terra Bambu" class="logo-emblem" fetchpriority="high">
+<img src="assets/images/text_horizontal.png" alt="Conexão Terra Bambu" class="logo-text" fetchpriority="high">
 </div>
 <nav class="nav" id="main-nav">
 <a href="#sobre">Sobre</a>
@@ -458,7 +458,7 @@ aria-label="Fale conosco pelo WhatsApp">
   "@type": "Organization",
   "name": "Conexão Terra Bambu",
   "url": "https://conexaoterrabambu.com.br",
-  "logo": "https://conexaoterrabambu.com.br/assets/images/logo-minimal.webp",
+    "logo": "https://conexaoterrabambu.com.br/assets/images/logo_only.png",
   "sameAs": [
     "https://wa.me/5511992908488"
   ],
@@ -480,7 +480,7 @@ aria-label="Fale conosco pelo WhatsApp">
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Conexão Terra Bambu",
-  "image": "https://conexaoterrabambu.com.br/assets/images/logo-minimal.webp",
+    "image": "https://conexaoterrabambu.com.br/assets/images/logo_only.png",
   "description": "Empresa especializada em bioconstrução, utilizando bambu, taipa de mão e materiais naturais para criar edificações sustentáveis e saudáveis.",
   "priceRange": "$$",
   "telephone": "+55-11-99290-8488",
@@ -524,7 +524,7 @@ aria-label="Fale conosco pelo WhatsApp">
 
 <script src="js/blog.js" defer></script>
 
-<section class="section blog-section" id="blog">
+<section class="section blog-section" id="blog" hidden>
   <div class="container">
     <div class="section-header">
       <h2 class="title">Blog</h2>
@@ -535,9 +535,7 @@ aria-label="Fale conosco pelo WhatsApp">
       <!-- Post cards serão carregados dinamicamente via JavaScript -->
     </div>
 
-    <div class="text-center mt-4">
-      <a href="#blog" class="button button-primary">Ver Mais Posts</a>
-    </div>
+    <!-- Seção de blog escondida na landing page; botão removido para não mostrar diretamente na LP -->
   </div>
 </section>
 

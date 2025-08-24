@@ -6,7 +6,7 @@ date: '2024-01-10'
 category: Materiais
 author:
   name: Conexão Terra Bambu
-  picture: /assets/images/logo-minimal.webp
+  picture: /assets/images/logo_only.png
 ogImage:
   url: /assets/images/bambu.webp
 ---

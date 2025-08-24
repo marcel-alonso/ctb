@@ -6,7 +6,7 @@ date: '2024-01-05'
 category: DIY
 author:
   name: Conexão Terra Bambu
-  picture: /assets/images/logo-minimal.webp
+  picture: /assets/images/logo_only.png
 ogImage:
   url: /assets/images/tinta.webp
 ---
