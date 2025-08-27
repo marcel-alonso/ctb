@@ -62,21 +62,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const sobreSection = document.querySelector('#sobre');
     const WHATSAPP_SHOW_DELAY = 600; // ms
     let whatsappTimeout = null;
+    let whatsappShown = false; // flag para manter visível após aparecer
 
     if (whatsappBtn && sobreSection && 'IntersectionObserver' in window) {
         const sobreObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
+                if (entry.isIntersecting && !whatsappShown) {
                     // Aguarda um pequeno delay antes de exibir
                     whatsappTimeout = setTimeout(() => {
                         whatsappBtn.classList.add('visible');
+                        whatsappShown = true; // marca como exibido para não esconder
+                        // não precisamos mais observar a seção
+                        try { sobreObserver.unobserve(sobreSection); } catch(e){}
                     }, WHATSAPP_SHOW_DELAY);
                 } else {
-                    if (whatsappTimeout) {
+                    // Se ainda não apareceu, cancelar timeout quando sair da seção
+                    if (!entry.isIntersecting && whatsappTimeout && !whatsappShown) {
                         clearTimeout(whatsappTimeout);
                         whatsappTimeout = null;
                     }
-                    whatsappBtn.classList.remove('visible');
+                    // NÃO removemos a classe 'visible' quando sair — deve permanecer após aparecer
                 }
             });
         }, { threshold: 0.35 }); // quando ~35% da seção estiver visível
