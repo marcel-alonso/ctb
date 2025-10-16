@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Conexão Terra Bambu - Bioconstrução Sustentável</title>
 <meta name="description" content="Construa o lar dos seus sonhos em harmonia com a natureza. Bioconstrução com bambu, taipa de mão e materiais naturais. Especialistas em construção sustentável no interior de SP.">
+
+<!-- Preload de recursos críticos -->
+<link rel="preload" href="assets/images/logo_only.png" as="image" fetchpriority="high">
+<link rel="preload" href="assets/images/text_horizontal.png" as="image" fetchpriority="high">
+<link rel="preload" href="assets/images/hero.webp" as="image" fetchpriority="high">
+
+<!-- DNS Prefetch para recursos externos -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+
 <!-- CSS Crítico -->
 <link rel="preload" href="css/styles.css" as="style">
 <link rel="preload" href="css/faq.css" as="style">
@@ -44,14 +55,20 @@
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
 <link rel="preload" href="assets/images/hero.webp" as="image">
 
-<!-- Carregamento das fontes e ícones -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<!-- Otimização de fontes com display swap -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap&display=swap" rel="stylesheet">
 
-<!-- Fontes adicionais carregadas de forma assíncrona -->
+<!-- Font Awesome otimizado -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</noscript>
+
+<!-- Fontes adicionais com carregamento priorizado -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<!-- Favicon otimizado -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any">
 </head>
 <body>
 <!-- Header -->
@@ -129,19 +146,6 @@
 </div>
 </section>
 
-<!-- Faixa Imagine seu espaço ideal -->
-<section class="imagine-banner">
-<img src="assets/images/hero.webp" alt="Ambiente de bioconstrução com bambu" class="imagine-bg-image" width="1920" height="1080" fetchpriority="high">
-<div class="imagine-banner-content">
-<h2>A saúde do nosso corpo e da mente são reflexos diretos da saúde do nosso&nbsp;lar.</h2>
-<p>Cansado do convencional, sonha com um ambiente único, saudável e em ressonância com a natureza? A Conexão Terra Bambu materializa seu projeto.</p>
-<a href="https://wa.me/5511992908488?text=Olá!%20Vi%20o%20site%20de%20vocês%20e%20me%20conectei%20com%20a%20ideia%20de%20que%20a%20saúde%20do%20nosso%20lar%20reflete%20em%20nossa%20saúde.%20Gostaria%20de%20saber%20mais%20sobre%20como%20materializar%20meu%20projeto." class="cta-button" target="_blank" rel="noopener noreferrer">
-<i class="fab fa-whatsapp" aria-hidden="true"></i>
-QUERO CONSTRUIR
-</a>
-</div>
-</section>
-
 <!-- Especialidades Section -->
 <section id="especialidades" class="specialties">
 <div class="container">
@@ -151,7 +155,12 @@ QUERO CONSTRUIR
 <div class="specialties-grid">
 <div class="specialty-card">
 <div class="specialty-image">
-<img src="assets/images/bambu.webp" alt="Estrutura de bambu em construção" loading="lazy">
+<img src="assets/images/bambu.webp" 
+    alt="Estrutura de bambu em construção" 
+    loading="lazy"
+    decoding="async"
+    width="400"
+    height="300">
 </div>
 <div class="specialty-content">
 <h3>Bambu</h3>
@@ -161,7 +170,12 @@ QUERO CONSTRUIR
 
 <div class="specialty-card">
 <div class="specialty-image">
-<img src="assets/images/pau-a-pique.webp" alt="Construção com taipa de mão" loading="lazy">
+<img src="assets/images/pau-a-pique.webp" 
+    alt="Construção com taipa de mão" 
+    loading="lazy"
+    decoding="async"
+    width="400"
+    height="300">
 </div>
 <div class="specialty-content">
 <h3>Taipa de Mão (Pau a Pique)</h3>
@@ -469,8 +483,18 @@ aria-label="Fale conosco pelo WhatsApp">
 <i class="fab fa-whatsapp"></i>
 </a>
 
-<script src="js/main.js"></script>
-<script src="js/faq.js"></script>
+<!-- Scripts com carregamento otimizado -->
+<script src="js/main.js" defer></script>
+<script src="js/faq.js" defer></script>
+
+<!-- Intersection Observer Polyfill (carregado condicionalmente) -->
+<script>
+    if (!('IntersectionObserver' in window)) {
+        const script = document.createElement('script');
+        script.src = 'https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver';
+        document.head.appendChild(script);
+    }
+</script>
 
 <!-- Schema.org FAQ Markup -->
 <script type="application/ld+json">
