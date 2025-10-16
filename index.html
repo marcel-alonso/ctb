@@ -17,15 +17,29 @@
 <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
 
 <!-- CSS Crítico -->
-<link rel="preload" href="css/styles.css" as="style">
-<link rel="preload" href="css/faq.css" as="style">
-<link rel="preload" href="css/accessibility.css" as="style">
-<link rel="preload" href="css/blog.css" as="style">
+<!-- CSS Crítico inline -->
+<style>
+/* CSS crítico aqui - apenas estilos essenciais para o primeiro render */
+:root{--primary-color:#4a7c59;--accent-color:#25D366;--white:#fff;--font-primary:'Poppins',sans-serif}
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 0}
+.hero{min-height:100vh;display:flex;place-items:center;color:var(--white)}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.hero-title{font-size:3.5rem;font-weight:700;margin-bottom:1rem}
+@media (max-width:768px){.hero-title{font-size:2.2rem}}
+</style>
 
-<link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/faq.css">
-<link rel="stylesheet" href="css/accessibility.css">
-<link rel="stylesheet" href="css/blog.css">
+<!-- CSS não crítico com preload -->
+<link rel="preload" href="css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="css/faq.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="css/accessibility.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="css/blog.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<noscript>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/faq.css">
+    <link rel="stylesheet" href="css/accessibility.css">
+    <link rel="stylesheet" href="css/blog.css">
+</noscript>
 
 <!-- Lite YouTube Embed -->
 <script src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube.js" type="module"></script>
@@ -55,17 +69,31 @@
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
 <link rel="preload" href="assets/images/hero.webp" as="image">
 
-<!-- Otimização de fontes com display swap -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap&display=swap" rel="stylesheet">
+<!-- Fonte principal com subset otimizado -->
+<link rel="preload" as="font" href="https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2" type="font/woff2" crossorigin>
+<style>
+/* Font-face local primeiro */
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Poppins Regular'), local('Poppins-Regular'),
+         url(https://fonts.gstatic.com/s/poppins/v20/pxiEyp8kv8JHgFVrJJfecg.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
 
-<!-- Font Awesome otimizado -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'">
+<!-- Font Awesome otimizado apenas ícones necessários -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/fontawesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/brands.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<!-- Fallback para no-JS -->
 <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </noscript>
-
-<!-- Fontes adicionais com carregamento priorizado -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
 <!-- Favicon otimizado -->
 <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any">
@@ -75,8 +103,20 @@
 <header class="header">
 <div class="container">
 <div class="logo">
-<img src="assets/images/logo_only.png" alt="Emblema Conexão Terra Bambu" class="logo-emblem" fetchpriority="high">
-<img src="assets/images/text_horizontal.png" alt="Conexão Terra Bambu" class="logo-text" fetchpriority="high">
+<img src="assets/images/logo_only.png" 
+    alt="Emblema Conexão Terra Bambu" 
+    class="logo-emblem" 
+    fetchpriority="high"
+    width="84" 
+    height="84"
+    decoding="sync">
+<img src="assets/images/text_horizontal.png" 
+    alt="Conexão Terra Bambu" 
+    class="logo-text" 
+    fetchpriority="high"
+    width="240" 
+    height="72"
+    decoding="sync">
 </div>
 <!-- Menu removido para foco no logo e CTA principal -->
 </div>
@@ -85,8 +125,21 @@
 <!-- Hero Section -->
 <section class="hero">
 <div class="hero-background">
-<video autoplay loop muted playsinline aria-hidden="true" class="imagine-bg-video" poster="assets/images/hero.webp">
-    <source src="assets/videos/imagine.webm" type="video/webm">
+<video 
+    autoplay 
+    loop 
+    muted 
+    playsinline 
+    aria-hidden="true" 
+    class="imagine-bg-video" 
+    poster="assets/images/hero.webp"
+    preload="metadata"
+    width="1920"
+    height="1080">
+    <source 
+        src="assets/videos/imagine.webm" 
+        type="video/webm"
+        media="(min-width: 768px)">
 </video>
 </div>
 <div class="hero-content">
