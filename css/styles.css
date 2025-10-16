@@ -339,6 +339,57 @@ body {
     background: var(--bg-light);
 }
 
+/* Video Container Styles */
+.video-container {
+    max-width: 900px;
+    margin: 2rem auto 4rem;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    background: var(--white);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-container:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+lite-youtube {
+    aspect-ratio: 16/9;
+    width: 100%;
+    border-radius: var(--border-radius);
+}
+
+/* Melhorias de acessibilidade para o botão de play */
+lite-youtube .lyt-playbtn:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Loading state animation */
+lite-youtube::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s ease;
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        margin: 1.5rem -15px 3rem;
+        border-radius: 0;
+    }
+    
+    lite-youtube {
+        border-radius: 0;
+    }
+}
+
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 350px));
