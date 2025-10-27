@@ -957,8 +957,37 @@ lite-youtube::before {
   filter: brightness(0.9) saturate(0.95);
   transition: transform .6s ease, opacity .6s ease, filter .6s ease;
   transform-origin: center;
-  /* garantir que o media fique abaixo do overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: -2;
+}
+
+/* Otimizações para mobile */
+@media (max-width: 767px) {
+  .hero-background video {
+    object-position: center center;
+  }
+  
+  .hero-background::before {
+    background: linear-gradient(180deg, 
+      rgba(0,0,0,0.4) 0%, 
+      rgba(0,0,0,0.5) 60%, 
+      rgba(0,0,0,0.6) 100%);
+  }
+}
+
+/* Otimizações para mobile */
+@media (max-width: 767px) {
+  .hero-background video {
+    height: 100vh;
+    object-position: center center;
+  }
+  
+  .hero-background .imagine-bg-image {
+    display: block;
+    opacity: 1;
+  }
 }
 
 /* Fade-in helper for media to avoid sudden attention-shifts */
