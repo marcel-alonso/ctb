@@ -6,7 +6,7 @@
 
 O painel administrativo usa a API do GitHub para salvar posts. Siga estes passos:
 
-1. Acesse https://github.com/settings/tokens
+1. Acesse [https://github.com/settings/tokens](https://github.com/settings/tokens)
 2. Clique em **"Generate new token"** → **"Generate new token (classic)"**
 3. Complete os dados:
    - **Note**: "Admin Blog CTB"
@@ -60,6 +60,7 @@ O post será salvo no GitHub e estará disponível automaticamente no blog!
 ## 📝 Campos de um Post
 
 ### Obrigatórios
+
 - **Título**: O nome do post
 - **Resumo**: Descrição breve (aparece na lista de posts e redes sociais)
 - **Categoria**: Guia Básico, Materiais ou DIY
@@ -69,6 +70,7 @@ O post será salvo no GitHub e estará disponível automaticamente no blog!
 - **Texto Alternativo da Imagem**: Descrição da imagem (acessibilidade)
 
 ### Preenchidos Automaticamente
+
 - **Slug**: URL amigável, gerado a partir do título
 - **Canonical URL**: URL canônica do post no blog
 - **Tempo de Leitura**: Calculado automaticamente
@@ -76,6 +78,7 @@ O post será salvo no GitHub e estará disponível automaticamente no blog!
 - **Data de Modificação**: Se vazio, usa data de publicação
 
 ### Opcionais
+
 - **OG Image**: Imagem para redes sociais (se vazio, usa imagem de capa)
 - **Data de Publicação**: Se vazio, usa data atual
 - **Autor**: Padrão é "Conexão Terra Bambu"
@@ -98,151 +101,128 @@ O post será salvo no GitHub e estará disponível automaticamente no blog!
 1. Vá para **Configurações** → **Autores**
 2. Clique em **"Editar"** ou **"Deletar"** no autor desejado
 
-## 🔧 Configurações do Site
+## ⚙️ Configurações do Site
 
 ### Site
+
 - **Título do Site**: Nome da organização
-- **Descrição do Site**: Breve descrição do negócio
+- **Descrição**: Descrição curta (para meta tags)
+- **URL Base**: URL do site em produção
+- **Logo**: Caminho da imagem do logo
 
 ### SEO
+
 - **Palavras-chave**: Separadas por vírgula
-- **URLs do Instagram e Facebook**: Para redes sociais
+- **Author Name**: Nome padrão do site para blogs
+- **Social Share Image**: Imagem padrão para compartilhamento
 
 ### GitHub
+
 Configure aqui seu token e informações do repositório (veja "Gerar Token" acima)
 
-## 📊 Gerenciar Posts
+## 📊 Visualizar Posts
 
 ### Ver Posts
+
 1. Na aba **"Posts"**, veja todos os seus posts
-2. Use a **barra de busca** para filtrar por título
-3. Selecione uma **categoria** para filtrar por assunto
+2. Cada linha mostra: Título, categoria, data, status
+3. Use o campo de busca para procurar por título ou slug
 
 ### Editar Post
+
 1. Clique em **"Editar"** no post que deseja modificar
-2. Altere os dados necessários
-3. Clique em **"Publicar Post"**
+2. Altere os campos desejados
+3. Clique em **"Atualizar Post"** para salvar as mudanças
 
 ### Deletar Post
+
 1. Clique em **"Deletar"** no post
-2. Confirme a ação
+2. Confirme a exclusão
+3. O post será removido do GitHub e do blog
 
 ### Preview
+
 1. Clique em **"Visualizar"** para ver como fica o post
-2. A preview abre em uma janela modal
-3. Você pode verificar formatação, imagens e layout
-
-## 📱 Upload de Mídia
-
-### Adicionar Imagens
-
-1. Vá para a aba **"Mídia"**
-2. Clique em **"Upload de Imagem"**
-3. Selecione a imagem do seu computador
-4. A imagem será enviada para `assets/images/` no repositório
-
-### Usar Imagens
-
-Após upload, use o caminho da imagem:
-- Exemplo: `/assets/images/minha-imagem.jpg`
-
-## ✅ Validação de Posts
-
-O sistema valida automaticamente:
-- ✔ Todos os campos obrigatórios preenchidos
-- ✔ Slug único (não pode repetir)
-- ✔ Formato correto de datas
-- ✔ Categoria válida
-
-Se houver erro, uma mensagem aparecerá indicando o problema.
+2. O preview é atualizado em tempo real conforme você digita
+3. Você pode testar links e formatos antes de publicar
 
 ## 🔐 Segurança
 
+### Checklist de Segurança
+
+- ✔ Todos os campos obrigatórios preenchidos
+- ✔ Token do GitHub guardado em local seguro
+- ✔ Imagem de capa com caminho válido
+- ✔ Exemplo: `/assets/images/minha-imagem.jpg`
+- ✔ Sem URLs diretas de imagens de terceiros
+- ✔ Sem informações sensíveis no conteúdo
+
 ### Token do GitHub
+
 - ⚠️ **Nunca compartilhe seu token**
-- Está armazenado em `sessionStorage` (perdido ao fechar o navegador)
-- Não é enviado para nenhum servidor externo
-- Só é usado para comunicar com a API do GitHub
+- ⚠️ Se o token vazar, regenere imediatamente em [GitHub Settings](https://github.com/settings/tokens)
+- ✔ Use um token pessoal, não o token do app
+- ✔ Armazene em local seguro (password manager)
 
 ### Autenticação
+
 - O login está na página `/admin/login.html`
-- Modifique as credenciais conforme necessário no `admin/js/admin.js`
-
-## 🛠️ Scripts de Build
-
-### Criar Novo Post (CLI)
-
-```bash
-node scripts/new-post.mjs "Título do Post" --category "Materiais" --tags "bambu,construção"
-```
-
-Isso cria um scaffold de post com front-matter preenchido.
-
-### Validar Posts
-
-```bash
-node scripts/validate-posts.mjs
-```
-
-Valida todos os posts e reporta erros.
-
-### Build Completo do Blog
-
-```bash
-node scripts/build-blog.mjs
-```
-
-Gera:
-- Páginas HTML de cada post (`blog/slug/index.html`)
-- Index do blog (`blog/index.html`)
-- Feed RSS (`rss.xml`)
-- Sitemap (`sitemap.xml`)
-- JSON de posts (`posts.json`)
-
-## 🚀 Workflow Completo
-
-1. **Criar post** via interface admin ou CLI
-2. **Editar conteúdo** e adicionar imagens
-3. **Visualizar** para verificar formatação
-4. **Publicar** quando pronto
-5. **GitHub Action** executa build automaticamente
-6. **Post aparece** no blog em segundos
+- As credenciais são verificadas no servidor
+- Use HTTPS em produção
 
 ## 🐛 Troubleshooting
 
+### Estrutura de Arquivos
+
+O blog espera que os posts estejam em:
+
+- Arquivos `.md`: `/content/posts/{slug}.md`
+- Imagens: `/assets/images/{nome}.{ext}`
+- JSON de posts: `/posts.json` (gerado automaticamente)
+- Páginas HTML de cada post: `blog/{slug}/index.html`
+
+### Verificação de Integridade
+
+- ✔ A pasta `/content/posts/` existe
+- ✔ Os arquivos `.md` têm front-matter válido
+- ✔ As imagens existem no diretório correto
+
 ### "Erro ao conectar com GitHub"
+
 - ✔ Verifique se o token está correto nas Configurações
-- ✔ Verifique se o token tem escopo `repo`
-- ✔ Verifique conexão com internet
+- ✔ Confirme que o token não expirou
+- ✔ Teste o token em [GitHub API Tester](https://docs.github.com/en/rest)
+- ✔ Verifique sua conexão com a internet
 
 ### "Slug já existe"
+
 - ✔ O título gera um slug automático
-- ✔ Mude o título ou delete o post existente
+- ✔ Se já existe, altere o título
+- ✔ Slugs são URL-friendly (minúsculas, hífens)
 
 ### "Campo obrigatório faltando"
+
 - ✔ Todos os campos com * são obrigatórios
-- ✔ Preencha antes de publicar
+- ✔ Verifique cada aba (Detalhes, Conteúdo, Imagem)
+- ✔ Título, resumo, categoria, tags são críticas
 
 ### "Imagem não aparece"
+
 - ✔ Verifique se o caminho está correto
-- ✔ Use `/assets/images/nome.jpg` como padrão
-- ✔ Certifique-se de que o arquivo existe no repositório
+- ✔ O caminho deve começar com `/assets/images/`
+- ✔ Confirme o nome do arquivo (case-sensitive)
+- ✔ Recarregue a página (Ctrl+F5 / Cmd+Shift+R)
 
-## 📚 Referências
+## 📚 Ajuda Adicional
 
-- [Markdown Guide](https://www.markdownguide.org/)
-- [GitHub API Docs](https://docs.github.com/en/rest)
-- [Schema.org BlogPosting](https://schema.org/BlogPosting)
-- [Open Graph Protocol](https://ogp.me/)
+Se encontrar problemas:
 
-## 💬 Suporte
-
-Se tiver dúvidas ou encontrar problemas:
 1. Verifique este guia
-2. Revise os logs do navegador (F12)
-3. Verifique os workflows do GitHub Actions
+2. Consulte o [TUTORIAL_ACESSO.md](TUTORIAL_ACESSO.md)
+3. Revise o [ACESSOS_E_LOGIN.md](ACESSOS_E_LOGIN.md)
+4. Leia [ARCHITECTURE_DETAILED.md](ARCHITECTURE_DETAILED.md) para entender o sistema
 
 ---
 
-**Última atualização**: Janeiro de 2026
-**Versão**: 2.0 (Refatoração Completa)
+**Versão:** 2.1  
+**Data de Atualização:** 2024-01-28
