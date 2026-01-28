@@ -1,81 +1,154 @@
-/* Admin Styles */
-.admin-page {
-    background: var(--bg-light);
-    min-height: 100vh;
+/* ============================================================================
+   ADMIN STYLES - Painel Moderno e Responsivo
+   ============================================================================ */
+
+:root {
+    --admin-bg: #f5f7fa;
+    --admin-card-bg: #ffffff;
+    --admin-border: #e1e8ed;
+    --admin-text: #2c3e50;
+    --admin-text-secondary: #7f8c8d;
+    --admin-accent: #3498db;
+    --admin-accent-hover: #2980b9;
+    --admin-danger: #e74c3c;
+    --admin-success: #27ae60;
+    --admin-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --admin-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
-/* Header */
+.admin-page {
+    background: var(--admin-bg);
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: var(--admin-text);
+}
+
+/* ============================================================================
+   HEADER - Design Moderno
+   ============================================================================ */
+
 .admin-header {
-    background: var(--white);
-    box-shadow: var(--shadow-light);
+    background: var(--admin-card-bg);
+    box-shadow: var(--admin-shadow);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
+    border-bottom: 1px solid var(--admin-border);
 }
 
 .admin-header__content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    height: 72px;
+    padding: 0 2rem;
 }
 
 .admin-header .logo {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
     text-decoration: none;
-    color: var(--text-dark);
+    color: var(--admin-text);
+    transition: opacity 0.3s ease;
+}
+
+.admin-header .logo:hover {
+    opacity: 0.8;
+}
+
+.admin-header .logo img {
+    height: 44px;
+    width: auto;
 }
 
 .admin-title {
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    color: var(--admin-text);
+    letter-spacing: -0.5px;
 }
 
+/* Navegação Responsiva */
 .admin-nav {
     display: flex;
-    gap: 1.5rem;
+    gap: 0.5rem;
+    align-items: center;
 }
 
-.admin-nav a {
-    text-decoration: none;
-    color: var(--text-light);
-    padding: 0.5rem 1rem;
-    border-radius: var(--border-radius);
+.tab-button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--admin-text-secondary);
+    transition: all 0.3s ease;
+    position: relative;
+    border-radius: 8px;
+}
+
+.tab-button:hover {
+    color: var(--admin-accent);
+    background: rgba(52, 152, 219, 0.08);
+}
+
+.tab-button.active {
+    color: var(--admin-accent);
+    background: rgba(52, 152, 219, 0.12);
+    border-bottom: 3px solid var(--admin-accent);
+}
+
+/* Botão Logout */
+.button-danger {
+    background: var(--admin-danger) !important;
+    color: white !important;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
     transition: all 0.3s ease;
 }
 
-.admin-nav a:hover {
-    color: var(--primary-color);
-    background: rgba(74, 124, 89, 0.1);
+.button-danger:hover {
+    background: darken(#e74c3c, 10%) !important;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
 }
 
-.admin-nav a.active {
-    color: var(--primary-color);
-    background: rgba(74, 124, 89, 0.1);
-    font-weight: 500;
-}
+/* ============================================================================
+   MAIN CONTENT - Layout Responsivo
+   ============================================================================ */
 
-/* Main Content */
 .admin-main {
-    padding-top: 80px;
-    padding-bottom: 2rem;
+    padding-top: 100px;
+    padding-bottom: 3rem;
+    margin: 0 auto;
+    max-width: 1400px;
 }
 
-/* Toolbar */
+.admin-main .container {
+    padding: 0 2rem;
+}
+
+/* ============================================================================
+   TOOLBAR E SEÇÕES
+   ============================================================================ */
+
 .admin-toolbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .admin-toolbar h2 {
-    font-size: 1.5rem;
-    color: var(--primary-dark-color);
+    font-size: 1.75rem;
+    color: var(--admin-text);
+    font-weight: 600;
+    margin: 0;
 }
 
 .toolbar-actions {
@@ -307,31 +380,253 @@
 }
 
 /* Responsive */
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
+    .admin-header__content {
+        padding: 0 1.5rem;
+    }
+
+    .admin-main .container {
+        padding: 0 1.5rem;
+    }
+
     .editor-grid {
         grid-template-columns: 1fr;
+    }
+
+    .media-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 }
 
 @media (max-width: 768px) {
-    .admin-header__content {
-        flex-direction: column;
-        height: auto;
-        padding: 1rem 0;
+    .admin-header {
+        position: sticky;
     }
 
+    .admin-header__content {
+        height: 64px;
+        padding: 0 1rem;
+    }
+
+    .admin-header .logo {
+        gap: 0.5rem;
+    }
+
+    .admin-header .logo img {
+        height: 36px;
+    }
+
+    .admin-title {
+        font-size: 1rem;
+    }
+
+    /* Navegação em mobile */
     .admin-nav {
-        margin-top: 1rem;
+        gap: 0.25rem;
+        overflow-x: auto;
+        padding: 0.5rem 0;
+        margin: 0;
+    }
+
+    .tab-button {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+
+    /* Main content */
+    .admin-main {
+        padding-top: 140px;
+    }
+
+    .admin-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .admin-toolbar h2 {
+        font-size: 1.4rem;
         width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
+    }
+
+    /* Forms */
+    .form-group input[type="text"],
+    .form-group input[type="url"],
+    .form-group input[type="datetime-local"],
+    .form-group select,
+    .form-group textarea {
+        padding: 0.75rem;
+        font-size: 16px; /* Previne zoom em iOS */
+    }
+
+    /* Table responsivo */
+    .posts-table {
+        border-radius: 8px;
+        overflow-x: auto;
+    }
+
+    .posts-table table {
+        font-size: 0.9rem;
+    }
+
+    .posts-table th,
+    .posts-table td {
+        padding: 0.75rem;
+    }
+
+    /* Media grid */
+    .media-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 1rem;
+    }
+
+    .media-item img {
+        height: 120px;
+    }
+
+    /* Modal responsivo */
+    .modal-content {
+        width: 95vw;
+        max-height: 95vh;
+    }
+
+    /* Editor */
+    .post-editor {
+        padding: 1.5rem;
+    }
+
+    /* Buttons */
+    .button,
+    .button-primary,
+    .button-danger {
+        width: 100%;
+        padding: 0.75rem;
+    }
+
+    .button:not(:last-child) {
+        margin-bottom: 0.5rem;
     }
 
     .toolbar-actions {
-        flex-wrap: wrap;
+        width: 100%;
+        flex-direction: column;
     }
 
-    .posts-table {
-        overflow-x: auto;
+    .toolbar-actions button,
+    .search-input {
+        width: 100%;
+    }
+
+    /* Sidebar sections */
+    .sidebar-section {
+        padding: 1rem;
+    }
+
+    .sidebar-section h3 {
+        font-size: 0.95rem;
+    }
+
+    /* Grid layout */
+    .form-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-header {
+        position: relative;
+    }
+
+    .admin-header__content {
+        height: 56px;
+        padding: 0 0.75rem;
+        gap: 0.5rem;
+    }
+
+    .admin-header .logo img {
+        height: 32px;
+    }
+
+    .admin-title {
+        display: none;
+    }
+
+    .admin-nav {
+        gap: 0.1rem;
+    }
+
+    .tab-button {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    .admin-main {
+        padding-top: 80px;
+    }
+
+    .admin-toolbar h2 {
+        font-size: 1.2rem;
+    }
+
+    /* Tables não ficam bem em mobile, mostrar alternativa */
+    .posts-table table {
+        font-size: 0.85rem;
+    }
+
+    .posts-table th,
+    .posts-table td {
+        padding: 0.5rem;
+    }
+
+    /* Buttons em coluna */
+    .button {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.8rem;
+    }
+
+    /* Forms */
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px;
+        padding: 0.7rem;
+    }
+
+    /* Media grid */
+    .media-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    .media-item img {
+        height: 100px;
+    }
+
+    /* Modal */
+    .modal-content {
+        width: 98vw;
+        border-radius: 8px;
+    }
+
+    .modal-header {
+        padding: 1rem;
+    }
+
+    .modal-body {
+        padding: 1rem;
+    }
+
+    /* Utility spacing */
+    .editor-grid {
+        gap: 1rem;
+    }
+
+    .sidebar-section {
+        padding: 0.75rem;
+        margin-bottom: 1rem;
     }
 }
