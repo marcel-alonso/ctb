@@ -1,5 +1,49 @@
+// ============================================================================
+// Header Scroll Effect - Dynamic sizing and styling
+// ============================================================================
+function initHeaderScroll() {
+    const header = document.querySelector('.header');
+    if (!header) return;
+
+    let rafId = null;
+    let lastScrollY = window.scrollY;
+    const SCROLL_THRESHOLD = 10;
+
+    function updateHeader() {
+        const shouldBeScrolled = window.scrollY >= SCROLL_THRESHOLD;
+        const isCurrentlyScrolled = header.classList.contains('is-scrolled');
+
+        // Only update if state has changed
+        if (shouldBeScrolled !== isCurrentlyScrolled) {
+            header.classList.toggle('is-scrolled', shouldBeScrolled);
+        }
+
+        rafId = null;
+    }
+
+    // Optimized scroll listener with throttling
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        
+        if (!rafId) {
+            rafId = requestAnimationFrame(updateHeader);
+        }
+    }
+
+    // Set initial state on load
+    updateHeader();
+
+    // Add listener with passive flag for better performance
+    window.addEventListener('scroll', onScroll, { passive: true });
+}
+
+// Smooth scrolling for navigation links
+// ============================================================================
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize header scroll effect
+    initHeaderScroll();
+
     // Mobile menu removed: no mobile menu toggle or nav in simplified header
 
     // Smooth scrolling for anchor links
@@ -44,18 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
-    // Header scroll effect
-    const header = document.querySelector('.header');
-    if (header) { // Verifica se o header existe
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) { // Adiciona a classe se a rolagem for maior que 50px
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    }
 
     // Mostrar botão do WhatsApp quando seção #sobre (Soluções) estiver visível
     const whatsappBtn = document.querySelector('.whatsapp-float');

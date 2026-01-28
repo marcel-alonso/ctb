@@ -150,7 +150,7 @@ module.exports = function postTemplate(post) {
     }
     </script>
 </head>
-<body>
+<body class="page-blog">
     <!-- Header -->
     <header class="header scrolled">
         <div class="container">

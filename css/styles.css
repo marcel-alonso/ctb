@@ -16,11 +16,27 @@
     --black-t-40: rgba(0, 0, 0, 0.4);
 
     --font-primary: 'Poppins', sans-serif;
-    --header-height: 92px; /* Aprox. 60px logo + 2rem padding */
+    
+    /* Header Sizing Variables */
+    --header-h: 160px;                  /* Header height (normal state) */
+    --header-h-scrolled: 90px;          /* Header height (scrolled state) */
+    --header-pad-y: 1.5rem;             /* Header vertical padding (normal) */
+    --header-pad-y-scrolled: 0.75rem;   /* Header vertical padding (scrolled) */
+    --logo-h: 84px;                     /* Logo height (normal state) */
+    --logo-h-scrolled: 52px;            /* Logo height (scrolled state) */
+    --scroll-transition: 0.25s ease;    /* Smooth transition time */
 
     --border-radius: 15px;
     --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Blog-specific header sizing (smaller header) */
+body.page-blog {
+    --header-h: 140px;
+    --header-h-scrolled: 80px;
+    --logo-h: 72px;
+    --logo-h-scrolled: 48px;
 }
 
 /* Reset & Base */
@@ -91,6 +107,12 @@ body {
     font-size: 1rem;
     line-height: 1.6;
     color: var(--text-light);
+    padding-top: var(--header-h);
+    transition: padding-top var(--scroll-transition);
+}
+
+body.page-blog {
+    padding-top: var(--header-h);
 }
 
 .container {
@@ -107,10 +129,21 @@ body {
     right: 0;
     background: transparent;
     z-index: 1000;
-    padding: 1rem 0;
-    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    padding: var(--header-pad-y) 0;
+    height: var(--header-h);
+    transition: height var(--scroll-transition), padding var(--scroll-transition), background-color var(--scroll-transition), box-shadow var(--scroll-transition);
 }
 
+.header.is-scrolled {
+    height: var(--header-h-scrolled);
+    padding: var(--header-pad-y-scrolled) 0;
+    background: var(--white-t-95);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Preserve .scrolled class for backward compatibility */
 .header.scrolled {
     background: var(--white-t-95);
     -webkit-backdrop-filter: blur(10px);
@@ -122,8 +155,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; /* necessário para posicionamento absoluto do logo */
-    min-height: 130px; /* aumentado para criar mais espaçamento superior */
+    position: relative;
+    height: 100%;
+    transition: min-height var(--scroll-transition);
 }
 
 .logo {
@@ -138,21 +172,21 @@ body {
 }
 
 .logo .logo-emblem {
-    height: 84px; /* emblema aumentado para destaque no desktop */
+    height: var(--logo-h);
     width: auto;
-    transition: filter 0.4s ease, transform 0.2s ease;
+    transition: height var(--scroll-transition), filter var(--scroll-transition);
     filter: brightness(0) invert(1) drop-shadow(1px 1px 2px rgba(0,0,0,0.6));
 }
 
 .logo .logo-text {
-    height: 72px; /* texto aumentado no desktop */
+    height: calc(var(--logo-h) * 0.857);  /* Maintain aspect ratio with emblem */
     width: auto;
-    transition: filter 0.4s ease, transform 0.2s ease;
+    transition: height var(--scroll-transition), filter var(--scroll-transition);
     filter: brightness(0) invert(1) drop-shadow(1px 1px 2px rgba(0,0,0,0.6));
 }
 
-.header.scrolled .logo .logo-emblem,
-.header.scrolled .logo .logo-text {
+.header.is-scrolled .logo .logo-emblem,
+.header.is-scrolled .logo .logo-text {
     filter: none;
 }
 
@@ -812,11 +846,20 @@ lite-youtube::before {
 
     /* Ajustes para o logo em pontos de quebra menores - mantêm tamanhos legíveis */
     .logo .logo-emblem {
-        height: 64px;
+        height: 56px;
     }
 
     .logo .logo-text {
-        height: 48px;
+        height: 40px;
+    }
+
+    /* Ensure mobile header is properly sized */
+    body {
+        padding-top: var(--header-h);
+    }
+
+    body.page-blog {
+        padding-top: var(--header-h);
     }
 
     /* Hero */
