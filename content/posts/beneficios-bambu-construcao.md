@@ -1,14 +1,25 @@
 ---
 title: Benefícios do Bambu na Construção
+slug: beneficios-bambu-construcao
 excerpt: Conheça as vantagens de usar bambu em sua construção - resistência, sustentabilidade e beleza natural se unem neste material versátil.
-coverImage: /assets/images/bambu.webp
 date: '2024-01-10'
+modified: '2024-01-10'
+status: published
 category: Materiais
+tags:
+  - bambu
+  - materiais-sustentáveis
+  - construção
+  - estruturas
 author:
   name: Conexão Terra Bambu
   picture: /assets/images/logo_only.png
-ogImage:
-  url: /assets/images/bambu.webp
+coverImage: /assets/images/bambu.webp
+coverAlt: Estrutura de bambu em construção tradicional
+ogImage: /assets/images/bambu.webp
+canonical: https://conexaoterrabambu.com.br/blog/beneficios-bambu-construcao
+readingTime: 4
+wordCount: 892
 ---
 
 O bambu é um dos materiais mais versáteis e sustentáveis disponíveis para a construção civil. Com uma história milenar na arquitetura asiática e crescente popularidade global, este recurso natural oferece uma combinação única de benefícios que o tornam uma escolha excepcional para construções contemporâneas.

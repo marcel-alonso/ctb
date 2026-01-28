@@ -1,0 +1,18 @@
+{
+  "authors": [
+    {
+      "id": "ctb",
+      "name": "Conexão Terra Bambu",
+      "picture": "/assets/images/logo_only.png",
+      "bio": "Especialistas em bioconstrução e sustentabilidade",
+      "email": "contato@conexaoterrabambu.com.br"
+    },
+    {
+      "id": "team",
+      "name": "Equipe Conexão Terra Bambu",
+      "picture": "/assets/images/logo_only.png",
+      "bio": "Nossa equipe de especialistas em construção sustentável",
+      "email": "contato@conexaoterrabambu.com.br"
+    }
+  ]
+}

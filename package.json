@@ -1,11 +1,15 @@
 {
   "name": "ctb-blog",
-  "version": "1.0.0",
-  "description": "Blog da Conexão Terra Bambu",
+  "version": "2.0.0",
+  "description": "Blog da Conexão Terra Bambu - Sistema de administração com GitHub API",
   "main": "lib/posts.js",
+  "type": "module",
   "scripts": {
-    "build": "node scripts/build.js",
-    "watch": "node scripts/build.js --watch"
+    "build": "node scripts/build-blog.mjs",
+    "validate": "node scripts/validate-posts.mjs",
+    "new-post": "node scripts/new-post.mjs",
+    "watch": "node scripts/build.js --watch",
+    "serve": "cd . && code --install-extension ritwickdey.LiveServer"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
@@ -13,5 +17,8 @@
   },
   "devDependencies": {
     "chokidar": "^3.5.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }

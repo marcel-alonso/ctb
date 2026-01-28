@@ -1,0 +1,47 @@
+name: Build Blog
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'content/posts/**'
+      - 'authors.json'
+      - 'scripts/build-blog.mjs'
+      - 'scripts/validate-posts.mjs'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install gray-matter marked
+
+      - name: Validate posts
+        run: node scripts/validate-posts.mjs
+
+      - name: Build blog
+        run: node scripts/build-blog.mjs
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add blog/ posts.json sitemap.xml rss.xml 2>/dev/null || true
+          git commit -m "Build: atualizar blog" --allow-empty
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}

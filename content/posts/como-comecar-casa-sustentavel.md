@@ -1,14 +1,25 @@
 ---
 title: Como Começar sua Casa Sustentável
+slug: como-comecar-casa-sustentavel
 excerpt: Descubra os primeiros passos para construir uma casa em harmonia com a natureza, usando materiais naturais e técnicas ancestrais.
-coverImage: /assets/images/pau-a-pique.webp
 date: '2024-01-15'
+modified: '2024-01-15'
+status: published
 category: Guia Básico
+tags:
+  - bioconstrução
+  - casa-sustentável
+  - guia
+  - planejamento
 author:
   name: Conexão Terra Bambu
   picture: /assets/images/logo_only.png
-ogImage:
-  url: /assets/images/pau-a-pique.webp
+coverImage: /assets/images/pau-a-pique.webp
+coverAlt: Construção de pau a pique tradicional com estrutura de madeira
+ogImage: /assets/images/pau-a-pique.webp
+canonical: https://conexaoterrabambu.com.br/blog/como-comecar-casa-sustentavel
+readingTime: 6
+wordCount: 1245
 ---
 
 A decisão de construir uma casa sustentável é o primeiro passo em direção a um estilo de vida mais consciente e em harmonia com a natureza. Neste guia, vamos explorar os aspectos fundamentais que você precisa considerar antes de começar sua jornada na bioconstrução.

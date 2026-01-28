@@ -1,14 +1,25 @@
 ---
 title: Tintas Naturais - Cores que Respiram
+slug: tintas-naturais-cores-que-respiram
 excerpt: Aprenda sobre as tintas naturais, uma alternativa saudável e sustentável para colorir sua casa sem toxinas ou VOCs.
-coverImage: /assets/images/tinta.webp
 date: '2024-01-05'
+modified: '2024-01-05'
+status: published
 category: DIY
+tags:
+  - tintas-naturais
+  - diy
+  - materiais-sustentáveis
+  - saúde
 author:
   name: Conexão Terra Bambu
   picture: /assets/images/logo_only.png
-ogImage:
-  url: /assets/images/tinta.webp
+coverImage: /assets/images/tinta.webp
+coverAlt: Amostras de tintas naturais com pigmentos coloridos de origem mineral e vegetal
+ogImage: /assets/images/tinta.webp
+canonical: https://conexaoterrabambu.com.br/blog/tintas-naturais-cores-que-respiram
+readingTime: 5
+wordCount: 1103
 ---
 
 As tintas naturais são uma alternativa ancestral que vem ganhando cada vez mais espaço na bioconstrução moderna. Além de serem ecológicas, elas proporcionam ambientes mais saudáveis e uma estética única com cores vivas e texturas naturais.

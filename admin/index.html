@@ -13,6 +13,343 @@
     <!-- Editor Markdown -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
     <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+
+    <!-- Marked para preview -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+        /* Estilos adicionais para Admin */
+        .collapsible-section {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .collapsible-header {
+            background-color: #f5f5f5;
+            padding: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            user-select: none;
+        }
+
+        .collapsible-header:hover {
+            background-color: #efefef;
+        }
+
+        .collapsible-header::after {
+            content: '▼';
+            transition: transform 0.2s ease;
+        }
+
+        .collapsible-section.collapsed .collapsible-header::after {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            padding: 1.5rem;
+            display: none;
+        }
+
+        .collapsible-section:not(.collapsed) .collapsible-content {
+            display: block;
+        }
+
+        .word-count {
+            display: inline-block;
+            margin-left: 1rem;
+            padding: 0.25rem 0.75rem;
+            background-color: #e8f5e9;
+            border-radius: 12px;
+            font-size: 0.85rem;
+        }
+
+        .reading-time {
+            display: inline-block;
+            margin-left: 0.5rem;
+            padding: 0.25rem 0.75rem;
+            background-color: #fff3e0;
+            border-radius: 12px;
+            font-size: 0.85rem;
+        }
+
+        .tags-input {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            min-height: 38px;
+        }
+
+        .tag-item {
+            background-color: #2196F3;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .tag-item button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 0;
+            font-size: 1rem;
+            line-height: 1;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-grid.full {
+            grid-template-columns: 1fr;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-card {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+            border-left: 4px solid #2196F3;
+        }
+
+        .stat-card h4 {
+            margin: 0 0 0.5rem;
+            color: #666;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .stat-card .value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .image-selector {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 1rem;
+        }
+
+        .image-item {
+            cursor: pointer;
+            padding: 0.5rem;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .image-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .image-item.selected {
+            border-color: #2196F3;
+            background-color: #e3f2fd;
+        }
+
+        .image-item img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+
+        .tabs-container {
+            display: flex;
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 1.5rem;
+        }
+
+        .tab-button {
+            padding: 1rem 1.5rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 1rem;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .tab-button.active {
+            border-bottom-color: #2196F3;
+            color: #2196F3;
+            font-weight: 600;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .success-message {
+            background-color: #c8e6c9;
+            color: #2e7d32;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .error-message {
+            background-color: #ffcdd2;
+            color: #c62828;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .canonical-url {
+            background-color: #f5f5f5;
+            padding: 0.75rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            word-break: break-all;
+        }
+
+        .github-token-warning {
+            background-color: #fff9c4;
+            border-left: 4px solid #fbc02d;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 8px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow: auto;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #999;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            color: #333;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .button-danger {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .button-danger:hover {
+            background-color: #da190b;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .media-item {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        .media-item:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .media-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .media-item-info {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .media-item-info p {
+            margin: 0 0 0.5rem;
+            font-size: 0.9rem;
+            word-break: break-word;
+        }
+    </style>
 </head>
 <body class="admin-page">
     <header class="admin-header">
@@ -23,10 +360,11 @@
                     <span class="admin-title">Painel Administrativo</span>
                 </a>
                 <nav class="admin-nav">
-                    <a href="#" class="active" data-view="posts">Posts</a>
-                    <a href="#" data-view="new">Novo Post</a>
-                    <a href="#" data-view="media">Mídia</a>
-                    <a href="#" data-view="config">Configurações</a>
+                    <button class="tab-button active" data-view="posts">Posts</button>
+                    <button class="tab-button" data-view="editor">Novo Post</button>
+                    <button class="tab-button" data-view="media">Mídia</button>
+                    <button class="tab-button" data-view="config">Configurações</button>
+                    <button id="logout-btn" class="button button-danger">Sair</button>
                 </nav>
             </div>
         </div>
@@ -34,17 +372,21 @@
 
     <main class="admin-main">
         <div class="container">
-            <!-- Lista de Posts -->
-            <section class="admin-view" id="posts-view">
+            <!-- Mensagens de Status -->
+            <div id="success-message" class="success-message"></div>
+            <div id="error-message" class="error-message"></div>
+
+            <!-- Seção: Posts -->
+            <section class="tab-content active" id="posts-view">
                 <div class="admin-toolbar">
-                    <h2>Posts</h2>
+                    <h2>Posts do Blog</h2>
                     <div class="toolbar-actions">
-                        <input type="search" placeholder="Buscar posts..." class="search-input">
-                        <select class="filter-select">
+                        <input type="search" id="search-input" placeholder="Buscar posts..." class="search-input">
+                        <select id="filter-category" class="filter-select">
                             <option value="">Todas as categorias</option>
-                            <option value="guia-basico">Guia Básico</option>
-                            <option value="materiais">Materiais</option>
-                            <option value="diy">DIY</option>
+                            <option value="Guia Básico">Guia Básico</option>
+                            <option value="Materiais">Materiais</option>
+                            <option value="DIY">DIY</option>
                         </select>
                         <button class="button button-primary" id="new-post-btn">Novo Post</button>
                     </div>
@@ -62,157 +404,353 @@
                             </tr>
                         </thead>
                         <tbody id="posts-list">
-                            <!-- Posts serão carregados via JavaScript -->
+                            <tr>
+                                <td colspan="5" style="text-align: center; padding: 2rem;">Carregando posts...</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- Editor de Post -->
-            <section class="admin-view hidden" id="editor-view">
+            <!-- Seção: Editor de Post -->
+            <section class="tab-content" id="editor-view">
                 <div class="admin-toolbar">
-                    <h2>Novo Post</h2>
+                    <h2>Editor de Post</h2>
                     <div class="toolbar-actions">
                         <button class="button" id="preview-btn">Visualizar</button>
-                        <button class="button button-primary" id="save-btn">Salvar</button>
+                        <button class="button button-primary" id="save-btn">Publicar</button>
                     </div>
                 </div>
 
+                <div class="github-token-warning" id="github-warning" style="display: none;">
+                    <strong>Aviso:</strong> Nenhum token do GitHub configurado. <a href="#" onclick="document.querySelectorAll('[data-view]')[3].click(); return false;">Configure na aba de Configurações</a> para salvar posts.
+                </div>
+
                 <form id="post-form" class="post-editor">
-                    <div class="editor-grid">
-                        <div class="editor-main">
-                            <div class="form-group">
-                                <label for="title">Título</label>
-                                <input type="text" id="title" name="title" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="content">Conteúdo</label>
-                                <textarea id="content" name="content"></textarea>
-                            </div>
+                    <!-- Seção: Detalhes Básicos -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header">
+                            📝 Detalhes Básicos
                         </div>
-
-                        <div class="editor-sidebar">
-                            <div class="sidebar-section">
-                                <h3>Publicação</h3>
+                        <div class="collapsible-content">
+                            <div class="form-grid full">
                                 <div class="form-group">
-                                    <label for="status">Status</label>
-                                    <select id="status" name="status">
+                                    <label for="post-title">
+                                        Título *
+                                        <span class="word-count" id="slug-preview" style="display: none;"></span>
+                                    </label>
+                                    <input type="text" id="post-title" name="title" required placeholder="Digite o título do post">
+                                </div>
+                            </div>
+
+                            <div class="form-grid full">
+                                <div class="form-group">
+                                    <label for="post-excerpt">Resumo/Descrição *</label>
+                                    <textarea id="post-excerpt" name="excerpt" required rows="3" placeholder="Resumo que aparecerá no blog e em redes sociais"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="post-slug">URL Amigável (Slug)</label>
+                                    <input type="text" id="post-slug" name="slug" readonly placeholder="Preenchido automaticamente">
+                                </div>
+                                <div class="form-group">
+                                    <label for="post-category">Categoria *</label>
+                                    <select id="post-category" name="category" required>
+                                        <option value="">Selecione uma categoria</option>
+                                        <option value="Guia Básico">Guia Básico</option>
+                                        <option value="Materiais">Materiais</option>
+                                        <option value="DIY">DIY</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="post-status">Status</label>
+                                    <select id="post-status" name="status">
                                         <option value="draft">Rascunho</option>
                                         <option value="published">Publicado</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="date">Data</label>
-                                    <input type="datetime-local" id="date" name="date">
-                                </div>
-                            </div>
-
-                            <div class="sidebar-section">
-                                <h3>Categoria</h3>
-                                <div class="form-group">
-                                    <select id="category" name="category">
-                                        <option value="guia-basico">Guia Básico</option>
-                                        <option value="materiais">Materiais</option>
-                                        <option value="diy">DIY</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="sidebar-section">
-                                <h3>Imagem de Capa</h3>
-                                <div class="cover-image-upload">
-                                    <input type="file" id="cover-image" name="cover-image" accept="image/*">
-                                    <div class="image-preview"></div>
-                                </div>
-                            </div>
-
-                            <div class="sidebar-section">
-                                <h3>SEO</h3>
-                                <div class="form-group">
-                                    <label for="excerpt">Resumo</label>
-                                    <textarea id="excerpt" name="excerpt" rows="3"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="slug">URL amigável</label>
-                                    <input type="text" id="slug" name="slug">
+                                    <label for="post-date">Data de Publicação</label>
+                                    <input type="datetime-local" id="post-date" name="date">
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Seção: Conteúdo -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header">
+                            📄 Conteúdo
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="form-group">
+                                <label for="post-content">Conteúdo (Markdown) *</label>
+                                <textarea id="post-content" name="content" required></textarea>
+                            </div>
+
+                            <div class="stats-grid">
+                                <div class="stat-card">
+                                    <h4>Palavras</h4>
+                                    <div class="value" id="word-count">0</div>
+                                </div>
+                                <div class="stat-card">
+                                    <h4>Tempo de Leitura</h4>
+                                    <div class="value" id="reading-time">0 min</div>
+                                </div>
+                                <div class="stat-card">
+                                    <h4>Caracteres</h4>
+                                    <div class="value" id="char-count">0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seção: Imagem e SEO -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header">
+                            🖼️ Imagem de Capa
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="form-grid full">
+                                <div class="form-group">
+                                    <label for="cover-image">Upload de Imagem de Capa *</label>
+                                    <input type="file" id="cover-image" name="cover-image" accept="image/*">
+                                    <div id="image-preview" style="margin-top: 1rem;"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cover-image-alt">Texto Alternativo da Imagem *</label>
+                                <input type="text" id="cover-image-alt" name="cover-image-alt" required placeholder="Descrição da imagem para acessibilidade">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="og-image">URL da Imagem para Redes Sociais (OG)</label>
+                                <input type="url" id="og-image" name="og-image" placeholder="Deixe em branco para usar a imagem de capa">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seção: Tags e Autor -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header">
+                            🏷️ Tags e Autor
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="form-group full">
+                                <label for="post-tags">Tags (separadas por vírgula) *</label>
+                                <div id="tags-input" class="tags-input"></div>
+                                <input type="hidden" id="post-tags" name="tags">
+                                <input type="text" id="tag-input" placeholder="Digite uma tag e pressione Enter">
+                                <small>Digite uma tag e pressione Enter para adicionar</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="post-author">Autor</label>
+                                <select id="post-author" name="author">
+                                    <option value="">Carregando autores...</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seção: Opções Avançadas -->
+                    <div class="collapsible-section">
+                        <div class="collapsible-header">
+                            ⚙️ Opções Avançadas
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="form-group full">
+                                <label for="post-canonical">URL Canônica</label>
+                                <div class="canonical-url" id="canonical-display">https://conexaoterrabambu.com.br/blog/seu-slug</div>
+                                <input type="hidden" id="post-canonical" name="canonical">
+                                <small>Preenchida automaticamente. Use se houver duplicação em outro domínio.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="post-modified">Data da Última Modificação</label>
+                                <input type="datetime-local" id="post-modified" name="modified">
+                                <small>Deixe em branco para usar a data de publicação</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+                        <button type="submit" class="button button-primary" id="submit-btn">Publicar Post</button>
+                        <button type="button" class="button" id="cancel-btn">Cancelar</button>
+                    </div>
                 </form>
             </section>
 
-            <!-- Upload de Mídia -->
-            <section class="admin-view hidden" id="media-view">
+            <!-- Seção: Mídia -->
+            <section class="tab-content" id="media-view">
                 <div class="admin-toolbar">
                     <h2>Biblioteca de Mídia</h2>
                     <div class="toolbar-actions">
-                        <button class="button button-primary" id="upload-btn">Upload</button>
+                        <button class="button button-primary" id="upload-media-btn">Upload de Imagem</button>
                     </div>
                 </div>
 
-                <div class="media-grid" id="media-list">
-                    <!-- Arquivos de mídia serão carregados via JavaScript -->
+                <div id="media-list" class="media-grid">
+                    <p style="text-align: center; padding: 2rem;">Carregando mídia...</p>
                 </div>
             </section>
 
-            <!-- Configurações -->
-            <section class="admin-view hidden" id="config-view">
+            <!-- Seção: Configurações -->
+            <section class="tab-content" id="config-view">
                 <div class="admin-toolbar">
                     <h2>Configurações</h2>
-                    <div class="toolbar-actions">
-                        <button class="button button-primary" id="save-config-btn">Salvar</button>
+                </div>
+
+                <div class="tabs-container">
+                    <button class="tab-button active" data-tab="site-config">Site</button>
+                    <button class="tab-button" data-tab="seo-config">SEO</button>
+                    <button class="tab-button" data-tab="authors-config">Autores</button>
+                    <button class="tab-button" data-tab="github-config">GitHub</button>
+                </div>
+
+                <!-- Tab: Configurações do Site -->
+                <div class="tab-content active" id="site-config-tab">
+                    <form id="site-config-form">
+                        <div class="form-group full">
+                            <label for="site-title">Título do Site</label>
+                            <input type="text" id="site-title" name="title" placeholder="Conexão Terra Bambu">
+                        </div>
+
+                        <div class="form-group full">
+                            <label for="site-description">Descrição do Site</label>
+                            <textarea id="site-description" name="description" rows="3" placeholder="Descrição breve do site"></textarea>
+                        </div>
+
+                        <button type="button" class="button button-primary" id="save-site-config">Salvar Configurações</button>
+                    </form>
+                </div>
+
+                <!-- Tab: SEO -->
+                <div class="tab-content" id="seo-config-tab">
+                    <form id="seo-config-form">
+                        <div class="form-group full">
+                            <label for="meta-keywords">Palavras-chave (SEO)</label>
+                            <textarea id="meta-keywords" name="keywords" rows="3" placeholder="Separe com vírgulas"></textarea>
+                        </div>
+
+                        <div class="form-group full">
+                            <label for="social-instagram">URL do Instagram</label>
+                            <input type="url" id="social-instagram" name="social_instagram" placeholder="https://instagram.com/seu-perfil">
+                        </div>
+
+                        <div class="form-group full">
+                            <label for="social-facebook">URL do Facebook</label>
+                            <input type="url" id="social-facebook" name="social_facebook" placeholder="https://facebook.com/seu-perfil">
+                        </div>
+
+                        <button type="button" class="button button-primary" id="save-seo-config">Salvar Configurações SEO</button>
+                    </form>
+                </div>
+
+                <!-- Tab: Autores -->
+                <div class="tab-content" id="authors-config-tab">
+                    <div style="margin-bottom: 1.5rem;">
+                        <button class="button button-primary" id="add-author-btn">Adicionar Autor</button>
+                    </div>
+
+                    <div id="authors-list"></div>
+
+                    <!-- Modal para adicionar/editar autor -->
+                    <div id="author-modal" class="modal" style="display: none;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 id="author-modal-title">Adicionar Autor</h3>
+                                <button class="modal-close" id="author-modal-close" type="button">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="author-form">
+                                    <div class="form-group full">
+                                        <label for="author-name">Nome *</label>
+                                        <input type="text" id="author-name" required>
+                                    </div>
+
+                                    <div class="form-group full">
+                                        <label for="author-picture">URL da Foto</label>
+                                        <input type="url" id="author-picture" placeholder="Caminho ou URL da imagem">
+                                    </div>
+
+                                    <div class="form-group full">
+                                        <label for="author-bio">Biografia</label>
+                                        <textarea id="author-bio" rows="3"></textarea>
+                                    </div>
+
+                                    <div class="form-group full">
+                                        <label for="author-email">Email</label>
+                                        <input type="email" id="author-email">
+                                    </div>
+
+                                    <div style="display: flex; gap: 1rem;">
+                                        <button type="submit" class="button button-primary">Salvar Autor</button>
+                                        <button type="button" class="button" id="author-cancel-btn">Cancelar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <form id="config-form" class="config-form">
-                    <div class="form-section">
-                        <h3>Geral</h3>
-                        <div class="form-group">
-                            <label for="site-title">Título do Site</label>
-                            <input type="text" id="site-title" name="site-title">
-                        </div>
-                        <div class="form-group">
-                            <label for="site-description">Descrição</label>
-                            <textarea id="site-description" name="site-description"></textarea>
-                        </div>
+                <!-- Tab: GitHub -->
+                <div class="tab-content" id="github-config-tab">
+                    <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
+                        <p><strong>Como obter um token do GitHub:</strong></p>
+                        <ol>
+                            <li>Acesse <a href="https://github.com/settings/tokens" target="_blank">https://github.com/settings/tokens</a></li>
+                            <li>Clique em "Generate new token" → "Generate new token (classic)"</li>
+                            <li>Selecione os escopos: <code>repo</code> (acesso completo) e <code>user</code></li>
+                            <li>Gere o token e copie-o (você só verá uma vez!)</li>
+                            <li>Cole aqui abaixo</li>
+                        </ol>
                     </div>
 
-                    <div class="form-section">
-                        <h3>SEO</h3>
-                        <div class="form-group">
-                            <label for="meta-keywords">Palavras-chave</label>
-                            <input type="text" id="meta-keywords" name="meta-keywords">
-                            <small>Separe as palavras-chave com vírgulas</small>
+                    <form id="github-config-form">
+                        <div class="form-group full">
+                            <label for="github-token">Token do GitHub *</label>
+                            <input type="password" id="github-token" name="github_token" placeholder="ghp_xxxxxxxxxxxx">
+                            <small>Nunca será compartilhado ou exibido novamente</small>
                         </div>
-                    </div>
 
-                    <div class="form-section">
-                        <h3>Redes Sociais</h3>
-                        <div class="form-group">
-                            <label for="social-instagram">Instagram</label>
-                            <input type="url" id="social-instagram" name="social-instagram">
+                        <div class="form-group full">
+                            <label for="github-owner">Proprietário do Repositório (GitHub username)</label>
+                            <input type="text" id="github-owner" name="github_owner" placeholder="seu-usuario">
                         </div>
-                        <div class="form-group">
-                            <label for="social-facebook">Facebook</label>
-                            <input type="url" id="social-facebook" name="social-facebook">
+
+                        <div class="form-group full">
+                            <label for="github-repo">Nome do Repositório</label>
+                            <input type="text" id="github-repo" name="github_repo" placeholder="ctb">
                         </div>
-                    </div>
-                </form>
+
+                        <div class="form-group full">
+                            <label for="github-branch">Branch Padrão</label>
+                            <input type="text" id="github-branch" name="github_branch" placeholder="main">
+                        </div>
+
+                        <button type="button" class="button button-primary" id="save-github-config">Salvar Configurações do GitHub</button>
+                    </form>
+                </div>
             </section>
         </div>
     </main>
 
     <!-- Modal de Preview -->
-    <div class="modal" id="preview-modal">
-        <div class="modal-content">
+    <div class="modal" id="preview-modal" style="display: none;">
+        <div class="modal-content" style="width: 90%; max-width: 1200px; height: 90vh;">
             <div class="modal-header">
                 <h3>Preview do Post</h3>
-                <button class="modal-close">&times;</button>
+                <button class="modal-close" id="preview-close" type="button">&times;</button>
             </div>
-            <div class="modal-body">
-                <iframe id="preview-frame"></iframe>
+            <div class="modal-body" style="height: calc(100% - 60px); overflow: auto;">
+                <iframe id="preview-frame" style="width: 100%; height: 100%; border: none;"></iframe>
             </div>
         </div>
     </div>
