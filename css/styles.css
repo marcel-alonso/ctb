@@ -842,6 +842,8 @@ lite-youtube::before {
            em vez de ficar fixo na tela. */
         position: absolute;
         right: 20px;
+        z-index: 1050;
+        transition: transform var(--scroll-transition);
     }
 
     /* Ajustes para o logo em pontos de quebra menores - mantêm tamanhos legíveis */
@@ -860,6 +862,15 @@ lite-youtube::before {
 
     body.page-blog {
         padding-top: var(--header-h);
+    }
+
+    /* Mobile menu should appear over content properly with dynamic header */
+    .header.is-scrolled {
+        z-index: 999;
+    }
+
+    .nav.active {
+        z-index: 1020;
     }
 
     /* Hero */

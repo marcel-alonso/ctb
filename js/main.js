@@ -1,5 +1,7 @@
 // ============================================================================
 // Header Scroll Effect - Dynamic sizing and styling
+// Uses requestAnimationFrame for optimal performance and smooth animations
+// Mobile menu won't break because header height changes are transitioned smoothly
 // ============================================================================
 function initHeaderScroll() {
     const header = document.querySelector('.header');
@@ -13,7 +15,7 @@ function initHeaderScroll() {
         const shouldBeScrolled = window.scrollY >= SCROLL_THRESHOLD;
         const isCurrentlyScrolled = header.classList.contains('is-scrolled');
 
-        // Only update if state has changed
+        // Only update if state has changed to avoid unnecessary repaints
         if (shouldBeScrolled !== isCurrentlyScrolled) {
             header.classList.toggle('is-scrolled', shouldBeScrolled);
         }
@@ -21,7 +23,7 @@ function initHeaderScroll() {
         rafId = null;
     }
 
-    // Optimized scroll listener with throttling
+    // Optimized scroll listener with requestAnimationFrame throttling
     function onScroll() {
         lastScrollY = window.scrollY;
         
@@ -30,10 +32,10 @@ function initHeaderScroll() {
         }
     }
 
-    // Set initial state on load
+    // Set initial state on load based on current scroll position
     updateHeader();
 
-    // Add listener with passive flag for better performance
+    // Add listener with passive flag for better scroll performance
     window.addEventListener('scroll', onScroll, { passive: true });
 }
 
