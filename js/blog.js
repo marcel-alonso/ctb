@@ -7,9 +7,14 @@
 let allPosts = [];           // Todos os posts carregados do JSON
 let filteredPosts = [];      // Posts após filtro (categoria/tag)
 let currentPage = 1;         // Página atual de paginação
-const postsPerPage = 9;      // Posts por página
+const postsPerPage = 9;      // Posts por página (na página de blog)
+const homePostsCount = 3;    // Posts na homepage
 let currentCategory = 'all'; // Categoria ativa
 let currentTag = null;       // Tag ativa (se houver)
+
+// Detecta se está na homepage ou página de blog
+const isHomepage = window.location.pathname === '/' || window.location.pathname === '/index.html';
+const isBlogPage = window.location.pathname.includes('/blog');
 
 // ============================================================================
 // Funções de Carregamento
@@ -29,7 +34,11 @@ async function loadPostsFromJson() {
         // Ordenar por data (mais recentes primeiro)
         allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
         
-        initializeFilters();
+        // Se está na página de blog, inicializa filtros
+        if (isBlogPage) {
+            initializeFilters();
+        }
+        
         loadBlogPosts();
     } catch (error) {
         console.error('Erro ao carregar posts:', error);
@@ -41,11 +50,11 @@ async function loadPostsFromJson() {
 }
 
 /**
- * Inicializa filtros dinamicamente a partir dos posts
+ * Inicializa filtros dinamicamente a partir dos posts (apenas na página de blog)
  */
 function initializeFilters() {
     const filterContainer = document.querySelector('.blog-filters');
-    if (!filterContainer) return;
+    if (!filterContainer || !isBlogPage) return;
 
     // Obter categorias únicas
     const categories = [...new Set(allPosts.map(p => p.category))];
@@ -76,6 +85,8 @@ function initializeFilters() {
  * Filtra posts por categoria
  */
 function filterByCategory(category, button) {
+    if (!isBlogPage) return; // Só permite filtro na página de blog
+    
     currentCategory = category;
     currentPage = 1;
     currentTag = null;
@@ -100,9 +111,11 @@ function filterByCategory(category, button) {
 }
 
 /**
- * Filtra posts por tag
+ * Filtra posts por tag (apenas na página de blog)
  */
 function filterByTag(tag) {
+    if (!isBlogPage) return; // Só permite filtro na página de blog
+    
     currentTag = tag;
     currentCategory = 'all';
     currentPage = 1;
@@ -197,7 +210,7 @@ function createPostCard(post) {
 // ============================================================================
 
 /**
- * Carrega e exibe posts com paginação
+ * Carrega e exibe posts com paginação (blog page) ou limitado (homepage)
  */
 function loadBlogPosts() {
     const blogGrid = document.querySelector('.blog-grid');
@@ -208,10 +221,17 @@ function loadBlogPosts() {
         filteredPosts = [...allPosts];
     }
 
-    // Calcular índices de paginação
-    const startIndex = (currentPage - 1) * postsPerPage;
-    const endIndex = startIndex + postsPerPage;
-    const paginatedPosts = filteredPosts.slice(startIndex, endIndex);
+    let paginatedPosts = [];
+
+    // Se está na homepage, mostra apenas 3 posts (sem paginação)
+    if (isHomepage) {
+        paginatedPosts = filteredPosts.slice(0, homePostsCount);
+    } else {
+        // Se está na página de blog, usa paginação normal
+        const startIndex = (currentPage - 1) * postsPerPage;
+        const endIndex = startIndex + postsPerPage;
+        paginatedPosts = filteredPosts.slice(startIndex, endIndex);
+    }
 
     // Renderizar posts
     if (paginatedPosts.length === 0) {
@@ -221,15 +241,19 @@ function loadBlogPosts() {
         blogGrid.innerHTML = postsHTML;
     }
 
-    // Atualizar informações de paginação
-    const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
-    updatePaginationInfo(currentPage, totalPages);
+    // Atualizar informações de paginação (apenas na página de blog)
+    if (isBlogPage) {
+        const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+        updatePaginationInfo(currentPage, totalPages);
+    }
 }
 
 /**
- * Atualiza estado dos botões de paginação
+ * Atualiza estado dos botões de paginação (apenas na página de blog)
  */
 function updatePaginationButtons() {
+    if (!isBlogPage) return; // Só atualiza na página de blog
+    
     const prevButton = document.querySelector('.pagination-prev');
     const nextButton = document.querySelector('.pagination-next');
     if (!prevButton || !nextButton) return;
@@ -253,9 +277,11 @@ function updatePaginationInfo(currentPageNum, totalPages) {
 }
 
 /**
- * Navega entre páginas
+ * Navega entre páginas (apenas na página de blog)
  */
 function navigateToPage(direction) {
+    if (!isBlogPage) return; // Só permite navegação na página de blog
+    
     const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
     
     if (direction === 'prev' && currentPage > 1) {

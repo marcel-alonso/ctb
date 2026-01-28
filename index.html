@@ -620,7 +620,7 @@ aria-label="Fale conosco pelo WhatsApp">
 
 <script src="js/blog.js" defer></script>
 
-<section class="section blog-section" id="blog" hidden>
+<section class="section blog-section" id="blog">
   <div class="container">
     <div class="section-header">
       <h2 class="title">Blog</h2>
@@ -628,10 +628,12 @@ aria-label="Fale conosco pelo WhatsApp">
     </div>
     
     <div class="blog-grid">
-      <!-- Post cards serão carregados dinamicamente via JavaScript -->
+      <!-- Post cards serão carregados dinamicamente via JavaScript (máximo 3 posts) -->
     </div>
 
-    <!-- Seção de blog escondida na landing page; botão removido para não mostrar diretamente na LP -->
+    <div class="blog-view-all">
+      <a href="/blog/" class="button">Ver todos os artigos</a>
+    </div>
   </div>
 </section>
 
