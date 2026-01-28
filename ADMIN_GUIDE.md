@@ -1,31 +1,34 @@
 # Guia de Administração do Blog - Conexão Terra Bambu
 
-## 🚀 Começando em Menos de 1 Minuto
+## 🚀 Começando em Menos de 2 Minutos
 
 ### 1. Gerar Token do GitHub
 
-O painel administrativo usa a API do GitHub para salvar posts. Siga estes passos:
+O painel administrativo usa a API do GitHub para salvar posts. Você precisará de um Personal Access Token:
 
 1. Acesse [https://github.com/settings/tokens](https://github.com/settings/tokens)
 2. Clique em **"Generate new token"** → **"Generate new token (classic)"**
 3. Complete os dados:
-   - **Note**: "Admin Blog CTB"
-   - **Expiration**: "No expiration"
-   - **Scopes**: Selecione `repo` (acesso completo ao repositório)
+   - **Note**: "Admin Blog CTB" (um nome descritivo)
+   - **Expiration**: "No expiration" (ou defina um prazo)
+   - **Scopes**: Selecione apenas `repo` (acesso completo ao repositório)
 4. Clique em **"Generate token"**
-5. **Copie o token** (você só verá uma vez!)
+5. **Copie o token imediatamente** (você só o verá uma vez!)
 
-### 2. Configurar o Painel Admin
+⚠️ **SEGURANÇA**: Guarde este token com cuidado. Nunca o compartilhe ou envie por email!
 
-1. Abra `/admin/index.html` no navegador
-2. Faça login com suas credenciais
-3. Vá para a aba **"Configurações"** → **"GitHub"**
-4. Preencha:
-   - **Token do GitHub**: Cole o token que você copiou
-   - **Proprietário do Repositório**: `marcel-alonso` (seu username)
-   - **Nome do Repositório**: `ctb`
-   - **Branch Padrão**: `main`
-5. Clique em **"Salvar Configurações do GitHub"**
+### 2. Acessar o Painel Admin
+
+1. Acesse `/admin/` no navegador (ou `/admin/login.html`)
+2. Você verá um formulário com os seguintes campos:
+   - **GitHub Personal Access Token**: Cole o token que você copiou na etapa anterior
+   - **Proprietário do Repositório**: `marcel-alonso` (padrão)
+   - **Nome do Repositório**: `ctb` (padrão)
+   - **Branch**: `main` (padrão)
+3. Clique em **"Autenticar"**
+4. Se o token é válido e tem permissão no repositório, você será redirecionado para o painel
+
+> 💡 **Dica**: O token é salvo apenas na sessão do seu navegador. Se fechar a aba ou o navegador, precisará fazer login novamente.
 
 ### 3. Criar um Novo Post
 
@@ -43,6 +46,7 @@ O painel administrativo usa a API do GitHub para salvar posts. Siga estes passos
 
 4. Na seção **"Imagem de Capa"**:
    - Clique em "Upload de Imagem de Capa" para selecionar uma imagem
+   - A imagem será enviada para `/assets/images/` no repositório
    - Preencha **"Texto Alternativo"** com descrição da imagem (importante para acessibilidade)
    - Opcionalmente, adicione uma **URL para Redes Sociais (OG)**
 
@@ -113,12 +117,42 @@ O post será salvo no GitHub e estará disponível automaticamente no blog!
 ### SEO
 
 - **Palavras-chave**: Separadas por vírgula
-- **Author Name**: Nome padrão do site para blogs
-- **Social Share Image**: Imagem padrão para compartilhamento
+## 🔐 Segurança e Autenticação
 
-### GitHub
+### ⚠️ Proteção do Token
 
-Configure aqui seu token e informações do repositório (veja "Gerar Token" acima)
+- **NUNCA** compartilhe seu token do GitHub com ninguém
+- **NUNCA** o envie por email ou mensagem
+- Se expor acidentalmente o token, revogue-o imediatamente em [GitHub Settings → Tokens](https://github.com/settings/tokens)
+- O token funciona como uma chave mestre do repositório
+
+### Revogar Token Exposto
+
+Se alguém conseguir ver seu token:
+
+1. Vá para [https://github.com/settings/tokens](https://github.com/settings/tokens)
+2. Encontre o token "Admin Blog CTB"
+3. Clique em **"Delete"**
+4. Gere um novo token seguindo o guia de início
+
+### Padrões de Segurança
+
+- **Checklist de Segurança**:
+  - ✔ Token guardado em local seguro
+  - ✔ Não reuse o token em outros aplicativos
+  - ✔ Mantenha o navegador atualizado
+  - ✔ Use HTTPS para acessar o painel
+  - ✔ Feche a sessão ao terminar (botão "Sair")
+
+- **Imagens**:
+  - ✔ Formatos: PNG, JPG, WebP
+  - ✔ Tamanho máximo: 5MB
+  - ✔ Caminho: `/assets/images/slug-cover.jpg`
+
+- **Conteúdo**:
+  - ✔ Valide links e formatação antes de publicar
+  - ✔ Use preview para testar o layout
+  - ✔ Texto alternativo obrigatório para imagens
 
 ## 📊 Visualizar Posts
 
@@ -146,14 +180,22 @@ Configure aqui seu token e informações do repositório (veja "Gerar Token" aci
 2. O preview é atualizado em tempo real conforme você digita
 3. Você pode testar links e formatos antes de publicar
 
-## 🔐 Segurança
+## ⚙️ Configurações Adicionais
 
-### Checklist de Segurança
+### Site
 
-- ✔ Todos os campos obrigatórios preenchidos
-- ✔ Token do GitHub guardado em local seguro
-- ✔ Imagem de capa com caminho válido
-- ✔ Exemplo: `/assets/images/minha-imagem.jpg`
+- **Título do Site**: Nome da organização
+- **Descrição**: Descrição curta (para meta tags)
+- **URL Base**: URL do site em produção
+- **Logo**: Caminho da imagem do logo
+
+### SEO
+
+- **Palavras-chave**: Separadas por vírgula
+- **Author Name**: Nome padrão do site para blogs
+- **Social Share Image**: Imagem padrão para compartilhamento
+
+## 🔐 Checklist de Segurança (resumido)
 - ✔ Sem URLs diretas de imagens de terceiros
 - ✔ Sem informações sensíveis no conteúdo
 

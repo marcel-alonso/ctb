@@ -2,10 +2,11 @@
 
 ## 📍 Índice
 1. [Preparação Inicial](#preparação-inicial)
-2. [Acessar o Painel](#acessar-o-painel)
-3. [Primeira Configuração](#primeira-configuração)
+2. [Gerar Token do GitHub](#gerar-token-do-github)
+3. [Acessar o Painel](#acessar-o-painel)
 4. [Criar Seu Primeiro Post](#criar-seu-primeiro-post)
-5. [Dicas e Truques](#dicas-e-truques)
+5. [Dicas de Segurança](#dicas-de-segurança)
+6. [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -13,25 +14,21 @@
 
 ### O que você precisa
 
-- ✅ Conta GitHub (grátis: github.com/signup)
+- ✅ Conta GitHub (grátis: [github.com/signup](https://github.com/signup))
 - ✅ Acesso ao repositório `marcel-alonso/ctb`
 - ✅ Navegador moderno (Chrome, Firefox, Safari, Edge)
-- ✅ Conexão com internet
+- ✅ Conexão com internet estável
 
-### Passo 1: Criar Token do GitHub
+---
 
-#### 1.1 Acesse GitHub Settings
+## 🔑 Gerar Token do GitHub
 
-1. Vá para: **https://github.com/settings/tokens**
-2. Você será redirecionado automaticamente se estiver logado
-3. Se não estiver, faça login com suas credenciais
+### Passo 1: Acessar GitHub Settings
 
-```
-URL: https://github.com/settings/tokens
-Você precisa estar logado!
-```
+1. Acesse: **[https://github.com/settings/tokens](https://github.com/settings/tokens)**
+2. Faça login se necessário com suas credenciais GitHub
 
-#### 1.2 Gerar Novo Token
+### Passo 2: Gerar Novo Token
 
 1. Clique em **"Generate new token"**
 2. Selecione **"Generate new token (classic)"**
@@ -42,74 +39,115 @@ Você precisa estar logado!
 ├─────────────────────────────────────┤
 │  Personal access tokens             │
 │  [Generate new token ▼]             │
-│  ├─ Generate new token (classic)    │
+│  ├─ Generate new token (classic) ✓  │
 │  └─ Tokens (beta)                   │
 └─────────────────────────────────────┘
 ```
 
-#### 1.3 Preencher Formulário
+### Passo 3: Configurar o Token
+
+Na tela de criação, preencha:
+
 
 | Campo | Valor |
 |-------|-------|
-| **Note** | "CTB Blog Admin" ou "Meu Blog Token" |
-| **Expiration** | "No expiration" (nunca expirar) |
-| **Scopes** | Marcar apenas: `repo` |
+| Campo | Valor | Obrigatório |
+|-------|-------|-------------|
+| **Note** | "CTB Blog Admin" ou similar | ✅ Sim |
+| **Expiration** | "No expiration" (nunca expirar) | ✅ Sim |
+| **Scopes** | Marque apenas: `repo` | ✅ Sim |
 
-#### 1.4 Copiar Token
+### Passo 4: Copiar Token
 
-1. Após gerar, verá uma página com o token
-2. Clique em **"Copiar para clipboard"** (ícone de cópia)
-3. **GUARDE O TOKEN EM LOCAL SEGURO** (notepad, password manager, etc)
+1. Após gerar, verá uma página com o token gerado
+2. Clique em **"Copiar para clipboard"** (ícone de cópia à direita)
+3. **NUNCA** compartilhe este token com ninguém
+4. **GUARDE** em local seguro (password manager, editor de texto local)
 
 ```
-┌─────────────────────────────────────────┐
-│  ✅ Personal access token created!      │
-├─────────────────────────────────────────┤
-│  ghp_abc123def456xyz...                 │
-│  [📋 Copiar]                            │
-│                                         │
-│  ⚠️ Make sure to copy your new token    │
-│  now. You won't be able to see it again │
-└─────────────────────────────────────────┘
+┌──────────────────────────────────────────┐
+│  ✅ Personal access token created!       │
+├──────────────────────────────────────────┤
+│  ghp_abc123def456xyz789abc123def456      │
+│  [📋 Copiar para clipboard]              │
+│                                          │
+│  ⚠️ Make sure to copy your new token     │
+│  now. You won't be able to see it again  │
+└──────────────────────────────────────────┘
 ```
+
+⚠️ **IMPORTANTE**: Após sair desta página, você **NÃO** poderá ver o token novamente!
 
 ---
 
 ## 🚪 Acessar o Painel
 
-### Passo 2: Abrir o Admin Panel
+### Acessar o Admin Panel
 
 #### No Seu Computador Local
 ```
-http://localhost/admin/index.html
+http://localhost/admin/login.html
 ```
 
 #### Se Hospedado Online
 ```
-https://seu-dominio.com.br/admin/index.html
+https://seu-dominio.com.br/admin/login.html
 ```
 
-#### 📱 Acesse de Qualquer Dispositivo
-- **Desktop**: http://localhost/admin/ ou https://seu-dominio.com/admin/
-- **Smartphone**: https://seu-dominio.com/admin/ (HTTPS obrigatório)
-- **Tablet**: Mesma URL que smartphone
+### Fazer Login
 
-💡 **Dica**: Use um navegador moderno (Chrome, Firefox, Safari, Edge)
+1. Abra a URL acima no seu navegador
+2. Você verá um formulário com 4 campos:
+   - **GitHub Personal Access Token**: Cole o token que você copiou
+   - **Proprietário do Repositório**: `marcel-alonso` (padrão)
+   - **Nome do Repositório**: `ctb` (padrão)
+   - **Branch**: `main` (padrão)
+
+3. Clique em **"Autenticar"**
+4. Se o token é válido, você será redirecionado para o painel
+
+```
+┌────────────────────────────────────────┐
+│  Painel Administrativo                 │
+│  Autenticação via GitHub                │
+├────────────────────────────────────────┤
+│                                        │
+│  GitHub Personal Access Token          │
+│  [••••••••••••••••••••••]              │
+│                                        │
+│  Proprietário do Repositório           │
+│  [marcel-alonso________________]       │
+│                                        │
+│  Nome do Repositório                   │
+│  [ctb_________________]                │
+│                                        │
+│  Branch                                │
+│  [main________________]                │
+│                                        │
+│  [Autenticar] button                   │
+│                                        │
+│  ℹ️ Como obter seu token:              │
+│     1. GitHub Settings → ...            │
+│     2. Gere novo token (classic)        │
+│     3. Escopo: repo                     │
+│     4. Copie aqui                       │
+│     ⚠️ Revogue se exposto               │
+└────────────────────────────────────────┘
+```
 
 ---
 
-## ⚙️ Primeira Configuração
+## ✅ Autenticação com Sucesso!
 
-### Passo 3: Fazer Login
+Se viu a tela do painel admin com as abas **Posts**, **Novo Post**, **Mídia**, **Configurações** e um botão **Sair**, você está autenticado com sucesso!
 
-#### Credenciais Padrão
+💡 **Lembre-se**:
+- O token é armazenado apenas na sessão (na memória do navegador)
+- Se fechar a aba ou o navegador, precisará fazer login novamente
+- Nunca compartilhe seu token com ninguém
+- Revogue imediatamente se expuser acidentalmente
 
-| Campo | Valor |
-|-------|-------|
-| **Username** | admin |
-| **Password** | admin123 |
-
-⚠️ **Segurança**: Altere essas credenciais em produção!
+---
 
 ### Passo 4: Configurar GitHub
 
@@ -295,7 +333,49 @@ Ao publicar:
 
 ---
 
-## 💡 Dicas e Truques
+## � Dicas de Segurança
+
+### 1️⃣ Proteger seu Token
+
+- **NUNCA** compartilhe o token por email, Slack, Discord, etc.
+- **NUNCA** commit o token no Git
+- **NUNCA** compartilhe screenshots que mostrem o token
+- Guarde em um **password manager** (Bitwarden, 1Password, LastPass)
+
+### 2️⃣ Revogar Token Exposto
+
+Se alguém vê seu token:
+
+1. Acesse [https://github.com/settings/tokens](https://github.com/settings/tokens)
+2. Encontre o token "CTB Blog Admin"
+3. Clique em **Delete**
+4. Crie um novo token imediatamente
+
+```
+ANTES: Token exposto a X pessoas
+DEPOIS: X pessoas não conseguem acessar
+         (revogação é imediata)
+```
+
+### 3️⃣ Escopo Mínimo do Token
+
+Você usou apenas o escopo `repo` (o mais permissivo, necessário para editar posts).
+
+Se soubesse apenas criar posts de leitura, seria melhor usar `public_repo`, mas como você precisa editar, `repo` é necessário.
+
+⚠️ **NUNCA** selecione `admin:*`, `user:*`, ou `workflow:*` - são desnecessários!
+
+### 4️⃣ Auditoria
+
+GitHub registra tudo que você faz com seu token:
+
+1. Acesse [https://github.com/settings/security-log](https://github.com/settings/security-log)
+2. Veja todas as ações realizadas
+3. Desconfiança? **Revogue o token imediatamente!**
+
+---
+
+## �💡 Dicas e Truques
 
 ### Dica 1: Slug é Automático
 Quando você digita o título, o slug é gerado automaticamente:
@@ -375,34 +455,81 @@ Na aba **"Posts"**, use:
 
 ## 🆘 Troubleshooting
 
+### ❌ "Token inválido ou expirado"
+**Motivo**: O token é inválido ou já foi revogado
+**Soluções**:
+1. Verifique se copiou o token corretamente (sem espaços)
+2. Acesse [GitHub Settings → Tokens](https://github.com/settings/tokens) e verifique se o token ainda existe
+3. Se não existe, gere um novo token
+4. Tente fazer login novamente
+
+### ❌ "Token sem permissão para acessar este repositório"
+**Motivo**: O token não tem permissão necessária
+**Soluções**:
+1. Verifique se tem acesso ao repositório `marcel-alonso/ctb`
+2. Crie um novo token com escopo `repo`
+3. Se for colaborador, peça para ser adicionado ao repositório
+
+### ❌ "Repositório não encontrado"
+**Motivo**: O proprietário ou repositório estão errados
+**Verifique**:
+1. **Proprietário**: `marcel-alonso` (seu username)
+2. **Repositório**: `ctb`
+3. **Branch**: `main`
+
 ### ❌ "Erro ao conectar com GitHub"
 **Soluções**:
-1. Verificar se o token está correto (Configurações > GitHub)
-2. Verificar se o proprietário está certo (seu username GitHub)
-3. Verificar se tem conexão com internet
-4. Tente novamente após alguns minutos
+1. Verifique sua conexão de internet
+2. Verifique se o GitHub está disponível ([status.github.com](https://status.github.com))
+3. Aguarde alguns minutos e tente novamente
+4. Tente em outro navegador
 
 ### ❌ "Slug já existe"
 **Motivo**: O título gerou um slug que já existe
 **Solução**:
 1. Mude o título para gerar um slug diferente
-2. Ou delete o post anterior
+2. Ou delete o post anterior antes de criar este
 
 ### ❌ "Todos os campos obrigatórios devem ser preenchidos"
 **Campos obrigatórios**:
 - ✓ Título
-- ✓ Resumo
+- ✓ Resumo (descrição)
 - ✓ Conteúdo
 - ✓ Categoria
-- ✓ Tags
+- ✓ Tags (pelo menos uma)
 - ✓ Imagem de capa
-- ✓ Alt text da imagem
+- ✓ Texto alternativo da imagem
 
 Preencha todos antes de publicar!
 
 ### ❌ "Upload de imagem falhou"
 **Verifique**:
 1. Formato válido (JPG, PNG, WebP)
+2. Tamanho < 5MB
+3. Conexão com internet estável
+
+---
+
+## 📝 Checklist Final
+
+Antes de publicar um post, verifique:
+
+- [ ] Token do GitHub está válido
+- [ ] Estou logado no painel
+- [ ] Título preenchido (será o slug)
+- [ ] Resumo/Descrição preenchido
+- [ ] Conteúdo em Markdown preenchido
+- [ ] Categoria selecionada
+- [ ] Pelo menos uma tag adicionada
+- [ ] Imagem de capa uploadada
+- [ ] Texto alternativo da imagem preenchido
+- [ ] Preview visto (botão Visualizar)
+- [ ] Links testados no preview
+- [ ] Autor selecionado
+- [ ] Cliquei em "Publicar Post"
+- [ ] GitHub Actions gerou HTML
+- [ ] Post está ao vivo em /blog/slug/ ✅
+
 2. Tamanho (máx 5MB recomendado)
 3. Tente outra imagem
 4. Verifique se token tem permissão
