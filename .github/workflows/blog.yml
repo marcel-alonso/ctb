@@ -9,11 +9,17 @@ on:
       - 'authors.json'
       - 'scripts/build-blog.mjs'
       - 'scripts/validate-posts.mjs'
+      - '.github/workflows/blog.yml'
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Previne loops infinitos quando o workflow criar commits
+    if: github.actor != 'github-actions[bot]'
 
     steps:
       - name: Checkout

@@ -11,11 +11,12 @@ const appState = {
     authors: [],
     tags: [],
     mediaFiles: [],
+    auth: {},
     config: {
-        githubToken: sessionStorage.getItem('github_token') || '',
-        githubOwner: localStorage.getItem('github_owner') || '',
-        githubRepo: localStorage.getItem('github_repo') || '',
-        githubBranch: localStorage.getItem('github_branch') || 'main',
+        githubToken: '',
+        githubOwner: '',
+        githubRepo: '',
+        githubBranch: 'main',
         siteTitle: localStorage.getItem('site_title') || 'Conexão Terra Bambu',
         siteDescription: localStorage.getItem('site_description') || ''
     },
@@ -27,17 +28,34 @@ const appState = {
 // ============================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    checkAuthentication();
+    loadAuthenticationData();
     initializeEditor();
     setupEventListeners();
     loadAuthors();
     loadPosts();
-    checkGitHubToken();
 });
 
-function checkAuthentication() {
-    const token = sessionStorage.getItem('admin_token');
-    if (!token) {
+function loadAuthenticationData() {
+    const sessionData = sessionStorage.getItem('ctb-auth');
+    if (!sessionData) {
+        window.location.href = 'login.html';
+        return;
+    }
+    
+    try {
+        appState.auth = JSON.parse(sessionData);
+        if (!appState.auth.isAuthenticated || !appState.auth.token) {
+            throw new Error('Dados de autenticação inválidos');
+        }
+        
+        // Carrega dados de autenticação no state
+        appState.config.githubToken = appState.auth.token;
+        appState.config.githubOwner = appState.auth.owner;
+        appState.config.githubRepo = appState.auth.repo;
+        appState.config.githubBranch = appState.auth.branch;
+    } catch (e) {
+        console.error('Erro ao carregar autenticação:', e);
+        sessionStorage.removeItem('ctb-auth');
         window.location.href = 'login.html';
     }
 }
@@ -243,19 +261,55 @@ function switchConfigTab(tab) {
 
 async function loadPosts() {
     try {
-        const response = await fetch('../posts.json').catch(() => null);
+        // Tenta carregar posts.json primeiro
+        let response = await fetch('/posts.json').catch(() => null);
         
-        if (response) {
+        if (response && response.ok) {
             const data = await response.json();
             appState.posts = data.posts || [];
         } else {
-            appState.posts = [];
+            // Fallback: carrega via GitHub API
+            console.warn('posts.json não encontrado. Carregando via GitHub API...');
+            
+            const token = appState.config.githubToken;
+            const owner = appState.config.githubOwner;
+            const repo = appState.config.githubRepo;
+            
+            if (!token || !owner || !repo) {
+                throw new Error('Configuração do GitHub incompleta. Configure nas Configurações.');
+            }
+            
+            // Lista arquivos em content/posts/ via GitHub API
+            const apiResponse = await fetch(
+                `https://api.github.com/repos/${owner}/${repo}/contents/content/posts`,
+                { 
+                    headers: { 'Authorization': `token ${token}` },
+                    method: 'GET'
+                }
+            );
+            
+            if (!apiResponse.ok) {
+                throw new Error('Erro ao acessar repositório no GitHub');
+            }
+            
+            const files = await apiResponse.json();
+            const mdFiles = files.filter(f => f.name.endsWith('.md'));
+            
+            appState.posts = mdFiles.map(file => ({
+                title: file.name.replace('.md', ''),
+                slug: file.name.replace('.md', ''),
+                status: 'draft',
+                date: new Date().toISOString(),
+                category: 'Sem categoria'
+            }));
         }
         
         renderPostsList();
     } catch (error) {
         console.error('Erro ao carregar posts:', error);
         showError('Erro ao carregar posts: ' + error.message);
+        appState.posts = [];
+        renderPostsList();
     }
 }
 
@@ -306,9 +360,9 @@ function createNewPost() {
 
 async function editPost(slug) {
     try {
-        const token = sessionStorage.getItem('github_token');
-        const owner = localStorage.getItem('github_owner');
-        const repo = localStorage.getItem('github_repo');
+        const token = appState.config.githubToken;
+        const owner = appState.config.githubOwner;
+        const repo = appState.config.githubRepo;
         
         if (!token || !owner || !repo) {
             showError('Configure o GitHub nas Configurações para editar posts');
@@ -371,10 +425,10 @@ async function deletePost(slug) {
     }
 
     try {
-        const token = sessionStorage.getItem('github_token');
-        const owner = localStorage.getItem('github_owner');
-        const repo = localStorage.getItem('github_repo');
-        const branch = localStorage.getItem('github_branch') || 'main';
+        const token = appState.config.githubToken;
+        const owner = appState.config.githubOwner;
+        const repo = appState.config.githubRepo;
+        const branch = appState.config.githubBranch;
 
         if (!token) {
             showError('Token do GitHub não configurado');
@@ -473,9 +527,9 @@ async function handleSavePost(e) {
         const markdownContent = `${frontMatter}\n\n${content}`;
         const encodedContent = btoa(markdownContent);
 
-        const owner = localStorage.getItem('github_owner');
-        const repo = localStorage.getItem('github_repo');
-        const branch = localStorage.getItem('github_branch') || 'main';
+        const owner = appState.config.githubOwner;
+        const repo = appState.config.githubRepo;
+        const branch = appState.config.githubBranch;
         const fileName = `${postData.slug}.md`;
 
         let sha = null;
@@ -591,9 +645,9 @@ async function uploadCoverImageToGithub(base64Data, postSlug, token) {
         const ext = mimeType.split('/')[1] || 'jpg';
         const fileName = `${postSlug}-cover.${ext}`;
 
-        const owner = localStorage.getItem('github_owner');
-        const repo = localStorage.getItem('github_repo');
-        const branch = localStorage.getItem('github_branch') || 'main';
+        const owner = appState.config.githubOwner;
+        const repo = appState.config.githubRepo;
+        const branch = appState.config.githubBranch;
         
         const url = `https://api.github.com/repos/${owner}/${repo}/contents/assets/images/${fileName}`;
 
@@ -821,9 +875,9 @@ async function uploadMediaFile() {
                 return;
             }
 
-            const owner = localStorage.getItem('github_owner');
-            const repo = localStorage.getItem('github_repo');
-            const branch = localStorage.getItem('github_branch') || 'main';
+            const owner = appState.config.githubOwner;
+            const repo = appState.config.githubRepo;
+            const branch = appState.config.githubBranch;
 
             const encoded = await fileToBase64(file);
             const fileName = `${Date.now()}-${file.name}`;
@@ -1064,7 +1118,6 @@ async function saveGitHubConfig(e) {
     appState.config.githubBranch = branch;
 
     showSuccess('Configurações do GitHub salvas!');
-    checkGitHubToken();
 }
 
 // ============================================================================
@@ -1073,7 +1126,7 @@ async function saveGitHubConfig(e) {
 
 function logout() {
     if (confirm('Tem certeza que deseja sair?')) {
-        sessionStorage.removeItem('admin_token');
+        sessionStorage.removeItem('ctb-auth');
         window.location.href = 'login.html';
     }
 }

@@ -7,7 +7,7 @@
     <meta name="robots" content="noindex, nofollow">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="css/admin.css">
     
     <!-- Editor Markdown -->
@@ -355,8 +355,8 @@
     <header class="admin-header">
         <div class="container">
             <div class="admin-header__content">
-                <a href="../" class="logo">
-                    <img src="../assets/images/logo_only.png" alt="Logotipo Conexão Terra Bambu" class="logo-emblem">
+                <a href="/" class="logo">
+                    <img src="/assets/images/logo_only.png" alt="Logotipo Conexão Terra Bambu" class="logo-emblem">
                     <span class="admin-title">Painel Administrativo</span>
                 </a>
                 <nav class="admin-nav">
@@ -756,6 +756,41 @@
     </div>
 
     <!-- Scripts -->
+    <script>
+        // Verificação de autenticação
+        window.addEventListener('DOMContentLoaded', () => {
+            const sessionData = sessionStorage.getItem('ctb-auth');
+            
+            if (!sessionData) {
+                // Não autenticado - redireciona para login
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            try {
+                const auth = JSON.parse(sessionData);
+                if (!auth.isAuthenticated || !auth.token) {
+                    // Dados inválidos - redireciona para login
+                    sessionStorage.removeItem('ctb-auth');
+                    window.location.href = 'login.html';
+                    return;
+                }
+                
+                // Adiciona logout handler
+                const logoutBtn = document.getElementById('logout-btn');
+                if (logoutBtn) {
+                    logoutBtn.addEventListener('click', () => {
+                        sessionStorage.removeItem('ctb-auth');
+                        window.location.href = 'login.html';
+                    });
+                }
+            } catch (e) {
+                console.error('Erro ao verificar autenticação:', e);
+                sessionStorage.removeItem('ctb-auth');
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
     <script src="js/admin.js" type="module"></script>
 </body>
 </html>

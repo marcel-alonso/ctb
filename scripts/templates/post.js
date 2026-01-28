@@ -94,13 +94,13 @@ module.exports = function postTemplate(post) {
     <link rel="canonical" href="\${post.canonical || \`https://conexaoterrabambu.com.br/blog/\${post.slug}\`}">
     
     <!-- CSS Crítico -->
-    <link rel="preload" href="../css/styles.css" as="style">
-    <link rel="preload" href="../css/blog.css" as="style">
-    <link rel="preload" href="../css/accessibility.css" as="style">
+    <link rel="preload" href="/css/styles.css" as="style">
+    <link rel="preload" href="/css/blog.css" as="style">
+    <link rel="preload" href="/css/accessibility.css" as="style">
 
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/blog.css">
-    <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/css/accessibility.css">
 
     <!-- Open Graph Tags para Compartilhamento em Redes Sociais -->
     <meta property="og:title" content="\${post.title} - Conexão Terra Bambu">
@@ -154,9 +154,9 @@ module.exports = function postTemplate(post) {
     <!-- Header -->
     <header class="header scrolled">
         <div class="container">
-            <a href="../" class="logo">
-                <img src="../assets/images/logo_only.png" alt="Logotipo Conexão Terra Bambu" class="logo-emblem">
-                <img src="../assets/images/text_horizontal.png" alt="Conexão Terra Bambu" class="logo-text">
+            <a href="/" class="logo">
+                <img src="/assets/images/logo_only.png" alt="Logotipo Conexão Terra Bambu" class="logo-emblem">
+                <img src="/assets/images/text_horizontal.png" alt="Conexão Terra Bambu" class="logo-text">
             </a>
             
             <button class="mobile-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav">
@@ -166,11 +166,11 @@ module.exports = function postTemplate(post) {
             </button>
 
             <nav class="nav" id="nav">
-                <a href="../#sobre">Sobre</a>
-                <a href="../#solucoes">Soluções</a>
-                <a href="../#especialidades">Especialidades</a>
-                <a href="../#contato">Contato</a>
-                <a href="../blog">Blog</a>
+                <a href="/#sobre">Sobre</a>
+                <a href="/#solucoes">Soluções</a>
+                <a href="/#especialidades">Especialidades</a>
+                <a href="/#contato">Contato</a>
+                <a href="/blog">Blog</a>
             </nav>
         </div>
     </header>
@@ -179,8 +179,8 @@ module.exports = function postTemplate(post) {
     <nav class="breadcrumbs" aria-label="Navegação de caminho">
         <div class="container">
             <ol>
-                <li><a href="../">Home</a></li>
-                <li><a href="../blog/">Blog</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog/">Blog</a></li>
                 <li aria-current="page">\${post.title}</li>
             </ol>
         </div>
@@ -262,8 +262,8 @@ module.exports = function postTemplate(post) {
     </a>
 
     <!-- JavaScript -->
-    <script src="../js/main.js" defer></script>
-    <script src="../js/blog.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/blog.js" defer></script>
 </body>
 </html>\`;
 };
