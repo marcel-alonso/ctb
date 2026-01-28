@@ -1,0 +1,65 @@
+[
+  {
+    "id": "tintas-naturais-cores-que-respiram",
+    "title": "Tintas Naturais - Cores que Respiram",
+    "slug": "tintas-naturais-cores-que-respiram",
+    "excerpt": "Aprenda sobre as tintas naturais, uma alternativa saudável e sustentável para colorir sua casa sem toxinas ou VOCs.",
+    "date": "2024-01-05",
+    "modified": "2024-01-05",
+    "status": "published",
+    "category": "DIY",
+    "tags": ["tintas-naturais", "diy", "materiais-sustentáveis", "saúde"],
+    "author": {
+      "name": "Conexão Terra Bambu",
+      "picture": "/assets/images/logo_only.png"
+    },
+    "coverImage": "/assets/images/tinta.webp",
+    "coverAlt": "Amostras de tintas naturais com pigmentos coloridos de origem mineral e vegetal",
+    "ogImage": "/assets/images/tinta.webp",
+    "canonical": "https://conexaoterrabambu.com.br/blog/tintas-naturais-cores-que-respiram",
+    "readingTime": 5,
+    "wordCount": 1103
+  },
+  {
+    "id": "beneficios-bambu-construcao",
+    "title": "Benefícios do Bambu na Construção",
+    "slug": "beneficios-bambu-construcao",
+    "excerpt": "Conheça as vantagens de usar bambu em sua construção - resistência, sustentabilidade e beleza natural se unem neste material versátil.",
+    "date": "2024-01-10",
+    "modified": "2024-01-10",
+    "status": "published",
+    "category": "Materiais",
+    "tags": ["bambu", "materiais-sustentáveis", "construção", "estruturas"],
+    "author": {
+      "name": "Conexão Terra Bambu",
+      "picture": "/assets/images/logo_only.png"
+    },
+    "coverImage": "/assets/images/bambu.webp",
+    "coverAlt": "Estrutura de bambu em construção tradicional",
+    "ogImage": "/assets/images/bambu.webp",
+    "canonical": "https://conexaoterrabambu.com.br/blog/beneficios-bambu-construcao",
+    "readingTime": 4,
+    "wordCount": 892
+  },
+  {
+    "id": "como-comecar-casa-sustentavel",
+    "title": "Como Começar sua Casa Sustentável",
+    "slug": "como-comecar-casa-sustentavel",
+    "excerpt": "Descubra os primeiros passos para construir uma casa em harmonia com a natureza, usando materiais naturais e técnicas ancestrais.",
+    "date": "2024-01-15",
+    "modified": "2024-01-15",
+    "status": "published",
+    "category": "Guia Básico",
+    "tags": ["bioconstrução", "casa-sustentável", "guia", "planejamento"],
+    "author": {
+      "name": "Conexão Terra Bambu",
+      "picture": "/assets/images/logo_only.png"
+    },
+    "coverImage": "/assets/images/pau-a-pique.webp",
+    "coverAlt": "Construção de pau a pique tradicional com estrutura de madeira",
+    "ogImage": "/assets/images/pau-a-pique.webp",
+    "canonical": "https://conexaoterrabambu.com.br/blog/como-comecar-casa-sustentavel",
+    "readingTime": 6,
+    "wordCount": 1245
+  }
+]
