@@ -453,6 +453,22 @@ async function handleSavePost(e) {
             return;
         }
 
+        // Fazer upload de imagem de capa se for base64
+        let coverImageUrl = postData.coverImage;
+        if (postData.coverImage && postData.coverImage.startsWith('data:')) {
+            showStatus('⏳ Fazendo upload de imagem de capa...');
+            try {
+                coverImageUrl = await uploadCoverImageToGithub(postData.coverImage, postData.slug, token);
+                postData.coverImage = coverImageUrl;
+                postData.ogImage = coverImageUrl;
+            } catch (uploadError) {
+                showError(`Erro no upload da imagem: ${uploadError.message}`);
+                return;
+            }
+        }
+
+        showStatus('💾 Salvando post...');
+        
         const frontMatter = generateFrontMatter(postData);
         const markdownContent = `${frontMatter}\n\n${content}`;
         const encodedContent = btoa(markdownContent);
@@ -535,26 +551,98 @@ function getPostData() {
     };
 }
 
+// ============================================================================
+// YAML e Upload de Imagens
+// ============================================================================
+
+/**
+ * Escapa valores YAML para evitar quebras de parsing
+ * Protege contra aspas, dois-pontos e quebras de linha
+ */
+function escapeYamlValue(value) {
+    if (!value) return '""';
+    
+    // Verificar se precisa de quotes
+    const needsQuotes = /[":'\n\r]|:\s/.test(value);
+    
+    if (needsQuotes) {
+        // Escapar aspas internas e quebras de linha
+        const escaped = value
+            .replace(/\\/g, '\\\\')    // Escapar backslashes
+            .replace(/"/g, '\\"')       // Escapar aspas
+            .replace(/\n/g, '\\n')      // Escapar quebras
+            .replace(/\r/g, '\\r');     // Escapar retorno de carro
+        
+        return `"${escaped}"`;
+    }
+    
+    return value;
+}
+
+/**
+ * Faz upload de imagem em base64 para GitHub
+ * Retorna a URL relativa do arquivo salvo
+ */
+async function uploadCoverImageToGithub(base64Data, postSlug, token) {
+    try {
+        // Extrair MIME type e dados
+        const [header, data] = base64Data.split(',');
+        const mimeType = header.match(/data:([^;]+)/)?.[1] || 'image/jpeg';
+        const ext = mimeType.split('/')[1] || 'jpg';
+        const fileName = `${postSlug}-cover.${ext}`;
+
+        const owner = localStorage.getItem('github_owner');
+        const repo = localStorage.getItem('github_repo');
+        const branch = localStorage.getItem('github_branch') || 'main';
+        
+        const url = `https://api.github.com/repos/${owner}/${repo}/contents/assets/images/${fileName}`;
+
+        const response = await fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Authorization': `token ${token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                message: `Fazer upload de imagem de capa para post ${postSlug}`,
+                content: data,
+                branch
+            })
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Erro ao fazer upload da imagem');
+        }
+
+        // Retornar URL relativa
+        return `/assets/images/${fileName}`;
+    } catch (error) {
+        console.error('Erro ao fazer upload:', error);
+        throw new Error(`Upload de imagem falhou: ${error.message}`);
+    }
+}
+
 function generateFrontMatter(postData) {
     const authorId = postData.author?.id || 'ctb';
     const author = appState.authors.find(a => a.id === authorId) || appState.authors[0];
     
     return `---
-title: ${postData.title}
+title: ${escapeYamlValue(postData.title)}
 slug: ${postData.slug}
-excerpt: ${postData.excerpt}
+excerpt: ${escapeYamlValue(postData.excerpt)}
 date: '${postData.date}'
 modified: '${postData.modified}'
 status: ${postData.status}
-category: ${postData.category}
+category: ${escapeYamlValue(postData.category)}
 tags:
-${postData.tags.map(tag => `  - ${tag}`).join('\n')}
+${postData.tags.map(tag => `  - ${escapeYamlValue(tag)}`).join('\n')}
 author:
   id: ${author?.id || 'ctb'}
-  name: ${author?.name || 'Conexão Terra Bambu'}
+  name: ${escapeYamlValue(author?.name || 'Conexão Terra Bambu')}
   picture: ${author?.picture || '/assets/images/logo_only.png'}
 coverImage: ${postData.coverImage}
-coverAlt: ${postData.coverAlt}
+coverAlt: ${escapeYamlValue(postData.coverAlt)}
 ogImage: ${postData.ogImage}
 canonical: ${postData.canonical}
 readingTime: ${postData.readingTime}

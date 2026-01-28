@@ -1,60 +1,184 @@
-// Array simulando os posts que virão do backend
-const posts = [
-    {
-        id: 1,
-        title: 'Como Começar sua Casa Sustentável',
-        excerpt: 'Descubra os primeiros passos para construir uma casa em harmonia com a natureza, usando materiais naturais e técnicas ancestrais.',
-        coverImage: 'assets/images/pau-a-pique.webp',
-        category: 'Guia Básico',
-        date: '2024-01-15',
-        slug: 'como-comecar-casa-sustentavel'
-    },
-    {
-        id: 2,
-        title: 'Benefícios do Bambu na Construção',
-        excerpt: 'Conheça as vantagens de usar bambu em sua construção: resistência, sustentabilidade e beleza natural se unem neste material versátil.',
-        coverImage: 'assets/images/bambu.webp',
-        category: 'Materiais',
-        date: '2024-01-10',
-        slug: 'beneficios-bambu-construcao'
-    },
-    {
-        id: 3,
-        title: 'Tintas Naturais: Cores que Respiram',
-        excerpt: 'Aprenda sobre as tintas naturais, uma alternativa saudável e sustentável para colorir sua casa sem toxinas ou VOCs.',
-        coverImage: 'assets/images/tinta.webp',
-        category: 'DIY',
-        date: '2024-01-05',
-        slug: 'tintas-naturais-cores-que-respiram'
-    }
-];
+// ============================================================================
+// Blog Frontend v2.1
+// Sistema completo de carregamento, filtros, paginação e posts relacionados
+// ============================================================================
 
-// Função para formatar a data
+// Variáveis de estado global
+let allPosts = [];           // Todos os posts carregados do JSON
+let filteredPosts = [];      // Posts após filtro (categoria/tag)
+let currentPage = 1;         // Página atual de paginação
+const postsPerPage = 9;      // Posts por página
+let currentCategory = 'all'; // Categoria ativa
+let currentTag = null;       // Tag ativa (se houver)
+
+// ============================================================================
+// Funções de Carregamento
+// ============================================================================
+
+/**
+ * Carrega posts do arquivo posts.json
+ */
+async function loadPostsFromJson() {
+    try {
+        const response = await fetch('/posts.json');
+        if (!response.ok) {
+            throw new Error('posts.json não encontrado');
+        }
+        allPosts = await response.json();
+        
+        // Ordenar por data (mais recentes primeiro)
+        allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+        
+        initializeFilters();
+        loadBlogPosts();
+    } catch (error) {
+        console.error('Erro ao carregar posts:', error);
+        const blogGrid = document.querySelector('.blog-grid');
+        if (blogGrid) {
+            blogGrid.innerHTML = '<p>Nenhum post disponível no momento.</p>';
+        }
+    }
+}
+
+/**
+ * Inicializa filtros dinamicamente a partir dos posts
+ */
+function initializeFilters() {
+    const filterContainer = document.querySelector('.blog-filters');
+    if (!filterContainer) return;
+
+    // Obter categorias únicas
+    const categories = [...new Set(allPosts.map(p => p.category))];
+    
+    // Limpar filtros existentes
+    filterContainer.innerHTML = '';
+    
+    // Adicionar botão "Todos"
+    const allBtn = document.createElement('button');
+    allBtn.className = 'blog-filter active';
+    allBtn.dataset.category = 'all';
+    allBtn.textContent = 'Todos';
+    allBtn.addEventListener('click', (e) => filterByCategory('all', e.target));
+    filterContainer.appendChild(allBtn);
+    
+    // Adicionar botões de categorias
+    categories.forEach(category => {
+        const btn = document.createElement('button');
+        btn.className = 'blog-filter';
+        btn.dataset.category = category.toLowerCase().replace(/\s+/g, '-');
+        btn.textContent = category;
+        btn.addEventListener('click', (e) => filterByCategory(category, e.target));
+        filterContainer.appendChild(btn);
+    });
+}
+
+/**
+ * Filtra posts por categoria
+ */
+function filterByCategory(category, button) {
+    currentCategory = category;
+    currentPage = 1;
+    currentTag = null;
+    
+    // Atualizar estilos dos botões
+    document.querySelectorAll('.blog-filter').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    if (button) {
+        button.classList.add('active');
+    }
+    
+    // Filtrar posts
+    if (category === 'all') {
+        filteredPosts = [...allPosts];
+    } else {
+        filteredPosts = allPosts.filter(p => p.category === category);
+    }
+    
+    loadBlogPosts();
+    updatePaginationButtons();
+}
+
+/**
+ * Filtra posts por tag
+ */
+function filterByTag(tag) {
+    currentTag = tag;
+    currentCategory = 'all';
+    currentPage = 1;
+    
+    filteredPosts = allPosts.filter(p => p.tags && p.tags.includes(tag));
+    
+    // Atualizar estilos dos botões
+    document.querySelectorAll('.blog-filter').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.category === 'all') {
+            btn.classList.add('active');
+        }
+    });
+    
+    loadBlogPosts();
+    updatePaginationButtons();
+}
+
+// ============================================================================
+// Funções Auxiliares
+// ============================================================================
+
+/**
+ * Escapa caracteres HTML para prevenir XSS
+ */
+function escapeHtml(text) {
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+    return String(text).replace(/[&<>"']/g, m => map[m]);
+}
+
+/**
+ * Formata data para português brasileiro
+ */
 function formatDate(dateString) {
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
     return new Date(dateString).toLocaleDateString('pt-BR', options);
 }
 
-// Função para criar o HTML do card do post
+/**
+ * Cria HTML do card de um post
+ */
 function createPostCard(post) {
+    const readingTime = post.readingTime || `${Math.ceil((post.wordCount || 300) / 200)} min`;
+    
     return `
         <article class="post-card">
             <a href="/blog/${post.slug}" class="post-card__link">
                 <div class="post-card__image">
                     <img 
-                        src="${post.coverImage}" 
-                        alt="${post.title}"
+                        src="${escapeHtml(post.coverImage)}" 
+                        alt="${escapeHtml(post.title)}"
                         class="post-card__img"
                         loading="lazy"
                     >
+                    ${post.readingTime ? `<span class="post-card__reading-time">${readingTime}</span>` : ''}
                 </div>
                 <div class="post-card__content">
                     <div class="post-card__meta">
-                        <span class="post-card__category">${post.category}</span>
+                        <span class="post-card__category">${escapeHtml(post.category)}</span>
                         <time class="post-card__date">${formatDate(post.date)}</time>
                     </div>
-                    <h3 class="post-card__title">${post.title}</h3>
-                    <p class="post-card__excerpt">${post.excerpt}</p>
+                    <h3 class="post-card__title">${escapeHtml(post.title)}</h3>
+                    <p class="post-card__excerpt">${escapeHtml(post.excerpt)}</p>
+                    ${post.tags && post.tags.length > 0 ? `
+                        <div class="post-card__tags">
+                            ${post.tags.slice(0, 3).map(tag => 
+                                `<a href="#" class="post-card__tag" onclick="filterByTag('${escapeHtml(tag)}'); return false;">#${escapeHtml(tag)}</a>`
+                            ).join(' ')}
+                        </div>
+                    ` : ''}
                     <span class="post-card__read-more">
                         Ler mais
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -68,134 +192,143 @@ function createPostCard(post) {
     `;
 }
 
-// Função para carregar os posts na página
+// ============================================================================
+// Renderização
+// ============================================================================
+
+/**
+ * Carrega e exibe posts com paginação
+ */
 function loadBlogPosts() {
     const blogGrid = document.querySelector('.blog-grid');
     if (!blogGrid) return;
 
-    const postsHTML = posts.map(post => createPostCard(post)).join('');
-    blogGrid.innerHTML = postsHTML;
-}
+    // Se nenhum filtro foi aplicado ainda, usa allPosts
+    if (filteredPosts.length === 0 && currentCategory === 'all' && !currentTag) {
+        filteredPosts = [...allPosts];
+    }
 
-// Variáveis de estado para paginação e filtros
-let currentPage = 1;
-const postsPerPage = 6;
-let currentCategory = 'all';
-
-// Função para filtrar os posts por categoria
-function filterPosts(category) {
-    currentCategory = category;
-    currentPage = 1;
-    loadBlogPosts();
-    updatePaginationButtons();
-}
-
-// Função para carregar os posts com paginação
-function loadBlogPosts() {
-    const blogGrid = document.querySelector('.blog-grid');
-    if (!blogGrid) return;
-
-    // Filtrar posts por categoria
-    const filteredPosts = currentCategory === 'all' 
-        ? posts 
-        : posts.filter(post => post.category.toLowerCase().replace(/\s+/g, '-') === currentCategory);
-
-    // Calcular posts para a página atual
+    // Calcular índices de paginação
     const startIndex = (currentPage - 1) * postsPerPage;
     const endIndex = startIndex + postsPerPage;
     const paginatedPosts = filteredPosts.slice(startIndex, endIndex);
 
-    // Atualizar grid de posts
-    const postsHTML = paginatedPosts.map(post => createPostCard(post)).join('');
-    blogGrid.innerHTML = postsHTML;
+    // Renderizar posts
+    if (paginatedPosts.length === 0) {
+        blogGrid.innerHTML = '<p>Nenhum post encontrado nesta categoria.</p>';
+    } else {
+        const postsHTML = paginatedPosts.map(post => createPostCard(post)).join('');
+        blogGrid.innerHTML = postsHTML;
+    }
 
     // Atualizar informações de paginação
     const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
     updatePaginationInfo(currentPage, totalPages);
 }
 
-// Função para atualizar os botões de paginação
+/**
+ * Atualiza estado dos botões de paginação
+ */
 function updatePaginationButtons() {
     const prevButton = document.querySelector('.pagination-prev');
     const nextButton = document.querySelector('.pagination-next');
     if (!prevButton || !nextButton) return;
 
-    const filteredPosts = currentCategory === 'all' 
-        ? posts 
-        : posts.filter(post => post.category.toLowerCase().replace(/\s+/g, '-') === currentCategory);
     const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
 
     prevButton.disabled = currentPage === 1;
-    nextButton.disabled = currentPage === totalPages;
+    nextButton.disabled = currentPage === totalPages || filteredPosts.length === 0;
 }
 
-// Função para atualizar informações de paginação
-function updatePaginationInfo(currentPage, totalPages) {
+/**
+ * Atualiza informações de paginação na página
+ */
+function updatePaginationInfo(currentPageNum, totalPages) {
     const currentPageSpan = document.querySelector('.current-page');
     const totalPagesSpan = document.querySelector('.total-pages');
     if (!currentPageSpan || !totalPagesSpan) return;
 
-    currentPageSpan.textContent = currentPage;
+    currentPageSpan.textContent = currentPageNum;
     totalPagesSpan.textContent = totalPages;
 }
 
-// Função para navegar entre as páginas
+/**
+ * Navega entre páginas
+ */
 function navigateToPage(direction) {
+    const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+    
     if (direction === 'prev' && currentPage > 1) {
         currentPage--;
-    } else if (direction === 'next') {
-        const filteredPosts = currentCategory === 'all' 
-            ? posts 
-            : posts.filter(post => post.category.toLowerCase().replace(/\s+/g, '-') === currentCategory);
-        const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
-        if (currentPage < totalPages) {
-            currentPage++;
-        }
+    } else if (direction === 'next' && currentPage < totalPages) {
+        currentPage++;
     }
+    
     loadBlogPosts();
     updatePaginationButtons();
+    
+    // Scroll para o topo dos posts
+    const blogSection = document.querySelector('.blog-section');
+    if (blogSection) {
+        blogSection.scrollIntoView({ behavior: 'smooth' });
+    }
 }
 
-// Função para carregar posts relacionados
+// ============================================================================
+// Posts Relacionados
+// ============================================================================
+
+/**
+ * Carrega posts relacionados por categoria
+ */
 function loadRelatedPosts(currentPostSlug) {
     const relatedGrid = document.querySelector('.related-posts .blog-grid');
     if (!relatedGrid) return;
 
-    // Excluir o post atual e pegar 3 posts aleatórios
-    const otherPosts = posts.filter(post => post.slug !== currentPostSlug);
-    const randomPosts = otherPosts.sort(() => 0.5 - Math.random()).slice(0, 3);
-    
-    const postsHTML = randomPosts.map(post => createPostCard(post)).join('');
-    relatedGrid.innerHTML = postsHTML;
+    // Encontrar post atual
+    const currentPost = allPosts.find(p => p.slug === currentPostSlug);
+    if (!currentPost) return;
+
+    // Encontrar posts da mesma categoria
+    const relatedPosts = allPosts
+        .filter(p => p.slug !== currentPostSlug && p.category === currentPost.category)
+        .slice(0, 3);
+
+    if (relatedPosts.length === 0) {
+        relatedGrid.innerHTML = '<p>Nenhum post relacionado encontrado.</p>';
+    } else {
+        const postsHTML = relatedPosts.map(post => createPostCard(post)).join('');
+        relatedGrid.innerHTML = postsHTML;
+    }
 }
 
-// Event Listeners
+// ============================================================================
+// Inicialização
+// ============================================================================
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar posts
-    loadBlogPosts();
-    updatePaginationButtons();
+    // Carregar posts do JSON
+    loadPostsFromJson();
 
-    // Event listeners para filtros
-    const filters = document.querySelectorAll('.blog-filter');
-    filters.forEach(filter => {
-        filter.addEventListener('click', () => {
-            filters.forEach(f => f.classList.remove('active'));
-            filter.classList.add('active');
-            filterPosts(filter.dataset.category);
-        });
-    });
-
-    // Event listeners para paginação
+    // Configurar event listeners de paginação
     const prevButton = document.querySelector('.pagination-prev');
     const nextButton = document.querySelector('.pagination-next');
-    if (prevButton && nextButton) {
+    
+    if (prevButton) {
         prevButton.addEventListener('click', () => navigateToPage('prev'));
+    }
+    if (nextButton) {
         nextButton.addEventListener('click', () => navigateToPage('next'));
     }
 
-    // Carregar posts relacionados se estiver em uma página de post
-    const postSlug = window.location.pathname.split('/').pop().replace('.html', '');
-    if (postSlug && postSlug !== 'index') {
+    // Carregar posts relacionados se estiver em página de post individual
+    const postSlug = window.location.pathname.split('/').pop().replace(/\.html?$/, '');
+    if (postSlug && postSlug !== 'index' && postSlug !== '') {
         loadRelatedPosts(postSlug);
     }
 });
+
+// Expor funções globalmente para use em onclick
+window.filterByTag = filterByTag;
+window.filterByCategory = filterByCategory;
+window.navigateToPage = navigateToPage;
