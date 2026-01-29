@@ -440,7 +440,18 @@ lite-youtube::before {
     text-align: center;
     box-shadow: var(--shadow);
     transition: .3s;
-    container-type: inline-size
+    container-type: inline-size;
+    display: flex;
+    flex-direction: column;
+}
+
+.benefit-card img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
 }
 
 .benefit-card:hover {
@@ -686,6 +697,19 @@ lite-youtube::before {
         0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Detail section images */
+.solutions section img,
+.solutions > div > div > img {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 1.5rem auto;
+    display: block;
+}
+
 /* Final CTA Section */
 .final-cta {
     padding: 5rem 0;
@@ -904,6 +928,16 @@ lite-youtube::before {
     .benefit-card {
         max-width: none; /* Permite que os cards ocupem toda a largura disponível no mobile */
     }
+
+    .benefit-card img {
+        max-height: 200px;
+    }
+
+    .solutions section img,
+    .solutions > div > div > img {
+        max-width: 100%;
+        max-height: 350px;
+    }
     .specialty-card {
         max-width: none; /* Permite que os cards de especialidade também ocupem toda a largura */
     }
@@ -981,6 +1015,15 @@ lite-youtube::before {
     }
     .imagine-banner-content p {
         font-size: 1rem;
+    }
+
+    .benefit-card img {
+        max-height: 180px;
+    }
+
+    .solutions section img,
+    .solutions > div > div > img {
+        max-height: 300px;
     }
 }
 
