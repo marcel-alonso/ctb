@@ -306,7 +306,7 @@
 </div>
 
 <!-- Header (reutilizado do site) -->
-<header class="header">
+<header class="header" id="main-header">
   <div class="container">
     <div class="logo">
       <img src="../../assets/images/logo_only.png" alt="Emblema Conexão Terra Bambu" class="logo-emblem" width="84" height="84" decoding="sync">
@@ -314,6 +314,27 @@
     </div>
   </div>
 </header>
+
+<!-- Script para detectar scroll e modificar o logo -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.getElementById('main-header');
+  const logoContainer = header.querySelector('.logo');
+  let hasScrolled = false;
+  
+  window.addEventListener('scroll', function() {
+    const shouldScroll = window.scrollY > 50;
+    
+    if (shouldScroll && !hasScrolled) {
+      logoContainer.classList.add('scrolled');
+      hasScrolled = true;
+    } else if (!shouldScroll && hasScrolled) {
+      logoContainer.classList.remove('scrolled');
+      hasScrolled = false;
+    }
+  });
+});
+</script>
 
 <!-- HERO OTIMIZADO PARA VENDAS -->
 <section class="hero">

@@ -584,6 +584,58 @@
 }
 
 /* ============================================
+   EFEITO SCROLL - LOGO RESPONSIVO
+   ============================================ */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.logo .logo-emblem {
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.logo .logo-text {
+  transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+/* Estado normal (sem scroll) */
+.logo:not(.scrolled) {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+/* Estado scrolled - logo pequeno e à esquerda */
+.logo.scrolled {
+  gap: 0;
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 99;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 12px;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.logo.scrolled .logo-emblem {
+  width: 45px !important;
+  height: 45px !important;
+}
+
+.logo.scrolled .logo-text {
+  display: none;
+}
+
+/* ============================================
    ANIMAÇÕES
    ============================================ */
 
