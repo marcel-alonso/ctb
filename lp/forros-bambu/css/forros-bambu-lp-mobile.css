@@ -1,0 +1,565 @@
+/* ============================================
+   CSS MOBILE - Forros de Bambu LP
+   Otimizado para telas pequenas (até 768px)
+   ============================================ */
+
+:root {
+  --primary-color: #4a7c59;
+  --primary-dark: #2c5530;
+  --accent-color: #25D366;
+  --accent-hover: #128C7E;
+  --success-color: #27ae60;
+  --danger-color: #e74c3c;
+  --white: #fff;
+  --text-dark: #1a1a1a;
+  --text-light: #666;
+  --bg-light: #f8f9fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+  background: var(--bg-light);
+}
+
+.container-mobile {
+  max-width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   BANNER DE URGÊNCIA
+   ============================================ */
+
+.lp-banner-urgency {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  padding: 12px 15px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  animation: pulse-banner 3s infinite;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+@keyframes pulse-banner {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.95; }
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.header {
+  padding: 1rem 0;
+  background: var(--white);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 50px;
+  z-index: 40;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo .logo-emblem {
+  width: 50px;
+  height: 50px;
+}
+
+.logo .logo-text {
+  width: 150px;
+  height: 45px;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero-mobile {
+  background: linear-gradient(135deg, #4a7c59 0%, #2c5530 100%);
+  color: white;
+  padding: 2.5rem 0;
+  text-align: center;
+  min-height: auto;
+}
+
+.hero-content-mobile {
+  padding: 0 15px;
+}
+
+.hero-title-mobile {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  word-spacing: 0.1em;
+}
+
+.hero-title-mobile .accent {
+  color: #25D366;
+  display: block;
+  margin-top: 0.3rem;
+}
+
+.hero-subtitle-mobile {
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+  line-height: 1.4;
+}
+
+.benefits-mobile {
+  list-style: none;
+  margin: 1.5rem 0;
+  text-align: left;
+  max-width: 100%;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.benefits-mobile li {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding-left: 1rem;
+}
+
+.benefits-mobile li:before {
+  content: "✓ ";
+  color: #25D366;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+/* ============================================
+   SEÇÕES GENÉRICAS
+   ============================================ */
+
+.section-mobile {
+  padding: 2rem 0;
+  border-bottom: 1px solid #eee;
+  background: var(--white);
+}
+
+.section-mobile h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--text-dark);
+}
+
+/* ============================================
+   PROBLEMA vs SOLUÇÃO
+   ============================================ */
+
+.problem-solution-mobile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.problem-block, 
+.solution-block {
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.problem-block {
+  background: rgba(231, 76, 60, 0.08);
+  border-top: 3px solid #e74c3c;
+}
+
+.problem-block h3 {
+  color: #e74c3c;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.problem-block p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.solution-block {
+  background: rgba(39, 174, 96, 0.08);
+  border-top: 3px solid #27ae60;
+}
+
+.solution-block h3 {
+  color: #27ae60;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.solution-block p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* ============================================
+   ACORDEÃO
+   ============================================ */
+
+.accordion-mobile {
+  margin: 1.5rem 0;
+}
+
+.accordion-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.accordion-button {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: var(--white);
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s;
+  color: var(--text-dark);
+}
+
+.accordion-button:active {
+  background: #f8f9fa;
+}
+
+.accordion-button i {
+  transition: transform 0.3s;
+  color: var(--accent-color);
+  font-size: 0.85rem;
+}
+
+.accordion-item.active .accordion-button {
+  background: #f8f9fa;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.accordion-item.active .accordion-button i {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding: 0 1.25rem;
+  background: #fafafa;
+}
+
+.accordion-content p {
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* ============================================
+   TESTEMUNHAS
+   ============================================ */
+
+.testimonials-mobile {
+  display: grid;
+  gap: 1rem;
+}
+
+.testimonial-mobile {
+  background: var(--white);
+  border-left: 4px solid var(--accent-color);
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.testimonial-mobile .stars {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.testimonial-mobile p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-dark);
+}
+
+.testimonial-mobile .author {
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   GARANTIA BADGE
+   ============================================ */
+
+.guarantee-badge-mobile {
+  background: linear-gradient(135deg, #27ae60 0%, rgba(39, 174, 96, 0.9) 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.2);
+}
+
+.guarantee-badge-mobile h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.guarantee-badge-mobile p {
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+/* ============================================
+   FORMULÁRIO
+   ============================================ */
+
+.form-section-mobile {
+  background: #f8f9fa;
+}
+
+.form-subtitle {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.form-mobile {
+  max-width: 100%;
+}
+
+.form-group-mobile {
+  margin-bottom: 1.2rem;
+}
+
+.form-group-mobile label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.form-group-mobile input,
+.form-group-mobile select,
+.form-group-mobile textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  background: white;
+  color: var(--text-dark);
+  transition: all 0.3s;
+}
+
+.form-group-mobile input:focus,
+.form-group-mobile select:focus,
+.form-group-mobile textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.1);
+}
+
+.form-group-mobile textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.checkbox-mobile {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  margin: 1.5rem 0;
+  cursor: pointer;
+}
+
+.checkbox-mobile input {
+  width: auto;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.checkbox-mobile span {
+  line-height: 1.4;
+}
+
+/* ============================================
+   CTA BUTTONS
+   ============================================ */
+
+.cta-mobile-primary {
+  display: block;
+  background: var(--accent-color);
+  color: white;
+  padding: 14px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+  margin-top: 1rem;
+}
+
+.cta-mobile-primary:active {
+  background: var(--accent-hover);
+  transform: scale(0.98);
+}
+
+.cta-secondary-mobile {
+  display: inline-block;
+  background: white;
+  color: var(--accent-color);
+  padding: 10px 20px;
+  border: 2px solid var(--accent-color);
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.cta-secondary-mobile:active {
+  background: rgba(37, 211, 102, 0.1);
+}
+
+/* ============================================
+   CTA FINAL
+   ============================================ */
+
+.cta-final-mobile {
+  background: linear-gradient(135deg, #4a7c59 0%, #2c5530 100%);
+  color: white;
+  text-align: center;
+}
+
+.cta-final-mobile h2 {
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.cta-final-mobile .cta-mobile-primary {
+  max-width: 100%;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer-mobile {
+  background: #1a1a1a;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 15px;
+  font-size: 0.85rem;
+}
+
+/* ============================================
+   FLOATING WHATSAPP
+   ============================================ */
+
+.whatsapp-float-mobile {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: var(--accent-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transition: all 0.3s;
+}
+
+.whatsapp-float-mobile:active {
+  background: var(--accent-hover);
+  transform: scale(0.95);
+}
+
+/* ============================================
+   ACESSIBILIDADE
+   ============================================ */
+
+.accordion-button:focus,
+.cta-mobile-primary:focus,
+.form-group-mobile input:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   ANIMAÇÕES
+   ============================================ */
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.benefits-mobile li {
+  animation: slideInUp 0.5s ease-out forwards;
+}
+
+.benefits-mobile li:nth-child(1) { animation-delay: 0.1s; }
+.benefits-mobile li:nth-child(2) { animation-delay: 0.15s; }
+.benefits-mobile li:nth-child(3) { animation-delay: 0.2s; }
+.benefits-mobile li:nth-child(4) { animation-delay: 0.25s; }
+.benefits-mobile li:nth-child(5) { animation-delay: 0.3s; }
