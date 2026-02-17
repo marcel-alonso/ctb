@@ -9,10 +9,12 @@
 
 ## 🎯 Seções do Projeto
 
-### 1️⃣ **Landing Page de Forros de Bambu** 🌿
-A principal página de vendas otimizada para conversão de leads com duas versões (mobile/desktop):
+### 1️⃣ Landing Page de Forros de Bambu 🌿
+
+A principal página de vendas otimizada para conversão de leads com duas versões (mobile/desktop).
 
 #### Versão Mobile (`/lp/forros-bambu/index-mobile.html`)
+
 - ✅ Acordeão interativo para modelos (Roliço, Filepa Reta, Entrelaçado)
 - ✅ Formulário simplificado com campos essenciais
 - ✅ Testimunhas compactas com ratings
@@ -22,6 +24,7 @@ A principal página de vendas otimizada para conversão de leads com duas versõ
 - ✅ Layout de coluna única
 
 #### Versão Desktop (`/lp/forros-bambu/index-desktop.html`)
+
 - ✅ Tabela comparativa de modelos (Roliço, Filepa, Entrelaçado)
 - ✅ Seção Hero expandida com benefícios
 - ✅ Grid de comparação Problema vs Solução
@@ -33,15 +36,18 @@ A principal página de vendas otimizada para conversão de leads com duas versõ
 - ✅ Logo responsivo (diminui ao scroll)
 
 #### Roteador Inteligente (`/lp/forros-bambu/index.html`)
+
 - 🤖 Detecta automaticamente device (mobile/desktop)
 - 🤖 Redireciona para versão apropriada
 - 🤖 Fallback em caso de JavaScript desativado
 - 🤖 Preserva SEO com meta tags em ambas versões
 
-### 2️⃣ **Blog de Bioconstrução** 📚
-Conteúdo educativo sobre construção sustentável:
+### 2️⃣ Blog de Bioconstrução 📚
 
-#### Posts Disponíveis:
+Conteúdo educativo sobre construção sustentável.
+
+#### Posts Disponíveis
+
 1. [Como Começar sua Casa Sustentável](blog/como-comecar-casa-sustentavel.html)
    - Um guia completo para iniciar sua jornada na bioconstrução
    - Data: 15 de Janeiro de 2024
@@ -57,8 +63,10 @@ Conteúdo educativo sobre construção sustentável:
    - Data: 5 de Janeiro de 2024
    - Categoria: DIY
 
-### 3️⃣ **Admin Dashboard** 🔐
-Painel administrativo privado para gerenciamento:
+### 3️⃣ Admin Dashboard 🔐
+
+Painel administrativo privado para gerenciamento.
+
 - 📊 Acesso em [/admin/](admin/)
 - 🔑 Login com credenciais seguras
 - 📝 Gerenciamento de posts
@@ -78,6 +86,7 @@ A página foi projetada para ser uma máquina de conversão de leads, focada em:
 ### 🎯 Landing Page de Vendas (Forros de Bambu)
 
 #### Elementos de Conversão
+
 - **Banner de Urgência:** Animado com promoção limitada (15% OFF até 28/02)
 - **Logo Responsivo:** Diminui e se move para canto inferior ao scroll
 - **Hero Section:** Headline magnética + value props + benefit badges
@@ -90,12 +99,14 @@ A página foi projetada para ser uma máquina de conversão de leads, focada em:
 - **FAQ Otimizado:** 10 respostas focadas em objeção-handling
 
 #### Integração WhatsApp
+
 - 📱 Pré-preenchimento automático de mensagens
 - 📋 Todos os dados do formulário inclusos
 - ⚡ Links diretos em cada modelo
 - 🔔 Redirecionamento automático ao enviar
 
 #### Detecção Inteligente
+
 - 🎯 Auto-detecta mobile vs desktop (768px breakpoint)
 - 📊 User Agent detection para máxima compatibilidade
 - ♿ Acessibilidade WCAG 2.1
@@ -103,19 +114,20 @@ A página foi projetada para ser uma máquina de conversão de leads, focada em:
 
 ### 📚 Blog
 
--   **CMS baseado em Markdown:** Sistema simples e eficiente para gerenciamento de conteúdo
--   **SEO Otimizado:** Meta tags, dados estruturados, Open Graph e URLs amigáveis
--   **Design Responsivo:** Layout adaptável para todas as telas
--   **Categorias:** Filtros para organizar o conteúdo
--   **Posts Relacionados:** Sugestões de leitura relacionada
--   **Newsletter:** Captura de leads interessados em conteúdo
--   **Compartilhamento Social:** Meta tags otimizadas para Twitter, Facebook, LinkedIn
--   **Botão Flutuante WhatsApp:** Um botão de contato sempre visível
+- **CMS baseado em Markdown:** Sistema simples e eficiente para gerenciamento de conteúdo
+- **SEO Otimizado:** Meta tags, dados estruturados, Open Graph e URLs amigáveis
+- **Design Responsivo:** Layout adaptável para todas as telas
+- **Categorias:** Filtros para organizar o conteúdo
+- **Posts Relacionados:** Sugestões de leitura relacionada
+- **Newsletter:** Captura de leads interessados em conteúdo
+- **Compartilhamento Social:** Meta tags otimizadas para Twitter, Facebook, LinkedIn
+- **Botão Flutuante WhatsApp:** Um botão de contato sempre visível
 
 ### 🛠️ Arquitetura Técnica
 
 #### Estrutura de Arquivos
-```
+
+```plaintext
 /lp/forros-bambu/
 ├── index.html                    # Roteador inteligente
 ├── index-mobile.html            # Versão mobile otimizada
@@ -127,6 +139,7 @@ A página foi projetada para ser uma máquina de conversão de leads, focada em:
 ```
 
 #### Performance
+
 - ⚡ Critical CSS inline para faster first paint
 - 📦 Preload de recursos críticos
 - 🖼️ Imagens otimizadas (WebP + fallback)
@@ -134,6 +147,8 @@ A página foi projetada para ser uma máquina de conversão de leads, focada em:
 - 📱 Mobile-first responsive design
 
 ## 🛠️ Tecnologias Utilizadas
+
+### Stack Técnico
 
 - **HTML5:** Semântica, acessibilidade e dados estruturados (Schema.org)
 - **CSS3:** Grid, Flexbox, animations, media queries (BEM naming convention)
@@ -144,25 +159,27 @@ A página foi projetada para ser uma máquina de conversão de leads, focada em:
 - **JSON-LD:** Estrutura para SEO e rich snippets
 
 ### Compatibilidade
+
 - ✅ Todos os navegadores modernos (Chrome, Firefox, Safari, Edge)
 - ✅ iOS 12+
 - ✅ Android 8+
 - ✅ Progressive Enhancement (funciona sem JavaScript)
 
-## � Modelos de Bambu - Preços & Especificações
+## 💰 Modelos de Bambu - Preços & Especificações
 
 | Modelo | Preço/m² | Acabamento | Ideal Para | Link Orçamento |
-|--------|----------|-----------|-----------|---|
+| --- | --- | --- | --- | --- |
 | 🌿 **Roliço** | R$ 160 | Cilíndrico natural | Rústico, casual | [WhatsApp](https://wa.me/5511992908488?text=Ol%C3%A1!%20Gostaria%20de%20or%C3%A7amento%20para%20o%20modelo%20RO%C3%89ÇO) |
 | 📐 **Filepa Reta** | R$ 180 | Reto e geométrico | Moderno, sofisticado | [WhatsApp](https://wa.me/5511992908488?text=Ol%C3%A1!%20Gostaria%20de%20or%C3%A7amento%20para%20o%20modelo%20FILEPA%20RETA) |
 | 🔀 **Entrelaçado** | R$ 200 | Trançado/esteira | Premium, diferenciado | [WhatsApp](https://wa.me/5511992908488?text=Ol%C3%A1!%20Gostaria%20de%20or%C3%A7amento%20para%20o%20modelo%20ENTRELA%C3%87ADO) |
 
-**Garantia:** 10 anos (áreas cobertas) | 3 anos (áreas descobertas)
+**Garantia:** 10 anos (áreas cobertas) | 3 anos (áreas descobertas)  
 **Abrangência:** Todo Brasil | Instalação em Grande SP, Bauru e região
 
 ## 🚀 Como Usar a LP de Forros de Bambu
 
 ### Acessar via Navegador
+
 1. **Mobile:** Acesse `/lp/forros-bambu/` em qualquer dispositivo < 768px
 2. **Desktop:** Acesse `/lp/forros-bambu/` em desktop ou tablet > 768px
 3. **Roteamento automático:** O `index.html` detecta e redireciona automaticamente
@@ -170,20 +187,24 @@ A página foi projetada para ser uma máquina de conversão de leads, focada em:
 ### Personalizar a LP
 
 #### Mudar o Número do WhatsApp
-Procure por `5511992908488` em:
+
 - `lp/forros-bambu/index-mobile.html` (linhas com WhatsApp)
 - `lp/forros-bambu/index-desktop.html` (linhas com WhatsApp)
 
 #### Mudar Preços dos Modelos
-**Desktop:** Procure na tabela comparativa (linha 800-850)
-**Mobile:** Procure nos accordion buttons (linha 200-250)
+
+- **Desktop:** Procure na tabela comparativa (linha 800-850)
+- **Mobile:** Procure nos accordion buttons (linha 200-250)
 
 #### Mudar Conteúdo do FAQ
-**Desktop:** Procure a seção `faq-list` (linha 900+)
-**Mobile:** Procure a seção `accordion-mobile` (linha 400+)
+
+- **Desktop:** Procure a seção `faq-list` (linha 900+)
+- **Mobile:** Procure a seção `accordion-mobile` (linha 400+)
 
 #### Mudar Data da Promoção
+
 Procure por `28/02` e atualize para nova data:
+
 - Banner de urgência
 - Meta descriptions
 - Conteúdo do hero
@@ -193,6 +214,7 @@ Procure por `28/02` e atualize para nova data:
 Para publicar seu site e deixá-lo acessível para todos na internet, usaremos o **GitHub Pages**, uma ferramenta gratuita do próprio GitHub.
 
 ### Pré-requisitos
+
 - Conta GitHub ativa
 - Domínio personalizado (opcional) ou uso do GitHub Pages
 
@@ -219,13 +241,14 @@ Para publicar seu site e deixá-lo acessível para todos na internet, usaremos o
 5. **(Opcional) Domínio Personalizado:**
    - Em "Custom domain", insira seu domínio (ex: `conexaoterrabambu.com.br`)
    - Configure os registros DNS em sua empresa de domínios:
-     ```
-     A Record: 185.199.108.153
-     A Record: 185.199.109.153
-     A Record: 185.199.110.153
-     A Record: 185.199.111.153
-     CNAME: seu-usuario.github.io
-     ```
+
+   ```plaintext
+   A Record: 185.199.108.153
+   A Record: 185.199.109.153
+   A Record: 185.199.110.153
+   A Record: 185.199.111.153
+   CNAME: seu-usuario.github.io
+   ```
 
 ### Passo a Passo - Celular
 
@@ -263,11 +286,13 @@ python -m http.server 8000
 ## 📱 Acessar a LP em Diferentes Dispositivos
 
 ### Links Diretos
+
 - **Versão Mobile:** [/lp/forros-bambu/index-mobile.html](lp/forros-bambu/index-mobile.html)
 - **Versão Desktop:** [/lp/forros-bambu/index-desktop.html](lp/forros-bambu/index-desktop.html)
 - **Auto-redirecionamento:** [/lp/forros-bambu/](lp/forros-bambu/)
 
 ### Testar Responsividade no Chrome
+
 1. Abra a LP
 2. Pressione `F12` para abrir DevTools
 3. Clique no ícone de dispositivo (canto superior esquerdo)
@@ -279,11 +304,12 @@ Para dúvidas sobre a LP, personalizações ou bugs:
 
 - **WhatsApp:** [Enviar mensagem](https://wa.me/5511992908488)
 - **Email:** Através do formulário da LP
-- **Issues GitHub:** Abra uma issue neste repositório---
+- **Issues GitHub:** Abra uma issue neste repositório
 
 ## 📊 Métricas de Sucesso da LP
 
 ### KPIs Monitorizados
+
 - 📊 Taxa de clique nos CTAs (alvo: >5%)
 - 💬 Conversões via WhatsApp (alvo: >2%)
 - ⏱️ Tempo médio na página (alvo: >2min)
@@ -317,25 +343,21 @@ Se encontrou um bug ou tem sugestões:
 
 ## 📝 Licença
 
-Este projeto é de código aberto e pode ser usado livremente.
-Para uso comercial, entre em contato via WhatsApp.
+Este projeto é de código aberto e pode ser usado livremente. Para uso comercial, entre em contato via WhatsApp.
 
 ## ✅ Checklist de Deployment
 
 Antes de publicar a LP em produção:
 
 - [ ] Verificar todos os links WhatsApp funcionam
-- [ ] Testar formulário em mobile e desktop
-- [ ] Revisar preços e promoção vigente
-- [ ] Verificar imagens carregam corretamente
-- [ ] Testar em diferentes navegadores (Chrome, Firefox, Safari)
+- [ ] Testar em diferentes navegadores
+- [ ] Testar em dispositivos móveis
 - [ ] Validar HTML com W3C Validator
-- [ ] Testar speed com PageSpeed Insights
+- [ ] Rodar Lighthouse audit
 - [ ] Configurar Google Analytics
-- [ ] Ativar HTTPS (automático no GitHub Pages)
-- [ ] Verificar meta tags (Open Graph, Twitter Card)
+- [ ] Testar formulários e integração WhatsApp
+- [ ] Verificar performance em 3G
 
 ---
 
-_Última atualização: 16 de Fevereiro de 2026_  
-_Versão: 2.0 - Landing Page Otimizada para Conversão_
+Versão: 2.0 - Landing Page Otimizada para Conversão
