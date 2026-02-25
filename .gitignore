@@ -1,0 +1,11 @@
+# Ignore node modules and lock files
+node_modules/
+package-lock.json
+
+# VSCode workspace files
+.vscode/
+
+# Log files
+npm-debug.log*
+
+dist/
