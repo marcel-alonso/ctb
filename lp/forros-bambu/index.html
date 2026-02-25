@@ -3,147 +3,1186 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forros e Painéis de Bambu Premium | Receba Orçamento em 24h | CTB</title>
-  <meta name="description" content="Forros e painéis de bambu premium sob medida para toda o Brasil. 3 modelos exclusivos, acabamento impecável e garantia de 10 anos. Envio rápido + instalação opcional. Orçamento grátis!">
-  <meta name="keywords" content="forros bambu, painéis bambu, bambu sob medida, forro roliço, filepa reta, bambu entrelaçado, acabamento bambu">
-  
-  <!-- Open Graph para SEO -->
-  <meta property="og:title" content="Forros de Bambu Premium 🌿 Receba Orçamento em 24h">
-  <meta property="og:description" content="Sob medida, acabamento impecável, garantia de 10 anos. Envio para todo Brasil. Clique e receba orçamento grátis!">
-  <meta property="og:image" content="https://conexaoterrabambu.com.br/assets/lp/forros-bambu/og-forros-bambu-1200x630.webp">
-  <meta property="og:url" content="https://conexaoterrabambu.com.br/lp/forros-bambu/">
+  <title>Acabamento Premium em Bambu | Orçamento Express (12h úteis) | CTB</title>
+  <meta name="description" content="Transforme seu ambiente com acabamento premium em bambu. Orçamento Express em até 12 horas úteis. Sem cara de plástico. Natural, sob medida, com instalação profissional.">
+  <meta name="keywords" content="bambu premium, forro bambu, parede bambu, pergolado, divisória, acabamento, orçamento express">
+  <link rel="canonical" href="https://conexaoterrabambu.com.br/lp/forros-bambu/">
 
-  <!-- JSON-LD para SEO -->
+  <!-- Font Awesome Icons -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+  <!-- CSS do site -->
+  <link rel="preload" href="../../css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="css/forros-bambu-lp.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="css/forros-bambu-lp-mobile.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <noscript>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="css/forros-bambu-lp.css">
+    <link rel="stylesheet" href="css/forros-bambu-lp-mobile.css">
+  </noscript>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Acabamento Premium em Bambu - Orçamento Express (12h)">
+  <meta property="og:description" content="Transforme seu ambiente com acabamento premium sem cara de plástico. Orçamento em até 12 horas úteis.">
+  <meta property="og:url" content="https://conexaoterrabambu.com.br/lp/forros-bambu/">
+  <meta property="og:type" content="website">
+
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Forros e Painéis de Bambu Premium - Conexão Terra Bambu",
+    "name": "Conexão Terra Bambu",
+    "description": "Acabamento premium em bambu com orçamento express",
     "url": "https://conexaoterrabambu.com.br/lp/forros-bambu/",
-    "priceRange": "R$160-300/m²",
     "telephone": "+5511992908488",
-    "ratingValue": "4.9",
-    "reviewCount": "27"
+    "areaServed": ["Barueri", "Alphaville", "Grande São Paulo"]
   }
   </script>
 
-  <script>
-    // Detectar se é mobile/tablet
-    function isMobileDevice() {
-      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-      
-      // Padrões de dispositivos móveis
-      const mobilePatterns = [
-        /android/i,
-        /webos/i,
-        /iphone/i,
-        /ipad/i,
-        /ipod/i,
-        /blackberry/i,
-        /windows phone/i,
-        /opera mini/i
-      ];
-      
-      const isMobile = mobilePatterns.some(pattern => pattern.test(userAgent));
-      const screenWidth = window.innerWidth;
-      
-      // Considerar mobile se: é device móvel OU tela < 768px
-      return isMobile || screenWidth < 768;
-    }
-    
-    // Redirecionar para versão apropriada
-    function redirectToVersion() {
-      const isMobile = isMobileDevice();
-      const basePath = window.location.pathname.replace(/\/[^\/]*$/, '/');
-      
-      if (isMobile) {
-        window.location.href = basePath + 'index-mobile.html';
-      } else {
-        window.location.href = basePath + 'index-desktop.html';
-      }
-    }
-    
-    // Redirecionar imediatamente
-    redirectToVersion();
-    
-    // Fallback se JS falhar
-    setTimeout(redirectToVersion, 100);
-  </script>
-
   <style>
-    body {
-      background: linear-gradient(135deg, #f8f9fa 0%, #f0f5f2 100%);
+    :root {
+      --primary: #4a7c59;
+      --primary-dark: #2c5530;
+      --accent: #25D366;
+      --text-dark: #1a1a1a;
+      --text-light: #666;
+      --bg-light: #f8f9fa;
+      --white: #fff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; color: var(--text-dark); line-height: 1.6; }
+    
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* HERO */
+    .hero-premium {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--white);
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .hero-premium h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero-premium .subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .hero-bullets {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .bullet-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem;
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+    }
+
+    .bullet-item strong {
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-primary {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      padding: 16px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      margin: 1rem;
+    }
+
+    .cta-primary:hover {
+      background: #128C7E;
+      transform: translateY(-2px);
+    }
+
+    .microcopy {
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      opacity: 0.9;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .trust-pills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .trust-pill {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 0.75rem 1.5rem;
+      border-radius: 20px;
+      font-size: 0.95rem;
+    }
+
+    .micro-links {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .micro-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--accent);
+      transition: opacity 0.3s;
+    }
+
+    .micro-link:hover {
+      opacity: 0.8;
+    }
+
+    /* SECTION PAINS */
+    .section-pains {
+      padding: 80px 20px;
+      background: var(--white);
+    }
+
+    .section-pains h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .pains-intro {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      color: var(--text-light);
+      font-size: 1.05rem;
+    }
+
+    .pain-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .pain-card {
+      background: var(--bg-light);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: 2px solid transparent;
+    }
+
+    .pain-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .pain-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .pain-card p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .pain-cta {
+      color: var(--accent);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .pain-cta:hover {
+      opacity: 0.8;
+    }
+
+    /* SECTIONS DE APLICAÇÃO */
+    .application-section {
+      padding: 80px 20px;
+      background: var(--white);
+      border-top: 1px solid #eee;
+    }
+
+    .app-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    .app-content.reverse {
+      direction: rtl;
+    }
+
+    .app-content.reverse > * {
+      direction: ltr;
+    }
+
+    .app-image {
+      background: var(--bg-light);
+      border-radius: 12px;
+      height: 400px;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      font-family: 'Poppins', Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
+      font-size: 3rem;
+      color: var(--text-light);
     }
-    
-    .redirect-container {
+
+    .app-text h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    .app-for-who {
+      background: rgba(74, 124, 89, 0.05);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      border-left: 4px solid var(--accent);
+    }
+
+    .app-for-who strong {
+      color: var(--primary);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .app-bullets {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+
+    .app-bullets li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .app-bullets li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .app-attention {
+      background: rgba(230, 126, 34, 0.05);
+      padding: 1rem;
+      border-radius: 6px;
+      margin: 1.5rem 0;
+      border-left: 3px solid #e67e22;
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+
+    /* TESTEMUNHAS */
+    .testimonials-section {
+      padding: 80px 20px;
+      background: var(--bg-light);
+    }
+
+    .testimonials-section h2 {
+      font-size: 2rem;
       text-align: center;
-      padding: 40px 20px;
-      background: white;
+      margin-bottom: 1rem;
+      color: var(--text-dark);
+    }
+
+    .testimonials-intro {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      color: var(--text-light);
+    }
+
+    .testimonial-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border-left: 4px solid var(--accent);
+    }
+
+    .testimonial-quote {
+      font-style: italic;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 0.9rem;
+    }
+
+    .testimonial-context {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 0.5rem;
+    }
+
+    /* PROCESSO */
+    .process-section {
+      padding: 80px 20px;
+      background: var(--white);
+    }
+
+    .process-intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      font-size: 1.05rem;
+      color: var(--text-light);
+    }
+
+    .process-section h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--text-dark);
+    }
+
+    .process-pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .pillar {
+      background: linear-gradient(135deg, rgba(74, 124, 89, 0.05) 0%, rgba(37, 211, 102, 0.05) 100%);
+      padding: 2rem;
+      border-radius: 12px;
+      border-top: 4px solid var(--accent);
+      text-align: center;
+    }
+
+    .pillar h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .pillar p {
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* FAQ */
+    .faq-section {
+      padding: 80px 20px;
+      background: var(--bg-light);
+    }
+
+    .faq-section h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--text-dark);
+    }
+
+    .faq-item {
+      background: var(--white);
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 1.5rem;
+      background: var(--bg-light);
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.05rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s;
+    }
+
+    .faq-question:hover {
+      background: rgba(74, 124, 89, 0.08);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      padding: 0 1.5rem;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding: 1.5rem;
+    }
+
+    .faq-item.active .faq-question {
+      background: rgba(74, 124, 89, 0.1);
+      color: var(--primary);
+    }
+
+    .faq-answer p {
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* CTA FINAL + FORM */
+    .cta-final-section {
+      padding: 80px 20px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .cta-final-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-final-section .subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .form-what-we-need {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 2rem 0;
       max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      backdrop-filter: blur(10px);
     }
-    
-    h1 {
-      color: #4a7c59;
-      margin-bottom: 10px;
-      font-size: 1.5rem;
+
+    .form-what-we-need ul {
+      list-style: none;
+      text-align: left;
     }
-    
-    p {
-      color: #666;
-      margin: 10px 0;
+
+    .form-what-we-need li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .form-what-we-need li:before {
+      content: "📷";
+      position: absolute;
+      left: 0;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: 2rem auto;
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 12px;
+      color: var(--text-dark);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
       font-size: 0.95rem;
     }
-    
-    .emoji {
-      font-size: 3rem;
-      margin: 20px 0;
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.3s;
     }
-    
-    .spinner {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      border: 4px solid #f3f3f3;
-      border-top: 4px solid #4a7c59;
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-submit {
+      width: 100%;
+      background: var(--accent);
+      color: var(--white);
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 1rem;
+    }
+
+    .form-submit:hover {
+      background: #128C7E;
+    }
+
+    .form-scarcity {
+      font-size: 0.85rem;
+      margin-top: 1rem;
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    /* WHATSAPP FLOAT */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background: var(--accent);
+      color: var(--white);
       border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 20px 0;
-    }
-    
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    
-    a {
-      color: #4a7c59;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
       text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      transition: all 0.3s;
     }
-    
-    a:hover {
-      text-decoration: underline;
+
+    .whatsapp-float:hover {
+      background: #128C7E;
+      transform: scale(1.1);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--text-dark);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero-premium h1 { font-size: 1.8rem; }
+      .hero-premium .subtitle { font-size: 1rem; }
+      .app-content { grid-template-columns: 1fr; gap: 2rem; }
+      .app-content.reverse { direction: ltr; }
+      .app-image { height: 300px; }
+      .pain-cards { grid-template-columns: 1fr; }
+      .process-pillars { grid-template-columns: 1fr; }
+      .testimonial-cards { grid-template-columns: 1fr; }
+      .form-container { padding: 1.5rem; }
     }
   </style>
 </head>
 <body>
-  <div class="redirect-container">
-    <h1>⏳ Carregando...</h1>
-    <div class="emoji">🌿</div>
-    <p>Estamos preparando a melhor experiência para você.</p>
-    <div class="spinner"></div>
-    <p style="font-size: 0.85rem; margin-top: 20px; color: #999;">
-      Se você não for redirecionado em alguns segundos,<br>
-      <a href="index-desktop.html">clique aqui para continuar</a>.
-    </p>
+
+<!-- HERO -->
+<section class="hero-premium">
+  <div class="container">
+    <h1>Transforme seu ambiente com um acabamento premium que valoriza e traz aconchego — sem cara de plástico.</h1>
+    <p class="subtitle">Solução natural sob medida, com instalação profissional e acabamento correto para seu ambiente.</p>
+    
+    <div class="hero-bullets">
+      <div class="bullet-item">
+        <strong>✓ Material natural</strong>
+        <p>Sem aspecto artificial</p>
+      </div>
+      <div class="bullet-item">
+        <strong>✓ Pouca obra</strong>
+        <p>Grande impacto visual</p>
+      </div>
+      <div class="bullet-item">
+        <strong>✓ Express</strong>
+        <p>Orçamento em até 12h úteis</p>
+      </div>
+    </div>
+
+    <a href="#form-orcamento" class="cta-primary">Quero Orçamento Express (até 12 horas úteis)</a>
+    <p class="microcopy">📱 Envie 2 fotos + medida aproximada. Retornamos em até 12 horas úteis com a orientação e o próximo passo.</p>
+
+    <div class="trust-pills">
+      <div class="trust-pill">✅ Atendimento rápido (12h úteis)</div>
+      <div class="trust-pill">✅ Sob medida (não é peça genérica)</div>
+      <div class="trust-pill">✅ Padrão premium de execução</div>
+      <div class="trust-pill">✅ Atendemos: Barueri/Alphaville/Grande SP</div>
+    </div>
+
+    <div class="micro-links">
+      <a href="#faq-duracao" class="micro-link">Dura?</a>
+      <a href="#faq-externo" class="micro-link">Externo/umidade?</a>
+      <a href="#faq-pragas" class="micro-link">Cupim/mofo?</a>
+      <a href="#faq-preco" class="micro-link">Preço/prazo?</a>
+    </div>
   </div>
+</section>
+
+<!-- DORES -->
+<section class="section-pains">
+  <div class="container">
+    <h2>Se você chegou até aqui, é porque quer resolver uma dessas dores:</h2>
+    <p class="pains-intro">Fazer de qualquer jeito causa retrabalho: manchas, empeno, desgaste cedo. Vamos direto ao ponto.</p>
+
+    <div class="pain-cards">
+      <div class="pain-card" onclick="document.getElementById('forro').scrollIntoView({behavior: 'smooth'})">
+        <h3>🏠</h3>
+        <h3>Sem acabamento e sem aconchego</h3>
+        <p>Quer transformar rápido?</p>
+        <a href="#forro" class="pain-cta">Ver solução →</a>
+      </div>
+
+      <div class="pain-card" onclick="document.getElementById('pergolado').scrollIntoView({behavior: 'smooth'})">
+        <h3>☀️</h3>
+        <h3>Área externa quente e pouco utilizável</h3>
+        <p>Quer aproveitar melhor?</p>
+        <a href="#pergolado" class="pain-cta">Ver solução →</a>
+      </div>
+
+      <div class="pain-card" onclick="document.getElementById('divisorias').scrollIntoView({behavior: 'smooth'})">
+        <h3>🚪</h3>
+        <h3>Dividir com privacidade sem fechar</h3>
+        <p>Quer separar com estilo?</p>
+        <a href="#divisorias" class="pain-cta">Ver solução →</a>
+      </div>
+
+      <div class="pain-card" onclick="document.getElementById('parede').scrollIntoView({behavior: 'smooth'})">
+        <h3>⭐</h3>
+        <h3>Impacto premium sem obra pesada</h3>
+        <p>Quer transformar o espaço?</p>
+        <a href="#parede" class="pain-cta">Ver solução →</a>
+      </div>
+
+      <div class="pain-card" onclick="document.getElementById('decorativo').scrollIntoView({behavior: 'smooth'})">
+        <h3>✨</h3>
+        <h3>Falta o detalhe final do alto padrão</h3>
+        <p>Quer finalizar bem?</p>
+        <a href="#decorativo" class="pain-cta">Ver solução →</a>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="#form-orcamento" class="cta-primary">Quero Orçamento Express (até 12 horas úteis)</a>
+    </div>
+  </div>
+</section>
+
+<!-- FORRO -->
+<section class="application-section" id="forro">
+  <div class="container">
+    <div class="app-content">
+      <div class="app-image">
+        <img src="../../assets/lp/forros-bambu/forro-bambu-premium.webp" alt="Forro de bambu premium em varanda gourmet" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+      </div>
+      <div class="app-text">
+        <h3>Teto com cara de projeto pronto (acabamento premium imediato)</h3>
+        
+        <div class="app-for-who">
+          <strong>Para quem é:</strong>
+          Varanda, área gourmet, sala, corredores e comércios.
+        </div>
+
+        <strong>O que resolve:</strong>
+        <ul class="app-bullets">
+          <li>Elevar padrão visual do ambiente</li>
+          <li>Trazer aconchego natural</li>
+          <li>Amarrar iluminação e arquitetura</li>
+          <li>Esconder imperfeições da estrutura</li>
+          <li>Valorizar o espaço inteiro</li>
+        </ul>
+
+        <strong>O que muda quando é feito certo:</strong>
+        <ul class="app-bullets">
+          <li>Acabamento alinhado e limpo (sem falhas)</li>
+          <li>Instalação planejada, sem retrabalho</li>
+        </ul>
+
+        <div class="app-attention">
+          <strong>⚠️ Atenção:</strong> Externo exposto exige avaliação do cenário.
+        </div>
+
+        <a href="#form-orcamento" class="cta-primary" style="display: inline-block; margin-top: 1rem;">Quero Orçamento Express</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERGOLADO -->
+<section class="application-section" id="pergolado">
+  <div class="container">
+    <div class="app-content reverse">
+      <div class="app-image">
+        <img src="../../assets/lp/forros-bambu/pergolado-bambu-premium.webp" alt="Pergolado de bambu em área externa de lazer" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+      </div>
+      <div class="app-text">
+        <h3>Sombra bonita e confortável: a área externa volta a ser usada</h3>
+        
+        <div class="app-for-who">
+          <strong>Para quem é:</strong>
+          Quintal, varanda ou área de lazer pouco usada por sol forte.
+        </div>
+
+        <strong>Benefícios:</strong>
+        <ul class="app-bullets">
+          <li>Cria sombra funcional e elegante</li>
+          <li>Clima mais confortável</li>
+          <li>Valoriza a área externa</li>
+          <li>Combina com paisagismo</li>
+          <li>Protege móveis e acabamentos</li>
+        </ul>
+
+        <strong>O que muda quando é feito certo:</strong>
+        <ul class="app-bullets">
+          <li>Sombra funcional (nem escuro nem claro demais)</li>
+          <li>Montagem pensada para vento e umidade</li>
+        </ul>
+
+        <div class="app-attention">
+          <strong>⚠️ Atenção:</strong> Ideal em externo coberto/protegido.
+        </div>
+
+        <a href="#form-orcamento" class="cta-primary" style="display: inline-block; margin-top: 1rem;">Quero Orçamento Express</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVISÓRIAS -->
+<section class="application-section" id="divisorias">
+  <div class="container">
+    <div class="app-content">
+      <div class="app-image">
+        <img src="../../assets/lp/forros-bambu/divisoria-bambu-premium.webp" alt="Divisória de ambiente em bambu minimalista" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+      </div>
+      <div class="app-text">
+        <h3>Privacidade e organização sem fechar o ambiente</h3>
+        
+        <div class="app-for-who">
+          <strong>Para quem é:</strong>
+          Separar espaços sem perder luz e amplitude (residencial e comercial).
+        </div>
+
+        <strong>Benefícios:</strong>
+        <ul class="app-bullets">
+          <li>Separar com leveza</li>
+          <li>Manter iluminação natural</li>
+          <li>Organizar espaços</li>
+          <li>Servir de painel decorativo</li>
+          <li>Elegância discreta</li>
+        </ul>
+
+        <strong>O que muda quando é feito certo:</strong>
+        <ul class="app-bullets">
+          <li>Encaixe limpo sem vãos</li>
+          <li>Nível de privacidade ajustado ao objetivo</li>
+        </ul>
+
+        <div class="app-attention">
+          <strong>⚠️ Atenção:</strong> Depende do objetivo e da estrutura local.
+        </div>
+
+        <a href="#form-orcamento" class="cta-primary" style="display: inline-block; margin-top: 1rem;">Quero Orçamento Express</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAREDE -->
+<section class="application-section" id="parede">
+  <div class="container">
+    <div class="app-content reverse">
+      <div class="app-image">
+        <img src="../../assets/lp/forros-bambu/parede-bambu-premium.webp" alt="Revestimento de parede em bambu ripado" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+      </div>
+      <div class="app-text">
+        <h3>Parede de destaque premium: impacto rápido sem reforma pesada</h3>
+        
+        <div class="app-for-who">
+          <strong>Para quem é:</strong>
+          Criar ponto focal (sala, quarto, recepção, restaurante).
+        </div>
+
+        <strong>Benefícios:</strong>
+        <ul class="app-bullets">
+          <li>Ponto focal imediato</li>
+          <li>Textura natural que atrai olhar</li>
+          <li>Valoriza imóvel ou marca</li>
+          <li>Transformação rápida</li>
+          <li>Ideal para TV, cabeceira ou destaque</li>
+        </ul>
+
+        <strong>O que muda quando é feito certo:</strong>
+        <ul class="app-bullets">
+          <li>Recortes minimizados</li>
+          <li>Emendas discretas</li>
+          <li>Acabamento alinhado ao ambiente</li>
+        </ul>
+
+        <div class="app-attention">
+          <strong>⚠️ Atenção:</strong> Paredes com umidade precisam de avaliação prévia.
+        </div>
+
+        <a href="#form-orcamento" class="cta-primary" style="display: inline-block; margin-top: 1rem;">Quero Orçamento Express</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DECORATIVO -->
+<section class="application-section" id="decorativo">
+  <div class="container">
+    <div class="app-content">
+      <div class="app-image">
+        <img src="../../assets/lp/forros-bambu/detalhe-bambu-premium.webp" alt="Detalhe decorativo premium em bambu" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+      </div>
+      <div class="app-text">
+        <h3>O toque final de alto padrão que fecha o projeto</h3>
+        
+        <div class="app-for-who">
+          <strong>Para quem é:</strong>
+          Quem sente faltar o detalhe final.
+        </div>
+
+        <strong>Benefícios:</strong>
+        <ul class="app-bullets">
+          <li>Finalizar com padrão premium</li>
+          <li>Envolver colunas/vigas</li>
+          <li>Esconder imperfeições inteligentes</li>
+          <li>Elevar percepção de qualidade</li>
+          <li>Útil para comércios e residências</li>
+        </ul>
+
+        <strong>O que muda quando é feito certo:</strong>
+        <ul class="app-bullets">
+          <li>Escolha inteligente de onde realçar</li>
+          <li>Emendas discretas</li>
+          <li>Acabamento real, não artificial</li>
+        </ul>
+
+        <div class="app-attention">
+          <strong>⚠️ Atenção:</strong> Detalhes decorativos funcionam melhor pensados em conjunto com o ambiente.
+        </div>
+
+        <a href="#form-orcamento" class="cta-primary" style="display: inline-block; margin-top: 1rem;">Quero Orçamento Express</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTEMUNHAS -->
+<section class="testimonials-section">
+  <div class="container">
+    <h2>Quem já fez, entende a diferença</h2>
+    <p class="testimonials-intro">Resultado premium é detalhe + execução. E isso aparece no final.</p>
+
+    <div class="testimonial-cards">
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"Ficou com cara de projeto pronto. Mudou tudo."</div>
+        <div class="testimonial-author">— Residencial (Forro)</div>
+        <div class="testimonial-context">Grande SP</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"A área externa virou o lugar preferido da casa."</div>
+        <div class="testimonial-author">— Residencial (Pergolado)</div>
+        <div class="testimonial-context">Barueri</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"Separou sem fechar. Ficou leve e elegante."</div>
+        <div class="testimonial-author">— Residencial (Divisória)</div>
+        <div class="testimonial-context">Alphaville</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"A parede virou destaque. O ambiente parece outro."</div>
+        <div class="testimonial-author">— Comercial (Parede)</div>
+        <div class="testimonial-context">São Paulo</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"Atendimento rápido e orientação clara, sem enrolação."</div>
+        <div class="testimonial-author">— Orçamento Express (12h úteis)</div>
+        <div class="testimonial-context">Feedback comum</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"Dá pra ver que tem método. Instalação limpa e organizada."</div>
+        <div class="testimonial-author">— Execução & Acabamento</div>
+        <div class="testimonial-context">Padrão de qualidade</div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 3rem;">
+      <a href="#form-orcamento" class="cta-primary">Quero meu acabamento premium também</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESSO -->
+<section class="process-section">
+  <div class="container">
+    <p class="process-intro">Não é só "ficar bonito". É ficar bonito com previsibilidade — do orçamento à execução.</p>
+    <h2>O que evita retrabalho e garante o resultado</h2>
+
+    <div class="process-pillars">
+      <div class="pillar">
+        <h3>1️⃣ Peça certa para seu ambiente</h3>
+        <p>Recomendação baseada no cenário, sem empurrar o mais caro. Apenas o que funciona.</p>
+      </div>
+
+      <div class="pillar">
+        <h3>2️⃣ Proteção e acabamento adequados</h3>
+        <p>Compatível com o uso e ambiente, sem promessas irreais. Resultado previsível.</p>
+      </div>
+
+      <div class="pillar">
+        <h3>3️⃣ Instalação bem feita</h3>
+        <p>Fixação + planejamento. Execução planejada para evitar improviso e aparência torta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <h2>Perguntas Frequentes</h2>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        Dura mesmo? <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        <p><strong>Sim, dura.</strong> A durabilidade depende do ambiente e do processo correto. Se instalado conforme nossa orientação e com o acabamento adequado, bambu bem tratado dura muitos anos. Evitamos cenários arriscados na recomendação inicial.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="faq-externo">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        Pode em externo ou com umidade? <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        <p><strong>Externo coberto:</strong> Sim, é o cenário mais seguro. <strong>Externo exposto (chuva direta):</strong> Precisamos avaliar caso a caso. Umidade dentro de casa não é problema se a instalação e acabamento forem corretos.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="faq-pragas">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        Cupim ou mofo? <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        <p><strong>Prevenção faz parte do processo.</strong> Evitamos instalação que cria estufa (ar preso). Escolhemos acabamento compatível com o cenário. Se seguir a orientação pós-instalação (ventilação, etc), não há surpresas.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="faq-preco">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+        Preço e prazo? <i class="fas fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        <p><strong>Varia conforme:</strong> medida, altura, estrutura, recortes, acabamento escolhido. Por isso existe o Orçamento Express: você envia 2 fotos + medida aproximada, e em até 12 horas úteis retornamos com orientação clara e preço justo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL + FORM -->
+<section class="cta-final-section" id="form-orcamento">
+  <div class="container">
+    <h2>Orçamento Express (até 12 horas úteis)</h2>
+    <p class="subtitle">Envie 2 fotos + medida aproximada + seu objetivo. Retornamos em até 12 horas úteis com orientação e o próximo passo.</p>
+
+    <div class="form-what-we-need">
+      <ul>
+        <li><strong>📷 Duas fotos</strong> do ambiente (visão geral + detalhe)</li>
+        <li><strong>📐 Medida aproximada</strong> (altura x comprimento ou circunferência)</li>
+        <li><strong>🎯 Seu objetivo</strong> (forro, parede, divisória, etc)</li>
+      </ul>
+    </div>
+
+    <form class="form-container" onsubmit="enviarOrcamento(event)">
+      <div class="form-group">
+        <label>Nome completo *</label>
+        <input type="text" id="nome" required>
+      </div>
+
+      <div class="form-group">
+        <label>WhatsApp *</label>
+        <input type="tel" id="whatsapp" placeholder="(11) 99999-9999" required>
+      </div>
+
+      <div class="form-group">
+        <label>Aplicação *</label>
+        <select id="aplicacao" required>
+          <option value="">Selecione...</option>
+          <option value="Forro">Forro</option>
+          <option value="Pergolado">Pergolado/Sombreamento</option>
+          <option value="Divisória">Divisória/Painel</option>
+          <option value="Parede">Revestimento de Parede</option>
+          <option value="Decorativo">Detalhes Decorativos</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Ambiente *</label>
+        <select id="ambiente" required>
+          <option value="">Selecione...</option>
+          <option value="Residencial">Residencial</option>
+          <option value="Comercial">Comercial</option>
+          <option value="Hotelaria">Hotelaria</option>
+          <option value="Restaurante">Restaurante</option>
+          <option value="Outro">Outro</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Medida aproximada (ex: 5m x 3m) *</label>
+        <input type="text" id="medida" placeholder="5m x 3m ou 10m de comprimento" required>
+      </div>
+
+      <div class="form-group">
+        <label>Cidade/Bairro *</label>
+        <input type="text" id="cidade" placeholder="Ex: Barueri, SP" required>
+      </div>
+
+      <div class="form-group">
+        <label>Observações (opcional)</label>
+        <textarea id="observacoes" placeholder="Conte mais sobre seu projeto..."></textarea>
+      </div>
+
+      <button type="submit" class="form-submit">Enviar e receber Orçamento Express</button>
+      
+      <p class="form-scarcity">💡 Priorizamos solicitações com fotos e medidas para responder com precisão e manter padrão de acabamento.</p>
+    </form>
+  </div>
+</section>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5511992908488?text=Oi!%20Quero%20um%20Or%C3%A7amento%20Express%20(at%C3%A9%2012%20horas%20%C3%BAteis)..." class="whatsapp-float" title="Orçamento Express no WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>&copy; <span id="year"></span> Conexão Terra Bambu. Todos os direitos reservados.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.85rem;">Acabamento Premium em Bambu | Orçamento Express (12h úteis)</p>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+function enviarOrcamento(e) {
+  e.preventDefault();
+  
+  const nome = document.getElementById('nome').value;
+  const whatsapp = document.getElementById('whatsapp').value;
+  const aplicacao = document.getElementById('aplicacao').value;
+  const ambiente = document.getElementById('ambiente').value;
+  const medida = document.getElementById('medida').value;
+  const cidade = document.getElementById('cidade').value;
+  const observacoes = document.getElementById('observacoes').value;
+
+  const texto = `*NOVO ORÇAMENTO EXPRESS - BAMBU PREMIUM* 🌿
+
+👤 *Nome:* ${nome}
+📱 *WhatsApp:* ${whatsapp}
+🎯 *Aplicação:* ${aplicacao}
+🏢 *Ambiente:* ${ambiente}
+📐 *Medida:* ${medida}
+📍 *Cidade:* ${cidade}
+
+💬 *Observações:* ${observacoes || 'Nenhuma'}
+
+---
+Lead gerado via LP
+${new Date().toLocaleDateString('pt-BR')} ${new Date().toLocaleTimeString('pt-BR')}`;
+
+  const url = `https://wa.me/5511992908488?text=${encodeURIComponent(texto)}`;
+  window.open(url, '_blank');
+  document.querySelector('form').reset();
+}
+
+// Scroll suave para FAQ
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', function() {
+    this.parentElement.classList.toggle('active');
+  });
+});
+</script>
+
 </body>
 </html>

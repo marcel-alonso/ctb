@@ -4,43 +4,13 @@
 
 - **Site Principal:** [https://conexaoterrabambu.com.br](https://conexaoterrabambu.com.br)
 - **GitHub Pages:** [https://marcel-alonso.github.io/ctb/](https://marcel-alonso.github.io/ctb/)
-- **LP Forros de Bambu (Mobile):** [/lp/forros-bambu/index-mobile.html](lp/forros-bambu/index-mobile.html)
-- **LP Forros de Bambu (Desktop):** [/lp/forros-bambu/index-desktop.html](lp/forros-bambu/index-desktop.html)
+- **LP Forros de Bambu:** [/lp/forros-bambu/index.html](lp/forros-bambu/index.html)
 
 ## 🎯 Seções do Projeto
 
 ### 1️⃣ Landing Page de Forros de Bambu 🌿
 
-A principal página de vendas otimizada para conversão de leads com duas versões (mobile/desktop).
-
-#### Versão Mobile (`/lp/forros-bambu/index-mobile.html`)
-
-- ✅ Acordeão interativo para modelos (Roliço, Filepa Reta, Entrelaçado)
-- ✅ Formulário simplificado com campos essenciais
-- ✅ Testimunhas compactas com ratings
-- ✅ FAQ com acordeão
-- ✅ Botão WhatsApp flutuante
-- ✅ Otimizado para telas < 768px
-- ✅ Layout de coluna única
-
-#### Versão Desktop (`/lp/forros-bambu/index-desktop.html`)
-
-- ✅ Tabela comparativa de modelos (Roliço, Filepa, Entrelaçado)
-- ✅ Seção Hero expandida com benefícios
-- ✅ Grid de comparação Problema vs Solução
-- ✅ Cards de proposição de valor
-- ✅ Formulário completo com 10 campos
-- ✅ Testimunhas lado a lado
-- ✅ FAQ expandida
-- ✅ Otimizado para desktops
-- ✅ Logo responsivo (diminui ao scroll)
-
-#### Roteador Inteligente (`/lp/forros-bambu/index.html`)
-
-- 🤖 Detecta automaticamente device (mobile/desktop)
-- 🤖 Redireciona para versão apropriada
-- 🤖 Fallback em caso de JavaScript desativado
-- 🤖 Preserva SEO com meta tags em ambas versões
+Página de vendas responsiva única em `/lp/forros-bambu/index.html` que se adapta a qualquer largura de tela. Os estilos utilizam media queries para ajustar espaçamentos, tipografia e layout; não há mais versões separadas para mobile e desktop.
 
 ### 2️⃣ Blog de Bioconstrução 📚
 

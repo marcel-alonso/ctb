@@ -1,3 +1,4 @@
+@media (max-width: 768px) {
 /* ============================================
    CSS MOBILE - Forros de Bambu LP
    Otimizado para telas pequenas (até 768px)
@@ -563,3 +564,4 @@ body {
 .benefits-mobile li:nth-child(3) { animation-delay: 0.2s; }
 .benefits-mobile li:nth-child(4) { animation-delay: 0.25s; }
 .benefits-mobile li:nth-child(5) { animation-delay: 0.3s; }
+}
