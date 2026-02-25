@@ -99,13 +99,11 @@ A página foi projetada para ser uma máquina de conversão de leads, focada em:
 
 ```plaintext
 /lp/forros-bambu/
-├── index.html                    # Roteador inteligente
-├── index-mobile.html            # Versão mobile otimizada
-├── index-desktop.html           # Versão desktop completa
+├── index.html                   # LP responsiva única
 ├── css/
-│   ├── forros-bambu-lp.css      # Estilos desktop
-│   └── forros-bambu-lp-mobile.css # Estilos mobile
-└── (imagens e assets)
+│   ├── forros-bambu-lp.css      # Estilos principais + media queries
+│   └── forros-bambu-lp-mobile.css # Sobrepor mobile (@media ≤768px)
+└── assets/ (imagens e recursos)
 ```
 
 #### Performance
@@ -158,8 +156,7 @@ A página foi projetada para ser uma máquina de conversão de leads, focada em:
 
 #### Mudar o Número do WhatsApp
 
-- `lp/forros-bambu/index-mobile.html` (linhas com WhatsApp)
-- `lp/forros-bambu/index-desktop.html` (linhas com WhatsApp)
+- `lp/forros-bambu/index.html` (formulário com integração WhatsApp en todos os CTAs)
 
 #### Mudar Preços dos Modelos
 
@@ -257,8 +254,7 @@ python -m http.server 8000
 
 ### Links Diretos
 
-- **Versão Mobile:** [/lp/forros-bambu/index-mobile.html](lp/forros-bambu/index-mobile.html)
-- **Versão Desktop:** [/lp/forros-bambu/index-desktop.html](lp/forros-bambu/index-desktop.html)
+- **LP Responsiva:** [/lp/forros-bambu/](lp/forros-bambu/index.html)
 - **Auto-redirecionamento:** [/lp/forros-bambu/](lp/forros-bambu/)
 
 ### Testar Responsividade no Chrome
