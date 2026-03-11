@@ -42,7 +42,7 @@ export default function CTAFinal() {
                     <motion.div variants={fadeUp} className="flex flex-col items-center gap-6 mb-24 w-full">
                         <button
                             onClick={() => trackAndOpenWA(CONFIG.wa.msgFinal, 'Final_CTA_Click')}
-                            className="group relative flex items-center justify-center gap-4 bg-[var(--accent)] hover:bg-[var(--accent-dark)] text-white text-xl md:text-2xl font-black py-8 px-12 rounded-2xl transition-all duration-500 shadow-[0_20px_40px_rgba(126,200,80,0.3)] hover:shadow-[0_25px_50px_rgba(126,200,80,0.5)] transform hover:scale-105 active:scale-95 w-full md:w-auto"
+                            className="group relative flex items-center justify-center gap-4 bg-[var(--accent)] hover:bg-[var(--accent-dark)] text-white text-lg md:text-xl font-black py-5 px-12 rounded-full transition-all duration-500 shadow-[0_15px_30px_rgba(126,200,80,0.3)] hover:shadow-[0_20px_40px_rgba(126,200,80,0.4)] transform hover:scale-105 active:scale-95 w-full md:w-auto tracking-wider uppercase"
                         >
                             {CONFIG.wa.ctaFinal}
                             <ArrowRight className="group-hover:translate-x-2 transition-transform" />

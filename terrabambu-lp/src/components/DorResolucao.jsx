@@ -48,11 +48,11 @@ export default function DorResolucao() {
                     className="text-center max-w-3xl mx-auto mb-16"
                 >
                     <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                        O medo da dor de cabeça <br className="hidden md:block" /> não precisa adiar seu projeto.
+                        A área externa que você sempre sonhou, <br className="hidden md:block" /> sem o calor que você detesta.
                     </h2>
                     <p className="text-lg text-[var(--text-muted)]">
-                        Sabemos que entrar em uma "obra" gera ansiedade. Por isso, criamos um
-                        método focado em paz de espírito do início ao fim.
+                        Sabemos que uma área externa mal aproveitada por conta do sol forte é uma frustração.
+                        Nosso método une conforto térmico imbatível com uma execução livre de dores de cabeça.
                     </p>
                 </motion.div>
 

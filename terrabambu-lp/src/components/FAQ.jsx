@@ -101,7 +101,7 @@ export default function FAQ() {
                     <h3 className="text-2xl font-bold text-white mb-6">Pronto para iniciar seu projeto?</h3>
                     <button
                         onClick={() => trackAndOpenWA(CONFIG.wa.msgFaq, 'FAQ_CTA_Click')}
-                        className="inline-flex items-center gap-3 bg-[var(--accent)] hover:bg-[var(--accent-dark)] text-white font-black py-5 px-10 rounded-2xl transition-all duration-300 group"
+                        className="inline-flex items-center gap-3 bg-[var(--accent)] hover:bg-[var(--accent-dark)] text-white font-black py-4 px-10 rounded-full transition-all duration-300 group tracking-wider"
                     >
                         FALAR COM CONSULTOR AGORA
                         <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />

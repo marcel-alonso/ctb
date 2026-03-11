@@ -42,21 +42,21 @@ export default function Hero() {
                         variants={fadeUp}
                         className="text-4xl md:text-7xl font-black leading-tight mb-6 text-white tracking-tight"
                     >
-                        Excelência em Execução: <br />
-                        <span className="text-[var(--accent)]">Inspirando novos momentos ao ar livre</span>
+                        Cansado da sua área externa <br className="hidden md:block" />
+                        <span className="text-[var(--accent)] text-shadow-lg">quente e mal aproveitada?</span>
                     </motion.h1>
 
                     <motion.p
                         variants={fadeUp}
                         className="text-base md:text-2xl text-[var(--text-muted)] max-w-2xl mx-auto mb-10 leading-relaxed font-medium"
                     >
-                        Cada projeto é uma peça única, desenhada para se integrar harmonicamente à sua arquitetura e ao seu estilo de vida.
+                        Temos a solução ideal para transformar seu espaço em um refúgio fresco, elegante e extremamente confortável com o toque artesanal do bambu.
                     </motion.p>
 
                     <motion.div variants={fadeUp} className="w-full md:w-auto flex flex-col items-center">
                         <button
                             onClick={() => trackAndOpenWA("Olá! Vi o Hero do site e gostaria de um orçamento para meu projeto.")}
-                            className="group relative w-full md:w-auto bg-[var(--accent)] hover:bg-[var(--accent-dark)] text-[var(--bg)] px-8 py-5 md:py-8 rounded-2xl font-black text-lg md:text-xl transition-all shadow-[0_20px_40px_rgba(205,170,125,0.3)] hover:scale-105 active:scale-95"
+                            className="group relative w-full md:w-auto bg-[var(--accent)] hover:bg-[var(--accent-dark)] text-[var(--bg)] px-10 py-4 md:py-5 rounded-full font-black text-base md:text-lg transition-all shadow-[0_15px_30px_rgba(126,200,80,0.3)] hover:scale-105 active:scale-95 uppercase tracking-wider"
                         >
                             SOLICITAR ORÇAMENTO GRÁTIS
                         </button>

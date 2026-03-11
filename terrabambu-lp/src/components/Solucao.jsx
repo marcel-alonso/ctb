@@ -44,10 +44,10 @@ export default function Solucao() {
                         <span>Equipes de campo especializadas</span>
                     </div>
                     <motion.h2 variants={fadeUp} className="text-4xl md:text-6xl font-black mb-6">
-                        Projetos sob medida em <span className="text-[var(--accent)]">qualquer região</span>
+                        Recupere sua <span className="text-[var(--accent)]">área externa</span>
                     </motion.h2>
                     <motion.p variants={fadeUp} className="text-[var(--text-muted)] text-xl max-w-2xl mx-auto leading-relaxed font-medium">
-                        Desenvolvemos soluções que unem a beleza natural do bambu à excelência em execução, transformando seu espaço em um refúgio único.
+                        Diga adeus ao calor excessivo. Nossas soluções de bambu reduzem a temperatura e trazem o conforto que sua varanda ou pergolado merece.
                     </motion.p>
                 </motion.div>
 
@@ -97,7 +97,7 @@ export default function Solucao() {
 
                                 <button
                                     onClick={() => trackAndOpenWA(`Olá! Tenho interesse no ${product.title}. Pode me passar um orçamento?`, `Product_Click_${product.title.replace(' ', '_')}`)}
-                                    className="w-full bg-white/5 hover:bg-[var(--accent)] text-white font-black py-5 rounded-2xl flex items-center justify-center gap-2 transition-all duration-300 border border-white/10 hover:border-[var(--accent)] group/btn"
+                                    className="w-full bg-white/5 hover:bg-[var(--accent)] text-white font-black py-4 rounded-full flex items-center justify-center gap-2 transition-all duration-300 border border-white/10 hover:border-[var(--accent)] group/btn text-sm tracking-wider"
                                 >
                                     SOLICITAR ORÇAMENTO
                                     <ArrowRight size={18} className="group-hover/btn:translate-x-2 transition-transform" />
