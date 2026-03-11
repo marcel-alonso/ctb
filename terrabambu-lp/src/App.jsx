@@ -1,7 +1,7 @@
 import { useScroll, motion } from "framer-motion";
 import WhatsAppFloat from "./components/WhatsAppFloat";
 import Hero from "./components/Hero";
-
+import ProvaVisual from "./components/ProvaVisual";
 export default function App() {
     const { scrollYProgress } = useScroll();
     return (
@@ -11,6 +11,7 @@ export default function App() {
             <WhatsAppFloat />
             <main>
                 <Hero />
+                <ProvaVisual />
             </main>
         </>
     );

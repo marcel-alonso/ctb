@@ -1,0 +1,110 @@
+[
+  {
+    "file": "hero-forros-bambu-1920.webp",
+    "section": "hero",
+    "alt": "Forros e painéis de bambu premium em ambiente interno",
+    "width": 1920,
+    "height": 1080,
+    "loading": "eager",
+    "priority": "high"
+  },
+  {
+    "file": "modelo-rolico-thumb-1200.webp",
+    "section": "modelos",
+    "alt": "Modelo roliço inteiro alinhado - miniatura",
+    "width": 1200,
+    "height": 800,
+    "loading": "lazy",
+    "priority": "low"
+  },
+  {
+    "file": "modelo-filepa-reta-thumb-1200.webp",
+    "section": "modelos",
+    "alt": "Modelo filepa reta (fitas) - miniatura",
+    "width": 1200,
+    "height": 800,
+    "loading": "lazy",
+    "priority": "low"
+  },
+  {
+    "file": "modelo-entrelaçado-thumb-1200.webp",
+    "section": "modelos",
+    "alt": "Modelo entrelaçado (esteira/trançado) - miniatura",
+    "width": 1200,
+    "height": 800,
+    "loading": "lazy",
+    "priority": "low"
+  },
+  {
+    "file": "rolico-instalado-01-1600.webp",
+    "section": "instalado",
+    "alt": "Forro roliço instalado em ambiente residencial",
+    "width": 1600,
+    "height": 1067,
+    "loading": "lazy",
+    "priority": "low"
+  },
+  {
+    "file": "filepa-reta-instalado-01-1600.webp",
+    "section": "instalado",
+    "alt": "Painel filepa reta instalado em forro",
+    "width": 1600,
+    "height": 1067,
+    "loading": "lazy",
+    "priority": "low"
+  },
+  {
+    "file": "entrelaçado-instalado-01-1600.webp",
+    "section": "instalado",
+    "alt": "Painel entrelaçado instalado em ambiente interno",
+    "width": 1600,
+    "height": 1067,
+    "loading": "lazy",
+    "priority": "low"
+  },
+  {
+    "file": "aplicacao-forro-01-1600.webp",
+    "section": "aplicacoes",
+    "alt": "Aplicação de forro de bambu em ambiente residencial",
+    "width": 1600,
+    "height": 1067,
+    "loading": "lazy",
+    "priority": "low"
+  },
+  {
+    "file": "aplicacao-divisoria-01-1600.webp",
+    "section": "aplicacoes",
+    "alt": "Divisória de bambu instalada em ambiente interior",
+    "width": 1600,
+    "height": 1067,
+    "loading": "lazy",
+    "priority": "low"
+  },
+  {
+    "file": "aplicacao-mureta-01-1600.webp",
+    "section": "aplicacoes",
+    "alt": "Mureta com painel de bambu aplicada em projeto paisagístico",
+    "width": 1600,
+    "height": 1067,
+    "loading": "lazy",
+    "priority": "low"
+  },
+  {
+    "file": "aplicacao-cercado-01-1600.webp",
+    "section": "aplicacoes",
+    "alt": "Cercado de bambu aplicado em delimitação externa",
+    "width": 1600,
+    "height": 1067,
+    "loading": "lazy",
+    "priority": "low"
+  },
+  {
+    "file": "og-forros-bambu-1200x630.webp",
+    "section": "og",
+    "alt": "Forros e Painéis de Bambu Premium - Conexão Terra Bambu",
+    "width": 1200,
+    "height": 630,
+    "loading": "lazy",
+    "priority": "high"
+  }
+]
