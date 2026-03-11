@@ -1,19 +1,21 @@
 import { motion } from "framer-motion";
 import { fadeUp, stagger } from "../shared/animations";
-import { Plus, Minus } from "lucide-react";
+import { Plus, Minus, ArrowRight, ShieldCheck } from "lucide-react";
 import { useState } from "react";
-import { waURL, CONFIG } from "../config";
+import { trackAndOpenWA, CONFIG } from "../config";
 
 const AccordionItem = ({ question, answer, isOpen, onClick }) => {
     return (
-        <div className="border-b border-[var(--border)]">
+        <div className={`border-b border-white/5 transition-colors ${isOpen ? 'bg-white/[0.02]' : ''}`}>
             <button
-                className="w-full py-6 flex items-center justify-between text-left focus:outline-none"
+                className="w-full py-8 flex items-center justify-between text-left focus:outline-none group"
                 onClick={onClick}
             >
-                <span className="text-lg font-bold pr-4">{question}</span>
-                <span className="text-[var(--accent)] flex-shrink-0 transition-transform duration-300">
-                    {isOpen ? <Minus /> : <Plus />}
+                <span className={`text-lg md:text-xl font-bold pr-4 transition-colors ${isOpen ? 'text-[var(--accent)]' : 'text-white/90 group-hover:text-white'}`}>
+                    {question}
+                </span>
+                <span className={`flex-shrink-0 w-8 h-8 rounded-full border border-[var(--border)] flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-[var(--accent)] border-[var(--accent)] text-white rotate-180' : 'text-[var(--accent)]'}`}>
+                    {isOpen ? <Minus size={18} /> : <Plus size={18} />}
                 </span>
             </button>
             <motion.div
@@ -22,7 +24,7 @@ const AccordionItem = ({ question, answer, isOpen, onClick }) => {
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 style={{ overflow: "hidden" }}
             >
-                <p className="pb-6 text-[var(--text-muted)] leading-relaxed">
+                <p className="pb-8 text-[var(--text-muted)] text-base md:text-lg leading-relaxed max-w-2xl font-medium">
                     {answer}
                 </p>
             </motion.div>
@@ -35,55 +37,40 @@ export default function FAQ() {
 
     const faqs = [
         {
-            q: "Bambu dura mesmo lá fora?",
-            a: "Sim — quando instalado certo. Bambu tratado dura muitos anos em externo coberto. Evitamos cenários de risco na recomendação inicial."
-        },
-        {
-            q: "E se ficar exposto à chuva?",
-            a: "Externo coberto: sim, cenário mais seguro. Exposto à chuva direta: avaliamos caso a caso. Nunca recomendamos algo que vai dar problema."
-        },
-        {
-            q: "Preciso de obra grande para instalar?",
-            a: "Não. Grande impacto visual com pouca obra. A maioria não exige quebrar nada."
-        },
-        {
-            q: "Quanto custa? Posso saber antes de entrar em contato?",
-            a: "Depende da medida, altura e modelo. Por isso existe o Orçamento Express: 2 fotos + medida aproximada → valor real em até 12h úteis. Sem compromisso."
-        },
-        {
-            q: "Vai dar cupim ou mofo?",
-            a: "Prevenção faz parte do processo. Escolhemos acabamento compatível com o ambiente. Seguindo a orientação, não há surpresas."
-        },
-        {
             q: "Vocês atendem minha cidade?",
-            a: "Grande SP, Barueri, Alphaville e interior de SP. Manda sua cidade no WhatsApp — confirmamos em minutos."
+            a: "Atendemos São Paulo, Grande SP, Interior e Litoral. Também organizamos logística dedicada para projetos em qualquer região do Brasil. Onde houver um projeto de alto padrão, nossa equipe chega."
         },
         {
-            q: "E se eu não gostar do resultado?",
-            a: "Você aprova tudo antes de começar: material, modelo, processo. Surpresa negativa não faz parte do nosso método."
+            q: "Como funciona a consultoria?",
+            a: "Unimos tecnologia e atendimento humano. Você envia fotos e medidas, nossa engenharia analisa e em até 12h úteis você tem uma proposta técnica e comercial clara. Após aprovado, nossas equipes de campo assumem o projeto presencialmente."
         },
         {
-            q: "Quanto tempo leva para ficar pronto?",
-            a: "Orçamento: até 12h úteis após envio das fotos. Instalação: maioria dos projetos concluída em 1 a 2 dias."
+            q: "O bambu é resistente?",
+            a: "Sim. Utilizamos bambu com tratamento industrial de alta tecnologia. Nossas equipes são treinadas para garantir que cada instalação suporte as condições climáticas da sua região, mantendo a durabilidade por anos."
+        },
+        {
+            q: "A equipe de instalação é própria?",
+            a: "Sim. Temos equipes de campo comprometidas, extremamente preparadas e uniformizadas. Não terceirizamos a execução, garantindo o padrão Terra Bambu em cada detalhe presencial."
         }
     ];
 
     return (
-        <section className="bg-[var(--bg-2)] py-24 px-6 border-b border-[var(--border)]">
-            <div className="max-w-3xl mx-auto">
+        <section className="bg-[var(--bg-2)] py-24 px-6 relative overflow-hidden">
+            <div className="max-w-4xl mx-auto relative z-10">
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
                     variants={stagger}
-                    className="text-center mb-16"
+                    className="mb-16"
                 >
-                    <motion.h2 variants={fadeUp} className="text-3xl md:text-5xl font-bold mb-4">
-                        Dúvidas frequentes
+                    <div className="flex items-center gap-2 text-[var(--gold)] font-bold mb-4 uppercase tracking-[0.2em] text-xs">
+                        <ShieldCheck size={18} />
+                        <span>Segurança e Transparência</span>
+                    </div>
+                    <motion.h2 variants={fadeUp} className="text-4xl md:text-6xl font-black mb-6 tracking-tight text-white leading-tight">
+                        Tecnologia na gestão, <br className="hidden md:block" /> <span className="text-[var(--accent)]">excelência no campo.</span>
                     </motion.h2>
-                    <motion.p variants={fadeUp} className="text-[var(--text-muted)] text-lg">
-                        Transparência total desde o primeiro contato.
-                    </motion.p>
                 </motion.div>
 
                 <motion.div
@@ -91,6 +78,7 @@ export default function FAQ() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
                     variants={fadeUp}
+                    className="border-t border-white/5"
                 >
                     {faqs.map((item, i) => (
                         <AccordionItem
@@ -108,16 +96,16 @@ export default function FAQ() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
                     variants={fadeUp}
-                    className="mt-16 text-center"
+                    className="mt-20 p-10 rounded-3xl bg-[var(--bg)] border border-white/5 text-center"
                 >
-                    <p className="text-lg font-medium mb-4">Ainda tem dúvida? Manda no WhatsApp — respondemos na hora.</p>
-                    <a
-                        href={waURL(CONFIG.wa.msgFaq)}
-                        target="_blank" rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 border-2 border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white font-bold py-3 px-8 rounded-full transition-colors"
+                    <h3 className="text-2xl font-bold text-white mb-6">Pronto para iniciar seu projeto?</h3>
+                    <button
+                        onClick={() => trackAndOpenWA(CONFIG.wa.msgFaq, 'FAQ_CTA_Click')}
+                        className="inline-flex items-center gap-3 bg-[var(--accent)] hover:bg-[var(--accent-dark)] text-white font-black py-5 px-10 rounded-2xl transition-all duration-300 group"
                     >
-                        Falar pelo WhatsApp
-                    </a>
+                        FALAR COM CONSULTOR AGORA
+                        <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+                    </button>
                 </motion.div>
             </div>
         </section>

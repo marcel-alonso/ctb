@@ -1,6 +1,7 @@
 import { motion, useInView, useSpring, useTransform, useMotionValue } from "framer-motion";
 import { useRef, useEffect } from "react";
 import { fadeUp, stagger, fadeIn } from "../shared/animations";
+import { Star } from "lucide-react";
 
 const AnimatedCounter = ({ target, suffix = "", delay = 0 }) => {
     const count = useMotionValue(0);
@@ -22,77 +23,95 @@ const AnimatedCounter = ({ target, suffix = "", delay = 0 }) => {
 
 export default function ProvaVisual() {
     const images = [
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800",
-        "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&q=80&w=800",
-        "https://images.unsplash.com/photo-1599619351208-3e6c839d6828?auto=format&fit=crop&q=80&w=800",
-        "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&q=80&w=800"
+        { url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800", label: "Varanda Gourmet" },
+        { url: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&q=80&w=800", label: "Área de Piscina" },
+        { url: "https://images.unsplash.com/photo-1599619351208-3e6c839d6828?auto=format&fit=crop&q=80&w=800", label: "Pergolado Zen" },
+        { url: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&q=80&w=800", label: "Forro de Bambu" }
     ];
 
     return (
-        <section className="bg-[var(--bg-light)] text-[var(--text-dark)] py-24 px-6 overflow-hidden">
-            <div className="max-w-6xl mx-auto">
+        <section className="bg-[var(--bg-light)] text-[var(--text-dark)] py-32 px-6 overflow-hidden">
+            <div className="max-w-7xl mx-auto">
 
-                {/* Números Animados */}
+                {/* Prova Social em Números - Gatilho de Escala */}
                 <motion.div
                     variants={stagger}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
-                    className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20"
+                    className="grid grid-cols-2 lg:grid-cols-4 gap-12 mb-28"
                 >
-                    <motion.div variants={fadeUp} className="text-center">
-                        <h3 className="text-4xl md:text-5xl font-bold text-[var(--accent-dark)] mb-2">
+                    <motion.div variants={fadeUp} className="flex flex-col items-center">
+                        <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
+                        <h3 className="text-5xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
                             +<AnimatedCounter target={200} />
                         </h3>
-                        <p className="text-sm md:text-base font-medium opacity-80">Projetos Entregues</p>
+                        <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)]">Casas Transformadas</p>
                     </motion.div>
-                    <motion.div variants={fadeUp} className="text-center">
-                        <h3 className="text-4xl md:text-5xl font-bold text-[var(--accent-dark)] mb-2">
+
+                    <motion.div variants={fadeUp} className="flex flex-col items-center">
+                        <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
+                        <h3 className="text-5xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
                             <AnimatedCounter target={12} delay={0.1} suffix="h" />
                         </h3>
-                        <p className="text-sm md:text-base font-medium opacity-80">Orçamento Express</p>
+                        <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)]">Resposta Express</p>
                     </motion.div>
-                    <motion.div variants={fadeUp} className="text-center">
-                        <h3 className="text-4xl md:text-5xl font-bold text-[var(--accent-dark)] mb-2">
+
+                    <motion.div variants={fadeUp} className="flex flex-col items-center">
+                        <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
+                        <h3 className="text-5xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
                             <AnimatedCounter target={100} delay={0.2} suffix="%" />
                         </h3>
-                        <p className="text-sm md:text-base font-medium opacity-80">Sob Medida</p>
+                        <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)]">Artesanal Sob Medida</p>
                     </motion.div>
-                    <motion.div variants={fadeUp} className="text-center">
-                        <h3 className="text-4xl md:text-5xl font-bold text-[var(--accent-dark)] mb-2">
+
+                    <motion.div variants={fadeUp} className="flex flex-col items-center">
+                        <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
+                        <h3 className="text-5xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
                             <AnimatedCounter target={10} delay={0.3} suffix="+" />
                         </h3>
-                        <p className="text-sm md:text-base font-medium opacity-80">Anos de Experiência</p>
+                        <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)]">Anos no Mercado</p>
                     </motion.div>
                 </motion.div>
 
-                {/* Galeria */}
+                {/* Galeria de Alta Aspiração */}
                 <motion.div
                     variants={fadeIn}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
                 >
-                    <div className="text-center mb-10">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">Transformação Real</h2>
-                        <p className="text-lg opacity-70">Deslize pelas nossas execuções recentes de forros de bambu em áreas de lazer.</p>
+                    <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+                        <div className="max-w-2xl text-left">
+                            <div className="flex items-center gap-2 mb-4 text-[var(--accent-dark)] font-bold uppercase tracking-widest text-xs">
+                                <Star size={16} fill="currentColor" />
+                                <span>Excelência em Execução</span>
+                            </div>
+                            <h2 className="text-4xl md:text-6xl font-black mb-6 leading-[1.1]">Inspirando <span className="text-[var(--accent-dark)]">novos momentos</span> ao ar livre</h2>
+                            <p className="text-xl opacity-70 leading-relaxed font-medium">Cada projeto é uma peça única, desenhada para se integrar harmonicamente à sua arquitetura e ao seu estilo de vida.</p>
+                        </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                         {images.map((img, i) => (
                             <motion.div
                                 key={i}
-                                className="relative h-64 md:h-80 overflow-hidden rounded-xl group"
-                                whileHover={{ scale: 1.02 }}
-                                transition={{ duration: 0.4, ease: "easeOut" }}
+                                className="relative aspect-[3/4] overflow-hidden rounded-3xl group shadow-2xl"
+                                whileHover={{ y: -10 }}
+                                transition={{ duration: 0.5, ease: "easeOut" }}
                             >
                                 <img
-                                    src={img}
-                                    alt={`Projeto Conexão Terra Bambu ${i + 1}`}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    src={img.url}
+                                    alt={img.label}
+                                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                                     loading="lazy"
                                 />
-                                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                                    <div className="text-white">
+                                        <p className="text-xs font-bold uppercase tracking-widest mb-1 text-[var(--accent)]">Projeto Real</p>
+                                        <h4 className="text-xl font-bold">{img.label}</h4>
+                                    </div>
+                                </div>
                             </motion.div>
                         ))}
                     </div>

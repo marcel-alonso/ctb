@@ -1,41 +1,52 @@
 import { motion } from "framer-motion";
 import { fadeUp, stagger } from "../shared/animations";
-import { Check } from "lucide-react";
+import { Check, ArrowRight, UserCheck } from "lucide-react";
+import { CONFIG, trackAndOpenWA } from "../config";
 
 export default function Solucao() {
     const products = [
         {
             title: "Forro Reto",
-            desc: "Perfeito para aplicar em varandas e garagens já cobertas. Traz conforto térmico e esconde vigas.",
-            features: ["Instalação rápida", "Isolamento térmico", "Visual clean"]
+            badge: "🏆 O Mais Escolhido",
+            desc: "Perfeito para varandas e garagens já cobertas. Traz conforto térmico imediato e esconde vigamentos com elegância.",
+            features: ["Instalação especializada", "Conforto térmico nobre", "Acabamento artesanal"],
+            img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600"
         },
         {
             title: "Pergolado Completo",
-            desc: "Estrutura robusta com forro de bambu sombreador. Cria um ambiente novo onde antes batia sol direto.",
-            features: ["Estrutura de madeira", "Sombra projetada", "Maior impacto visual"]
+            badge: "✨ Alto Padrão",
+            desc: "Estrutura robusta montada por especialistas. Sombreamento natural projetado pela nossa engenharia.",
+            features: ["Engenharia de campo", "Sombra arquitetônica", "Valorização estética"],
+            img: "https://images.unsplash.com/photo-1599619351208-3e6c839d6828?auto=format&fit=crop&q=80&w=600"
         },
         {
             title: "Revestimento Vertical",
-            desc: "Aplicação em paredes, muros ou fachadas para decoração ou privacidade no quintal.",
-            features: ["Privacidade", "Textura natural", "Aconchego imediato"]
+            badge: "🌿 Tendência",
+            desc: "Transformação de muros e fachadas. Equipes preparadas para lidar com grandes superfícies e detalhes.",
+            features: ["Privacidade absoluta", "Execução profissional", "Design biofílico"],
+            img: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&q=80&w=600"
         }
     ];
 
     return (
-        <section className="bg-[var(--bg)] py-24 px-6">
-            <div className="max-w-6xl mx-auto">
+        <section className="bg-[var(--bg)] py-24 px-6 relative overflow-hidden">
+            <div className="max-w-7xl mx-auto relative z-10">
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
                     variants={stagger}
-                    className="text-center mb-16"
+                    className="text-center mb-20"
                 >
-                    <motion.h2 variants={fadeUp} className="text-3xl md:text-5xl font-bold mb-4">
-                        A solução ideal para <span className="text-[var(--accent)]">cada espaço</span>
+                    <div className="flex items-center justify-center gap-2 text-[var(--accent)] font-bold mb-4 uppercase tracking-[0.2em] text-xs">
+                        <UserCheck size={18} />
+                        <span>Equipes de campo especializadas</span>
+                    </div>
+                    <motion.h2 variants={fadeUp} className="text-4xl md:text-6xl font-black mb-6">
+                        Projetos sob medida em <span className="text-[var(--accent)]">qualquer região</span>
                     </motion.h2>
-                    <motion.p variants={fadeUp} className="text-[var(--text-muted)] text-lg max-w-2xl mx-auto">
-                        Adaptamos o bambu para diferentes necessidades arquitetônicas, garantindo o melhor resultado estético e funcional.
+                    <motion.p variants={fadeUp} className="text-[var(--text-muted)] text-xl max-w-2xl mx-auto leading-relaxed font-medium">
+                        Atendimento presencial com consultores preparados e logística organizada para todo o território nacional.
                     </motion.p>
                 </motion.div>
 
@@ -44,28 +55,53 @@ export default function Solucao() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
                     variants={stagger}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                    className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4"
                 >
                     {products.map((product, i) => (
                         <motion.div
                             key={product.title}
                             variants={fadeUp}
-                            whileHover={{ y: -8, transition: { duration: 0.25, ease: "easeOut" } }}
-                            className="bg-[var(--bg-2)] border border-[var(--border)] rounded-2xl p-8 shadow-xl shadow-black/20"
+                            className="bg-[var(--bg-2)] border border-[var(--border)] rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col group"
                         >
-                            <h3 className="text-2xl font-bold mb-3">{product.title}</h3>
-                            <p className="text-[var(--text-muted)] mb-6 min-h-[5rem]">{product.desc}</p>
+                            {/* Imagem */}
+                            <div className="relative h-64 overflow-hidden">
+                                <img
+                                    src={product.img}
+                                    alt={product.title}
+                                    className="w-full h-full object-cover transition-transform duration-[1s] group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                                <span className="absolute top-4 right-4 bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-bold px-3 py-1 rounded-full z-10">
+                                    {product.badge}
+                                </span>
+                                <h3 className="absolute bottom-6 left-6 text-2xl font-bold text-white z-10 leading-tight">
+                                    {product.title}
+                                </h3>
+                            </div>
 
-                            <ul className="space-y-3">
-                                {product.features.map(f => (
-                                    <li key={f} className="flex items-center gap-2">
-                                        <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[var(--surface)] flex items-center justify-center text-[var(--accent)]">
-                                            <Check size={12} strokeWidth={3} />
-                                        </span>
-                                        <span className="text-sm font-medium">{f}</span>
-                                    </li>
-                                ))}
-                            </ul>
+                            {/* Info */}
+                            <div className="p-8 flex flex-col flex-1">
+                                <p className="text-[var(--text-muted)] mb-8 text-base leading-relaxed h-[4.5rem] overflow-hidden font-medium">
+                                    {product.desc}
+                                </p>
+
+                                <ul className="space-y-4 mb-10 flex-1">
+                                    {product.features.map(f => (
+                                        <li key={f} className="flex items-center gap-3">
+                                            <Check size={16} className="text-[var(--accent)]" />
+                                            <span className="text-sm font-bold text-white/80 uppercase tracking-wide">{f}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                <button
+                                    onClick={() => trackAndOpenWA(`Olá! Tenho interesse no ${product.title}. Pode me passar um orçamento?`, `Product_Click_${product.title.replace(' ', '_')}`)}
+                                    className="w-full bg-white/5 hover:bg-[var(--accent)] text-white font-black py-5 rounded-2xl flex items-center justify-center gap-2 transition-all duration-300 border border-white/10 hover:border-[var(--accent)] group/btn"
+                                >
+                                    SOLICITAR ORÇAMENTO
+                                    <ArrowRight size={18} className="group-hover/btn:translate-x-2 transition-transform" />
+                                </button>
+                            </div>
                         </motion.div>
                     ))}
                 </motion.div>

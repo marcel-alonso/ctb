@@ -1,61 +1,74 @@
 import { motion } from "framer-motion";
-import { fadeUp, stagger, slideLeft } from "../shared/animations";
-import { Compass, Ruler, Zap, Hammer, Leaf, PhoneCall } from "lucide-react";
+import { fadeUp, stagger, slideLeft, fadeIn } from "../shared/animations";
+import { Compass, Ruler, Zap, Hammer, Leaf, PhoneCall, Award } from "lucide-react";
 
 export default function Autoridade() {
     const differentials = [
         {
-            Title: "Diagnóstico honesto",
-            Text: "Recomendamos só o que funciona pro seu caso",
-            Icon: Compass
+            Title: "Diagnóstico Honesto",
+            Text: "Não vendemos o que você não precisa. Recomendamos a solução que realmente funciona para a incidência de sol do seu espaço.",
+            Icon: Compass,
+            Gatilho: "Ética"
         },
         {
-            Title: "Sob medida real",
-            Text: "Nenhuma peça genérica. Tudo calculado pro seu espaço",
-            Icon: Ruler
+            Title: "Sob Medida Real",
+            Text: "Nada de peças prontas ou genéricas. Cada bambu é selecionado, cortado e ajustado milimetricamente para o seu projeto.",
+            Icon: Ruler,
+            Gatilho: "Exclusividade"
         },
         {
             Title: "Orçamento em 12h",
-            Text: "Você envia fotos, a gente responde rápido",
-            Icon: Zap
+            Text: "Sabemos que você tem pressa. Nosso processo digital permite enviar fotos e receber seu valor exato em tempo recorde.",
+            Icon: Zap,
+            Gatilho: "Velocidade"
         },
         {
-            Title: "Instalação com método",
-            Text: "Equipe treinada, execução planejada, sem improviso",
-            Icon: Hammer
+            Title: "Instalação com Método",
+            Text: "Equipe própria treinada em montagem silenciosa e limpa. Cronograma seguido à risca, sem 'surpresas' de última hora.",
+            Icon: Hammer,
+            Gatilho: "Segurança"
         },
         {
-            Title: "Material tratado",
-            Text: "Bambu que dura (não o que apodreceu no vizinho)",
-            Icon: Leaf
+            Title: "Material Tratado",
+            Text: "Utilizamos bambu com tratamento industrial de alta durabilidade. Resistente a pragas e com acabamento premium de longa vida.",
+            Icon: Leaf,
+            Gatilho: "Qualidade"
         },
         {
-            Title: "Acompanhamento pós-obra",
-            Text: "Não sumimos depois. Suporte real se precisar",
-            Icon: PhoneCall
+            Title: "Acompanhamento Real",
+            Text: "Damos suporte total após a entrega. Nossa relação com o cliente não termina quando a última peça é instalada.",
+            Icon: PhoneCall,
+            Gatilho: "Cuidado"
         }
     ];
 
     return (
-        <section className="bg-[var(--bg-2)] border-y border-[var(--border)] py-24 px-6 relative overflow-hidden">
+        <section className="bg-[var(--bg)] py-32 px-6 relative overflow-hidden">
 
-            {/* Decoração de fundo sutil */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-[var(--accent)]/5 rounded-full blur-[120px] pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-[var(--gold)]/5 rounded-full blur-[120px] pointer-events-none" />
+            {/* Background Atmosphere */}
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[var(--accent)]/10 rounded-full blur-[150px] pointer-events-none opacity-30" />
+            <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[var(--gold)]/10 rounded-full blur-[150px] pointer-events-none opacity-30" />
 
-            <div className="max-w-6xl mx-auto relative z-10">
+            <div className="max-w-7xl mx-auto relative z-10">
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
                     variants={stagger}
-                    className="text-center mb-16"
+                    className="text-center mb-24"
                 >
-                    <motion.h2 variants={fadeUp} className="text-3xl md:text-5xl font-bold mb-4">
-                        Por que escolher a <span className="text-[var(--gold)]">Terra Bambu</span>?
+                    <motion.div
+                        variants={fadeUp}
+                        className="inline-flex items-center gap-2 mb-6 text-[var(--gold)] text-xs font-bold uppercase tracking-[0.3em]"
+                    >
+                        <Award size={18} />
+                        <span>O Padrão Terra Bambu</span>
+                    </motion.div>
+                    <motion.h2 variants={fadeUp} className="text-4xl md:text-7xl font-black mb-6 tracking-tight text-white">
+                        Por que confiar seu espaço <br className="hidden md:block" /> à <span className="text-[var(--gold)]">Terra Bambu</span>?
                     </motion.h2>
-                    <motion.p variants={fadeUp} className="text-[var(--text-muted)] text-lg max-w-2xl mx-auto">
-                        Tratamos a sua casa com o respeito que ela merece. Sem bagunça, sem material descartável, com método de ponta a ponta.
+                    <motion.p variants={fadeUp} className="text-[var(--text-muted)] text-xl max-w-3xl mx-auto leading-relaxed">
+                        Unimos o conhecimento ancestral do bambu com métodos modernos de engenharia e atendimento express. O resultado? Uma obra impecável e sem dor de cabeça.
                     </motion.p>
                 </motion.div>
 
@@ -64,23 +77,47 @@ export default function Autoridade() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
                     variants={stagger}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
                 >
                     {differentials.map((item, i) => (
                         <motion.div
                             key={i}
-                            variants={slideLeft}
-                            className="bg-[var(--surface)] border border-white/5 p-6 rounded-2xl flex items-start gap-4 hover:border-[var(--border)] transition-colors"
+                            variants={fadeUp}
+                            whileHover={{ scale: 1.02 }}
+                            className="group bg-[var(--bg-2)] border border-white/5 p-8 rounded-[2rem] flex flex-col items-start hover:border-[var(--accent)]/40 transition-all duration-500 shadow-xl"
                         >
-                            <div className="bg-[#0D1810] p-3 rounded-xl shadow-inner text-[var(--accent)] flex-shrink-0">
-                                <item.Icon size={24} />
+                            <div className="mb-8 p-4 rounded-2xl bg-[var(--bg)] text-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:text-white transition-colors duration-500 shadow-inner">
+                                <item.Icon size={32} strokeWidth={1.5} />
                             </div>
-                            <div>
-                                <h4 className="font-bold text-lg mb-1">{item.Title}</h4>
-                                <p className="text-[var(--text-muted)] text-sm leading-relaxed">{item.Text}</p>
+
+                            <div className="flex items-center gap-2 mb-4">
+                                <span className="text-[var(--gold)] text-[10px] font-bold uppercase tracking-widest bg-[var(--gold)]/10 px-2 py-0.5 rounded">
+                                    {item.Gatilho}
+                                </span>
                             </div>
+
+                            <h4 className="text-2xl font-bold text-white mb-4 group-hover:text-[var(--accent)] transition-colors line-clamp-1">
+                                {item.Title}
+                            </h4>
+                            <p className="text-[var(--text-muted)] text-base leading-relaxed font-medium">
+                                {item.Text}
+                            </p>
                         </motion.div>
                     ))}
+                </motion.div>
+
+                {/* Mensagem Final de Autoridade */}
+                <motion.div
+                    variants={fadeIn}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="mt-24 text-center"
+                >
+                    <div className="inline-block p-1 rounded-full bg-gradient-to-r from-transparent via-[var(--border)] to-transparent w-full max-w-2xl mb-12" />
+                    <p className="text-[var(--text-muted)] italic text-lg max-w-2xl mx-auto">
+                        "Nossa missão não é apenas instalar um forro, é criar a atmosfera ideal para as melhores memórias da sua família."
+                    </p>
                 </motion.div>
             </div>
         </section>

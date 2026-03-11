@@ -1,94 +1,93 @@
 import { motion } from "framer-motion";
 import { fadeUp, stagger } from "../shared/animations";
-import { Camera, ClipboardCheck, CalendarCheck } from "lucide-react";
+import { Camera, ClipboardCheck, CalendarCheck, ArrowRight } from "lucide-react";
 
 export default function ComoFunciona() {
     const steps = [
         {
-            num: "1",
-            title: "Você manda 2 fotos + medida",
-            desc: "Nem precisa ser preciso — a gente ajuda a entender o espaço.",
-            Icon: Camera
+            num: "01",
+            title: "Snapshot Instantâneo",
+            desc: "Você nos envia apenas 2 fotos do espaço e uma medida aproximada. Sem burocracia, sem visitas demoradas agora.",
+            Icon: Camera,
+            Detail: "Direto pelo WhatsApp"
         },
         {
-            num: "2",
-            title: "Recebe orientação clara em até 12h úteis",
-            desc: "Qual material, qual processo, qual custo. Direto ao ponto.",
-            Icon: ClipboardCheck
+            num: "02",
+            title: "Orientação Estratégica",
+            desc: "Em até 12h úteis, você recebe um diagnóstico completo: material ideal, processo de obra e o valor exato.",
+            Icon: ClipboardCheck,
+            Detail: "Transparência total"
         },
         {
-            num: "3",
-            title: "Combina e agenda a instalação",
-            desc: "Planejamos juntos. Sem surpresa de prazo ou valor no meio da obra.",
-            Icon: CalendarCheck
+            num: "03",
+            title: "Execução Master",
+            desc: "Agendamos a instalação. Nossa equipe entra, transforma seu espaço com método e sai deixando tudo limpo.",
+            Icon: CalendarCheck,
+            Detail: "Rapidez e Limpeza"
         }
     ];
 
     return (
-        <section className="bg-[var(--bg)] py-24 px-6 relative overflow-hidden">
-            <div className="max-w-4xl mx-auto relative z-10">
+        <section className="bg-[var(--bg)] py-32 px-6 relative overflow-hidden">
+            <div className="max-w-6xl mx-auto relative z-10">
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
                     variants={stagger}
-                    className="text-center mb-20"
+                    className="text-center mb-28"
                 >
-                    <motion.h2 variants={fadeUp} className="text-3xl md:text-5xl font-bold mb-4">
-                        Como funciona o <span className="text-[var(--accent)]">Orçamento Express</span>
+                    <motion.div
+                        variants={fadeUp}
+                        className="inline-block px-3 py-1 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-[10px] font-bold uppercase tracking-widest mb-6"
+                    >
+                        Método Ágil
+                    </motion.div>
+                    <motion.h2 variants={fadeUp} className="text-4xl md:text-7xl font-black mb-6 tracking-tight text-white">
+                        Do sonho ao projeto em <br className="hidden md:block" /> <span className="text-[var(--accent)]">tempo recorde</span>
                     </motion.h2>
-                    <motion.p variants={fadeUp} className="text-[var(--text-muted)] text-lg">
-                        Descomplicamos o processo para você resolver seu problema rápido.
+                    <motion.p variants={fadeUp} className="text-[var(--text-muted)] text-xl max-w-2xl mx-auto font-medium">
+                        Eliminamos a complicação das obras tradicionais. Nosso processo é 100% focado em entregar resultado com o mínimo de atrito possível.
                     </motion.p>
                 </motion.div>
 
-                <div className="relative">
-                    {/* Progress Line */}
-                    <div className="absolute left-6 md:left-[50%] top-0 bottom-0 w-[2px] bg-[var(--border)] -translate-x-1/2 hidden md:block" />
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                    {/* Decorative Arrow for Desktop */}
+                    <div className="hidden md:block absolute top-1/4 left-1/3 w-1/6 border-t-2 border-dashed border-white/10 z-0" />
+                    <div className="hidden md:block absolute top-1/4 left-2/3 w-1/6 border-t-2 border-dashed border-white/10 z-0" />
 
-                    <motion.div
-                        className="absolute left-6 md:left-[50%] top-0 bottom-0 w-[2px] bg-[var(--accent)] -translate-x-1/2 origin-top hidden md:block"
-                        initial={{ scaleY: 0 }}
-                        whileInView={{ scaleY: 1 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-                    />
+                    {steps.map((step, i) => (
+                        <motion.div
+                            key={step.num}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-80px" }}
+                            variants={fadeUp}
+                            className="group relative flex flex-col items-center text-center p-10 bg-[var(--bg-2)] border border-white/5 rounded-[2.5rem] hover:border-[var(--accent)]/30 transition-all duration-500 shadow-2xl"
+                        >
+                            <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-14 h-14 rounded-2xl bg-[var(--accent)] text-white flex items-center justify-center font-black text-2xl shadow-xl shadow-[var(--accent)]/20 rotate-3 group-hover:rotate-0 transition-transform">
+                                {step.num}
+                            </div>
 
-                    <div className="space-y-12 md:space-y-24">
-                        {steps.map((step, i) => {
-                            const isEven = i % 2 === 0;
-                            return (
-                                <motion.div
-                                    key={step.num}
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    viewport={{ once: true, margin: "-80px" }}
-                                    variants={fadeUp}
-                                    className={`relative flex flex-col md:flex-row items-center gap-6 md:gap-12 ${isEven ? "md:flex-row-reverse" : ""
-                                        }`}
-                                >
-                                    {/* Ponto / Número */}
-                                    <div className="absolute left-0 md:left-[50%] md:-translate-x-1/2 top-0 md:top-1/2 md:-translate-y-1/2 w-12 h-12 rounded-full bg-[var(--bg)] border-2 border-[var(--accent)] text-[var(--accent)] flex items-center justify-center font-bold text-xl z-20 shadow-[0_0_20px_rgba(126,200,80,0.3)]">
-                                        {step.num}
-                                    </div>
+                            <div className="mb-8 mt-4 text-[var(--gold)]">
+                                <step.Icon size={48} strokeWidth={1.2} />
+                            </div>
 
-                                    {/* Spacer for timeline centering */}
-                                    <div className="hidden md:block w-1/2" />
+                            <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[var(--accent)] transition-colors">
+                                {step.title}
+                            </h3>
 
-                                    {/* Content */}
-                                    <div className={`w-full md:w-1/2 bg-[var(--surface)] p-8 rounded-2xl border border-white/5 pl-16 md:pl-8 ${isEven ? "md:text-right" : "md:text-left"
-                                        }`}>
-                                        <div className={`flex items-center gap-3 mb-4 w-full ${isEven ? 'md:justify-end' : ''}`}>
-                                            <step.Icon className="text-[var(--gold)] md:hidden" size={24} />
-                                            <h3 className="text-xl md:text-2xl font-bold">{step.title}</h3>
-                                            <step.Icon className="text-[var(--gold)] hidden md:block text-right" size={28} />
-                                        </div>
-                                        <p className="text-[var(--text-muted)] text-base md:text-lg leading-relaxed">{step.desc}</p>
-                                    </div>
-                                </motion.div>
-                            );
-                        })}
-                    </div>
+                            <p className="text-[var(--text-muted)] text-base leading-relaxed mb-6 font-medium">
+                                {step.desc}
+                            </p>
+
+                            <div className="mt-auto pt-4 border-t border-white/5 w-full">
+                                <span className="text-[var(--accent)] text-[10px] font-bold uppercase tracking-[0.2em]">
+                                    {step.Detail}
+                                </span>
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>
