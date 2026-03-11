@@ -23,10 +23,10 @@ const AnimatedCounter = ({ target, suffix = "", delay = 0 }) => {
 
 export default function ProvaVisual() {
     const images = [
-        { url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800", label: "Varanda Gourmet" },
-        { url: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&q=80&w=800", label: "Área de Piscina" },
-        { url: "https://images.unsplash.com/photo-1599619351208-3e6c839d6828?auto=format&fit=crop&q=80&w=800", label: "Pergolado Zen" },
-        { url: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&q=80&w=800", label: "Forro de Bambu" }
+        { url: "/lp/forros-bambu/assets/images/hero-bambu.png", label: "Varanda Gourmet" },
+        { url: "/lp/forros-bambu/assets/images/forro-reto.png", label: "Forro de Bambu Paralelo" },
+        { url: "/lp/forros-bambu/assets/images/pergolado.png", label: "Pergolado de Luxo" },
+        { url: "/lp/forros-bambu/assets/images/revestimento.png", label: "Revestimento Biofílico" }
     ];
 
     return (
