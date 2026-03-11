@@ -1,8 +1,8 @@
 import { motion, useInView, useSpring, useTransform, useMotionValue } from "framer-motion";
 import { useRef, useEffect } from "react";
-import { fadeUp, stagger } from "../shared/animations";
+import { fadeUp, stagger, fadeIn } from "../shared/animations";
 
-const AnimatedCounter = ({ target, suffix = "" }) => {
+const AnimatedCounter = ({ target, suffix = "", delay = 0 }) => {
     const count = useMotionValue(0);
     const spring = useSpring(count, { stiffness: 70, damping: 18 });
     const rounded = useTransform(spring, v => Math.round(v));
@@ -11,99 +11,91 @@ const AnimatedCounter = ({ target, suffix = "" }) => {
 
     useEffect(() => {
         if (isInView) {
-            spring.set(target);
+            setTimeout(() => {
+                spring.set(target);
+            }, delay * 1000);
         }
-    }, [isInView, spring, target]);
+    }, [isInView, spring, target, delay]);
 
-    return (
-        <span ref={ref} className="font-bold">
-            <motion.span>{rounded}</motion.span>{suffix}
-        </span>
-    );
+    return <span ref={ref}><motion.span>{rounded}</motion.span>{suffix}</span>;
 };
 
 export default function ProvaVisual() {
     const images = [
-        "/assets/lp/forros-bambu/aplicacao-forro-01-1600.webp",
-        "/assets/lp/forros-bambu/entrelaçado-instalado-01-1600.webp",
-        "/assets/lp/forros-bambu/filepa-instalado-01-1600.webp",
-        "/assets/lp/forros-bambu/rolico-instalado-01-1600.webp"
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1599619351208-3e6c839d6828?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&q=80&w=800"
     ];
 
     return (
-        <section className="py-24 bg-[var(--bg-light)] text-[var(--text-dark)] overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6">
+        <section className="bg-[var(--bg-light)] text-[var(--text-dark)] py-24 px-6 overflow-hidden">
+            <div className="max-w-6xl mx-auto">
 
-                {/* Numbers */}
+                {/* Números Animados */}
                 <motion.div
                     variants={stagger}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
-                    className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 text-center"
+                    className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20"
                 >
-                    <motion.div variants={fadeUp} className="flex flex-col items-center">
-                        <div className="text-4xl md:text-5xl text-[var(--accent)] mb-2">
+                    <motion.div variants={fadeUp} className="text-center">
+                        <h3 className="text-4xl md:text-5xl font-bold text-[var(--accent-dark)] mb-2">
                             +<AnimatedCounter target={200} />
-                        </div>
-                        <div className="text-sm font-medium uppercase tracking-wider text-[var(--text-muted)]">
-                            Projetos em SP
-                        </div>
+                        </h3>
+                        <p className="text-sm md:text-base font-medium opacity-80">Projetos Entregues</p>
                     </motion.div>
-
-                    <motion.div variants={fadeUp} className="flex flex-col items-center">
-                        <div className="text-4xl md:text-5xl text-[var(--accent)] mb-2">
-                            <AnimatedCounter target={100} suffix="%" />
-                        </div>
-                        <div className="text-sm font-medium uppercase tracking-wider text-[var(--text-muted)]">
-                            Sob Medida
-                        </div>
+                    <motion.div variants={fadeUp} className="text-center">
+                        <h3 className="text-4xl md:text-5xl font-bold text-[var(--accent-dark)] mb-2">
+                            <AnimatedCounter target={12} delay={0.1} suffix="h" />
+                        </h3>
+                        <p className="text-sm md:text-base font-medium opacity-80">Orçamento Express</p>
                     </motion.div>
-
-                    <motion.div variants={fadeUp} className="flex flex-col items-center">
-                        <div className="text-4xl md:text-5xl text-[var(--accent)] mb-2">
-                            <AnimatedCounter target={12} suffix="h" />
-                        </div>
-                        <div className="text-sm font-medium uppercase tracking-wider text-[var(--text-muted)]">
-                            Orçamento Express
-                        </div>
+                    <motion.div variants={fadeUp} className="text-center">
+                        <h3 className="text-4xl md:text-5xl font-bold text-[var(--accent-dark)] mb-2">
+                            <AnimatedCounter target={100} delay={0.2} suffix="%" />
+                        </h3>
+                        <p className="text-sm md:text-base font-medium opacity-80">Sob Medida</p>
                     </motion.div>
-
-                    <motion.div variants={fadeUp} className="flex flex-col items-center">
-                        <div className="text-4xl md:text-5xl text-[var(--accent)] mb-2">
-                            <AnimatedCounter target={5} />
-                            <span className="text-[var(--gold)] ml-1">★</span>
-                        </div>
-                        <div className="text-sm font-medium uppercase tracking-wider text-[var(--text-muted)]">
-                            Avaliação Média
-                        </div>
+                    <motion.div variants={fadeUp} className="text-center">
+                        <h3 className="text-4xl md:text-5xl font-bold text-[var(--accent-dark)] mb-2">
+                            <AnimatedCounter target={10} delay={0.3} suffix="+" />
+                        </h3>
+                        <p className="text-sm md:text-base font-medium opacity-80">Anos de Experiência</p>
                     </motion.div>
                 </motion.div>
 
-                {/* Gallery */}
+                {/* Galeria */}
                 <motion.div
-                    variants={stagger}
+                    variants={fadeIn}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
                 >
-                    {images.map((src, index) => (
-                        <motion.div
-                            key={index}
-                            variants={fadeUp}
-                            whileHover={{ y: -8, transition: { duration: 0.25, ease: "easeOut" } }}
-                            className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg group"
-                        >
-                            <img
-                                src={src}
-                                alt={`Projeto Terra Bambu ${index + 1}`}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                loading="lazy"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        </motion.div>
-                    ))}
+                    <div className="text-center mb-10">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4">Transformação Real</h2>
+                        <p className="text-lg opacity-70">Deslize pelas nossas execuções recentes de forros de bambu em áreas de lazer.</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {images.map((img, i) => (
+                            <motion.div
+                                key={i}
+                                className="relative h-64 md:h-80 overflow-hidden rounded-xl group"
+                                whileHover={{ scale: 1.02 }}
+                                transition={{ duration: 0.4, ease: "easeOut" }}
+                            >
+                                <img
+                                    src={img}
+                                    alt={`Projeto Conexão Terra Bambu ${i + 1}`}
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    loading="lazy"
+                                />
+                                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                            </motion.div>
+                        ))}
+                    </div>
                 </motion.div>
 
             </div>

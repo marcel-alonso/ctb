@@ -2,6 +2,13 @@ import { useScroll, motion } from "framer-motion";
 import WhatsAppFloat from "./components/WhatsAppFloat";
 import Hero from "./components/Hero";
 import ProvaVisual from "./components/ProvaVisual";
+import Solucao from "./components/Solucao";
+import Autoridade from "./components/Autoridade";
+import ComoFunciona from "./components/ComoFunciona";
+import Depoimentos from "./components/Depoimentos";
+import FAQ from "./components/FAQ";
+import CTAFinal from "./components/CTAFinal";
+
 export default function App() {
     const { scrollYProgress } = useScroll();
     return (
@@ -12,6 +19,12 @@ export default function App() {
             <main>
                 <Hero />
                 <ProvaVisual />
+                <Solucao />
+                <Autoridade />
+                <ComoFunciona />
+                <Depoimentos />
+                <FAQ />
+                <CTAFinal />
             </main>
         </>
     );
