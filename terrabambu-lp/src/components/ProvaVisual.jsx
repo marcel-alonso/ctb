@@ -40,22 +40,22 @@ export default function ProvaVisual() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
-                    className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-20 md:mb-28"
+                    className="grid grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-20 md:mb-28"
                 >
                     <motion.div variants={fadeUp} className="flex flex-col items-center">
                         <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
                         <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
-                            +<AnimatedCounter target={200} />
+                            <AnimatedCounter target={10} delay={0} suffix="+" />
                         </h3>
-                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)]">Casas Transformadas</p>
+                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">Anos no Mercado</p>
                     </motion.div>
 
                     <motion.div variants={fadeUp} className="flex flex-col items-center">
                         <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
                         <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
-                            <AnimatedCounter target={12} delay={0.1} suffix="h" />
+                            +<AnimatedCounter target={100} delay={0.1} />
                         </h3>
-                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)]">Resposta Express</p>
+                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">Projetos Executados</p>
                     </motion.div>
 
                     <motion.div variants={fadeUp} className="flex flex-col items-center">
@@ -63,15 +63,31 @@ export default function ProvaVisual() {
                         <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
                             <AnimatedCounter target={100} delay={0.2} suffix="%" />
                         </h3>
-                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)]">Artesanal Sob Medida</p>
+                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">Artesanal Sob Medida</p>
                     </motion.div>
 
                     <motion.div variants={fadeUp} className="flex flex-col items-center">
                         <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
                         <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
-                            <AnimatedCounter target={10} delay={0.3} suffix="+" />
+                            <AnimatedCounter target={6} delay={0.3} suffix="h" />
                         </h3>
-                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)]">Anos no Mercado</p>
+                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">Resposta Express</p>
+                    </motion.div>
+
+                    <motion.div variants={fadeUp} className="flex flex-col items-center">
+                        <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
+                        <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
+                            <AnimatedCounter target={5} delay={0.4} />
+                        </h3>
+                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">Anos de Garantia</p>
+                    </motion.div>
+
+                    <motion.div variants={fadeUp} className="flex flex-col items-center">
+                        <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
+                        <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
+                            <AnimatedCounter target={100} delay={0.5} suffix="%" />
+                        </h3>
+                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">Ecológico</p>
                     </motion.div>
                 </motion.div>
 
