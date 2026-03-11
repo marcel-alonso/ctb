@@ -105,6 +105,10 @@ export default function Solucao() {
                         </motion.div>
                     ))}
                 </motion.div>
+
+                <div className="mt-20">
+                    <ScrollIndicator color="var(--accent-dark)" label="Ver nossa autoridade" />
+                </div>
             </div>
         </section>
     );

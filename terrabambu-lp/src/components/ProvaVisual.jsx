@@ -2,6 +2,7 @@ import { motion, useInView, useSpring, useTransform, useMotionValue } from "fram
 import { useRef, useEffect } from "react";
 import { fadeUp, stagger, fadeIn } from "../shared/animations";
 import { Star } from "lucide-react";
+import ScrollIndicator from "./ScrollIndicator";
 
 const AnimatedCounter = ({ target, suffix = "", delay = 0 }) => {
     const count = useMotionValue(0);
@@ -30,7 +31,7 @@ export default function ProvaVisual() {
     ];
 
     return (
-        <section className="bg-[var(--bg-light)] text-[var(--text-dark)] py-32 px-6 overflow-hidden">
+        <section className="bg-[var(--bg-light)] text-[var(--text-dark)] py-20 md:py-32 px-6 overflow-hidden">
             <div className="max-w-7xl mx-auto">
 
                 {/* Prova Social em Números - Gatilho de Escala */}
@@ -39,38 +40,38 @@ export default function ProvaVisual() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
-                    className="grid grid-cols-2 lg:grid-cols-4 gap-12 mb-28"
+                    className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-20 md:mb-28"
                 >
                     <motion.div variants={fadeUp} className="flex flex-col items-center">
                         <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
-                        <h3 className="text-5xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
+                        <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
                             +<AnimatedCounter target={200} />
                         </h3>
-                        <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)]">Casas Transformadas</p>
+                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)]">Casas Transformadas</p>
                     </motion.div>
 
                     <motion.div variants={fadeUp} className="flex flex-col items-center">
                         <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
-                        <h3 className="text-5xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
+                        <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
                             <AnimatedCounter target={12} delay={0.1} suffix="h" />
                         </h3>
-                        <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)]">Resposta Express</p>
+                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)]">Resposta Express</p>
                     </motion.div>
 
                     <motion.div variants={fadeUp} className="flex flex-col items-center">
                         <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
-                        <h3 className="text-5xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
+                        <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
                             <AnimatedCounter target={100} delay={0.2} suffix="%" />
                         </h3>
-                        <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)]">Artesanal Sob Medida</p>
+                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)]">Artesanal Sob Medida</p>
                     </motion.div>
 
                     <motion.div variants={fadeUp} className="flex flex-col items-center">
                         <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
-                        <h3 className="text-5xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
+                        <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
                             <AnimatedCounter target={10} delay={0.3} suffix="+" />
                         </h3>
-                        <p className="text-xs md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)]">Anos no Mercado</p>
+                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)]">Anos no Mercado</p>
                     </motion.div>
                 </motion.div>
 
@@ -81,18 +82,18 @@ export default function ProvaVisual() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
                 >
-                    <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-                        <div className="max-w-2xl text-left">
-                            <div className="flex items-center gap-2 mb-4 text-[var(--accent-dark)] font-bold uppercase tracking-widest text-xs">
+                    <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 text-center md:text-left">
+                        <div className="max-w-2xl mx-auto md:mx-0">
+                            <div className="flex items-center justify-center md:justify-start gap-2 mb-4 text-[var(--accent-dark)] font-bold uppercase tracking-widest text-xs">
                                 <Star size={16} fill="currentColor" />
                                 <span>Excelência em Execução</span>
                             </div>
-                            <h2 className="text-4xl md:text-6xl font-black mb-6 leading-[1.1]">Inspirando <span className="text-[var(--accent-dark)]">novos momentos</span> ao ar livre</h2>
-                            <p className="text-xl opacity-70 leading-relaxed font-medium">Cada projeto é uma peça única, desenhada para se integrar harmonicamente à sua arquitetura e ao seu estilo de vida.</p>
+                            <h2 className="text-3xl md:text-6xl font-black mb-6 leading-[1.1]">Inspirando <span className="text-[var(--accent-dark)]">novos momentos</span> ao ar livre</h2>
+                            <p className="text-lg md:text-xl opacity-70 leading-relaxed font-medium">Cada projeto é uma peça única, desenhada para se integrar harmonicamente à sua arquitetura e ao seu estilo de vida.</p>
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {images.map((img, i) => (
                             <motion.div
                                 key={i}
@@ -117,6 +118,9 @@ export default function ProvaVisual() {
                     </div>
                 </motion.div>
 
+                <div className="mt-20">
+                    <ScrollIndicator color="var(--accent-dark)" label="Depoimentos Reais" />
+                </div>
             </div>
         </section>
     );

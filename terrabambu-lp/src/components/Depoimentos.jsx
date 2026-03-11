@@ -1,83 +1,85 @@
 import { motion } from "framer-motion";
 import { fadeUp, stagger, fadeIn } from "../shared/animations";
 import { Quote, Star, CheckCircle } from "lucide-react";
+import ScrollIndicator from "./ScrollIndicator";
 
 export default function Depoimentos() {
     const reviews = [
-        { text: "A área externa era um forno. Hoje é onde a família fica todo fim de semana. O bambu trouxe vida nova para nossa varanda.", author: "Família Rodrigues", city: "Alphaville", stars: 5 },
-        { text: "Perguntei para 3 empresas. A Terra Bambu foi a única que respondeu rápido e com clareza. Instalação impecável.", author: "Carlos M.", city: "Barueri", stars: 5 },
-        { text: "Tinha medo do bambu apodrecer. Explicaram tudo, fizeram certo. Está impecável há 2 anos, mesmo com as chuvas.", author: "Ana P.", city: "Jundiaí", stars: 5 },
-        { text: "Área gourmet que ninguém usava pela temperatura. Hoje recebo toda semana com orgulho. Recomendo muito!", author: "Marcos T.", city: "Campinas", stars: 5 },
-        { text: "Instalação limpinha. Sem bagunça, sem surpresa. O resultado estético superou as expectativas da minha arquiteta.", author: "Renata S.", city: "São Paulo", stars: 5 },
-        { text: "Orçamento em menos de 12h como prometido no site. Isso já diz tudo sobre a seriedade da empresa. Nota 10.", author: "Pedro L.", city: "Barueri", stars: 5 }
+        {
+            name: "Ricardo A.",
+            role: "Arquiteto",
+            text: "O acabamento superou minhas expectativas. O detalhamento do bambu paralelo trouxe uma sofisticação que poucos materiais conseguem.",
+            rating: 5
+        },
+        {
+            name: "Mariana S.",
+            role: "Proprietária em Alphaville",
+            text: "A equipe foi impecável. Instalação rápida, limpa e o resultado final transformou meu espaço gourmet em um refúgio.",
+            rating: 5
+        },
+        {
+            name: "Lucas M.",
+            role: "Engenheiro Civil",
+            text: "Impressionado com a gestão do projeto. Tudo digital, transparente e executado com maestria técnica.",
+            rating: 5
+        }
     ];
 
     return (
-        <section className="bg-[var(--bg-light)] text-[var(--text-dark)] py-32 px-6 relative overflow-hidden">
-            <div className="max-w-7xl mx-auto relative z-10">
+        <section className="bg-[var(--bg-light)] text-[var(--text-dark)] py-20 md:py-32 px-6">
+            <div className="max-w-7xl mx-auto">
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, margin: "-80px" }}
+                    viewport={{ once: true }}
                     variants={stagger}
-                    className="text-center mb-24"
+                    className="text-center mb-16 md:mb-20"
                 >
-                    <motion.div
-                        variants={fadeUp}
-                        className="flex items-center justify-center gap-2 mb-4 text-[var(--accent-dark)] font-bold text-xs uppercase tracking-[0.3em]"
-                    >
-                        <CheckCircle size={18} />
-                        <span>100% Clientes Satisfeitos</span>
-                    </motion.div>
-                    <motion.h2 variants={fadeUp} className="text-4xl md:text-7xl font-black mb-6 tracking-tight">
-                        Vozes de quem já vive essa <br className="hidden md:block" /> <span className="text-[var(--accent-dark)]">transformação</span>
-                    </motion.h2>
-                    <motion.p variants={fadeUp} className="text-xl opacity-75 max-w-2xl mx-auto font-medium leading-relaxed">
-                        Não é apenas sobre instalar bambu — é sobre devolver o prazer de conviver nas áreas externas da sua casa.
-                    </motion.p>
+                    <div className="flex justify-center mb-6">
+                        <div className="flex gap-1">
+                            {[1, 2, 3, 4, 5].map(i => <Star key={i} size={20} fill="var(--accent-dark)" className="text-[var(--accent-dark)]" />)}
+                        </div>
+                    </div>
+                    <h2 className="text-3xl md:text-6xl font-black mb-6">O que dizem nossos <span className="text-[var(--accent-dark)]">clientes</span></h2>
                 </motion.div>
 
-                <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-80px" }}
-                    variants={stagger}
-                    className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8"
-                >
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                     {reviews.map((rev, i) => (
                         <motion.div
                             key={i}
                             variants={fadeUp}
-                            whileHover={{ y: -8, transition: { duration: 0.25, ease: "easeOut" } }}
-                            className="break-inside-avoid bg-white p-10 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-black/5 relative flex flex-col items-start"
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            className="bg-white p-8 rounded-3xl shadow-xl flex flex-col relative"
                         >
-                            <div className="flex text-[var(--gold)] mb-6">
-                                {[...Array(rev.stars)].map((_, idx) => <Star key={idx} size={16} fill="currentColor" />)}
-                            </div>
-
-                            <Quote size={40} className="text-[var(--accent)]/10 absolute top-8 right-8" />
-
-                            <p className="font-semibold text-lg md:text-xl leading-relaxed mb-8 text-[var(--bg)] italic">
-                                &ldquo;{rev.text}&rdquo;
-                            </p>
-
-                            <div className="mt-auto flex flex-col">
-                                <strong className="text-base font-black tracking-tight">{rev.author}</strong>
-                                <span className="text-xs font-bold uppercase tracking-widest opacity-50">{rev.city}</span>
+                            <Quote className="absolute top-6 right-8 text-[var(--accent-dark)]/10" size={48} />
+                            <p className="text-lg text-[var(--bg)] italic mb-8 relative z-10 font-medium">"{rev.text}"</p>
+                            <div className="mt-auto flex items-center gap-4">
+                                <div className="w-12 h-12 bg-[var(--accent)]/20 rounded-full flex items-center justify-center font-bold text-[var(--accent-dark)]">
+                                    {rev.name[0]}
+                                </div>
+                                <div>
+                                    <h4 className="font-bold text-[var(--bg)]">{rev.name}</h4>
+                                    <p className="text-xs text-[var(--text-muted)] uppercase tracking-widest">{rev.role}</p>
+                                </div>
                             </div>
                         </motion.div>
                     ))}
-                </motion.div>
+                </div>
 
-                {/* Footer de Prova Social */}
                 <motion.div
                     variants={fadeIn}
                     initial="hidden"
                     whileInView="visible"
-                    className="mt-20 flex flex-col items-center justify-center"
+                    className="text-center opacity-60"
                 >
                     <p className="text-sm font-bold uppercase tracking-widest opacity-40 mb-4">Referência em Alphaville, Barueri e Grande SP</p>
                 </motion.div>
+
+                <div className="mt-16">
+                    <ScrollIndicator color="var(--accent-dark)" label="Dúvidas Frequentes" />
+                </div>
             </div>
         </section>
     );

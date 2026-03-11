@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { fadeUp, stagger, slideLeft, fadeIn } from "../shared/animations";
+import { fadeUp, stagger, fadeIn } from "../shared/animations";
 import { Compass, Ruler, Zap, Hammer, Leaf, PhoneCall, Award } from "lucide-react";
+import ScrollIndicator from "./ScrollIndicator";
 
 export default function Autoridade() {
     const differentials = [
@@ -43,8 +44,7 @@ export default function Autoridade() {
     ];
 
     return (
-        <section className="bg-[var(--bg)] py-32 px-6 relative overflow-hidden">
-
+        <section className="bg-[var(--bg)] py-20 md:py-32 px-6 relative overflow-hidden">
             {/* Background Atmosphere */}
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[var(--accent)]/10 rounded-full blur-[150px] pointer-events-none opacity-30" />
             <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[var(--gold)]/10 rounded-full blur-[150px] pointer-events-none opacity-30" />
@@ -55,7 +55,7 @@ export default function Autoridade() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
                     variants={stagger}
-                    className="text-center mb-24"
+                    className="text-center mb-16 md:mb-24"
                 >
                     <motion.div
                         variants={fadeUp}
@@ -64,11 +64,11 @@ export default function Autoridade() {
                         <Award size={18} />
                         <span>O Padrão Terra Bambu</span>
                     </motion.div>
-                    <motion.h2 variants={fadeUp} className="text-4xl md:text-7xl font-black mb-6 tracking-tight text-white">
+                    <motion.h2 variants={fadeUp} className="text-3xl md:text-7xl font-black mb-6 tracking-tight text-white leading-tight">
                         Por que confiar seu espaço <br className="hidden md:block" /> à <span className="text-[var(--gold)]">Terra Bambu</span>?
                     </motion.h2>
-                    <motion.p variants={fadeUp} className="text-[var(--text-muted)] text-xl max-w-3xl mx-auto leading-relaxed">
-                        Unimos o conhecimento ancestral do bambu com métodos modernos de engenharia e atendimento express. O resultado? Uma obra impecável e sem dor de cabeça.
+                    <motion.p variants={fadeUp} className="text-lg md:text-xl text-[var(--text-muted)] max-w-3xl mx-auto leading-relaxed">
+                        Unimos o conhecimento ancestral do bambu com métodos modernos de engenharia e atendimento preparado. O resultado? Uma obra impecável e sem dor de cabeça.
                     </motion.p>
                 </motion.div>
 
@@ -77,7 +77,7 @@ export default function Autoridade() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
                     variants={stagger}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
                 >
                     {differentials.map((item, i) => (
                         <motion.div
@@ -86,7 +86,7 @@ export default function Autoridade() {
                             whileHover={{ scale: 1.02 }}
                             className="group bg-[var(--bg-2)] border border-white/5 p-8 rounded-[2rem] flex flex-col items-start hover:border-[var(--accent)]/40 transition-all duration-500 shadow-xl"
                         >
-                            <div className="mb-8 p-4 rounded-2xl bg-[var(--bg)] text-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:text-white transition-colors duration-500 shadow-inner">
+                            <div className="mb-6 md:mb-8 p-4 rounded-2xl bg-[var(--bg)] text-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:text-white transition-colors duration-500 shadow-inner">
                                 <item.Icon size={32} strokeWidth={1.5} />
                             </div>
 
@@ -96,10 +96,10 @@ export default function Autoridade() {
                                 </span>
                             </div>
 
-                            <h4 className="text-2xl font-bold text-white mb-4 group-hover:text-[var(--accent)] transition-colors line-clamp-1">
+                            <h4 className="text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-[var(--accent)] transition-colors">
                                 {item.Title}
                             </h4>
-                            <p className="text-[var(--text-muted)] text-base leading-relaxed font-medium">
+                            <p className="text-[var(--text-muted)] text-sm md:text-base leading-relaxed font-medium">
                                 {item.Text}
                             </p>
                         </motion.div>
@@ -112,13 +112,17 @@ export default function Autoridade() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="mt-24 text-center"
+                    className="mt-20 md:mt-24 text-center"
                 >
                     <div className="inline-block p-1 rounded-full bg-gradient-to-r from-transparent via-[var(--border)] to-transparent w-full max-w-2xl mb-12" />
                     <p className="text-[var(--text-muted)] italic text-lg max-w-2xl mx-auto">
                         "Nossa missão não é apenas instalar um forro, é criar a atmosfera ideal para as melhores memórias da sua família."
                     </p>
                 </motion.div>
+
+                <div className="mt-20">
+                    <ScrollIndicator color="white" label="Galeria de Projetos" />
+                </div>
             </div>
         </section>
     );
