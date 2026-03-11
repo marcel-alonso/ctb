@@ -17,8 +17,8 @@ export default function Hero() {
             >
                 <div className="absolute inset-0 bg-black/60 z-10" />
                 <img
-                    src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&q=80&w=2000"
-                    alt="Área externa com forro de bambu"
+                    src="/lp/forros-bambu/assets/images/hero-bambu.png"
+                    alt="Área externa com forro de bambu de alto padrão"
                     className="w-full h-full object-cover"
                 />
             </motion.div>
