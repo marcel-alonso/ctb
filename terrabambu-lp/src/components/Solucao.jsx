@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { fadeUp, stagger } from "../shared/animations";
 import { Check, ArrowRight, UserCheck } from "lucide-react";
 import { CONFIG, trackAndOpenWA } from "../config";
+import ScrollIndicator from "./ScrollIndicator";
 
 export default function Solucao() {
     const products = [
