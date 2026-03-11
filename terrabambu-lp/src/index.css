@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  --bg:         #0D1810;
+  --bg-2:       #162212;
+  --bg-light:   #F5F2EC;
+  --text:       #F0F4EF;
+  --text-dark:  #1A2410;
+  --text-muted: #94A88F;
+  --accent:     #7EC850;
+  --accent-dark:#5BA33A;
+  --gold:       #D4A842;
+  --surface:    rgba(255,255,255,0.05);
+  --border:     rgba(126,200,80,0.15);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; font-family: 'DM Sans', sans-serif; }
+body { background-color: var(--bg); color: var(--text); }
+h1,h2,h3 { font-family: 'Bricolage Grotesque', sans-serif; }
+
+@keyframes waPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(37,211,102,.5); }
+  60%     { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
+}
+
+@keyframes ctaPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(126,200,80,.4); }
+  60%     { box-shadow: 0 0 0 20px rgba(126,200,80,0); }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "terrabambu-lp",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "lint": "eslint .",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "framer-motion": "latest",
+        "lucide-react": "latest",
+        "react": "latest",
+        "react-dom": "latest"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "latest",
+        "@vitejs/plugin-react": "latest",
+        "tailwindcss": "latest",
+        "vite": "latest"
+    }
+}
