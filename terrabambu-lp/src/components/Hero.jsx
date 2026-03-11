@@ -43,15 +43,15 @@ export default function Hero() {
                     variants={fadeUp}
                     className="text-4xl md:text-7xl font-black leading-tight mb-6 text-white tracking-tight"
                 >
-                    Forros e Pergolados de <br />
-                    <span className="text-[var(--accent)]">Bambu sob medida</span>
+                    Excelência em Execução: <br />
+                    <span className="text-[var(--accent)]">Inspirando novos momentos ao ar livre</span>
                 </motion.h1>
 
                 <motion.p
                     variants={fadeUp}
                     className="text-lg md:text-2xl text-[var(--text-muted)] max-w-2xl mx-auto mb-10 leading-relaxed font-medium"
                 >
-                    Gestão inteligente através da tecnologia e <span className="text-white">equipes de campo altamente preparadas</span> para transformar sua área externa.
+                    Cada projeto é uma peça única, desenhada para se integrar harmonicamente à sua arquitetura e ao seu estilo de vida.
                 </motion.p>
 
                 {/* Action Button */}

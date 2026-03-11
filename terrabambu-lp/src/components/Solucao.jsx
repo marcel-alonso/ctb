@@ -46,7 +46,7 @@ export default function Solucao() {
                         Projetos sob medida em <span className="text-[var(--accent)]">qualquer região</span>
                     </motion.h2>
                     <motion.p variants={fadeUp} className="text-[var(--text-muted)] text-xl max-w-2xl mx-auto leading-relaxed font-medium">
-                        Atendimento presencial com consultores preparados e logística organizada para todo o território nacional.
+                        Desenvolvemos soluções que unem a beleza natural do bambu à excelência em execução, transformando seu espaço em um refúgio único.
                     </motion.p>
                 </motion.div>
 
