@@ -10,21 +10,21 @@ export default function Solucao() {
             badge: "🏆 O Mais Escolhido",
             desc: "Perfeito para varandas e garagens já cobertas. Traz conforto térmico imediato e esconde vigamentos com elegância.",
             features: ["Instalação especializada", "Conforto térmico nobre", "Acabamento artesanal"],
-            img: "/lp/forros-bambu/assets/images/forro-reto.png"
+            img: "/lp/forros-bambu/assets/images/gourmet-churrasqueira.jpg"
         },
         {
             title: "Pergolado Completo",
             badge: "✨ Alto Padrão",
             desc: "Estrutura robusta montada por especialistas. Sombreamento natural projetado pela nossa engenharia.",
             features: ["Engenharia de campo", "Sombra arquitetônica", "Valorização estética"],
-            img: "/lp/forros-bambu/assets/images/pergolado.png"
+            img: "/lp/forros-bambu/assets/images/pergolado-black-grid.jpg"
         },
         {
             title: "Revestimento Vertical",
             badge: "🌿 Tendência",
             desc: "Transformação de muros e fachadas. Equipes preparadas para lidar com grandes superfícies e detalhes.",
             features: ["Privacidade absoluta", "Execução profissional", "Design biofílico"],
-            img: "/lp/forros-bambu/assets/images/revestimento.png"
+            img: "/lp/forros-bambu/assets/images/bambu-paralelo-ecobans.jpg"
         }
     ];
 

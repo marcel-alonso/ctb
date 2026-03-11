@@ -23,10 +23,10 @@ const AnimatedCounter = ({ target, suffix = "", delay = 0 }) => {
 
 export default function ProvaVisual() {
     const images = [
-        { url: "/lp/forros-bambu/assets/images/hero-bambu.png", label: "Varanda Gourmet" },
-        { url: "/lp/forros-bambu/assets/images/forro-reto.png", label: "Forro de Bambu Paralelo" },
-        { url: "/lp/forros-bambu/assets/images/pergolado.png", label: "Pergolado de Luxo" },
-        { url: "/lp/forros-bambu/assets/images/revestimento.png", label: "Revestimento Biofílico" }
+        { url: "/lp/forros-bambu/assets/images/gourmet-churrasqueira.jpg", label: "Área Gourmet Churrasqueira" },
+        { url: "/lp/forros-bambu/assets/images/pergolado-black-grid.jpg", label: "Pergolado Contemporâneo" },
+        { url: "/lp/forros-bambu/assets/images/teto-ventilador.jpg", label: "Forro com Ventilador" },
+        { url: "/lp/forros-bambu/assets/images/bambu-paralelo-ecobans.jpg", label: "Acabamento Ecobans" }
     ];
 
     return (
