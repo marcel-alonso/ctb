@@ -68,7 +68,7 @@ export default function Autoridade() {
                         Por que confiar seu espaço <br className="hidden md:block" /> à <span className="text-[var(--gold)]">Conexão Terra Bambu</span>?
                     </motion.h2>
                     <motion.p variants={fadeUp} className="text-lg md:text-xl text-[var(--text-muted)] max-w-3xl mx-auto leading-relaxed">
-                        Unimos o conhecimento ancestral do bambu com métodos modernos de engenharia e atendimento preparado. O resultado? Uma obra impecável e sem dor de cabeça.
+                        Unimos o conhecimento ancestral do bambu com métodos modernos de engenharia e atendimento consultivo e processos precisos. O resultado? Uma obra impecável e sem dor de cabeça.
                     </motion.p>
                 </motion.div>
 

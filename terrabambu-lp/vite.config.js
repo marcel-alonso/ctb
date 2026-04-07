@@ -9,4 +9,9 @@ export default defineConfig({
     tailwindcss(),
   ],
   base: '/lp/forros-bambu/',
+  build: {
+    outDir: '../lp/forros-bambu',
+    emptyOutDir: true,
+  }
 })
+
