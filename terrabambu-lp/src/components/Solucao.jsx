@@ -7,6 +7,13 @@ import ScrollIndicator from "./ScrollIndicator";
 export default function Solucao() {
     const products = [
         {
+            title: "Painel Trançado",
+            badge: "🎨 Design Exclusivo",
+            desc: "Design personalizado para seu projeto. Conforto térmico e acústico com acabamento de alto padrão.",
+            features: ["Design Personalizado", "Conforto Térmico e Acústico", "Durabilidade Premium"],
+            img: "/lp/forros-bambu/assets/images/painel-trancado.png"
+        },
+        {
             title: "Forro Reto",
             badge: "🏆 O Mais Escolhido",
             desc: "Perfeito para varandas e garagens já cobertas. Traz conforto térmico imediato e esconde vigamentos com elegância.",

@@ -42,15 +42,15 @@ export default function Hero() {
                         variants={fadeUp}
                         className="text-4xl md:text-7xl font-black leading-tight mb-6 text-white tracking-tight"
                     >
-                        Cansado da sua área externa <br className="hidden md:block" />
-                        <span className="text-[var(--accent)] text-shadow-lg">quente e mal aproveitada?</span>
+                        Design que respira, <br className="hidden md:block" />
+                        <span className="text-[var(--accent)] text-shadow-lg">natureza que acolhe.</span>
                     </motion.h1>
 
                     <motion.p
                         variants={fadeUp}
-                        className="text-base md:text-2xl text-[var(--text-muted)] max-w-2xl mx-auto mb-10 leading-relaxed font-medium"
+                        className="text-base md:text-2xl text-[var(--white)] max-w-2xl mx-auto mb-10 leading-relaxed font-bold opacity-90"
                     >
-                        Temos a solução ideal para transformar seu espaço em um refúgio fresco, elegante e extremamente confortável com o toque artesanal do bambu.
+                        Evolua sua área externa para o máximo conforto térmico com o toque artesanal do bambu premium.
                     </motion.p>
 
                     <motion.div variants={fadeUp} className="w-full md:w-auto flex flex-col items-center">

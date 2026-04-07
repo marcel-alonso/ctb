@@ -9,7 +9,7 @@ export const CONFIG = {
         ctaFloat: "Falar com Consultor",
         ctaFinal: "QUERO MEU ORÇAMENTO AGORA",
     },
-    prazo: "12h úteis",
+    prazo: "minutos (IA)",
     area: "Atendimento em todo o Brasil · Foco em SP",
     pixelId: "",
 };
