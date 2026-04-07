@@ -55,7 +55,7 @@ export default function ProvaVisual() {
                         <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
                             Minutos
                         </h3>
-                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">Resposta com IA</p>
+                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">Atendimento Especializado</p>
                     </motion.div>
 
                     <motion.div variants={fadeUp} className="flex flex-col items-center">
