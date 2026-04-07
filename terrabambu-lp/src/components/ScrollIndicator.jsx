@@ -12,7 +12,7 @@ export default function ScrollIndicator({ label = "Continuar Lendo", color = "va
                 repeatType: "reverse",
                 ease: "easeInOut"
             }}
-            className="flex flex-col items-center justify-center py-8 cursor-pointer opacity-60 hover:opacity-100 transition-opacity"
+            className="flex flex-col items-center justify-center py-2 cursor-pointer opacity-60 hover:opacity-100 transition-opacity"
         >
             <span className="text-[10px] uppercase tracking-[0.3em] font-bold mb-2" style={{ color }}>{label}</span>
             <ChevronDown size={20} style={{ color }} />

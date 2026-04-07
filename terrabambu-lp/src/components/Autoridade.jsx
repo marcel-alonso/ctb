@@ -65,7 +65,7 @@ export default function Autoridade() {
                         <span>O Padrão Terra Bambu</span>
                     </motion.div>
                     <motion.h2 variants={fadeUp} className="text-3xl md:text-7xl font-black mb-6 tracking-tight text-white leading-tight">
-                        Por que confiar seu espaço <br className="hidden md:block" /> à <span className="text-[var(--gold)]">Terra Bambu</span>?
+                        Por que confiar seu espaço <br className="hidden md:block" /> à <span className="text-[var(--gold)]">Conexão Terra Bambu</span>?
                     </motion.h2>
                     <motion.p variants={fadeUp} className="text-lg md:text-xl text-[var(--text-muted)] max-w-3xl mx-auto leading-relaxed">
                         Unimos o conhecimento ancestral do bambu com métodos modernos de engenharia e atendimento preparado. O resultado? Uma obra impecável e sem dor de cabeça.

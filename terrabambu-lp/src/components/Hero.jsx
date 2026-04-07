@@ -23,7 +23,7 @@ export default function Hero() {
             </motion.div>
 
             {/* Conteúdo Central */}
-            <div className="relative z-20 text-center px-6 max-w-5xl mx-auto pt-20 pb-12">
+            <div className="relative z-20 text-center px-6 max-w-5xl mx-auto pt-20 pb-32 md:pb-12">
                 <motion.div
                     variants={stagger}
                     initial="hidden"
@@ -65,7 +65,7 @@ export default function Hero() {
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30">
+            <div className="absolute bottom-2 md:bottom-8 left-1/2 -translate-x-1/2 z-30">
                 <ScrollIndicator color="white" label="Explorar Projetos" />
             </div>
 
