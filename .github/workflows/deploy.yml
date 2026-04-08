@@ -31,22 +31,30 @@ jobs:
 
       - name: Create _site directory
         run: |
-          mkdir -p _site
-          # Copiar arquivos estáticos da raiz (excluindo pastas de código e o próprio _site)
-          cp -r assets css js index.html CNAME favicon.ico robots.txt .htaccess google7ff159491cb1da82.html _site/ 2>/dev/null || true
+          mkdir -p _site/lp/forros-bambu
+          mkdir -p _site/blog
+          
+          echo "Copying static root files..."
+          cp index.html CNAME favicon.ico robots.txt .htaccess google7ff159491cb1da82.html _site/ 2>/dev/null || true
+          cp -r assets css js _site/ 2>/dev/null || true
 
       - name: Build Blog
         run: |
           npm install
           npm run build
-          # Copiar resultados do blog para _site
-          cp -r blog posts.json rss.xml sitemap.xml _site/ 2>/dev/null || true
+          echo "Copying blog artifacts..."
+          cp -r blog/* _site/blog/ 2>/dev/null || true
+          cp posts.json rss.xml sitemap.xml _site/ 2>/dev/null || true
 
       - name: Build Landing Page
         run: |
           cd terrabambu-lp
           npm install
           npm run build
+          # O vite já está configurado para buildar em ../_site/lp/forros-bambu
+
+      - name: List _site content (Debug)
+        run: ls -R _site
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
