@@ -12,17 +12,14 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import matter from 'gray-matter';
 import { marked } from 'marked';
-import { createRequire } from 'module';
-
-const require = createRequire(import.meta.url);
+import postTemplate from './templates/post.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const postsDir = path.join(__dirname, '../content/posts');
 const blogDir = path.join(__dirname, '../blog');
 const distDir = path.join(__dirname, '../dist');
 const templatesDir = path.join(__dirname, './templates');
 
-// Importar template
-const postTemplate = require('./templates/post.js');
+// Template carregado via import
 
 // Configurações
 const siteConfig = {

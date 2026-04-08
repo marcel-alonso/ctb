@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Conexão Terra Bambu</title>
+    <link>https://conexaoterrabambu.com.br</link>
+    <description>Bioconstrução, sustentabilidade e harmonia com a natureza</description>
+    <language>pt-br</language>
+    <lastBuildDate>Wed, 08 Apr 2026 19:19:14 GMT</lastBuildDate>
+  <item>
+    <title>Como Começar sua Casa Sustentável</title>
+    <link>https://conexaoterrabambu.com.br/blog/como-comecar-casa-sustentavel/</link>
+    <guid>https://conexaoterrabambu.com.br/blog/como-comecar-casa-sustentavel/</guid>
+    <description><![CDATA[Descubra os primeiros passos para construir uma casa em harmonia com a natureza, usando materiais naturais e técnicas ancestrais.]]></description>
+    <pubDate>Mon, 15 Jan 2024 00:00:00 GMT</pubDate>
+    <category>Guia Básico</category>
+  </item>
+  <item>
+    <title>Benefícios do Bambu na Construção</title>
+    <link>https://conexaoterrabambu.com.br/blog/beneficios-bambu-construcao/</link>
+    <guid>https://conexaoterrabambu.com.br/blog/beneficios-bambu-construcao/</guid>
+    <description><![CDATA[Conheça as vantagens de usar bambu em sua construção - resistência, sustentabilidade e beleza natural se unem neste material versátil.]]></description>
+    <pubDate>Wed, 10 Jan 2024 00:00:00 GMT</pubDate>
+    <category>Materiais</category>
+  </item>
+  <item>
+    <title>Tintas Naturais - Cores que Respiram</title>
+    <link>https://conexaoterrabambu.com.br/blog/tintas-naturais-cores-que-respiram/</link>
+    <guid>https://conexaoterrabambu.com.br/blog/tintas-naturais-cores-que-respiram/</guid>
+    <description><![CDATA[Aprenda sobre as tintas naturais, uma alternativa saudável e sustentável para colorir sua casa sem toxinas ou VOCs.]]></description>
+    <pubDate>Fri, 05 Jan 2024 00:00:00 GMT</pubDate>
+    <category>DIY</category>
+  </item>
+  </channel>
+</rss>

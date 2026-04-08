@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://msabinobr.github.io/ctb/</loc>
-    <lastmod>2024-07-29</lastmod> <!-- Data da última modificação atualizada -->
-    <priority>1.00</priority>
+    <loc>https://conexaoterrabambu.com.br</loc>
+    <lastmod>2026-04-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://conexaoterrabambu.com.br/lp/forros-bambu/</loc>
-    <lastmod>2026-01-26</lastmod>
-    <priority>0.80</priority>
+    <loc>https://conexaoterrabambu.com.br/blog/</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://conexaoterrabambu.com.br/blog/como-comecar-casa-sustentavel/</loc>
+    <lastmod>2024-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://conexaoterrabambu.com.br/blog/beneficios-bambu-construcao/</loc>
+    <lastmod>2024-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://conexaoterrabambu.com.br/blog/tintas-naturais-cores-que-respiram/</loc>
+    <lastmod>2024-01-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

@@ -1,4 +1,4 @@
-module.exports = function postTemplate(post) {
+export default function postTemplate(post) {
     // Escapar caracteres especiais para JSON-LD
     const escapeJson = (str) => str?.replace(/"/g, '\\"').replace(/\n/g, '\\n') || '';
     
@@ -81,7 +81,7 @@ module.exports = function postTemplate(post) {
         ]
     };
 
-    return \`<!DOCTYPE html>
+    return `<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -256,5 +256,5 @@ module.exports = function postTemplate(post) {
     <script src="/js/main.js" defer></script>
     <script src="/js/blog.js" defer></script>
 </body>
-</html>\`;
+</html>`;
 };

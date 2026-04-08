@@ -4,130 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Conexão Terra Bambu</title>
-    <meta name="description" content="Explore nosso blog sobre bioconstrução e vida sustentável. Aprenda sobre construção com bambu, materiais naturais e técnicas ancestrais.">
-    
-    <!-- CSS Crítico -->
-    <link rel="preload" href="../css/styles.css" as="style">
-    <link rel="preload" href="../css/blog.css" as="style">
-    <link rel="preload" href="../css/accessibility.css" as="style">
-
+    <meta name="description" content="Artigos sobre bioconstrução, sustentabilidade e materiais naturais">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/blog.css">
-    <link rel="stylesheet" href="../css/accessibility.css">
-
-    <!-- Meta Tags para Compartilhamento -->
-    <meta property="og:title" content="Blog - Conexão Terra Bambu">
-    <meta property="og:description" content="Explore nosso blog sobre bioconstrução e vida sustentável. Aprenda sobre construção com bambu, materiais naturais e técnicas ancestrais.">
-    <meta property="og:image" content="https://conexaoterrabambu.com.br/assets/images/img-compartilhamento.webp">
-    <meta property="og:url" content="https://conexaoterrabambu.com.br/blog">
-    <meta property="og:type" content="website">
-    
-    <!-- Dados Estruturados -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Blog",
-        "name": "Blog Conexão Terra Bambu",
-        "description": "Blog sobre bioconstrução e vida sustentável",
-        "url": "https://conexaoterrabambu.com.br/blog",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Conexão Terra Bambu",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://conexaoterrabambu.com.br/assets/images/logo_only.png"
-            }
-        }
-    }
-    </script>
 </head>
-<body class="page-blog">
-    <!-- Header -->
+<body>
     <header class="header scrolled">
         <div class="container">
-            <a href="../" class="logo">
-                <img src="../assets/images/logo_only.png" alt="Logotipo Conexão Terra Bambu" class="logo-emblem">
+            <a href="/" class="logo">
+                <img src="../assets/images/logo_only.png" alt="Logo" class="logo-emblem">
                 <img src="../assets/images/text_horizontal.png" alt="Conexão Terra Bambu" class="logo-text">
             </a>
-            
-                <!-- Menu removido para foco no logo -->
-                <!-- Navegação removida para foco no logo -->
-                <!-- Navegação simplificada: links removidos para destacar logo -->
-            
+            <nav class="nav">
+                <a href="/#sobre">Sobre</a>
+                <a href="/#solucoes">Soluções</a>
+                <a href="/#especialidades">Especialidades</a>
+                <a href="/#contato">Contato</a>
+                <a href="/blog">Blog</a>
+            </nav>
         </div>
     </header>
 
     <main>
-        <!-- Hero do Blog -->
-        <section class="blog-hero">
+        <section class="blog-section">
             <div class="container">
-                <h1 class="blog-hero__title">Blog</h1>
-                <p class="blog-hero__subtitle">Explorando os caminhos da bioconstrução e da vida sustentável</p>
-            </div>
-        </section>
+                <h1>Blog</h1>
+                <p class="section-subtitle">Conheça mais sobre bioconstrução e sustentabilidade</p>
 
-        <!-- Lista de Posts -->
-        <section class="blog-listing">
-            <div class="container">
-                <!-- Filtros de Categoria -->
-                <div class="blog-filters">
-                    <button class="blog-filter active" data-category="all">Todos</button>
-                    <button class="blog-filter" data-category="guia-basico">Guia Básico</button>
-                    <button class="blog-filter" data-category="materiais">Materiais</button>
-                    <button class="blog-filter" data-category="diy">DIY</button>
-                </div>
-
-                <!-- Grid de Posts -->
                 <div class="blog-grid">
-                    <!-- Posts serão carregados via JavaScript -->
+                    
+        <article class="blog-card">
+            <a href="/blog/como-comecar-casa-sustentavel/">
+                <img src="/assets/images/pau-a-pique.webp" alt="Construção de pau a pique tradicional com estrutura de madeira" class="blog-card__image">
+                <div class="blog-card__content">
+                    <span class="blog-card__category">Guia Básico</span>
+                    <h2 class="blog-card__title">Como Começar sua Casa Sustentável</h2>
+                    <p class="blog-card__excerpt">Descubra os primeiros passos para construir uma casa em harmonia com a natureza, usando materiais naturais e técnicas ancestrais.</p>
+                    <div class="blog-card__meta">
+                        <time>14/01/2024</time>
+                        <span>2 min de leitura</span>
+                    </div>
                 </div>
-
-                <!-- Paginação -->
-                <div class="blog-pagination">
-                    <button class="pagination-prev" aria-label="Página anterior" disabled>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m15 18-6-6 6-6"/>
-                        </svg>
-                    </button>
-                    <span class="pagination-info">Página <span class="current-page">1</span> de <span class="total-pages">1</span></span>
-                    <button class="pagination-next" aria-label="Próxima página" disabled>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m9 18 6-6-6-6"/>
-                        </svg>
-                    </button>
+            </a>
+        </article>
+    
+        <article class="blog-card">
+            <a href="/blog/beneficios-bambu-construcao/">
+                <img src="/assets/images/bambu.webp" alt="Estrutura de bambu em construção tradicional" class="blog-card__image">
+                <div class="blog-card__content">
+                    <span class="blog-card__category">Materiais</span>
+                    <h2 class="blog-card__title">Benefícios do Bambu na Construção</h2>
+                    <p class="blog-card__excerpt">Conheça as vantagens de usar bambu em sua construção - resistência, sustentabilidade e beleza natural se unem neste material versátil.</p>
+                    <div class="blog-card__meta">
+                        <time>09/01/2024</time>
+                        <span>2 min de leitura</span>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Newsletter -->
-        <section class="blog-newsletter">
-            <div class="container">
-                <div class="newsletter-box">
-                    <h2>Fique por dentro das novidades</h2>
-                    <p>Receba dicas, tutoriais e inspiração sobre bioconstrução diretamente no seu email.</p>
-                    <form class="newsletter-form" action="#" method="POST">
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Seu melhor email" required>
-                            <button type="submit" class="button button-primary">Inscrever-se</button>
-                        </div>
-                        <small>Ao se inscrever, você concorda em receber nossos emails. Você pode cancelar a qualquer momento.</small>
-                    </form>
+            </a>
+        </article>
+    
+        <article class="blog-card">
+            <a href="/blog/tintas-naturais-cores-que-respiram/">
+                <img src="/assets/images/tinta.webp" alt="Amostras de tintas naturais com pigmentos coloridos de origem mineral e vegetal" class="blog-card__image">
+                <div class="blog-card__content">
+                    <span class="blog-card__category">DIY</span>
+                    <h2 class="blog-card__title">Tintas Naturais - Cores que Respiram</h2>
+                    <p class="blog-card__excerpt">Aprenda sobre as tintas naturais, uma alternativa saudável e sustentável para colorir sua casa sem toxinas ou VOCs.</p>
+                    <div class="blog-card__meta">
+                        <time>04/01/2024</time>
+                        <span>2 min de leitura</span>
+                    </div>
+                </div>
+            </a>
+        </article>
+    
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2024 Conexão Terra Bambu. Todos os direitos reservados.</p>
-            </div>
+            <p>&copy; 2026 Conexão Terra Bambu. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script src="../js/main.js" defer></script>
-    <script src="../js/blog.js" defer></script>
 </body>
 </html>
