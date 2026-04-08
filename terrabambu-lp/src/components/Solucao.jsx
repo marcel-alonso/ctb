@@ -13,28 +13,28 @@ export default function Solucao() {
         {
             title: "Forro Reto",
             badge: "🎨 Design Exclusivo",
-            desc: "Perfeito para varandas e garagens já cobertas. Traz conforto térmico imediato e esconde vigamentos com elegância.",
+            desc: "",
             features: ["Instalação especializada", "Conforto térmico nobre", "Acabamento artesanal"],
             img: forroRetoImg
         },
         {
             title: "Painel Trançado",
             badge: "🏆 O Mais Escolhido",
-            desc: "Design personalizado para seu projeto. Conforto térmico e acústico com acabamento de alto padrão.",
-            features: ["Design Personalizado", "Conforto Térmico e Acústico", "Durabilidade Premium"],
+            desc: "",
+            features: ["Design Sustentável", "Conforto Térmico e Acústico", "Durabilidade Premium"],
             img: gourmetImg
         },
         {
             title: "Pergolado Completo",
             badge: "✨ Alto Padrão",
-            desc: "Estrutura robusta montada por especialistas. Sombreamento natural projetado pela nossa engenharia.",
+            desc: "",
             features: ["Engenharia de campo", "Sombra arquitetônica", "Valorização estética"],
             img: pergolaoImg
         },
         {
             title: "Revestimento Vertical",
             badge: "🌿 Tendência",
-            desc: "Transformação de muros e fachadas. Equipes preparadas para lidar com grandes superfícies e detalhes.",
+            desc: "",
             features: ["Privacidade absoluta", "Execução profissional", "Design biofílico"],
             img: revestimentoImg
         }

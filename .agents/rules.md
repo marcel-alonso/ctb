@@ -19,12 +19,7 @@
 - **Animações**: Framer Motion de alto nível. Suaves e intencionais.
 - **Variáveis CSS**: Todas as cores e tokens devem ser gerenciados em `terrabambu-lp/src/index.css`. Nunca hardcodar cores.
 - **Ícones**: Utilizar `lucide-react` para consistência.
-- **Imagens**: 
-  - ⚠️ **CRÍTICO**: Importar como módulos ES6: `import img from "@assets/images/file.jpg"`
-  - **NUNCA** use strings como `/assets/images/...` (quebram em produção)
-  - Armazena em `terrabambu-lp/public/assets/images/`
-  - Sempre `loading="lazy"`. Formato WebP com fallback se possível. Atributos `alt` descritivos para SEO.
-  - Lê especificação: `.agents/specs/terrabambu-lp-vite-images.spec.md`
+- **Imagens**: Importar via módulos: `import img from "@assets/images/file.jpg"`. Nunca strings. Armazena em `public/assets/images/`. Sempre `loading="lazy"`. Atributos `alt` descritivos.
 
 ## 3. SEO e Acessibilidade
 
