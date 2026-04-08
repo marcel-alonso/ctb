@@ -14,7 +14,7 @@ export default function ComoFunciona() {
         {
             num: "02",
             title: "Orientação Estratégica",
-            desc: "Em até 12h úteis, você recebe um diagnóstico completo: material ideal, processo de obra e o valor exato.",
+            desc: "Em poucas horas, você recebe um diagnóstico completo: material ideal, processo de obra e o valor exato.",
             Icon: ClipboardCheck,
             Detail: "Transparência total"
         },

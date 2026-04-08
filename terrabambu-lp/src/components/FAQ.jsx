@@ -42,7 +42,7 @@ export default function FAQ() {
         },
         {
             q: "Como funciona a consultoria?",
-            a: "Unimos tecnologia e atendimento humano. Você envia fotos e medidas, nossa engenharia analisa e envia uma proposta técnica e comercial clara e detalhada. Após aprovado, nossas equipes de campo assumem o projeto presencialmente."
+            a: "Unimos tecnologia e atendimento humano. Você envia fotos e medidas, nossa engenharia analisa e em poucas horas você recebe uma proposta técnica e comercial clara e detalhada. Após aprovado, nossas equipes de campo assumem o projeto presencialmente."
         },
         {
             q: "O bambu é resistente?",

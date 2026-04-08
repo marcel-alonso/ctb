@@ -16,8 +16,8 @@ export default function DorResolucao() {
         },
         {
             icon: <Clock size={28} className="text-[var(--accent)]" />,
-            title: "Pré-orçamento Digital",
-            desc: "Análise técnica rápida baseada em suas fotos e medidas."
+            title: "Resposta em poucas horas",
+            desc: "Receba uma análise técnica e orçamento prévio sem esperas intermináveis."
         },
         {
             icon: <Hammer size={28} className="text-[var(--accent)]" />,

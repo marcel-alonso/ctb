@@ -18,8 +18,8 @@ export default function Autoridade() {
             Gatilho: "Exclusividade"
         },
         {
-            Title: "Orçamento em 12h",
-            Text: "Sabemos que você tem pressa. Nosso processo digital permite enviar fotos e receber seu valor exato em tempo recorde.",
+            Title: "Resposta em poucas horas",
+            Text: "Sabemos que você tem pressa. Nosso processo digital permite uma análise técnica rápida para você receber seu valor em poucas horas.",
             Icon: Zap,
             Gatilho: "Velocidade"
         },
