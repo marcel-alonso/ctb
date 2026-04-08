@@ -49,30 +49,30 @@ export default function ProvaVisual() {
                     <motion.div variants={fadeUp} className="flex flex-col items-center">
                         <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
                         <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
+                            <AnimatedCounter target={3000} delay={0.1} suffix="m²" />
+                        </h3>
+                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">Transformados</p>
+                    </motion.div>
+
+                    <motion.div variants={fadeUp} className="flex flex-col items-center">
+                        <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
+                        <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
+                            <AnimatedCounter target={10} delay={0.2} suffix="+" />
+                        </h3>
+                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">No Mercado</p>
+                    </motion.div>
+
+                    <motion.div variants={fadeUp} className="flex flex-col items-center">
+                        <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
+                        <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
                             Ecológico
                         </h3>
                         <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">Design Premium e Sustentável</p>
                     </motion.div>
-
-                    <motion.div variants={fadeUp} className="flex flex-col items-center">
-                        <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
-                        <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
-                            <AnimatedCounter target={100} delay={0.2} suffix="%" />
-                        </h3>
-                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">Personalizável</p>
-                    </motion.div>
-
-                    <motion.div variants={fadeUp} className="flex flex-col items-center">
-                        <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
-                        <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
-                            <AnimatedCounter target={10} delay={0.3} suffix="+" />
-                        </h3>
-                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">Anos no Mercado</p>
-                    </motion.div>
                 </motion.div>
 
                 {/* Faixa Extra de Destaque */}
-                <motion.div 
+                <motion.div
                     variants={fadeIn}
                     initial="hidden"
                     whileInView="visible"
@@ -80,13 +80,8 @@ export default function ProvaVisual() {
                     className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-16 mb-28 py-8 border-y border-[var(--accent)]/10"
                 >
                     <div className="flex items-center gap-4">
-                        <span className="text-3xl md:text-5xl font-black text-[var(--accent-dark)]">10 ANOS</span>
-                        <span className="text-xs font-bold uppercase tracking-[0.2em] opacity-60">Garantia Estrutural <br/> em Áreas Cobertas</span>
-                    </div>
-                    <div className="hidden md:block w-px h-12 bg-[var(--accent)]/20" />
-                    <div className="flex items-center gap-4">
-                        <span className="text-3xl md:text-5xl font-black text-[var(--accent-dark)]">+3.000m²</span>
-                        <span className="text-xs font-bold uppercase tracking-[0.2em] opacity-60">m² Transformados</span>
+                        <span className="text-3xl md:text-5xl font-black text-[var(--accent-dark)]">10</span>
+                        <span className="text-xs font-bold uppercase tracking-[0.2em] opacity-60">de Garantia <br/> em Áreas Cobertas</span>
                     </div>
                 </motion.div>
 
@@ -103,7 +98,7 @@ export default function ProvaVisual() {
                                 <Star size={16} fill="currentColor" />
                                 <span>Excelência em Execução</span>
                             </div>
-                            <h2 className="text-3xl md:text-6xl font-black mb-6 leading-[1.1]">Inspirando <span className="text-[var(--accent-dark)]">novos momentos</span> ao ar livre</h2>
+                            <h2 className="text-3xl md:text-6xl font-black mb-6 leading-[1.1]">Inspirando <span className="text-[var(--accent-dark)]">novos momentos</span></h2>
                             <p className="text-lg md:text-xl opacity-70 leading-relaxed font-medium">Cada projeto é uma peça única, desenhada para se integrar harmonicamente à sua arquitetura e ao seu estilo de vida.</p>
                         </div>
                     </div>
