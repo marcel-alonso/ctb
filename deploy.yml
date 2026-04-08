@@ -29,11 +29,6 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Build Blog
-        run: |
-          npm install
-          npm run build
-
       - name: Build Landing Page
         run: |
           cd terrabambu-lp
