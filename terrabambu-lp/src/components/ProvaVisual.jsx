@@ -44,16 +44,8 @@ export default function ProvaVisual() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-20"
+                    className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-20"
                 >
-                    <motion.div variants={fadeUp} className="flex flex-col items-center">
-                        <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
-                        <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
-                            <AnimatedCounter target={3000} delay={0.1} suffix="m²" />
-                        </h3>
-                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">Transformados</p>
-                    </motion.div>
-
                     <motion.div variants={fadeUp} className="flex flex-col items-center">
                         <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
                         <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
@@ -61,7 +53,7 @@ export default function ProvaVisual() {
                         </h3>
                         <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">No Mercado</p>
                     </motion.div>
-
+ 
                     <motion.div variants={fadeUp} className="flex flex-col items-center">
                         <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
                         <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">

@@ -14,28 +14,28 @@ export default function Solucao() {
             title: "Forro Reto",
             badge: "🎨 Design Artesanal",
             desc: "",
-            features: ["Bambu roliço inteiro", "Conforto térmico nobre", "Acabamento artesanal"],
+            features: ["Instalação especializada", "Conforto térmico nobre", "Acabamento artesanal"],
             img: forroRetoImg
         },
         {
             title: "Painel Trançado",
             badge: "🏆 O Mais Escolhido",
             desc: "",
-            features: ["Bambu ripado e trançado", "Conforto Térmico e Acústico", "Durabilidade Premium"],
+            features: ["Design Personalizado", "Conforto Térmico e Acústico", "Durabilidade Premium"],
             img: gourmetImg
         },
         {
             title: "Pergolado Completo",
             badge: "✨ Solução Completa",
             desc: "",
-            features: ["Estrutura de madeira ou metal", "+ Revestimento escolhido", "Instalação especializada"],
+            features: ["Engenharia de campo", "Sombra arquitetônica", "Valorização estética"],
             img: pergolaoImg
         },
         {
             title: "Lâmina Prime",
             badge: "🌿 Tendência",
             desc: "",
-            features: ["Ripas aparelhadas", "Execução profissional", "Design Sofisticado"],
+            features: ["Privacidade absoluta", "Execução profissional", "Design biofílico"],
             img: revestimentoImg
         }
     ];
