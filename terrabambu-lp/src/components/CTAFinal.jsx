@@ -36,7 +36,7 @@ export default function CTAFinal() {
                         variants={fadeUp}
                         className="text-xl md:text-2xl text-[var(--text-muted)] mb-14 max-w-3xl mx-auto font-medium"
                     >
-                        Unimos agilidade digital com a força de equipes de campo extremamente preparadas. <span className="text-white">Receba sua orientação técnica personalizada hoje mesmo.</span>
+                        Unimos agilidade digital com a força de equipes de campo extremamente preparadas. <span className="text-white">Dê o primeiro passo para sua análise técnica e orientação personalizada.</span>
                     </motion.p>
 
                     <motion.div variants={fadeUp} className="flex flex-col items-center gap-6 mb-24 w-full">

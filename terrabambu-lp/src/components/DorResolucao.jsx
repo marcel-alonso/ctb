@@ -16,8 +16,8 @@ export default function DorResolucao() {
         },
         {
             icon: <Clock size={28} className="text-[var(--accent)]" />,
-            title: "Orçamento em 12h",
-            desc: "Você envia fotos, a gente responde rápido."
+            title: "Pré-orçamento Digital",
+            desc: "Análise técnica rápida baseada em suas fotos e medidas."
         },
         {
             icon: <Hammer size={28} className="text-[var(--accent)]" />,
