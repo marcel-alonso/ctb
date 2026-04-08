@@ -3,7 +3,8 @@
     "allow": [
       "Bash(cat .github/workflows/*.yml)",
       "Bash(find . -type d -name \".agents\" -exec ls -la {} \\\\;)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(git commit -m 'feat: remover descricoes de produtos e alterar Design para Sustentável:*)"
     ]
   }
 }
