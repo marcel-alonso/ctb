@@ -4,10 +4,8 @@
       "Bash(cat .github/workflows/*.yml)",
       "Bash(find . -type d -name \".agents\" -exec ls -la {} \\\\;)",
       "Bash(npm run:*)",
-      "Bash(git commit -m 'feat: remover descricoes de produtos e alterar Design para Sustentável:*)",
       "Bash(git add:*)",
-      "Bash(git commit -m 'feat: reordenar estatísticas e remover '\\\\''ao ar livre'\\\\'':*)",
-      "Bash(git commit -m 'feat: atualizar nomes, badges e features dos produtos:*)"
+      "Bash(git commit -m:*)"
     ]
   }
 }
