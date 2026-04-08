@@ -36,3 +36,20 @@
 - **Consulte Always**: Leia o `prd.md` e a `spec.md` relevante antes de qualquer código.
 - **Commits**: Commits em PT-BR, seguindo padrão de tags (ex: `feat:`, `fix:`, `docs:`).
 - **Documentação**: Atualize as specs sempre que houver mudança técnica significativa.
+
+## 6. GitHub Actions - Deploy (CRÍTICO)
+
+⚠️ **NÃO MEXER** em `.github/workflows/deploy.yml` a menos que houver erro confirmado do GitHub.
+
+**Config atual que funciona:**
+```yaml
+- name: Upload artifact
+  uses: actions/upload-pages-artifact@v3
+  with:
+    path: '.'
+```
+
+**Histórico de erros:**
+- Tentar mudar `path: '.'` para `path: 'lp/forros-bambu/'` quebrou o deploy (erro 404 no artifact)
+- Última config que funcionou: `path: '.'` (volta ao raiz, GitHub Pages redireciona para /lp/forros-bambu/ via vite.config.js base)
+- **Se der erro novamente**: Reverter para a config acima. Não é problema do workflow, é do GitHub (cache/permissões).
