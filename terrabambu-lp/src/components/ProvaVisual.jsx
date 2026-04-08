@@ -3,6 +3,10 @@ import { useRef, useEffect } from "react";
 import { fadeUp, stagger, fadeIn } from "../shared/animations";
 import { Star } from "lucide-react";
 import ScrollIndicator from "./ScrollIndicator";
+import gourmetImg from "@assets/images/gourmet-churrasqueira.jpg";
+import pergolaoImg from "@assets/images/pergolado-black-grid.jpg";
+import tetoImg from "@assets/images/teto-ventilador.jpg";
+import revestimentoImg from "@assets/images/bambu-paralelo-ecobans.jpg";
 
 const AnimatedCounter = ({ target, suffix = "", delay = 0 }) => {
     const count = useMotionValue(0);
@@ -24,10 +28,10 @@ const AnimatedCounter = ({ target, suffix = "", delay = 0 }) => {
 
 export default function ProvaVisual() {
     const images = [
-        { url: "/assets/images/gourmet-churrasqueira.jpg", label: "Área Gourmet Churrasqueira" },
-        { url: "/assets/images/pergolado-black-grid.jpg", label: "Pergolado Contemporâneo" },
-        { url: "/assets/images/teto-ventilador.jpg", label: "Forro com Ventilador" },
-        { url: "/assets/images/bambu-paralelo-ecobans.jpg", label: "Acabamento Ecobans" }
+        { url: gourmetImg, label: "Área Gourmet Churrasqueira" },
+        { url: pergolaoImg, label: "Pergolado Contemporâneo" },
+        { url: tetoImg, label: "Forro com Ventilador" },
+        { url: revestimentoImg, label: "Acabamento Ecobans" }
     ];
 
     return (

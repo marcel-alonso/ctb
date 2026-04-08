@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat .github/workflows/*.yml)",
+      "Bash(find . -type d -name \".agents\" -exec ls -la {} \\\\;)"
+    ]
+  }
+}

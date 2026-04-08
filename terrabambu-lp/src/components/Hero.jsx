@@ -3,6 +3,7 @@ import { fadeUp, stagger, fadeIn } from "../shared/animations";
 import { CONFIG, trackAndOpenWA } from "../config";
 import { MapPin } from "lucide-react";
 import ScrollIndicator from "./ScrollIndicator";
+import heroImg from "@assets/images/hero-ultra-luxo.png";
 
 export default function Hero() {
     return (
@@ -16,7 +17,7 @@ export default function Hero() {
             >
                 <div className="absolute inset-0 bg-black/60 z-10" />
                 <img
-                    src="/assets/images/hero-ultra-luxo.png"
+                    src={heroImg}
                     alt="Área externa de luxo com forro de bambu ultra-realista"
                     className="w-full h-full object-cover"
                 />

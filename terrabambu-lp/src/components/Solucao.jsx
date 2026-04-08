@@ -3,36 +3,40 @@ import { fadeUp, stagger } from "../shared/animations";
 import { Check, ArrowRight, UserCheck } from "lucide-react";
 import { CONFIG, trackAndOpenWA } from "../config";
 import ScrollIndicator from "./ScrollIndicator";
+import forroRetoImg from "@assets/images/forro-reto.png";
+import gourmetImg from "@assets/images/gourmet-churrasqueira.jpg";
+import pergolaoImg from "@assets/images/pergolado-black-grid.jpg";
+import revestimentoImg from "@assets/images/bambu-paralelo-ecobans.jpg";
 
 export default function Solucao() {
     const products = [
         {
-            title: "Painel Trançado",
-            badge: "🎨 Design Exclusivo",
-            desc: "Design personalizado para seu projeto. Conforto térmico e acústico com acabamento de alto padrão.",
-            features: ["Design Personalizado", "Conforto Térmico e Acústico", "Durabilidade Premium"],
-            img: "/assets/images/forro-reto.png"
-        },
-        {
             title: "Forro Reto",
-            badge: "🏆 O Mais Escolhido",
+            badge: "🎨 Design Exclusivo",
             desc: "Perfeito para varandas e garagens já cobertas. Traz conforto térmico imediato e esconde vigamentos com elegância.",
             features: ["Instalação especializada", "Conforto térmico nobre", "Acabamento artesanal"],
-            img: "/assets/images/gourmet-churrasqueira.jpg"
+            img: forroRetoImg
+        },
+        {
+            title: "Painel Trançado",
+            badge: "🏆 O Mais Escolhido",
+            desc: "Design personalizado para seu projeto. Conforto térmico e acústico com acabamento de alto padrão.",
+            features: ["Design Personalizado", "Conforto Térmico e Acústico", "Durabilidade Premium"],
+            img: gourmetImg
         },
         {
             title: "Pergolado Completo",
             badge: "✨ Alto Padrão",
             desc: "Estrutura robusta montada por especialistas. Sombreamento natural projetado pela nossa engenharia.",
             features: ["Engenharia de campo", "Sombra arquitetônica", "Valorização estética"],
-            img: "/assets/images/pergolado-black-grid.jpg"
+            img: pergolaoImg
         },
         {
             title: "Revestimento Vertical",
             badge: "🌿 Tendência",
             desc: "Transformação de muros e fachadas. Equipes preparadas para lidar com grandes superfícies e detalhes.",
             features: ["Privacidade absoluta", "Execução profissional", "Design biofílico"],
-            img: "/assets/images/bambu-paralelo-ecobans.jpg"
+            img: revestimentoImg
         }
     ];
 
