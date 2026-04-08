@@ -16,7 +16,7 @@ export default function Hero() {
             >
                 <div className="absolute inset-0 bg-black/60 z-10" />
                 <img
-                    src="/lp/forros-bambu/assets/images/hero-ultra-luxo.png"
+                    src="/assets/images/hero-ultra-luxo.png"
                     alt="Área externa de luxo com forro de bambu ultra-realista"
                     className="w-full h-full object-cover"
                 />

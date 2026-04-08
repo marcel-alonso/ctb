@@ -9,30 +9,30 @@ export default function Solucao() {
         {
             title: "Painel Trançado",
             badge: "🎨 Design Exclusivo",
-            desc: "",
+            desc: "Design personalizado para seu projeto. Conforto térmico e acústico com acabamento de alto padrão.",
             features: ["Design Personalizado", "Conforto Térmico e Acústico", "Durabilidade Premium"],
-            img: "/lp/forros-bambu/assets/images/painel-trancado.png"
+            img: "/assets/images/forro-reto.png"
         },
         {
             title: "Forro Reto",
             badge: "🏆 O Mais Escolhido",
-            desc: "",
+            desc: "Perfeito para varandas e garagens já cobertas. Traz conforto térmico imediato e esconde vigamentos com elegância.",
             features: ["Instalação especializada", "Conforto térmico nobre", "Acabamento artesanal"],
-            img: "/lp/forros-bambu/assets/images/gourmet-churrasqueira.jpg"
+            img: "/assets/images/gourmet-churrasqueira.jpg"
         },
         {
             title: "Pergolado Completo",
             badge: "✨ Alto Padrão",
-            desc: "",
+            desc: "Estrutura robusta montada por especialistas. Sombreamento natural projetado pela nossa engenharia.",
             features: ["Engenharia de campo", "Sombra arquitetônica", "Valorização estética"],
-            img: "/lp/forros-bambu/assets/images/pergolado-black-grid.jpg"
+            img: "/assets/images/pergolado-black-grid.jpg"
         },
         {
             title: "Revestimento Vertical",
             badge: "🌿 Tendência",
-            desc: "",
+            desc: "Transformação de muros e fachadas. Equipes preparadas para lidar com grandes superfícies e detalhes.",
             features: ["Privacidade absoluta", "Execução profissional", "Design biofílico"],
-            img: "/lp/forros-bambu/assets/images/bambu-paralelo-ecobans.jpg"
+            img: "/assets/images/bambu-paralelo-ecobans.jpg"
         }
     ];
 
