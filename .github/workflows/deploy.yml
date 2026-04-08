@@ -29,10 +29,18 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Create _site directory
+        run: |
+          mkdir -p _site
+          # Copiar arquivos estáticos da raiz (excluindo pastas de código e o próprio _site)
+          cp -r assets css js index.html CNAME favicon.ico robots.txt .htaccess google7ff159491cb1da82.html _site/ 2>/dev/null || true
+
       - name: Build Blog
         run: |
           npm install
           npm run build
+          # Copiar resultados do blog para _site
+          cp -r blog posts.json rss.xml sitemap.xml _site/ 2>/dev/null || true
 
       - name: Build Landing Page
         run: |
@@ -43,7 +51,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'terrabambu-lp/dist'
+          path: '_site'
           
       - name: Deploy to GitHub Pages
         id: deployment

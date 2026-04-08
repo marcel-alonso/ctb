@@ -16,7 +16,7 @@ export default defineConfig({
   },
   base: '/lp/forros-bambu/',
   build: {
-    outDir: '../lp/forros-bambu',
+    outDir: '../_site/lp/forros-bambu',
     emptyOutDir: true,
   }
 })
