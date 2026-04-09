@@ -49,18 +49,8 @@ export default function Solucao() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
                     variants={stagger}
-                    className="text-center mb-20"
+                    className="text-center mb-12"
                 >
-                    <div className="flex items-center justify-center gap-2 text-[var(--accent)] font-bold mb-4 uppercase tracking-[0.2em] text-xs">
-                        <UserCheck size={18} />
-                        <span>Equipes de campo especializadas</span>
-                    </div>
-                    <motion.h2 variants={fadeUp} className="text-4xl md:text-6xl font-black mb-6">
-                        Recupere sua <span className="text-[var(--accent)]">área externa</span>
-                    </motion.h2>
-                    <motion.p variants={fadeUp} className="text-[var(--text-muted)] text-xl max-w-2xl mx-auto leading-relaxed font-medium">
-                        Diga adeus ao calor excessivo. Nossas soluções de bambu reduzem a temperatura e trazem o conforto que sua varanda ou pergolado merece.
-                    </motion.p>
                 </motion.div>
 
                 <motion.div
@@ -94,9 +84,11 @@ export default function Solucao() {
 
                             {/* Info */}
                             <div className="p-8 flex flex-col flex-1">
-                                <p className="text-[var(--text-muted)] mb-8 text-base leading-relaxed h-[4.5rem] overflow-hidden font-medium">
-                                    {product.desc}
-                                </p>
+                                {product.desc && (
+                                    <p className="text-[var(--text-muted)] mb-8 text-base leading-relaxed h-[4.5rem] overflow-hidden font-medium">
+                                        {product.desc}
+                                    </p>
+                                )}
 
                                 <ul className="space-y-4 mb-10 flex-1">
                                     {product.features.map(f => (
