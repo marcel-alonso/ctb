@@ -7,7 +7,7 @@ import heroImg from "@assets/images/hero-ultra-luxo.png";
 
 export default function Hero() {
     return (
-        <section className="relative min-h-[90vh] md:h-screen w-full flex items-center justify-center overflow-hidden bg-black">
+        <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-black">
             {/* Background com Parallax Suave */}
             <motion.div
                 initial={{ scale: 1.1, opacity: 0 }}
@@ -24,7 +24,7 @@ export default function Hero() {
             </motion.div>
 
             {/* Conteúdo Central */}
-            <div className="relative z-20 text-center px-6 max-w-5xl mx-auto pt-20 pb-32 md:pb-12">
+            <div className="relative z-20 text-center px-6 max-w-5xl mx-auto pt-20 pb-48 md:pb-12">
                 <motion.div
                     variants={stagger}
                     initial="hidden"

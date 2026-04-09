@@ -35,7 +35,7 @@ export default function ProvaVisual() {
     ];
 
     return (
-        <section className="bg-[var(--bg-light)] text-[var(--text-dark)] py-20 md:py-32 px-6 overflow-hidden">
+        <section className="bg-[var(--bg-light)] text-[var(--text-dark)] pt-32 pb-20 md:py-32 px-6 overflow-hidden">
             <div className="max-w-7xl mx-auto">
 
                 {/* Prova Social em Números - Gatilho de Escala */}
