@@ -49,8 +49,18 @@ export default function Solucao() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
                     variants={stagger}
-                    className="text-center mb-12"
+                    className="text-center mb-20"
                 >
+                    <div className="flex items-center justify-center gap-2 text-[var(--accent)] font-bold mb-4 uppercase tracking-[0.2em] text-xs">
+                        <UserCheck size={18} />
+                        <span>Equipes de campo especializadas</span>
+                    </div>
+                    <motion.h2 variants={fadeUp} className="text-4xl md:text-6xl font-black mb-6 text-white">
+                        Recupere sua <span className="text-[var(--accent)]">área externa</span>
+                    </motion.h2>
+                    <motion.p variants={fadeUp} className="text-[var(--text-muted)] text-xl max-w-2xl mx-auto leading-relaxed font-medium">
+                        Diga adeus ao calor excessivo. Nossas soluções de bambu reduzem a temperatura e trazem o conforto que sua varanda ou pergolado merece.
+                    </motion.p>
                 </motion.div>
 
                 <motion.div
@@ -58,7 +68,7 @@ export default function Solucao() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
                     variants={stagger}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4"
                 >
                     {products.map((product, i) => (
                         <motion.div
