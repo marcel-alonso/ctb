@@ -6,7 +6,7 @@ import ScrollIndicator from "./ScrollIndicator";
 import restaurantImg from "@assets/images/gallery-restaurant.jpg";
 import poolImg from "@assets/images/gallery-pool.jpg";
 import spaImg from "@assets/images/gallery-spa.jpg";
-import revestimentoImg from "@assets/images/bambu-paralelo-ecobans.jpg";
+import varandaImg from "@assets/images/gallery-varanda.jpg";
 
 const AnimatedCounter = ({ target, suffix = "", delay = 0 }) => {
     const count = useMotionValue(0);
@@ -31,7 +31,7 @@ export default function ProvaVisual() {
         { url: restaurantImg, label: "Arquitetura e Gastronomia" },
         { url: poolImg, label: "Lounge com Piscina" },
         { url: spaImg, label: "Área de Spa" },
-        { url: revestimentoImg, label: "Acabamento Ecobans" }
+        { url: varandaImg, label: "Varanda e Estilo de Vida" }
     ];
 
     return (
@@ -59,7 +59,7 @@ export default function ProvaVisual() {
                         <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
                             <AnimatedCounter target={10} delay={0.2} suffix="+" />
                         </h3>
-                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">No Mercado</p>
+                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">Anos no Mercado</p>
                     </motion.div>
  
                     <motion.div variants={fadeUp} className="flex flex-col items-center">
@@ -75,7 +75,7 @@ export default function ProvaVisual() {
                         <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
                             10
                         </h3>
-                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">de Garantia em Áreas Cobertas</p>
+                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">Anos de Garantia</p>
                     </motion.div>
                 </motion.div>
 
