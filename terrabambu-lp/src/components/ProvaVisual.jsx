@@ -3,9 +3,9 @@ import { useRef, useEffect } from "react";
 import { fadeUp, stagger, fadeIn } from "../shared/animations";
 import { Star } from "lucide-react";
 import ScrollIndicator from "./ScrollIndicator";
-import gourmetImg from "@assets/images/gourmet-churrasqueira.jpg";
-import pergolaoImg from "@assets/images/pergolado-black-grid.jpg";
-import tetoImg from "@assets/images/teto-ventilador.jpg";
+import restaurantImg from "@assets/images/gallery-restaurant.jpg";
+import poolImg from "@assets/images/gallery-pool.jpg";
+import spaImg from "@assets/images/gallery-spa.jpg";
 import revestimentoImg from "@assets/images/bambu-paralelo-ecobans.jpg";
 
 const AnimatedCounter = ({ target, suffix = "", delay = 0 }) => {
@@ -28,9 +28,9 @@ const AnimatedCounter = ({ target, suffix = "", delay = 0 }) => {
 
 export default function ProvaVisual() {
     const images = [
-        { url: gourmetImg, label: "Área Gourmet Churrasqueira" },
-        { url: pergolaoImg, label: "Pergolado Contemporâneo" },
-        { url: tetoImg, label: "Forro com Ventilador" },
+        { url: restaurantImg, label: "Arquitetura e Gastronomia" },
+        { url: poolImg, label: "Lounge com Piscina" },
+        { url: spaImg, label: "Área de Spa" },
         { url: revestimentoImg, label: "Acabamento Ecobans" }
     ];
 

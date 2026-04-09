@@ -5,6 +5,7 @@ import { CONFIG, trackAndOpenWA } from "../config";
 import ScrollIndicator from "./ScrollIndicator";
 import forroRetoImg from "@assets/images/forro-reto.png";
 import gourmetImg from "@assets/images/gourmet-churrasqueira.jpg";
+import panelTrancadoImg from "@assets/images/panel-trancado.jpg";
 import pergolaoImg from "@assets/images/pergolado-black-grid.jpg";
 import revestimentoImg from "@assets/images/bambu-paralelo-ecobans.jpg";
 
@@ -14,28 +15,28 @@ export default function Solucao() {
             title: "Forro Reto",
             badge: "🎨 Design Artesanal",
             desc: "",
-            features: ["Instalação especializada", "Conforto térmico nobre", "Acabamento artesanal"],
+            features: ["Bambu roliço inteiro", "Conforto térmico nobre", "Acabamento artesanal"],
             img: forroRetoImg
         },
         {
             title: "Painel Trançado",
             badge: "🏆 O Mais Escolhido",
             desc: "",
-            features: ["Design Personalizado", "Conforto Térmico e Acústico", "Durabilidade Premium"],
-            img: gourmetImg
+            features: ["bambu ripado e trançado", "Conforto Térmico e Acústico", "Durabilidade Premium"],
+            img: panelTrancadoImg
         },
         {
             title: "Pergolado Completo",
             badge: "✨ Solução Completa",
             desc: "",
-            features: ["Engenharia de campo", "Sombra arquitetônica", "Valorização estética"],
+            features: ["Estrutura de madeira ou metal", "+ Revestimento escolhido", "Instalação especializada"],
             img: pergolaoImg
         },
         {
             title: "Lâmina Prime",
             badge: "🌿 Tendência",
             desc: "",
-            features: ["Privacidade absoluta", "Execução profissional", "Design biofílico"],
+            features: ["Ripas aparelhadas", "Execução profissional", "Design biofílico"],
             img: revestimentoImg
         }
     ];
