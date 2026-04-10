@@ -44,7 +44,7 @@ export default function ProvaVisualPremium() {
     ];
 
     return (
-        <Section variant="light" className="pt-32 pb-20 overflow-hidden bg-[var(--bg-light)]">
+        <Section variant="light" className="pt-16 pb-16 overflow-hidden bg-[var(--bg-light)]">
             <Container>
                 {/* Stats Grid Premium */}
                 <motion.div
@@ -53,11 +53,11 @@ export default function ProvaVisualPremium() {
                     viewport={{ once: true, margin: "-100px" }}
                     variants={staggerSlow}
                 >
-                    <Grid cols={{ default: 1, md: 4 }} gap="gap-12" className="mb-32 py-16 border-y border-[var(--accent)]/10">
+                    <Grid cols={{ default: 1, md: 4 }} gap="gap-8" className="mb-16 py-8 border-y border-[var(--accent)]/10">
                         {stats.map((stat, i) => (
                             <motion.div key={i} variants={fadeUpPremium} className="flex flex-col items-center">
-                                <div className="w-12 h-1 bg-[var(--accent)]/40 rounded-full mb-8" />
-                                <h3 className="text-5xl md:text-6xl font-black text-[var(--bg)] mb-3 tracking-tighter">
+                                <div className="w-12 h-1 bg-[var(--accent)]/40 rounded-full mb-4" />
+                                <h3 className="text-4xl md:text-5xl font-black text-[var(--bg)] mb-2 tracking-tighter">
                                     {stat.isLabel ? (
                                         stat.label
                                     ) : stat.isSimple ? (
@@ -66,7 +66,7 @@ export default function ProvaVisualPremium() {
                                         <AnimatedCounter target={stat.target} suffix={stat.suffix} delay={i * 0.1} />
                                     )}
                                 </h3>
-                                <p className="text-[11px] font-black uppercase tracking-[0.2em] text-[var(--accent-dark)] text-center opacity-80">
+                                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--accent-dark)] text-center opacity-80">
                                     {stat.isLabel ? stat.subLabel : stat.label}
                                 </p>
                             </motion.div>
