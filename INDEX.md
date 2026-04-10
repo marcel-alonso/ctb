@@ -1,3 +1,6 @@
+---
+render_with_liquid: false
+---
 # 📚 Índice Completo - Premium Design System Skill
 
 Sistema premium pronto para elevação visual da Landing Page Forros Bambu.

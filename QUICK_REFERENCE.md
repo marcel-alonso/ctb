@@ -1,4 +1,4 @@
-# ⚡ Quick Reference - Premium Design System
+# 📋 Quick Reference - Premium Design System
 
 **Cheat sheet** para usar a skill premium no dia a dia.
 
