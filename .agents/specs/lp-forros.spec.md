@@ -2,7 +2,9 @@
 
 **Domínio:** Funil de Alta Performance  
 **Tecnologia:** Vite + React + Tailwind  
-**Caminho:** `/terrabambu-lp/`
+**Caminho Source:** `/terrabambu-lp/`  
+**Deploy URL V1:** `https://conexaoterrabambu.com.br/lp/forros-bambu/`  
+**Deploy URL V2:** `https://conexaoterrabambu.com.br/lp/forros-bambu-v2/`
 
 ---
 
@@ -34,3 +36,9 @@ A LP é composta pelos seguintes componentes, em ordem:
 
 - Base no `index.css`. Cores via CSS Variables (`--accent`, `--gold`).
 - Breakpoints: Mobile-first. Desktop (>768px).
+
+## 5. Deployment (GitHub Pages)
+
+- **V1 (Legacy)**: Pasta `lp/forros-bambu/`. Mantida para estabilidade e backup.
+- **V2 (Premium)**: Pasta `lp/forros-bambu-v2/`. Gerada via `npm run build` dentro de `/terrabambu-lp/`.
+- **Custom Domain**: Configurado via arquivo `CNAME` na raiz para `conexaoterrabambu.com.br`.

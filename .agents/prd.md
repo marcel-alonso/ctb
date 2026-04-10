@@ -42,7 +42,8 @@ Qualquer comunicação (LPs, Ads, Blog) deve utilizar os seguintes indicadores a
 
 A infraestrutura digital deve suportar a expansão rápida de funis:
 
-- ✅ **LP Forros de Bambu** (Ativa em `/terrabambu-lp/`)
+- ✅ **LP Forros de Bambu V1** [Estática] (Ativa em `/lp/forros-bambu/`)
+- ✅ **LP Forros de Bambu V2** [Premium] (Ativa em `/lp/forros-bambu-v2/`)
 - 🔜 **LP Parque Ecológico Infantil** (Próximo lançamento)
 - 📋 **LP Cursos e E-books** (Em planejamento)
 - 📋 **LP Projetos de Autoridade** (Em planejamento)
