@@ -323,6 +323,8 @@ terrabambu-lp/
 
 ## 10. Gatekeeper - O Que Não Fazer
 
+❌ **Não use arquiteturas duplicadas** - Concentre-se unicamente no servidor de desenvolvimento do Vite (`npm run dev`). A visualização do desenvolvimento deve SEMPRE ser feita via localhost do Vite para obter atualizações em tempo real (HMR).
+❌ **Não dependa de Github Actions para o fluxo da LP** - O desenvolvimento e os previews devem rodar exclusivamente local usando Vite, sem necessidades de commits constantes para ações apenas para preview no navegador. Evite a necessidade de rodar `npm run build` constante apenas para visualizar no diretório legado da raiz.
 ❌ **Não use divs customizadas** quando tiver componente base  
 ❌ **Não hardcode transições** - use tokens de animação  
 ❌ **Não quebre spacing 8px** - use var(--space-*)  

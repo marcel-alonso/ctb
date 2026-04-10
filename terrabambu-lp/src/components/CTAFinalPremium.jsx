@@ -39,9 +39,9 @@ export default function CTAFinalPremium() {
           {/* Subtitle */}
           <motion.p
             variants={fadeUpPremium}
-            className="text-xl md:text-2xl text-[var(--text-muted)] mb-14 max-w-3xl mx-auto font-medium leading-relaxed"
+            className="text-center text-xl md:text-2xl text-[var(--text-muted)] mb-14 max-w-3xl mx-auto font-medium leading-relaxed"
           >
-            Unimos agilidade digital com a força de equipes de campo extremamente preparadas. 
+            Unimos agilidade digital com a força de equipes de campo extremamente preparadas. <br className="hidden md:block" />
             <span className="text-white"> Dê o primeiro passo para sua análise técnica e orientação personalizada.</span>
           </motion.p>
 
