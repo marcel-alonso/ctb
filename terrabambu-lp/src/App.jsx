@@ -1,12 +1,12 @@
 import { useScroll, motion } from "framer-motion";
 import WhatsAppFloat from "./components/WhatsAppFloat";
-import Hero from "./components/Hero";
-import ProvaVisual from "./components/ProvaVisual";
-import Solucao from "./components/Solucao";
-import Autoridade from "./components/Autoridade";
-import Depoimentos from "./components/Depoimentos";
-import FAQ from "./components/FAQ";
-import CTAFinal from "./components/CTAFinal";
+import HeroPremium from "./components/HeroPremium";
+import ProvaVisualPremium from "./components/ProvaVisualPremium";
+import SolucaoPremium from "./components/SolucaoPremium";
+import AutoridadePremium from "./components/AutoridadePremium";
+import DepoimentosPremium from "./components/DepoimentosPremium";
+import FAQPremium from "./components/FAQPremium";
+import CTAFinalPremium from "./components/CTAFinalPremium";
 
 export default function App() {
     const { scrollYProgress } = useScroll();
@@ -16,13 +16,13 @@ export default function App() {
                 style={{ scaleX: scrollYProgress }} />
             <WhatsAppFloat />
             <main>
-                <Hero />
-                <ProvaVisual />
-                <Solucao />
-                <Autoridade />
-                <Depoimentos />
-                <FAQ />
-                <CTAFinal />
+                <HeroPremium />
+                <ProvaVisualPremium />
+                <SolucaoPremium />
+                <AutoridadePremium />
+                <DepoimentosPremium />
+                <FAQPremium />
+                <CTAFinalPremium />
             </main>
         </>
     );

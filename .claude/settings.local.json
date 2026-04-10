@@ -12,6 +12,10 @@
       "Bash(git commit -m 'fix: ajustar path do upload-pages-artifact:*)",
       "Bash(git commit -m 'revert: voltar path do upload-pages-artifact para original:*)",
       "Bash(git commit -m 'docs: adicionar documentação crítica sobre GitHub Actions deploy:*)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\msx\\.claude\\projects\\c--Users-msx-Documents-Marcel-ctb\\memory",
+      "c:\\Users\\msx\\.claude\\projects\\c--Users-msx-Documents-Marcel-ctb"
     ]
   }
 }
