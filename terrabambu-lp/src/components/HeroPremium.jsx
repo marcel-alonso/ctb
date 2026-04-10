@@ -30,7 +30,7 @@ export default function HeroPremium() {
           initial="hidden"
           animate="visible"
           variants={staggerSlow}
-          className="flex flex-col items-center"
+          className="flex flex-col items-center max-w-4xl mx-auto"
         >
           {/* Badge com ícone */}
           <motion.div variants={fadeUpPremium}>
@@ -38,14 +38,15 @@ export default function HeroPremium() {
               icon={MapPin}
               label="Atendimento em SP e todo Brasil"
               variant="light"
-              className="mb-8"
+              className="mb-10"
             />
           </motion.div>
-
+[diff_block_end]
+[diff_block_start]
           {/* Heading */}
           <motion.h1
             variants={fadeUpPremium}
-            className="text-6xl md:text-7xl font-black leading-tight mb-6 text-white"
+            className="text-5xl md:text-8xl font-black leading-[1.1] mb-8 text-white tracking-tighter"
           >
             Design que respira, <br className="hidden md:block" />
             <span className="text-[var(--accent)]">natureza que acolhe.</span>
@@ -54,31 +55,40 @@ export default function HeroPremium() {
           {/* Subtitle */}
           <motion.p
             variants={fadeUpPremium}
-            className="text-lg md:text-2xl text-[var(--text-muted)] max-w-2xl mx-auto mb-12"
+            className="text-lg md:text-2xl text-[var(--text-muted)] max-w-2xl mx-auto mb-20 leading-relaxed font-medium"
           >
-            Evolua sua área externa para o máximo conforto térmico com o toque artesanal do bambu premium.
+            Evolua sua área externa para o máximo conforto térmico <br className="hidden md:block" /> com o toque artesanal do bambu premium.
           </motion.p>
 
-          {/* CTA Button */}
-          <motion.div variants={fadeUpPremium}>
+          {/* CTA Button Wrapper */}
+          <motion.div variants={fadeUpPremium} className="flex flex-col items-center gap-6">
             <Button
               variant="primary"
               size="lg"
               onClick={() =>
                 trackAndOpenWA("Olá! Vi o Hero v2 e gostaria de um orçamento.")
               }
-              className="w-full md:w-auto"
+              className="w-full md:w-auto px-12 py-6 text-lg shadow-2xl hover:scale-105 transition-transform"
             >
               SOLICITAR ORÇAMENTO GRÁTIS
             </Button>
+            
+            <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 font-bold">
+              Análise técnica em poucas horas
+            </p>
           </motion.div>
         </motion.div>
       </Container>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30">
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2 }}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 z-30"
+      >
         <ScrollIndicator color="white" label="Explorar Projetos" />
-      </div>
+      </motion.div>
 
       {/* Glow Effects */}
       <div className="absolute -top-24 -right-24 w-96 h-96 bg-[var(--accent)]/10 rounded-full blur-[120px] pointer-events-none" />
