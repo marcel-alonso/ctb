@@ -3,7 +3,7 @@ import WhatsAppFloat from "./components/WhatsAppFloat";
 import HeroPremium from "./components/HeroPremium";
 import ProvaVisualPremium from "./components/ProvaVisualPremium";
 import SolucaoPremium from "./components/SolucaoPremium";
-import AutoridadePremium from "./components/AutoridadePremium";
+
 import DepoimentosPremium from "./components/DepoimentosPremium";
 import FAQPremium from "./components/FAQPremium";
 import CTAFinalPremium from "./components/CTAFinalPremium";
@@ -19,7 +19,6 @@ export default function App() {
                 <HeroPremium />
                 <ProvaVisualPremium />
                 <SolucaoPremium />
-                <AutoridadePremium />
                 <DepoimentosPremium />
                 <FAQPremium />
                 <CTAFinalPremium />

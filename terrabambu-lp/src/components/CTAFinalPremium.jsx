@@ -48,26 +48,26 @@ export default function CTAFinalPremium() {
           {/* CTA Buttons Row */}
           <motion.div 
             variants={fadeUpPremium} 
-            className="flex flex-col md:flex-row items-center justify-center gap-6 mb-24"
+            className="flex flex-col items-center justify-center gap-8 mb-24"
           >
             <Button
               variant="primary"
               size="lg"
               icon={ArrowRight}
               onClick={() => trackAndOpenWA(CONFIG.wa.msgFinal, 'Final_CTA_Click')}
-              className="w-full md:w-auto shadow-2xl"
+              className="w-full md:w-auto shadow-2xl py-6 px-12 text-lg"
             >
               {CONFIG.wa.ctaFinal}
             </Button>
             
-            <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-[11px] font-black uppercase tracking-[0.2em] text-[var(--text-muted)] mt-4 md:mt-0">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-xs font-bold uppercase tracking-widest text-[var(--text-muted)]">
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 size={16} className="text-[var(--accent)]" /> 
-                  Equipes de Campo Próprias
+                  <CheckCircle2 size={18} className="text-[var(--accent)]" /> 
+                  <span>Equipes de Campo Próprias</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle2 size={16} className="text-[var(--accent)]" /> 
-                  Brasil e Interior de SP
+                  <CheckCircle2 size={18} className="text-[var(--accent)]" /> 
+                  <span>Brasil e Interior de SP</span>
                 </div>
             </div>
           </motion.div>
