@@ -6,6 +6,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
+        "deploy": "vite build && node -e \"const fs=require('fs');const p=require('path');const src=p.resolve('dist');const dest=p.resolve('..','lp','forros-bambu');fs.mkdirSync(dest,{recursive:true});fs.cpSync(src,dest,{recursive:true});console.log('✅ Deploy: dist → ../lp/forros-bambu')\"",
         "lint": "eslint .",
         "preview": "vite preview"
     },

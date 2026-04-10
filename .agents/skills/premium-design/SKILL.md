@@ -154,16 +154,21 @@ terrabambu-lp/
    - Mudar imagens
    - Ajustar onClick handlers
 
-4. **Testar**
+4. **Testar (SEMPRE via dev server)**
    ```bash
+   cd terrabambu-lp
    npm run dev
+   # Abrir http://localhost:5173/lp/forros-bambu/
    # Verificar mobile, tablet, desktop
+   # Todas as mudanças aparecem instantaneamente (HMR)
    ```
 
-5. **Validar performance**
+5. **Publicar (somente quando aprovado)**
    ```bash
-   npm run build
-   # Bundle deve ser < 100KB
+   cd terrabambu-lp
+   npm run deploy
+   # Faz build + copia para ../lp/forros-bambu/
+   # Depois: git add, commit e push normalmente
    ```
 
 ---
@@ -338,16 +343,24 @@ terrabambu-lp/
 ## 11. Comandos Úteis
 
 ```bash
-# Development
-npm run dev              # localhost:5173
+# Dentro de terrabambu-lp/:
 
-# Testing
-npm run build            # Build production
-npm run preview          # Preview build local
+# Development (uso diário - HMR em tempo real)
+npm run dev              # localhost:5173/lp/forros-bambu/
+
+# Deploy (quando quiser publicar no GitHub Pages)
+npm run deploy           # Build + copia para ../lp/forros-bambu/
+
+# Preview do build local
+npm run preview          # Preview do bundle compilado
 
 # Linting
 npm run lint             # ESLint
 ```
+
+> ⚠️ **IMPORTANTE**: Nunca rode `npm run build` da raiz do repositório para a LP.
+> O comando `npm run deploy` dentro de `terrabambu-lp/` é o único caminho correto.
+> O `npm run dev` é o que deve ser usado no dia-a-dia para desenvolvimento.
 
 ---
 

@@ -6,8 +6,6 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build-blog.mjs",
-    "build:lp": "cd terrabambu-lp && npm run build",
-    "build:full": "npm run build && npm run build:lp",
     "validate": "node scripts/validate-posts.mjs",
     "new-post": "node scripts/new-post.mjs",
     "watch": "node scripts/build.js --watch",
