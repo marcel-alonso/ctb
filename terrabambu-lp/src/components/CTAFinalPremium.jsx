@@ -16,7 +16,7 @@ export default function CTAFinalPremium() {
            whileInView="visible"
            viewport={{ once: true, margin: "-100px" }}
            variants={staggerSlow}
-           className="px-6 text-center"
+           className="px-6 flex flex-col items-center text-center"
         >
           {/* Badge */}
           <motion.div variants={fadeUpPremium} className="flex justify-center mb-8">
