@@ -42,13 +42,13 @@ export default function HeroEmocional() {
             />
           </motion.div>
 
-          {/* Heading — fala do SONHO, nao do produto */}
+          {/* Heading */}
           <motion.h1
             variants={fadeUpPremium}
             className="text-4xl sm:text-5xl md:text-8xl font-black leading-[1.08] mb-6 text-white tracking-tighter"
           >
-            Design que respira, <br className="hidden md:block" />
-            <span className="text-[var(--accent)]">natureza que acolhe.</span>
+            REVESTIMENTOS DE BAMBU <br className="hidden md:block" />
+            <span className="text-[var(--accent)]">Conforto térmico e design orgânico</span>
           </motion.h1>
 
           {/* Subtitle — mobile: mais compacto, desktop: completo */}
@@ -65,7 +65,7 @@ export default function HeroEmocional() {
           <motion.div variants={fadeUpPremium} className="flex flex-col items-center gap-4">
             <Button
               variant="primary"
-              size="xl"
+              size="md"
               onClick={() =>
                 trackAndOpenWA("Ola! Vi o site e gostaria de um orcamento para forros de bambu.")
               }

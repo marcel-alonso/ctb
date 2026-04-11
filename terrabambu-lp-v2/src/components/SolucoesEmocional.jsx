@@ -13,28 +13,28 @@ import revestimentoImg from "@assets/images/bambu-paralelo-ecobans.jpg";
 export default function SolucoesEmocional() {
   const products = [
     {
-      title: "Forro Reto",
-      badge: "Design Artesanal",
-      features: ["Bambu rolico inteiro", "Conforto termico nobre", "Acabamento artesanal"],
-      img: forroRetoImg
-    },
-    {
-      title: "Painel Trancado",
+      title: "Painel Trançado",
       badge: "O Mais Escolhido",
-      features: ["Bambu ripado e trancado", "Conforto Termico e Acustico", "Durabilidade Premium"],
+      features: ["Bambu ripado e trançado", "Conforto Térmico e Acústico", "Durabilidade Premium"],
       img: panelTrancadoImg
     },
     {
-      title: "Pergolado Completo",
-      badge: "Solucao Completa",
-      features: ["Estrutura de madeira ou metal", "+ Revestimento escolhido", "Instalacao especializada"],
-      img: pergolaoImg
+      title: "Lâminas Prime",
+      badge: "Tendência",
+      features: ["Ripas aparelhadas de bambu", "Design sofisticado", "Conforto térmico adequado"],
+      img: revestimentoImg
     },
     {
-      title: "Lamina Prime",
-      badge: "Tendencia",
-      features: ["Ripas aparelhadas", "Execucao profissional", "Design biofilico"],
-      img: revestimentoImg
+      title: "Forro Reto",
+      badge: "Design Artesanal",
+      features: ["Bambu roliço inteiro", "Conforto térmico nobre", "Acabamento artesanal"],
+      img: forroRetoImg
+    },
+    {
+      title: "Pergolado",
+      badge: "Solução Completa",
+      features: ["Estrutura de madeira ou metal", "+ Revestimento escolhido", "Instalação especializada"],
+      img: pergolaoImg
     }
   ];
 
