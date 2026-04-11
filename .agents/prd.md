@@ -28,7 +28,7 @@ O crescimento da marca segue estes pilares em ordem de maturidade:
 - **Arquitetos/Designers**: Profissionais que desejam integrar materiais sustentáveis em seus projetos.
 - **Entusiastas e Profissionais de Bio**: Público interessado na vertente educacional (cursos e ebooks).
 
-## 4. Indicadores de Confiança (Voz da Marca)
+## 4. Identidade Visual e Voz da Marca
 
 Qualquer comunicação (LPs, Ads, Blog) deve utilizar os seguintes indicadores auditados:
 
@@ -37,6 +37,11 @@ Qualquer comunicação (LPs, Ads, Blog) deve utilizar os seguintes indicadores a
 - **Qualidade**: 100% Artesanal e Sob Medida.
 - **Garantia**: 5 Anos de Garantia Real.
 - **Eficiência**: Resposta em minutos (atendimento via IA inteligente).
+
+### 4.1 Identidade Visual (Tipografia)
+A marca "Conexão Terra Bambu" utiliza tipografias que comunicam luxo ecológico, arquitetura limpa e formas orgânicas:
+- **Títulos (Headings): `Outfit`** – Escolhida por suas formas geométricas arredondadas que lembram os arcos do bambu, garantindo modernidade, imponência e leitura limpa que o alto padrão exige.
+- **Texto Base (Body): `Plus Jakarta Sans`** – Traz sofisticação e legibilidade extrema, mantendo o tom técnico, acessível e clean em blocos de texto grandes ou no mobile.
 
 ## 5. Roadmap de Landing Pages
 
