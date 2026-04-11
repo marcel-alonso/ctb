@@ -53,7 +53,7 @@ export default function CTAFinalEmocional() {
           >
             <Button
               variant="primary"
-              size="xl"
+              size="lg"
               icon={ArrowRight}
               onClick={() => trackAndOpenWA(CONFIG.wa.msgFinal, 'Final_CTA_Click')}
               className="w-full sm:w-auto shadow-2xl"

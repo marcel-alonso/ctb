@@ -10,7 +10,7 @@ import { Button, Card, Badge, Section, Container, Grid } from "./base";
 import forroRetoImg from "@assets/images/forro-reto.png";
 import gourmetImg from "@assets/images/gourmet-churrasqueira.jpg";
 import panelTrancadoImg from "@assets/images/panel-trancado.jpg";
-import pergolaoImg from "@assets/images/pergolado-black-grid.jpg";
+import pergolaoImg from "@assets/images/pergolado-completo.jpeg";
 import revestimentoImg from "@assets/images/bambu-paralelo-ecobans.jpg";
 
 export default function SolucaoPremium() {

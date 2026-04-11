@@ -49,10 +49,10 @@ export const Button = ({
   };
 
   const sizes = {
-    sm: 'px-5 py-2.5 text-xs gap-1.5',          /* ~36px — compact actions */
-    md: 'px-7 py-3.5 text-sm gap-2',             /* ~44px — card CTAs (Apple HIG min) */
-    lg: 'px-10 py-4 text-sm gap-2.5',            /* ~48px — secondary prominence */
-    xl: 'px-14 py-5 text-base gap-3',            /* ~56px — hero / final CTA */
+    sm: 'px-4 py-2 text-[11px] gap-1',           /* ~32px — compact actions */
+    md: 'px-5 py-2.5 text-xs gap-1.5',           /* ~36px — card CTAs */
+    lg: 'px-7 py-3 text-xs gap-2',               /* ~40px — secondary prominence */
+    xl: 'px-9 py-3.5 text-sm gap-2',             /* ~44px — hero / final CTA */
   };
 
   /* Haptic feedback on touch devices */

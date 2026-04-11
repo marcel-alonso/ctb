@@ -38,12 +38,6 @@ export default function DepoimentosEmocional() {
           variants={staggerSlow}
           className="text-center mb-14 relative"
         >
-          <motion.div
-            variants={fadeUpPremium}
-            className="absolute -top-12 left-1/2 -translate-x-1/2 opacity-10 text-[var(--accent)]"
-          >
-            <Quote size={120} />
-          </motion.div>
           <motion.h2
             variants={fadeUpPremium}
             className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6"

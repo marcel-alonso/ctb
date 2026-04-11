@@ -45,16 +45,23 @@ export default function HeroEmocional() {
           {/* Heading */}
           <motion.h1
             variants={fadeUpPremium}
-            className="text-4xl sm:text-5xl md:text-8xl font-black leading-[1.08] mb-6 text-white tracking-tighter"
+            className="text-4xl sm:text-5xl md:text-8xl font-black leading-[1.08] mb-3 text-white tracking-tighter"
           >
-            REVESTIMENTOS DE BAMBU <br className="hidden md:block" />
-            <span className="text-[var(--accent)]">Conforto térmico e design orgânico</span>
+            REVESTIMENTOS DE BAMBU
           </motion.h1>
+          <motion.p
+            variants={fadeUpPremium}
+            className="text-2xl sm:text-3xl md:text-5xl font-black mb-6 tracking-tight"
+            style={{ WebkitTextStroke: "1px rgba(255,255,255,0.5)" }}
+          >
+            <span className="text-[var(--accent)]">Conforto térmico e design orgânico</span>
+          </motion.p>
 
           {/* Subtitle — mobile: mais compacto, desktop: completo */}
           <motion.p
             variants={fadeUpPremium}
-            className="text-base md:text-2xl text-[var(--text-muted)] max-w-2xl mx-auto mb-10 md:mb-12 leading-relaxed font-medium"
+            className="text-base md:text-2xl text-white/70 max-w-2xl mx-auto mb-10 md:mb-12 leading-relaxed font-medium"
+            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}
           >
             Evolua sua area externa para o maximo conforto termico{" "}
             <br className="hidden md:block" />
