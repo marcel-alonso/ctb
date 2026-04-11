@@ -52,9 +52,8 @@ export default function HeroEmocional() {
           <motion.p
             variants={fadeUpPremium}
             className="text-2xl sm:text-3xl md:text-5xl font-black mb-6 tracking-tight"
-            style={{ WebkitTextStroke: "1px rgba(255,255,255,0.5)" }}
           >
-            <span className="text-[var(--accent)]">Conforto térmico e design orgânico</span>
+            <span className="text-[var(--accent)] drop-shadow-md">Conforto térmico e design orgânico</span>
           </motion.p>
 
           {/* Subtitle — mobile: mais compacto, desktop: completo */}

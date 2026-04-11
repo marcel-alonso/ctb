@@ -8,7 +8,7 @@ import poolImg from "@assets/images/gallery-pool.jpg";
 import spaImg from "@assets/images/gallery-spa.jpg";
 import varandaImg from "@assets/images/gallery-varanda.jpg";
 
-const AnimatedCounter = ({ target, suffix = "", delay = 0 }) => {
+const AnimatedCounter = ({ target, prefix = "", suffix = "", delay = 0 }) => {
     const count = useMotionValue(0);
     const spring = useSpring(count, { stiffness: 70, damping: 18 });
     const rounded = useTransform(spring, v => Math.round(v));
@@ -23,7 +23,7 @@ const AnimatedCounter = ({ target, suffix = "", delay = 0 }) => {
         }
     }, [isInView, spring, target, delay]);
 
-    return <span ref={ref}><motion.span>{rounded}</motion.span>{suffix}</span>;
+    return <span ref={ref}>{prefix}<motion.span>{rounded}</motion.span>{suffix}</span>;
 };
 
 export default function ProvaVisual() {
@@ -44,38 +44,34 @@ export default function ProvaVisual() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-80px" }}
-                    className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-28 py-12 border-y border-[var(--accent)]/10"
+                    className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 mb-16 py-6 border-y border-[var(--accent)]/10"
                 >
-                    <motion.div variants={fadeUp} className="flex flex-col items-center">
-                        <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
-                        <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
-                            <AnimatedCounter target={3000} delay={0.1} suffix="m²" />
+                    <motion.div variants={fadeUp} className="flex flex-row items-center justify-center gap-3">
+                        <h3 className="text-3xl md:text-4xl font-black text-[var(--bg)] tracking-tighter whitespace-nowrap">
+                            <AnimatedCounter target={3000} delay={0.1} prefix="+" suffix="m²" />
                         </h3>
-                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">Transformados</p>
+                        <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[var(--accent-dark)] text-left leading-tight">Transformados</p>
                     </motion.div>
 
-                    <motion.div variants={fadeUp} className="flex flex-col items-center">
-                        <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
-                        <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
+                    <motion.div variants={fadeUp} className="flex flex-row items-center justify-center gap-3">
+                        <h3 className="text-3xl md:text-4xl font-black text-[var(--bg)] tracking-tighter whitespace-nowrap">
                             <AnimatedCounter target={10} delay={0.2} suffix="+" />
                         </h3>
-                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">Anos no Mercado</p>
+                        <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[var(--accent-dark)] text-left leading-tight">Anos no Mercado</p>
                     </motion.div>
  
-                    <motion.div variants={fadeUp} className="flex flex-col items-center">
-                        <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
-                        <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
+                    <motion.div variants={fadeUp} className="flex flex-row items-center justify-center gap-3">
+                        <h3 className="text-2xl md:text-3xl font-black text-[var(--bg)] tracking-tighter whitespace-nowrap">
                             Ecológico
                         </h3>
-                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">Design Premium e Sustentável</p>
+                        <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[var(--accent-dark)] text-left leading-tight">Design Premium e Sustentável</p>
                     </motion.div>
 
-                    <motion.div variants={fadeUp} className="flex flex-col items-center">
-                        <div className="w-16 h-1 w-full bg-[var(--accent)]/30 rounded-full mb-6" />
-                        <h3 className="text-4xl md:text-6xl font-black text-[var(--bg)] mb-2 tracking-tighter">
+                    <motion.div variants={fadeUp} className="flex flex-row items-center justify-center gap-3">
+                        <h3 className="text-3xl md:text-4xl font-black text-[var(--bg)] tracking-tighter whitespace-nowrap">
                             10
                         </h3>
-                        <p className="text-[10px] md:text-sm font-bold uppercase tracking-widest text-[var(--accent-dark)] text-center">Anos de Garantia</p>
+                        <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-[var(--accent-dark)] text-left leading-tight">Anos de<br className="hidden md:block"/>Garantia</p>
                     </motion.div>
                 </motion.div>
 

@@ -10,7 +10,7 @@ import poolImg from "@assets/images/gallery-pool.jpg";
 import spaImg from "@assets/images/gallery-spa.jpg";
 import varandaImg from "@assets/images/gallery-varanda.jpg";
 
-const AnimatedCounter = ({ target, suffix = "", delay = 0 }) => {
+const AnimatedCounter = ({ target, prefix = "", suffix = "", delay = 0 }) => {
     const count = useMotionValue(0);
     const spring = useSpring(count, { stiffness: 60, damping: 20 });
     const rounded = useTransform(spring, v => Math.round(v));
@@ -25,7 +25,7 @@ const AnimatedCounter = ({ target, suffix = "", delay = 0 }) => {
         }
     }, [isInView, spring, target, delay]);
 
-    return <span ref={ref}><motion.span>{rounded}</motion.span>{suffix}</span>;
+    return <span ref={ref}>{prefix}<motion.span>{rounded}</motion.span>{suffix}</span>;
 };
 
 export default function ProvaVisualPremium() {
@@ -37,7 +37,7 @@ export default function ProvaVisualPremium() {
     ];
 
     const stats = [
-        { target: 3000, suffix: "m²", label: "Transformados" },
+        { target: 3000, prefix: "+", suffix: "m²", label: "Transformados" },
         { target: 10, suffix: "+", label: "Anos no Mercado" },
         { target: 0, label: "Ecológico", subLabel: "Design Premium e Sustentável", isLabel: true },
         { target: 10, label: "Anos de Garantia", isSimple: true }
@@ -53,20 +53,19 @@ export default function ProvaVisualPremium() {
                     viewport={{ once: true, margin: "-100px" }}
                     variants={staggerSlow}
                 >
-                    <Grid cols={{ default: 1, md: 4 }} gap="gap-6" className="mb-14 py-8 border-y border-[var(--accent)]/10">
+                    <Grid cols={{ default: 1, md: 4 }} gap="gap-4" className="mb-10 py-6 border-y border-[var(--accent)]/10">
                         {stats.map((stat, i) => (
-                            <motion.div key={i} variants={fadeUpPremium} className="flex flex-col items-center">
-                                <div className="w-12 h-1 bg-[var(--accent)]/40 rounded-full mb-4" />
-                                <h3 className="text-4xl md:text-5xl font-black text-[var(--bg)] mb-2 tracking-tighter">
+                            <motion.div key={i} variants={fadeUpPremium} className="flex flex-row items-center justify-center gap-3">
+                                <h3 className="text-3xl md:text-4xl font-black text-[var(--bg)] tracking-tighter whitespace-nowrap">
                                     {stat.isLabel ? (
                                         stat.label
                                     ) : stat.isSimple ? (
                                         stat.target
                                     ) : (
-                                        <AnimatedCounter target={stat.target} suffix={stat.suffix} delay={i * 0.1} />
+                                        <AnimatedCounter target={stat.target} prefix={stat.prefix} suffix={stat.suffix} delay={i * 0.1} />
                                     )}
                                 </h3>
-                                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--accent-dark)] text-center opacity-80">
+                                <p className="text-[10px] md:text-xs font-black uppercase tracking-widest text-[var(--accent-dark)] text-left opacity-80 leading-tight">
                                     {stat.isLabel ? stat.subLabel : stat.label}
                                 </p>
                             </motion.div>
