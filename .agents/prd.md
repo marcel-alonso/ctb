@@ -51,3 +51,8 @@ A infraestrutura digital deve suportar a expansão rápida de funis:
 ## 6. Governança
 
 Todas as alterações técnicas devem respeitar o arquivo de **Global Rules** (`.agents/rules.md`) e as especificações de cada domínio (`.agents/specs/*.spec.md`).
+
+## 7. Backlog e Melhorias Contínuas
+
+Ideias e otimizações documentadas para implementações futuras:
+- **Prova Social / Depoimentos**: É ideal adicionar fotos reais das pessoas (clientes) nos depoimentos, e se possível, uma imagem real da obra/execução ("foto do trampo") lado a lado, para aumentar drasticamente a confiança e a conversão.

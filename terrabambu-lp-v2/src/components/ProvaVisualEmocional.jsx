@@ -44,7 +44,7 @@ export default function ProvaVisualEmocional() {
     ];
 
     return (
-        <Section variant="light" className="!pt-12 !pb-16 md:!py-20 overflow-hidden">
+        <Section variant="light" className="!pt-6 !pb-12 md:!pt-8 md:!pb-16 overflow-hidden">
             <Container>
                 {/* Stats — cascade de anticipation (cada numero aparece 0.3s apos o anterior) */}
                 <motion.div

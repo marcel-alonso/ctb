@@ -37,16 +37,16 @@ export default function WhatsAppFloat() {
 
                     <button
                         onClick={handleClick}
-                        className="group relative flex items-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white p-4 md:px-6 md:py-4 rounded-full shadow-[0_15px_30px_rgba(37,211,102,0.3)] transition-all duration-300 hover:scale-110 active:scale-95 touch-manipulation"
+                        className="group relative flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white p-3 md:px-5 md:py-2.5 rounded-full shadow-[0_10px_20px_rgba(37,211,102,0.3)] transition-all duration-300 hover:scale-105 active:scale-95 touch-manipulation"
                         style={{ animation: 'waPulse 3s infinite' }}
                         aria-label="Falar no WhatsApp"
                     >
-                        <MessageCircle size={24} fill="currentColor" />
-                        <span className="hidden md:block font-bold text-sm uppercase tracking-wider">
+                        <MessageCircle size={20} fill="currentColor" />
+                        <span className="hidden md:block font-bold text-xs md:text-[13px] uppercase tracking-wider">
                             {CONFIG.wa.ctaFloat}
                         </span>
 
-                        <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white" />
+                        <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-red-500 rounded-full border-2 border-white" />
                     </button>
                 </motion.div>
             )}
