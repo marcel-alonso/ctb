@@ -41,8 +41,7 @@ export default function HeroPremium() {
               className="mb-10"
             />
           </motion.div>
-[diff_block_end]
-[diff_block_start]
+
           {/* Heading */}
           <motion.h1
             variants={fadeUpPremium}
