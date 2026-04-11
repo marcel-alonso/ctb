@@ -7,7 +7,7 @@ import ScrollIndicator from "./ScrollIndicator";
 // Importar componentes base premium
 import { Button, Card, Badge, Section, Container, Grid } from "./base";
 
-import forroRetoImg from "@assets/images/forro-reto.png";
+import forroRetoImg from "@assets/images/forro-reto-novo.jpeg";
 import gourmetImg from "@assets/images/gourmet-churrasqueira.jpg";
 import panelTrancadoImg from "@assets/images/panel-trancado.jpg";
 import pergolaoImg from "@assets/images/pergolado-completo.jpeg";

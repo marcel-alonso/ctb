@@ -3,7 +3,7 @@ import { fadeUp, stagger } from "../shared/animations";
 import { Check, ArrowRight, UserCheck } from "lucide-react";
 import { CONFIG, trackAndOpenWA } from "../config";
 import ScrollIndicator from "./ScrollIndicator";
-import forroRetoImg from "@assets/images/forro-reto.png";
+import forroRetoImg from "@assets/images/forro-reto-novo.jpeg";
 import gourmetImg from "@assets/images/gourmet-churrasqueira.jpg";
 import panelTrancadoImg from "@assets/images/panel-trancado.jpg";
 import pergolaoImg from "@assets/images/pergolado-completo.jpeg";
