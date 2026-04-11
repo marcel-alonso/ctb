@@ -112,13 +112,8 @@ export default function ProvaVisualPremium() {
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
                                     
                                     {/* Overlay Content */}
-                                    <div className="absolute inset-0 flex flex-col justify-end p-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                        <div className="text-white">
-                                            <p className="text-[10px] font-black uppercase tracking-[0.2em] mb-2 text-[var(--accent)]">
-                                                Projeto Real · {img.tag}
-                                            </p>
-                                            <h4 className="text-2xl font-bold leading-tight">{img.label}</h4>
-                                        </div>
+                                    <div className="absolute inset-0 flex flex-col justify-end p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                        <h4 className="text-2xl md:text-3xl font-bold leading-tight text-white">{img.label}</h4>
                                     </div>
                                 </Card>
                             </motion.div>

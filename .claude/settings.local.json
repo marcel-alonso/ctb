@@ -12,7 +12,13 @@
       "Bash(git commit -m 'fix: ajustar path do upload-pages-artifact:*)",
       "Bash(git commit -m 'revert: voltar path do upload-pages-artifact para original:*)",
       "Bash(git commit -m 'docs: adicionar documentação crítica sobre GitHub Actions deploy:*)",
-      "Bash(npx vite:*)"
+      "Bash(npx vite:*)",
+      "Bash(npm install:*)",
+      "Bash(rm -f Autoridade.jsx AutoridadePremium.jsx CTAFinal.jsx ComoFunciona.jsx Depoimentos.jsx DorResolucao.jsx FAQ.jsx Hero.jsx ProvaVisual.jsx Solucao.jsx)",
+      "Bash(mv HeroPremium.jsx HeroEmocional.jsx)",
+      "Bash(mv ProvaVisualPremium.jsx ProvaVisualEmocional.jsx)",
+      "Bash(mv SolucaoPremium.jsx SolucoesEmocional.jsx)",
+      "Bash(mv DepoimentosPremium.jsx DepoimentosEmocional.jsx)"
     ],
     "additionalDirectories": [
       "c:\\Users\\msx\\.claude\\projects\\c--Users-msx-Documents-Marcel-ctb\\memory",
