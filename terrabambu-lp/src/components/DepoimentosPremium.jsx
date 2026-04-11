@@ -36,7 +36,7 @@ export default function DepoimentosPremium() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={staggerSlow}
-          className="text-center mb-16 relative"
+          className="text-center mb-14 relative"
         >
           <motion.div 
             variants={fadeUpPremium}
@@ -52,7 +52,7 @@ export default function DepoimentosPremium() {
           </motion.h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
           {testimonials.map((t, index) => (
             <motion.div
               key={t.name}
@@ -62,9 +62,9 @@ export default function DepoimentosPremium() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card interactive elevated className="flex flex-col h-full p-10 bg-white/[0.02]">
+              <Card interactive elevated className="flex flex-col h-full p-8 bg-white/[0.02]">
                 {/* Stars */}
-                <div className="flex gap-1 mb-6">
+                <div className="flex gap-1 mb-5">
                   {[...Array(t.rating)].map((_, i) => (
                     <Star
                       key={i}
@@ -75,7 +75,7 @@ export default function DepoimentosPremium() {
                 </div>
 
                 {/* Text */}
-                <p className="text-lg text-white mb-8 flex-1 italic leading-relaxed">
+                <p className="text-lg text-white mb-6 flex-1 italic leading-relaxed">
                   "{t.text}"
                 </p>
 

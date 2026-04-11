@@ -44,7 +44,7 @@ export default function ProvaVisualPremium() {
     ];
 
     return (
-        <Section variant="light" className="pt-16 pb-16 overflow-hidden bg-[var(--bg-light)]">
+        <Section variant="light" className="overflow-hidden">
             <Container>
                 {/* Stats Grid Premium */}
                 <motion.div
@@ -53,7 +53,7 @@ export default function ProvaVisualPremium() {
                     viewport={{ once: true, margin: "-100px" }}
                     variants={staggerSlow}
                 >
-                    <Grid cols={{ default: 1, md: 4 }} gap="gap-8" className="mb-16 py-8 border-y border-[var(--accent)]/10">
+                    <Grid cols={{ default: 1, md: 4 }} gap="gap-6" className="mb-14 py-8 border-y border-[var(--accent)]/10">
                         {stats.map((stat, i) => (
                             <motion.div key={i} variants={fadeUpPremium} className="flex flex-col items-center">
                                 <div className="w-12 h-1 bg-[var(--accent)]/40 rounded-full mb-4" />
@@ -81,12 +81,12 @@ export default function ProvaVisualPremium() {
                     viewport={{ once: true, margin: "-100px" }}
                     variants={staggerSlow}
                 >
-                    <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 text-center md:text-left">
+                    <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 text-center md:text-left">
                         <div className="max-w-2xl mx-auto md:mx-0">
                             <motion.div variants={fadeUpPremium}>
                                 <Badge icon={Star} label="Excelência em Execução" variant="gold" className="mb-6 justify-center md:justify-start" />
                             </motion.div>
-                            <motion.h2 variants={fadeUpPremium} className="text-5xl md:text-7xl font-black mb-8 leading-[1.1] text-[var(--text-dark)]">
+                            <motion.h2 variants={fadeUpPremium} className="text-5xl md:text-7xl font-black mb-6 leading-[1.1] text-[var(--text-dark)]">
                                 Inspirando <span className="text-[var(--accent-dark)]">novos momentos</span>
                             </motion.h2>
                             <motion.p variants={fadeUpPremium} className="text-xl opacity-70 leading-relaxed font-medium text-[var(--text-dark)]">
@@ -95,7 +95,7 @@ export default function ProvaVisualPremium() {
                         </div>
                     </div>
 
-                    <Grid cols={{ default: 1, sm: 2, lg: 4 }} gap="gap-8">
+                    <Grid cols={{ default: 1, sm: 2, lg: 4 }} gap="gap-6">
                         {images.map((img, i) => (
                             <motion.div
                                 key={i}
@@ -126,7 +126,7 @@ export default function ProvaVisualPremium() {
                     </Grid>
                 </motion.div>
 
-                <div className="mt-28 flex justify-center">
+                <div className="mt-16 flex justify-center">
                     <ScrollIndicator color="var(--accent-dark)" label="Depoimentos Reais" />
                 </div>
             </Container>

@@ -17,7 +17,7 @@ export const Section = ({
     <motion.section
       id={id}
       className={`
-        w-full py-24 px-6 relative overflow-hidden
+        w-full py-24 md:py-32 px-6 relative overflow-hidden
         ${variants[variant]}
         ${className}
       `}

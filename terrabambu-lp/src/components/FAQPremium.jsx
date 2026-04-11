@@ -34,7 +34,7 @@ export default function FAQPremium() {
            whileInView="visible"
            viewport={{ once: true }}
            variants={staggerSlow}
-           className="text-center mb-16"
+           className="text-center mb-14"
         >
           <motion.h2
             variants={fadeUpPremium}
@@ -50,7 +50,7 @@ export default function FAQPremium() {
           </motion.p>
         </motion.div>
 
-        <div className="space-y-4 relative z-10">
+        <div className="space-y-3 relative z-10">
           {faqs.map((item, i) => (
             <motion.div
               key={i}
@@ -63,7 +63,7 @@ export default function FAQPremium() {
             >
               <button
                 onClick={() => setOpen(open === i ? -1 : i)}
-                className={`w-full text-left px-8 py-6 rounded-3xl transition-all duration-300 flex items-center justify-between border ${
+                className={`w-full text-left px-8 py-5 rounded-2xl transition-all duration-300 flex items-center justify-between border ${
                   open === i 
                     ? "bg-white border-[var(--accent)] shadow-xl shadow-[var(--accent)]/5" 
                     : "bg-white/40 border-black/5 hover:border-black/10 hover:bg-white/60"
@@ -86,7 +86,7 @@ export default function FAQPremium() {
                     transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                     className="overflow-hidden"
                   >
-                    <div className="px-10 py-8 bg-white/60 rounded-b-3xl -mt-4 border-x border-b border-[var(--accent)]/10">
+                    <div className="px-8 py-6 bg-white/60 rounded-b-2xl -mt-3 border-x border-b border-[var(--accent)]/10">
                       <p className="text-lg leading-relaxed opacity-80">{item.a}</p>
                     </div>
                   </motion.div>

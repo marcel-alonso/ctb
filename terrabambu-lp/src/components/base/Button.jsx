@@ -13,9 +13,9 @@ export const Button = ({
   const baseStyles = `
     font-bold tracking-wider uppercase
     transition-all duration-300 ease-in-out
-    cursor-pointer
+    cursor-pointer will-change-transform
     border-0
-    flex items-center justify-center gap-2
+    flex items-center justify-center
     disabled:opacity-50 disabled:cursor-not-allowed
   `;
 
@@ -48,10 +48,10 @@ export const Button = ({
   };
 
   const sizes = {
-    sm: 'px-4 py-2 text-xs gap-1.5',
-    md: 'px-6 py-3 text-sm gap-2',
-    lg: 'px-10 py-5 text-base gap-3',
-    xl: 'px-12 py-6 text-lg gap-3'
+    sm: 'px-5 py-2.5 text-xs gap-1.5',          /* ~36px — compact actions */
+    md: 'px-7 py-3.5 text-sm gap-2',             /* ~44px — card CTAs (Apple HIG min) */
+    lg: 'px-10 py-4 text-sm gap-2.5',            /* ~48px — secondary prominence */
+    xl: 'px-14 py-5 text-base gap-3',            /* ~56px — hero / final CTA */
   };
 
   return (
@@ -63,7 +63,7 @@ export const Button = ({
       onClick={onClick}
       {...props}
     >
-      {Icon && <Icon size={16} />}
+      {Icon && <Icon size={size === 'xl' ? 20 : size === 'lg' ? 18 : 16} />}
       {children}
     </motion.button>
   );

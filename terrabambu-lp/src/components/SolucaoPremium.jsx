@@ -54,7 +54,7 @@ export default function SolucaoPremium() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={staggerSlow}
-          className="text-center mb-24"
+          className="text-center mb-16"
         >
           <Badge
             icon={UserCheck}
@@ -65,7 +65,7 @@ export default function SolucaoPremium() {
 
           <motion.h2
             variants={fadeUpPremium}
-            className="text-5xl md:text-7xl font-black mb-8 text-white tracking-tighter"
+            className="text-5xl md:text-7xl font-black mb-6 text-white tracking-tighter"
           >
             Recupere sua{" "}
             <span className="text-[var(--accent)]">área externa</span>
@@ -120,9 +120,9 @@ export default function SolucaoPremium() {
                 </div>
 
                 {/* Content */}
-                <div className="p-8 pb-10 flex flex-col flex-1">
+                <div className="p-6 pb-8 flex flex-col flex-1">
                   {/* Features List */}
-                  <ul className="space-y-5 mb-10 flex-1">
+                  <ul className="space-y-4 mb-8 flex-1">
                     {product.features.map((f) => (
                       <li key={f} className="flex items-start gap-3">
                         <div className="mt-1 w-5 h-5 rounded-full bg-[var(--accent)]/10 flex items-center justify-center shrink-0">
@@ -149,7 +149,7 @@ export default function SolucaoPremium() {
                         `Product_Click_${product.title.replace(" ", "_")}`
                       )
                     }
-                    className="text-[10px] tracking-[0.2em]"
+                    className="tracking-[0.2em]"
                   >
                     Solicitar Orçamento
                   </Button>
@@ -160,7 +160,7 @@ export default function SolucaoPremium() {
         </motion.div>
 
         {/* Scroll Indicator */}
-        <div className="mt-20 flex justify-center">
+        <div className="mt-16 flex justify-center">
           <ScrollIndicator
             color="var(--accent-dark)"
             label="Ver nossa autoridade"

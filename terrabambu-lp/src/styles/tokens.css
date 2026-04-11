@@ -84,7 +84,7 @@
    TIPOGRAFIA PREMIUM
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Bricolage+Grotesque:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Bricolage+Grotesque:wght@700;800&display=swap');
 
 * {
   box-sizing: border-box;
@@ -300,6 +300,32 @@ small, .text-small {
   }
   60% {
     box-shadow: 0 0 0 20px rgba(126, 200, 80, 0);
+  }
+}
+
+/* ============================================
+   PERFORMANCE
+   ============================================ */
+
+/* GPU-accelerated transforms for animated elements */
+.gpu-accelerated {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Reduce paint cost for off-screen sections */
+section + section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}
+
+/* Prefer reduced motion — respect OS accessibility settings */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
