@@ -122,6 +122,22 @@ import { Button, Badge, Section, Container, Card, Grid } from "./base";
 </Card>
 ```
 
+> ⚠️ O `Card` já tem `flex flex-col h-full` internamente. Para que cards num grid fiquem com a mesma altura, o wrapper `motion.div` deve ter `h-full` e o grid deve ter `items-stretch`:
+```jsx
+// Grid container
+className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch"
+
+// Wrapper de cada card
+<motion.div key={item.id} variants={fadeUpPremium} className="h-full">
+  <Card interactive elevated>
+    ...
+    {/* Botão sempre no rodapé com flex-1 na lista acima */}
+    <ul className="flex-1">...</ul>
+    <Button>CTA</Button>
+  </Card>
+</motion.div>
+```
+
 ### Badge
 | Variante | Uso |
 |---|---|
@@ -315,6 +331,7 @@ className="py-16 md:py-24 lg:py-32"
 ❌ `md:justify-start` em flex containers de header  
 ❌ Usar divs brutas quando há componente base disponível  
 ❌ `content-visibility: auto` em seções (quebra `mx-auto` em elementos filhos)  
+❌ Cards em grid sem `h-full` no wrapper e `items-stretch` no grid (desalinha botões)  
 ❌ Mexer em `.github/workflows/deploy.yml` sem erro confirmado  
 
 ---
@@ -331,6 +348,6 @@ className="py-16 md:py-24 lg:py-32"
 
 ---
 
-**Última atualização**: 2026-04-13  
-**Versão**: 2.0.0  
+**Última atualização**: 2026-04-13 (cards altura igual, grid items-stretch)  
+**Versão**: 2.1.0  
 **Status**: Production Ready ✅
