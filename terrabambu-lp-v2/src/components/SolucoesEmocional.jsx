@@ -66,10 +66,9 @@ export default function SolucoesEmocional() {
 
           <motion.p
             variants={fadeUpPremium}
-            className="text-base md:text-xl text-[var(--text-muted)] max-w-3xl mx-auto leading-relaxed font-medium"
+            className="text-base md:text-xl text-[var(--text-muted)] max-w-3xl mx-auto leading-relaxed font-medium text-center"
           >
-            Diga adeus ao calor excessivo. Nossas soluções de bambu reduzem a
-            temperatura e trazem o conforto que sua varanda ou pergolado merece.
+            Diga adeus ao calor excessivo. Nossas soluções de bambu reduzem a temperatura e trazem o conforto que sua varanda ou pergolado merece.
           </motion.p>
         </motion.div>
 
