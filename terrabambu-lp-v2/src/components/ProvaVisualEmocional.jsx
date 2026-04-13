@@ -85,17 +85,15 @@ export default function ProvaVisualEmocional() {
                     variants={staggerSlow}
                     className="flex flex-col items-center"
                 >
-                    <div className="text-center mb-12 w-full">
-                        <motion.div variants={fadeUpPremium} className="flex justify-center">
-                            <Badge icon={Star} label="Excelência em Execução" variant="gold" className="mb-6" />
-                        </motion.div>
-                        <motion.h2 variants={fadeUpPremium} className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 leading-[1.1] text-[var(--text-dark)]">
-                            Inspirando <span className="text-[var(--accent-dark)]">novos momentos</span>
-                        </motion.h2>
-                        <motion.p variants={fadeUpPremium} className="text-lg md:text-xl opacity-70 leading-relaxed font-medium text-[var(--text-dark)] max-w-2xl mx-auto text-center">
-                            Cada projeto é uma peça única, desenhada para se integrar harmonicamente à sua arquitetura e ao seu estilo de vida.
-                        </motion.p>
-                    </div>
+                    <motion.div variants={fadeUpPremium} className="flex justify-center">
+                        <Badge icon={Star} label="Excelência em Execução" variant="gold" className="mb-6" />
+                    </motion.div>
+                    <motion.h2 variants={fadeUpPremium} className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 leading-[1.1] text-[var(--text-dark)] text-center">
+                        Inspirando <span className="text-[var(--accent-dark)]">novos momentos</span>
+                    </motion.h2>
+                    <motion.p variants={fadeUpPremium} className="text-lg md:text-xl opacity-70 leading-relaxed font-medium text-[var(--text-dark)] max-w-2xl mx-auto text-center">
+                        Cada projeto é uma peça única, desenhada para se integrar harmonicamente à sua arquitetura e ao seu estilo de vida.
+                    </motion.p>
                 </motion.div>
 
                 {/* Gallery — mobile: horizontal scroll (1.5 cards visiveis = convite ao swipe) */}
