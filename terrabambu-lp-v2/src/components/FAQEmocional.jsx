@@ -6,8 +6,32 @@ import { Section, Container } from "./base";
 
 const faqs = [
   {
+    q: "Qual a durabilidade do bambu tratado?",
+    a: "O bambu tratado pode durar mais de 50 anos em area externa coberta. Usamos processos industriais profundos (autoclave) que transformam o bambu em um material extremamente resistente — comparavel a madeiras nobres, mas com muito mais leveza e sustentabilidade. Com o cuidado certo, seu investimento atravessa geracoes."
+  },
+  {
+    q: "O bambu aguenta chuva e sol direto?",
+    a: "Sim. O bambu tratado resiste bem a variacoes climaticas — chuva, sol, umidade e ate maresia. Para areas totalmente descobertas, aplicamos um verniz protetor adicional que mantem a cor e a integridade do material. Cada projeto recebe a protecao ideal para o seu ambiente especifico."
+  },
+  {
     q: "O bambu atrai bichos ou apodrece?",
     a: "Pode ficar tranquilo. Utilizamos bambu com tratamento industrial profundo que imuniza o material contra brocas, cupins e fungos. Com manutencao basica, ele dura decadas. Nos cuidamos de cada detalhe para que voce so aproveite."
+  },
+  {
+    q: "Qual a garantia que voces oferecem?",
+    a: "Oferecemos 10 anos de garantia contra defeitos estruturais e de instalacao. Somos uma empresa com mais de 10 anos de mercado e atendimento nacional — seu projeto fica em maos que conhecem profundamente o material e o clima do Brasil."
+  },
+  {
+    q: "Preciso fazer manutencao especial?",
+    a: "A manutencao e minima. Uma limpeza suave com pano umido a cada 3 ou 4 meses e, em areas descobertas, uma reaplicacao de verniz a cada 3-5 anos. So isso. Orientamos todo o passo a passo na entrega do projeto — sem complicacao, sem surpresas."
+  },
+  {
+    q: "O bambu e realmente uma opcao sustentavel?",
+    a: "Sim, e uma das mais sustentaveis que existem. O bambu cresce ate 1 metro por dia e se regenera sem replantio — captura ate 35% mais CO2 que arvores comuns. Ao escolher bambu, voce traz natureza para casa e contribui ativamente com o planeta."
+  },
+  {
+    q: "O bambu esquenta o ambiente?",
+    a: "Pelo contrario! O bambu e um dos melhores isolantes termicos naturais que existem. Ele ajuda a manter a temperatura amena mesmo em dias de sol forte. Voce vai sentir a diferenca desde o primeiro dia."
   },
   {
     q: "Quanto tempo demora a instalacao?",
@@ -16,10 +40,6 @@ const faqs = [
   {
     q: "Voces atendem em quais regioes?",
     a: "Atendemos em todo o estado de Sao Paulo (Capital, Alphaville, Interior e Litoral) e tambem realizamos projetos selecionados em todo o territorio nacional. Onde voce estiver, a gente chega."
-  },
-  {
-    q: "O bambu esquenta o ambiente?",
-    a: "Pelo contrario! O bambu e um dos melhores isolantes termicos naturais que existem. Ele ajuda a manter a temperatura amena mesmo em dias de sol forte. Voce vai sentir a diferenca desde o primeiro dia."
   }
 ];
 
