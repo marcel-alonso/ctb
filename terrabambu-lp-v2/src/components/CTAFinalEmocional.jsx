@@ -18,11 +18,11 @@ export default function CTAFinalEmocional() {
            variants={staggerSlow}
            className="px-6 flex flex-col items-center text-center"
         >
-          {/* Badge — selo de confianca final */}
+          {/* Badge — selo de confiança final */}
           <motion.div variants={fadeUpPremium} className="flex justify-center mb-8">
             <Badge
               icon={ShieldCheck}
-              label="Presenca Nacional - Foco em Excelencia"
+              label="Presença Nacional - Foco em Excelência"
               variant="gold"
             />
           </motion.div>
@@ -32,21 +32,21 @@ export default function CTAFinalEmocional() {
             variants={fadeUpPremium}
             className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 leading-tight tracking-tighter text-white"
           >
-            Seu projeto em boas maos, <br className="hidden md:block" />
+            Seu projeto em boas mãos, <br className="hidden md:block" />
             <span className="text-[var(--accent)]">em qualquer lugar do Brasil.</span>
           </motion.h2>
 
-          {/* Subtitle — convite, nao venda */}
+          {/* Subtitle — convite, não venda */}
           <motion.p
             variants={fadeUpPremium}
             className="text-center text-lg md:text-2xl text-[var(--text-muted)] mb-10 md:mb-12 max-w-3xl mx-auto font-medium leading-relaxed"
           >
-            Unimos agilidade digital com a forca de equipes de campo extremamente preparadas.{" "}
+            Unimos agilidade digital com a força de equipes de campo extremamente preparadas.{" "}
             <br className="hidden md:block" />
-            <span className="text-white">De o primeiro passo para sua analise tecnica e orientacao personalizada.</span>
+            <span className="text-white">Dê o primeiro passo para sua análise técnica e orientação personalizada.</span>
           </motion.p>
 
-          {/* CTA — porta aberta, sem pressao */}
+          {/* CTA — porta aberta, sem pressão */}
           <motion.div
             variants={fadeUpPremium}
             className="flex flex-col items-center justify-center gap-5 mb-10"
@@ -61,9 +61,9 @@ export default function CTAFinalEmocional() {
               {CONFIG.wa.ctaFinal}
             </Button>
 
-            {/* Micro-copy de seguranca — sem compromisso */}
+            {/* Micro-copy de segurança — sem compromisso */}
             <p className="text-[11px] uppercase tracking-[0.2em] text-white/35 font-bold">
-              Sem compromisso - Resposta em ate 2 horas
+              Sem compromisso - Resposta em até 2 horas
             </p>
           </motion.div>
 
@@ -74,7 +74,7 @@ export default function CTAFinalEmocional() {
           >
             <div className="flex items-center gap-2">
               <CheckCircle2 size={16} className="text-[var(--accent)]" />
-              <span>Equipes de Campo Proprias</span>
+              <span>Equipes de Campo Próprias</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 size={16} className="text-[var(--accent)]" />
@@ -82,7 +82,7 @@ export default function CTAFinalEmocional() {
             </div>
             <div className="flex items-center gap-2">
               <Heart size={16} className="text-[var(--accent)]" />
-              <span>Satisfacao Garantida</span>
+              <span>Satisfação Garantida</span>
             </div>
           </motion.div>
         </motion.div>
@@ -90,7 +90,7 @@ export default function CTAFinalEmocional() {
         {/* Footer bar */}
         <div className="mt-12 pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--text-muted)] opacity-60">
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-            <p>&copy; {new Date().getFullYear()} Conexao Terra Bambu</p>
+            <p>&copy; {new Date().getFullYear()} Conexão Terra Bambu</p>
             <span className="hidden md:block w-1.5 h-1.5 rounded-full bg-[var(--accent)]/30" />
             <p>CNPJ: 54.340.235/0001-08</p>
           </div>

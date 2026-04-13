@@ -32,7 +32,7 @@ export default function HeroEmocional() {
           variants={staggerSlow}
           className="flex flex-col items-center max-w-4xl mx-auto"
         >
-          {/* Badge — primeira semente de confianca */}
+          {/* Badge — primeira semente de confiança */}
           <motion.div variants={fadeUpPremium}>
             <Badge
               icon={MapPin}
@@ -62,22 +62,22 @@ export default function HeroEmocional() {
             className="text-base md:text-2xl text-white/70 max-w-2xl mx-auto mb-10 md:mb-12 leading-relaxed font-medium"
             style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}
           >
-            Evolua sua area externa para o maximo conforto termico{" "}
+            Evolua sua área externa para o máximo conforto térmico{" "}
             <br className="hidden md:block" />
             com o toque artesanal do bambu premium.
           </motion.p>
 
-          {/* CTA — porta aberta, sem pressao */}
+          {/* CTA — porta aberta, sem pressão */}
           <motion.div variants={fadeUpPremium} className="flex flex-col items-center gap-4">
             <Button
               variant="primary"
               size="md"
               onClick={() =>
-                trackAndOpenWA("Ola! Vi o site e gostaria de um orcamento para forros de bambu.")
+                trackAndOpenWA("Olá! Vi o site e gostaria de um orçamento para forros de bambu.")
               }
               className="w-full sm:w-auto shadow-2xl"
             >
-              SOLICITAR ORCAMENTO GRATIS
+              SOLICITAR ORÇAMENTO GRÁTIS
             </Button>
 
             <p className="text-[10px] uppercase tracking-[0.3em] text-white/40 font-bold">

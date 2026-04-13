@@ -9,21 +9,21 @@ const testimonials = [
     name: "Ricardo S.",
     location: "Alphaville, SP",
     rating: 5,
-    text: "O conforto termico mudou completamente nossa varanda. Alem de lindo, o atendimento foi impecavel.",
+    text: "O conforto térmico mudou completamente nossa varanda. Além de lindo, o atendimento foi impecável.",
     initials: "RS"
   },
   {
     name: "Mariana L.",
     location: "Interior de SP",
     rating: 5,
-    text: "Equipe extremamente limpa e rapida. O bambu trancado deu o toque de luxo que faltava no nosso spa.",
+    text: "Equipe extremamente limpa e rápida. O bambu trançado deu o toque de luxo que faltava no nosso spa.",
     initials: "ML"
   },
   {
-    name: "Andre M.",
-    location: "Sao Paulo, SP",
+    name: "André M.",
+    location: "São Paulo, SP",
     rating: 5,
-    text: "Superou as expectativas. O acabamento artesanal e diferenciado. Vale cada centavo.",
+    text: "Superou as expectativas. O acabamento artesanal é diferenciado. Vale cada centavo.",
     initials: "AM"
   }
 ];

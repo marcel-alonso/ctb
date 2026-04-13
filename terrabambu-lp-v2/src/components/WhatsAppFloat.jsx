@@ -25,7 +25,7 @@ export default function WhatsAppFloat() {
                     exit={{ opacity: 0, scale: 0.5, y: 50 }}
                     className="fixed bottom-8 right-6 z-[999] flex flex-col items-end gap-3"
                 >
-                    {/* Tooltip — empatico, nao vendedor */}
+                    {/* Tooltip — empático, não vendedor */}
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}

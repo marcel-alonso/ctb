@@ -41,7 +41,7 @@ export default function SolucoesEmocional() {
   return (
     <Section variant="dark" id="solucoes">
       <Container>
-        {/* Header — fala da DOR, nao do produto */}
+        {/* Header — fala da DOR, não do produto */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -61,14 +61,14 @@ export default function SolucoesEmocional() {
             className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 text-white tracking-tighter"
           >
             Recupere sua{" "}
-            <span className="text-[var(--accent)]">area externa</span>
+            <span className="text-[var(--accent)]">área externa</span>
           </motion.h2>
 
           <motion.p
             variants={fadeUpPremium}
             className="text-base md:text-xl text-[var(--text-muted)] max-w-3xl mx-auto leading-relaxed font-medium"
           >
-            Diga adeus ao calor excessivo. Nossas solucoes de bambu reduzem a
+            Diga adeus ao calor excessivo. Nossas soluções de bambu reduzem a
             temperatura e trazem o conforto que sua varanda ou pergolado merece.
           </motion.p>
         </motion.div>
@@ -124,13 +124,13 @@ export default function SolucoesEmocional() {
                     icon={ArrowRight}
                     onClick={() =>
                       trackAndOpenWA(
-                        `Ola! Tenho interesse no ${product.title}. Pode me passar um orcamento?`,
+                        `Olá! Tenho interesse no ${product.title}. Pode me passar um orçamento?`,
                         `Product_Click_${product.title.replace(" ", "_")}`
                       )
                     }
                     className="tracking-[0.2em]"
                   >
-                    Solicitar Orcamento
+                    Solicitar Orçamento
                   </Button>
                 </div>
               </Card>

@@ -14,7 +14,7 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, './public/assets'),
     }
   },
-  base: '/lp/forros-bambu-v2/',
+  base: '/lp/forros-bambu/',
   build: {
     outDir: 'dist',
     emptyOutDir: true,

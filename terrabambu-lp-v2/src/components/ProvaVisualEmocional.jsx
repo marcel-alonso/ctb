@@ -32,14 +32,14 @@ export default function ProvaVisualEmocional() {
     const images = [
         { url: restaurantImg, label: "Arquitetura e Gastronomia" },
         { url: poolImg, label: "Lounge com Piscina" },
-        { url: spaImg, label: "Area de Spa" },
+        { url: spaImg, label: "Área de Spa" },
         { url: varandaImg, label: "Varanda e Estilo de Vida" }
     ];
 
     const stats = [
-        { target: 3000, prefix: "+", suffix: "m\u00B2", label: "Transformados", delay: 0 },
+        { target: 3000, prefix: "+", suffix: "m²", label: "Transformados", delay: 0 },
         { target: 10, suffix: "+", label: "Anos no Mercado", delay: 0.3 },
-        { target: 0, label: "Ecologico", subLabel: "Design Premium e Sustentavel", isLabel: true, delay: 0.6 },
+        { target: 0, label: "Ecológico", subLabel: "Design Premium e Sustentável", isLabel: true, delay: 0.6 },
         { target: 10, label: "Anos de Garantia", isSimple: true, delay: 0.9 }
     ];
 
@@ -86,13 +86,13 @@ export default function ProvaVisualEmocional() {
                 >
                     <div className="text-center md:text-left mb-12">
                         <motion.div variants={fadeUpPremium} className="flex justify-center md:justify-start">
-                            <Badge icon={Star} label="Excelencia em Execucao" variant="gold" className="mb-6" />
+                            <Badge icon={Star} label="Excelência em Execução" variant="gold" className="mb-6" />
                         </motion.div>
                         <motion.h2 variants={fadeUpPremium} className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 leading-[1.1] text-[var(--text-dark)]">
                             Inspirando <span className="text-[var(--accent-dark)]">novos momentos</span>
                         </motion.h2>
                         <motion.p variants={fadeUpPremium} className="text-lg md:text-xl opacity-70 leading-relaxed font-medium text-[var(--text-dark)] max-w-2xl">
-                            Cada projeto e uma peca unica, desenhada para se integrar harmonicamente a sua arquitetura e ao seu estilo de vida.
+                            Cada projeto é uma peça única, desenhada para se integrar harmonicamente à sua arquitetura e ao seu estilo de vida.
                         </motion.p>
                     </div>
                 </motion.div>
