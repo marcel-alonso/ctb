@@ -84,14 +84,14 @@ export default function ProvaVisualEmocional() {
                     viewport={{ once: true, margin: "-100px" }}
                     variants={staggerSlow}
                 >
-                    <div className="text-center md:text-left mb-12">
-                        <motion.div variants={fadeUpPremium} className="flex justify-center md:justify-start">
+                    <div className="text-center mb-12">
+                        <motion.div variants={fadeUpPremium} className="flex justify-center">
                             <Badge icon={Star} label="Excelência em Execução" variant="gold" className="mb-6" />
                         </motion.div>
                         <motion.h2 variants={fadeUpPremium} className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 leading-[1.1] text-[var(--text-dark)]">
                             Inspirando <span className="text-[var(--accent-dark)]">novos momentos</span>
                         </motion.h2>
-                        <motion.p variants={fadeUpPremium} className="text-lg md:text-xl opacity-70 leading-relaxed font-medium text-[var(--text-dark)] max-w-2xl">
+                        <motion.p variants={fadeUpPremium} className="text-lg md:text-xl opacity-70 leading-relaxed font-medium text-[var(--text-dark)] max-w-2xl mx-auto text-center">
                             Cada projeto é uma peça única, desenhada para se integrar harmonicamente à sua arquitetura e ao seu estilo de vida.
                         </motion.p>
                     </div>
