@@ -21,7 +21,9 @@
       "Bash(mv DepoimentosPremium.jsx DepoimentosEmocional.jsx)",
       "Bash(ls -lh *.md *.txt)",
       "Bash(git -C \"c:\\\\Users\\\\msx\\\\Documents\\\\Marcel\\\\ctb\" status --short openclaude/)",
-      "Bash(git -C \"c:\\\\Users\\\\msx\\\\Documents\\\\Marcel\\\\ctb\" status)"
+      "Bash(git -C \"c:\\\\Users\\\\msx\\\\Documents\\\\Marcel\\\\ctb\" status)",
+      "Read(//c/Users/msx/.claude/**)",
+      "Read(//c/Users/msx/.claude\" 2>/dev/**)"
     ],
     "additionalDirectories": [
       "c:\\Users\\msx\\.claude\\projects\\c--Users-msx-Documents-Marcel-ctb\\memory",

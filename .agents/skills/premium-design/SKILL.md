@@ -1,227 +1,142 @@
-# SKILL: Premium Design System - Forros Bambu
+# SKILL: Premium Design System - Conexão Terra Bambu
 
 **Status**: ✅ Ativo  
-**Versão**: 1.0.0  
-**Data**: 2026-04-10
+**Versão**: 2.0.0  
+**Data**: 2026-04-13
 
 ---
 
 ## 1. Missão do Skill
 
-Elevar a Landing Page de Forros Bambu para nível de design premium (Apple/Google/Meta style) através de:
+Manter e evoluir a Landing Page de Bambu com design premium (Apple/Google style) através de:
 - Sistema de componentes base reutilizáveis
-- Animações suaves e profissionais
+- Animações suaves e profissionais (Framer Motion)
 - Design tokens CSS consistentes
+- Padrões rígidos de centralização e espaçamento
 - Zero dependências externas
 
 ---
 
-## 2. Competências do Skill
+## 2. Estrutura do Projeto
 
-### 🎨 Design System
-- Criar componentes base reutilizáveis (Button, Card, Badge, Section, etc)
-- Implementar design tokens CSS (cores, sombras, espaçamentos)
-- Manter paleta de cores consistente
-- Aplicar tipografia premium (DM Sans + Bricolage Grotesque)
+```
+ctb/
+├── terrabambu-lp-v2/          ← ÚNICO fonte React (V2 — sempre usar este)
+│   ├── src/components/base/   ← Button, Card, Badge, Section, Container, Grid
+│   ├── src/components/        ← Componentes emocionais (HeroEmocional, etc)
+│   ├── src/styles/tokens.css  ← Design tokens (40+ variáveis CSS)
+│   ├── src/shared/            ← animations.premium.js
+│   ├── src/config.js          ← WhatsApp, mensagens, telefone
+│   └── public/assets/         ← Imagens e vídeos
+├── lp/forros-bambu/           ← Build final (HTML+CSS+JS) — gerado via deploy
+└── index.html                 ← Site institucional
+```
 
-### ✨ Animações
-- Usar Framer Motion para animações suaves
-- Implementar 20+ variações de entrada/hover/scroll
-- Seguir padrões Apple (subtle), Google (clarity), Meta (interactive)
-- Respeitar `prefers-reduced-motion`
-
-### 📱 Responsividade
-- Mobile-first design
-- Breakpoints inteligentes (640px, 768px, 1024px)
-- Tipografia fluida com `clamp()`
-- Grid automático baseado em CSS
-
-### ⚡ Performance
-- Build local com Vite (sem CI/CD)
-- Bundle < 50KB gzipped
-- LCP < 2.5s, FID < 100ms
-- Imagens otimizadas (WebP)
-
-### ♿ Acessibilidade
-- WCAG 2.1 AA compliance
-- Contrast ratios otimizados
-- Semântica HTML correta
-- Navegação por teclado
+> ⚠️ **NÃO** usar `terrabambu-lp/` (V1 removida). Sempre `terrabambu-lp-v2/`.
 
 ---
 
-## 3. Padrões & Convenções
+## 3. Comandos
 
-### Componentes Base
-```jsx
-// Sempre reutilizar componentes base
-import { Button, Card, Badge, Section, Container } from './components/base';
+```bash
+# Desenvolvimento (HMR em tempo real)
+cd terrabambu-lp-v2
+npm run dev              # localhost:5173/lp/forros-bambu/
 
-// ✅ Correto:
-<Card interactive elevated>
-  <h2>Título</h2>
-  <Button variant="primary">Ação</Button>
-</Card>
+# Deploy (build + copia para ../lp/forros-bambu/)
+npm run deploy
 
-// ❌ Errado:
-<div className="bg-white/10 border border-white/10 rounded-2xl p-8">
+# Preview do build
+npm run preview
 ```
 
-### Animações
-```jsx
-// Sempre usar tokens de animação
-import { fadeUpPremium, staggerSlow } from './shared/animations.premium';
+---
 
-// ✅ Correto:
-<motion.div variants={fadeUpPremium}>
-  Conteúdo
-</motion.div>
+## 4. Branding / Design Tokens (`src/styles/tokens.css`)
 
-// ❌ Errado:
-<motion.div animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
-```
-
-### Cores & Tokens
+### Paleta Principal
 ```css
-/* ✅ Correto: Use CSS variables */
+--accent:      #7EC850   /* Verde Bambu — cor principal */
+--accent-dark: #5BA33A   /* Verde escuro */
+--accent-light:#A8D970   /* Verde claro */
+--bg:          #0D1810   /* Fundo dark premium */
+--bg-2:        #162212   /* Fundo secundário dark */
+--bg-light:    #F5F2EC   /* Fundo claro (seções light) */
+--text:        #F0F4EF   /* Texto principal */
+--text-dark:   #1A2410   /* Texto em seções light */
+--text-muted:  #94A88F   /* Texto secundário */
+--gold:        #D4A842   /* Dourado — badges premium, trust signals */
+--gold-dark:   #B89530   /* Dourado escuro */
+```
+
+### Tipografia
+- **Headings**: `Outfit` (700, 800, 900)
+- **Body**: `Plus Jakarta Sans` (400, 500, 600, 700)
+
+> ❌ Não usar DM Sans ou Bricolage Grotesque (fontes removidas na V2)
+
+### Uso de Tokens (OBRIGATÓRIO)
+```css
+/* ✅ Correto */
 color: var(--text);
 background: var(--surface);
 box-shadow: var(--shadow-lg);
+border-color: var(--accent);
 
-/* ❌ Errado: Não hardcode colors */
+/* ❌ Errado — não hardcodar */
 color: #F0F4EF;
 background: rgba(255,255,255,0.05);
 ```
 
-### Espaçamentos
+---
+
+## 5. Componentes Base
+
 ```jsx
-/* ✅ Correto: Múltiplos de 8px */
-padding: var(--space-md);  /* 16px */
-margin: var(--space-lg);   /* 24px */
-
-/* ❌ Errado: Valores aleatórios */
-padding: 13px;
-margin: 15px;
+import { Button, Badge, Section, Container, Card, Grid } from "./base";
 ```
-
----
-
-## 4. Estrutura de Arquivos
-
-```
-terrabambu-lp/
-├── src/
-│   ├── components/base/
-│   │   ├── Button.jsx
-│   │   ├── Card.jsx
-│   │   ├── Badge.jsx
-│   │   ├── Divider.jsx
-│   │   ├── Section.jsx
-│   │   ├── Container.jsx
-│   │   ├── Grid.jsx
-│   │   └── index.js
-│   ├── styles/
-│   │   └── tokens.css (40+ variáveis CSS)
-│   ├── shared/
-│   │   ├── animations.js
-│   │   └── animations.premium.js (20+ animações)
-│   └── index.css (importa tokens.css + tailwind)
-│
-.agents/skills/premium-design/
-├── SKILL.md (este arquivo)
-├── TEMPLATES.md (templates copy/paste)
-└── REFERENCE.md (referência rápida)
-```
-
----
-
-## 5. Workflow de Implementação
-
-### Para Refatorar uma Seção:
-
-1. **Ler exemplo**
-   ```bash
-   # Ver: terrabambu-lp/IMPLEMENTATION_EXAMPLES.md
-   ```
-
-2. **Copiar template**
-   ```bash
-   # Ver: terrabambu-lp/COPY_PASTE_TEMPLATES.md
-   ```
-
-3. **Adaptar conteúdo**
-   - Trocar textos
-   - Mudar imagens
-   - Ajustar onClick handlers
-
-4. **Testar (SEMPRE via dev server)**
-   ```bash
-   cd terrabambu-lp
-   npm run dev
-   # Abrir http://localhost:5173/lp/forros-bambu/
-   # Verificar mobile, tablet, desktop
-   # Todas as mudanças aparecem instantaneamente (HMR)
-   ```
-
-5. **Publicar (somente quando aprovado)**
-   ```bash
-   cd terrabambu-lp
-   npm run deploy
-   # Faz build + copia para ../lp/forros-bambu/
-   # Depois: git add, commit e push normalmente
-   ```
-
----
-
-## 6. Componentes Disponíveis
 
 ### Button
-**Variantes**: primary, secondary, ghost, accent  
-**Tamanhos**: sm, md, lg, xl  
-**Props**: onClick, disabled, icon, className
+| Prop | Valores |
+|---|---|
+| `variant` | `primary` \| `secondary` \| `ghost` \| `accent` |
+| `size` | `sm` (32px) \| `md` (36px) \| `lg` (40px) \| `xl` (44px) |
+| `icon` | Lucide icon component |
 
 ```jsx
-<Button 
-  variant="primary" 
-  size="lg" 
-  icon={ArrowRight}
-  onClick={handleClick}
->
-  Clique aqui
+// Hero / CTA Final → xl
+<Button variant="primary" size="xl" onClick={() => trackAndOpenWA(msg)}>
+  SOLICITAR ORÇAMENTO GRÁTIS
+</Button>
+
+// Cards de produto → md + secondary
+<Button variant="secondary" size="md" icon={ArrowRight} onClick={...}>
+  Solicitar Orçamento
 </Button>
 ```
 
 ### Card
-**Props**: interactive, elevated, hoverable, className  
-**Uso padrão**: Agrupador de conteúdo premium
-
 ```jsx
-<Card interactive elevated>
-  <img src={url} />
-  <h3>Título</h3>
-  <p>Descrição</p>
-  <Button>Ação</Button>
+<Card interactive elevated>  {/* interactive = hover/tap effects */}
+  {children}
 </Card>
 ```
 
 ### Badge
-**Variantes**: dark, light, accent, gold  
-**Props**: icon, label, variant, className
+| Variante | Uso |
+|---|---|
+| `gold` | Badges de seção (destaque premium) |
+| `dark` | Badges em cards sobre imagem |
+| `light` | Hero sobre fundo escuro |
+| `accent` | Destaque verde |
 
 ```jsx
-<Badge 
-  icon={MapPin} 
-  label="Sua cidade" 
-  variant="gold"
-/>
+<Badge icon={Star} label="Excelência em Execução" variant="gold" className="mb-6" />
 ```
 
 ### Section
-**Variantes**: dark, light, gradient  
-**Props**: id, variant, className
-
 ```jsx
-<Section variant="dark" id="minha-secao">
+<Section variant="dark" id="solucoes">   {/* dark ou light */}
   <Container>
     {children}
   </Container>
@@ -229,215 +144,193 @@ terrabambu-lp/
 ```
 
 ### Container
-**Tamanhos**: sm, default, lg, full  
-**Props**: size, className
+| Size | Max-width |
+|---|---|
+| `sm` | 42rem — seções estreitas (FAQ) |
+| `default` | 64rem — padrão |
+| `lg` | 80rem — full width |
+
+---
+
+## 6. Animações (`src/shared/animations.premium.js`)
 
 ```jsx
-<Container size="default">
-  {children}
-</Container>
+import { fadeUpPremium, staggerSlow, parallax } from "../shared/animations.premium";
 ```
 
-### Grid
-**Props**: cols (objeto com breakpoints), gap, className
+| Animação | Uso |
+|---|---|
+| `fadeUpPremium` | Entrada padrão de qualquer elemento |
+| `staggerSlow` | Container — cria cascata nos filhos |
+| `parallax` | Background do Hero |
+| `scaleReveal` | Entrada com escala |
+| `bounceEnter` | Entrada com bounce (spring) |
+
+---
+
+## 7. Padrão OBRIGATÓRIO de Header de Seção
+
+**Todo header de seção deve seguir este padrão:**
 
 ```jsx
-<Grid 
-  cols={{ default: 1, md: 2, lg: 3 }} 
-  gap="gap-8"
+<motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, margin: "-80px" }}
+  variants={staggerSlow}
+  className="flex flex-col items-center text-center mb-16"
 >
-  {items.map(item => <Card key={item.id}>{item}</Card>)}
-</Grid>
+  <motion.div variants={fadeUpPremium}>
+    <Badge icon={Icon} label="Label da Seção" variant="gold" className="mb-6" />
+  </motion.div>
+
+  <motion.h2
+    variants={fadeUpPremium}
+    className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 text-white tracking-tighter text-center"
+  >
+    Título com <span className="text-[var(--accent)]">destaque</span>
+  </motion.h2>
+
+  <motion.p
+    variants={fadeUpPremium}
+    className="text-base md:text-xl text-[var(--text-muted)] max-w-3xl mx-auto leading-relaxed font-medium text-center mb-16 md:mb-20"
+  >
+    Subtítulo da seção.
+  </motion.p>
+</motion.div>
 ```
 
 ---
 
-## 7. Animações Disponíveis
+## 8. Regras de Centralização (CRÍTICO)
 
-### Entrada
-- `fadeUpPremium` - Fade + slide up suave
-- `scaleReveal` - Scale com spring bounce
-- `bounceEnter` - Bounce dinâmico
-- `blurIn` - Desfoque gradual
+> Estas regras foram estabelecidas após múltiplas correções de layout.
 
-### Container
-- `stagger` - Padrão (0.1s delay)
-- `staggerSlow` - Lento (0.15s delay)
-- `containerFadeScale` - Combo fade + scale
+✅ **SEMPRE**:
+- `flex flex-col items-center` no wrapper `motion.div` do header
+- `text-center` em h2 e parágrafos de header
+- `mx-auto` em parágrafos com `max-w-*`
 
-### Interação
-- `hoverLift` - Levanta no hover
-- `hoverScale` - Escala no hover
-- `glowPulse` - Pulsa com brilho
+❌ **NUNCA**:
+- `md:text-left` em títulos ou parágrafos de header
+- `md:justify-start` em flex containers de header
+- `w-full` em wrapper quando o objetivo é centralizar filhos com max-width
 
-### Sutil
-- `floatSubtle` - Flutua suavemente
-- `rotateSubtle` - Gira suave
-- `slideDown/slideUp` - Slides suaves
-
-### Especial
-- `modalScale` - Para modais
-- `shimmer` - Efeito brilho
-- `scrollIndicator` - Indicador scroll
-- `progressBar` - Barra progresso
+**Por quê:** `mx-auto` em elemento `block` só funciona se o elemento pai for um flex container ou tiver largura bem definida. Sem `flex flex-col items-center` no pai, o `mx-auto` pode resolver incorretamente e deslocar o texto para a esquerda.
 
 ---
 
-## 8. Checklist de Qualidade
+## 9. Padrões de Espaçamento
 
-### Antes de Committar:
-- [ ] Componentes base usados (não divs customizadas)
-- [ ] Animações de tokens (não valores hardcoded)
-- [ ] Responsividade testada (mobile, tablet, desktop)
-- [ ] Acessibilidade OK (contrast, alt text, semântica)
-- [ ] Performance OK (`npm run build`)
-- [ ] Sem console errors/warnings
-- [ ] Documentação atualizada
-
-### Antes de Deploy:
-- [ ] `npm run build` sem erros
-- [ ] Bundle size < 100KB
-- [ ] Lighthouse audit > 90
-- [ ] QA em todos breakpoints
-- [ ] Testar em navegadores reais
+| Contexto | Classe |
+|---|---|
+| Entre header e cards/grid | `mb-16 md:mb-20` no último elemento do header |
+| Wrapper header completo | `mb-14` a `mb-16` |
+| Padding de seção (padrão) | `py-24 md:py-32` (automático via Section) |
+| Gap entre cards | `gap-6` |
+| Touch targets (botões) | mínimo `xl` (44px) em Hero e CTA final |
 
 ---
 
-## 9. Recursos
-
-### Documentação Interna
-- `terrabambu-lp/IMPLEMENTATION_EXAMPLES.md` - Exemplos por seção
-- `terrabambu-lp/COPY_PASTE_TEMPLATES.md` - Templates prontos
-- `PREMIUM_SKILL_GUIDE.md` - Guia detalhado
-- `QUICK_REFERENCE.md` - Cheat sheet
-- `premium-design-system.md` - Especificação técnica
-
-### Código-Fonte
-- `terrabambu-lp/src/components/base/` - Componentes base
-- `terrabambu-lp/src/styles/tokens.css` - Design tokens
-- `terrabambu-lp/src/shared/animations.premium.js` - Animações
-- `terrabambu-lp/src/components/SolucaoPremium.jsx` - Exemplo
-
-### Ferramentas Recomendadas
-- Framer Motion: https://www.framer.com/motion/
-- Tailwind CSS: https://tailwindcss.com/
-- Vite: https://vitejs.dev/
-- Lighthouse: https://developers.google.com/web/tools/lighthouse
-
----
-
-## 10. Gatekeeper - O Que Não Fazer
-
-❌ **Não use arquiteturas duplicadas** - Concentre-se unicamente no servidor de desenvolvimento do Vite (`npm run dev`). A visualização do desenvolvimento deve SEMPRE ser feita via localhost do Vite para obter atualizações em tempo real (HMR).
-❌ **Não dependa de Github Actions para o fluxo da LP** - O desenvolvimento e os previews devem rodar exclusivamente local usando Vite, sem necessidades de commits constantes para ações apenas para preview no navegador. Evite a necessidade de rodar `npm run build` constante apenas para visualizar no diretório legado da raiz.
-❌ **Não use divs customizadas** quando tiver componente base  
-❌ **Não hardcode transições** - use tokens de animação  
-❌ **Não quebre spacing 8px** - use var(--space-*)  
-❌ **Não copie cores** - use var(--accent), var(--gold), etc  
-❌ **Não ignore responsividade** - teste em mobile/tablet/desktop  
-❌ **Não ignora acessibilidade** - WCAG 2.1 AA sempre  
-❌ **Não crie seções sem _visão geral_** - documente mudanças
-
----
-
-## 11. Comandos Úteis
-
-```bash
-# Dentro de terrabambu-lp/:
-
-# Development (uso diário - HMR em tempo real)
-npm run dev              # localhost:5173/lp/forros-bambu/
-
-# Deploy (quando quiser publicar no GitHub Pages)
-npm run deploy           # Build + copia para ../lp/forros-bambu/
-
-# Preview do build local
-npm run preview          # Preview do bundle compilado
-
-# Linting
-npm run lint             # ESLint
-```
-
-> ⚠️ **IMPORTANTE**: Nunca rode `npm run build` da raiz do repositório para a LP.
-> O comando `npm run deploy` dentro de `terrabambu-lp/` é o único caminho correto.
-> O `npm run dev` é o que deve ser usado no dia-a-dia para desenvolvimento.
-
----
-
-## 12. Exemplo de Uso Completo
+## 10. WhatsApp Integration (`src/config.js`)
 
 ```jsx
-import { motion } from "framer-motion";
-import { fadeUpPremium, staggerSlow } from "../shared/animations.premium";
-import { Section, Container, Card, Button, Badge, Grid } from "./base";
-import { MapPin, ArrowRight } from "lucide-react";
+import { CONFIG, trackAndOpenWA } from "../config";
 
-export default function MeuComponente() {
-  return (
-    <Section variant="dark" id="secao">
-      <Container>
-        {/* Heading */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={staggerSlow}
-          className="text-center mb-16"
-        >
-          <Badge icon={MapPin} label="Seu badge" variant="gold" className="mb-6 justify-center" />
-          
-          <motion.h2 variants={fadeUpPremium} className="text-5xl font-black text-white mb-6">
-            Seu Título com <span className="text-[var(--accent)]">Destaque</span>
-          </motion.h2>
-          
-          <motion.p variants={fadeUpPremium} className="text-lg text-[var(--text-muted)] max-w-2xl mx-auto">
-            Sua descrição aqui
-          </motion.p>
-        </motion.div>
+// Abre WA com tracking opcional de evento Meta Pixel
+trackAndOpenWA("Mensagem contextualizada", "Event_Name");
+```
 
-        {/* Cards Grid */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={staggerSlow}
-        >
-          <Grid cols={{ default: 1, md: 3 }} gap="gap-8">
-            {[1, 2, 3].map((i) => (
-              <motion.div key={i} variants={fadeUpPremium}>
-                <Card interactive elevated>
-                  <h3 className="text-xl font-bold text-white mb-4">Card {i}</h3>
-                  <p className="text-[var(--text-muted)] mb-6">Descrição do card</p>
-                  <Button variant="secondary" icon={ArrowRight}>
-                    Saiba Mais
-                  </Button>
-                </Card>
-              </motion.div>
-            ))}
-          </Grid>
-        </motion.div>
-      </Container>
-    </Section>
-  );
-}
+Mensagens por seção (configuradas em `CONFIG.wa`):
+- Hero → `CONFIG.wa.msgHero`
+- Produto → `"Olá! Tenho interesse no [Produto]. Pode me passar um orçamento?"`
+- FAQ → `CONFIG.wa.msgFaq`
+- CTA Final → `CONFIG.wa.msgFinal`
+
+---
+
+## 11. Estrutura Emocional das LPs
+
+Toda LP CTB segue esta jornada de 6 seções + componentes de suporte:
+
+| # | Componente | Objetivo Emocional |
+|---|---|---|
+| 1 | `HeroEmocional` | Impacto visual imediato + CTA |
+| 2 | `ProvaVisualEmocional` | Stats numéricas + galeria de projetos |
+| 3 | `SolucoesEmocional` | 4 produtos com cards interativos |
+| 4 | `DepoimentosEmocional` | Vídeo testimonial + 3 depoimentos |
+| 5 | `FAQEmocional` | Resolver objeções técnicas |
+| 6 | `CTAFinalEmocional` | Urgência suave + trust signals + footer |
+
+Suporte permanente:
+- `WhatsAppFloat` — botão fixo, aparece após 2s
+- `ScrollIndicator` — indicador animado entre seções
+
+---
+
+## 12. Responsividade
+
+```jsx
+// Mobile-first sempre
+className="text-4xl sm:text-5xl md:text-7xl"
+className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+className="py-16 md:py-24 lg:py-32"
+```
+
+| Breakpoint | Layout |
+|---|---|
+| Mobile | 1 coluna, carousel snap-scroll, texto compacto |
+| Tablet (md: 768px) | 2 colunas |
+| Desktop (lg: 1024px+) | 3–4 colunas, animações completas |
+
+**Carrossel mobile:**
+```jsx
+<div className="flex gap-4 px-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4"
+     style={{ WebkitOverflowScrolling: "touch" }}>
+  {items.map(item => (
+    <div className="flex-shrink-0 w-[75vw] snap-center">...</div>
+  ))}
+</div>
 ```
 
 ---
 
-## 13. Métricas de Sucesso
+## 13. Acessibilidade e Performance
 
-| Métrica | Target | Status |
-|---------|--------|--------|
-| Bundle Size | < 100KB | ✅ ~50KB |
-| LCP | < 2.5s | ✅ ~1.8s |
-| FID | < 100ms | ✅ ~30ms |
-| CLS | < 0.1 | ✅ ~0.05 |
-| Componentes Reutilizáveis | > 5 | ✅ 7 |
-| Animações Disponíveis | > 10 | ✅ 20+ |
-| Documentação Pages | > 3 | ✅ 8 |
+- `prefers-reduced-motion` → desativa animações (já configurado em tokens.css)
+- `touch-action: manipulation` → remove 300ms tap delay
+- `-webkit-tap-highlight-color: transparent` → sem flash de tap
+- `loading="lazy"` em todas as imagens
+- `alt` descritivo em todas as imagens
+- Imagens: importar via `import img from "@assets/images/file.jpg"` (nunca strings)
 
 ---
 
-**Última atualização**: 2026-04-10  
-**Versão**: 1.0.0  
+## 14. O Que NÃO Fazer
+
+❌ Usar `terrabambu-lp/` (V1 removida — só `terrabambu-lp-v2/`)  
+❌ Hardcodar cores (`#7EC850`) — usar `var(--accent)`  
+❌ Hardcodar transições — usar tokens de animação  
+❌ `md:text-left` em headers de seção  
+❌ `md:justify-start` em flex containers de header  
+❌ Usar divs brutas quando há componente base disponível  
+❌ `content-visibility: auto` em seções (quebra `mx-auto` em elementos filhos)  
+❌ Mexer em `.github/workflows/deploy.yml` sem erro confirmado  
+
+---
+
+## 15. Checklist Antes de Deploy
+
+- [ ] Componentes base usados (Button, Card, Badge, Section, Container)
+- [ ] Animações via tokens (fadeUpPremium, staggerSlow)
+- [ ] Headers com `flex flex-col items-center` no wrapper
+- [ ] Parágrafos com `mx-auto text-center`
+- [ ] Responsividade testada (mobile, tablet, desktop)
+- [ ] `npm run deploy` sem erros
+- [ ] Git commit + push
+
+---
+
+**Última atualização**: 2026-04-13  
+**Versão**: 2.0.0  
 **Status**: Production Ready ✅
