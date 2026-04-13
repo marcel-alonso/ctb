@@ -47,7 +47,7 @@ export default function SolucoesEmocional() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={staggerSlow}
-          className="text-center mb-14"
+          className="flex flex-col items-center text-center mb-14"
         >
           <Badge
             icon={UserCheck}
