@@ -83,7 +83,7 @@ export default function ProvaVisualEmocional() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                     variants={staggerSlow}
-                    className="flex flex-col items-center w-full mb-16 md:mb-20"
+                    className="flex flex-col items-center w-full mb-12 md:mb-16"
                 >
                     <motion.div variants={fadeUpPremium} className="flex justify-center">
                         <Badge icon={Star} label="Excelência em Execução" variant="gold" className="mb-6" />
