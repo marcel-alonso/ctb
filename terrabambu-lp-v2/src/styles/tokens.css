@@ -317,12 +317,6 @@ small, .text-small {
   transform: translateZ(0);
 }
 
-/* Reduce paint cost for off-screen sections */
-section + section {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 800px;
-}
-
 /* Prefer reduced motion — respect OS accessibility settings */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
