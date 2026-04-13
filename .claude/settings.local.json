@@ -19,11 +19,14 @@
       "Bash(mv ProvaVisualPremium.jsx ProvaVisualEmocional.jsx)",
       "Bash(mv SolucaoPremium.jsx SolucoesEmocional.jsx)",
       "Bash(mv DepoimentosPremium.jsx DepoimentosEmocional.jsx)",
-      "Bash(ls -lh *.md *.txt)"
+      "Bash(ls -lh *.md *.txt)",
+      "Bash(git -C \"c:\\\\Users\\\\msx\\\\Documents\\\\Marcel\\\\ctb\" status --short openclaude/)",
+      "Bash(git -C \"c:\\\\Users\\\\msx\\\\Documents\\\\Marcel\\\\ctb\" status)"
     ],
     "additionalDirectories": [
       "c:\\Users\\msx\\.claude\\projects\\c--Users-msx-Documents-Marcel-ctb\\memory",
-      "c:\\Users\\msx\\.claude\\projects\\c--Users-msx-Documents-Marcel-ctb"
+      "c:\\Users\\msx\\.claude\\projects\\c--Users-msx-Documents-Marcel-ctb",
+      "c:\\Users\\msx\\Documents\\Marcel\\ctb\\openclaude"
     ]
   }
 }
