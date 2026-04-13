@@ -8,7 +8,7 @@ import heroImg from "@assets/images/hero-ultra-luxo.png";
 
 export default function HeroEmocional() {
   return (
-    <Section variant="dark" className="min-h-screen flex items-center pt-0 overflow-hidden">
+    <Section variant="dark" className="min-h-screen flex items-center !pt-0 overflow-hidden">
       {/* Background Parallax */}
       <motion.div
         className="absolute inset-0 w-full h-full"
@@ -25,7 +25,7 @@ export default function HeroEmocional() {
       </motion.div>
 
       {/* Content — mobile-first: compact subtitle, generous CTA area */}
-      <Container className="relative z-20 text-center pt-16 md:pt-20">
+      <Container className="relative z-20 text-center">
         <motion.div
           initial="hidden"
           animate="visible"
