@@ -7,7 +7,7 @@ import { Button, Card, Badge, Section, Container } from "./base";
 
 import forroRetoImg from "@assets/images/forro-reto.png";
 import panelTrancadoImg from "@assets/images/panel-trancado.jpg";
-import pergolaoImg from "@assets/images/pergolado-black-grid.jpg";
+import pergolaoImg from "@assets/images/pergolado-madeira.jpg";
 import revestimentoImg from "@assets/images/bambu-paralelo-ecobans.jpg";
 
 export default function SolucoesEmocional() {
