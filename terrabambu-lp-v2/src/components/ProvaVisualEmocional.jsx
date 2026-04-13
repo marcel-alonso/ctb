@@ -91,7 +91,7 @@ export default function ProvaVisualEmocional() {
                     <motion.h2 variants={fadeUpPremium} className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 leading-[1.1] text-[var(--text-dark)] text-center">
                         Inspirando <span className="text-[var(--accent-dark)]">novos momentos</span>
                     </motion.h2>
-                    <motion.p variants={fadeUpPremium} className="text-lg md:text-xl opacity-70 leading-relaxed font-medium text-[var(--text-dark)] max-w-2xl mx-auto text-center">
+                    <motion.p variants={fadeUpPremium} className="text-lg md:text-xl opacity-70 leading-relaxed font-medium text-[var(--text-dark)] max-w-2xl mx-auto text-center mb-16 md:mb-20">
                         Cada projeto é uma peça única, desenhada para se integrar harmonicamente à sua arquitetura e ao seu estilo de vida.
                     </motion.p>
                 </motion.div>
