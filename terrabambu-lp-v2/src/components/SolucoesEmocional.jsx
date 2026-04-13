@@ -78,10 +78,10 @@ export default function SolucoesEmocional() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={staggerSlow}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch"
         >
           {products.map((product) => (
-            <motion.div key={product.title} variants={fadeUpPremium}>
+            <motion.div key={product.title} variants={fadeUpPremium} className="h-full">
               <Card interactive elevated>
                 {/* Image */}
                 <div className="relative h-56 md:h-64 overflow-hidden">

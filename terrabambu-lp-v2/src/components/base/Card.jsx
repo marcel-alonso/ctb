@@ -14,6 +14,7 @@ export const Card = ({
     rounded-[2.5rem]
     transition-all duration-300
     overflow-hidden touch-manipulation
+    flex flex-col h-full
   `;
 
   const interactiveStyles = interactive || hoverable ? `
