@@ -18,7 +18,8 @@
       "Bash(mv HeroPremium.jsx HeroEmocional.jsx)",
       "Bash(mv ProvaVisualPremium.jsx ProvaVisualEmocional.jsx)",
       "Bash(mv SolucaoPremium.jsx SolucoesEmocional.jsx)",
-      "Bash(mv DepoimentosPremium.jsx DepoimentosEmocional.jsx)"
+      "Bash(mv DepoimentosPremium.jsx DepoimentosEmocional.jsx)",
+      "Bash(ls -lh *.md *.txt)"
     ],
     "additionalDirectories": [
       "c:\\Users\\msx\\.claude\\projects\\c--Users-msx-Documents-Marcel-ctb\\memory",
