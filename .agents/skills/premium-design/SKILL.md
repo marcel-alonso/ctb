@@ -225,14 +225,27 @@ import { fadeUpPremium, staggerSlow, parallax } from "../shared/animations.premi
 ✅ **SEMPRE**:
 - `flex flex-col items-center` no wrapper `motion.div` do header
 - `text-center` em h2 e parágrafos de header
-- `mx-auto` em parágrafos com `max-w-*`
+- `w-full max-w-2xl` (ou `max-w-3xl`) em parágrafos dentro de flex container — **não `mx-auto`**
 
 ❌ **NUNCA**:
 - `md:text-left` em títulos ou parágrafos de header
 - `md:justify-start` em flex containers de header
-- `w-full` em wrapper quando o objetivo é centralizar filhos com max-width
+- `mx-auto` em filhos diretos de flex container para centralizar com max-width (conflita com flex layout)
 
-**Por quê:** `mx-auto` em elemento `block` só funciona se o elemento pai for um flex container ou tiver largura bem definida. Sem `flex flex-col items-center` no pai, o `mx-auto` pode resolver incorretamente e deslocar o texto para a esquerda.
+**Por quê:** Dentro de um `flex` container, `mx-auto` pode conflitar com o layout flex e deslocar o elemento para a esquerda. O correto é `w-full max-w-*` — o `items-center` do pai faz a centralização. `mx-auto` só funciona corretamente em contexto de bloco (não-flex).
+
+**Padrão correto de parágrafo centralizado com max-width dentro de flex:**
+```jsx
+// ✅ Correto — dentro de flex flex-col items-center
+<motion.p className="w-full max-w-2xl text-center ...">
+  Texto centralizado.
+</motion.p>
+
+// ❌ Errado — mx-auto conflita com flex e pode deslocar para esquerda
+<motion.p className="max-w-2xl mx-auto text-center ...">
+  Texto deslocado.
+</motion.p>
+```
 
 ---
 
@@ -348,6 +361,6 @@ className="py-16 md:py-24 lg:py-32"
 
 ---
 
-**Última atualização**: 2026-04-13 (cards altura igual, grid items-stretch)  
-**Versão**: 2.1.0  
+**Última atualização**: 2026-04-13 (mx-auto vs w-full em flex, cards altura igual)  
+**Versão**: 2.2.0  
 **Status**: Production Ready ✅
