@@ -19,6 +19,7 @@
     "devDependencies": {
         "@tailwindcss/vite": "latest",
         "@vitejs/plugin-react": "latest",
+        "sharp": "^0.34.5",
         "tailwindcss": "latest",
         "vite": "latest"
     }

@@ -7,7 +7,7 @@ import { Section, Container } from "./base";
 const faqs = [
   {
     q: "Qual a durabilidade do bambu tratado?",
-    a: "O bambu tratado pode durar mais de 50 anos em área externa coberta. Usamos processos industriais profundos (autoclave) que transformam o bambu em um material extremamente resistente — comparável a madeiras nobres, mas com muito mais leveza e sustentabilidade. Com o cuidado certo, seu investimento atravessa gerações."
+    a: "O bambu tratado pode durar mais de 50 anos em área externa coberta. Usamos processos profundos que transformam o bambu em um material extremamente resistente — comparável a madeiras nobres, mas com muito mais leveza e sustentabilidade. Com o cuidado certo, seu investimento atravessa gerações."
   },
   {
     q: "O bambu aguenta chuva e sol direto?",
@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "O bambu atrai bichos ou apodrece?",
-    a: "Pode ficar tranquilo. Utilizamos bambu com tratamento industrial profundo que imuniza o material contra brocas, cupins e fungos. Com manutenção básica, ele dura décadas. Nos cuidamos de cada detalhe para que você só aproveite."
+    a: "Pode ficar tranquilo. Utilizamos bambu com tratamento profundo que imuniza o material contra brocas, cupins e fungos. Com manutenção básica, ele dura décadas. Nós cuidamos de cada detalhe para que você só aproveite."
   },
   {
     q: "Qual a garantia que vocês oferecem?",

@@ -5,10 +5,10 @@ import { trackAndOpenWA } from "../config";
 import ScrollIndicator from "./ScrollIndicator";
 import { Button, Card, Badge, Section, Container } from "./base";
 
-import forroRetoImg from "@assets/images/forro-reto.png";
-import panelTrancadoImg from "@assets/images/panel-trancado.jpg";
-import pergolaoImg from "@assets/images/pergolado-madeira.jpg";
-import revestimentoImg from "@assets/images/bambu-paralelo-ecobans.jpg";
+import forroRetoImg from "@assets/images/forro-reto.webp";
+import panelTrancadoImg from "@assets/images/panel-trancado.webp";
+import pergolaoImg from "@assets/images/pergolado-madeira.webp";
+import revestimentoImg from "@assets/images/bambu-paralelo-ecobans.webp";
 
 export default function SolucoesEmocional() {
   const products = [

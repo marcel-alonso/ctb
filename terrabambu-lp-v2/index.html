@@ -2,34 +2,153 @@
 <html lang="pt-BR">
 
 <head>
+  <!-- Charset e Viewport -->
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terra Bambu | Forros e Pergolados sob medida em todo o Brasil</title>
-  <meta name="description"
-    content="Especialistas em forros e pergolados de bambu. Gestão inteligente e instalação profissional em SP e todo o Brasil." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <!-- Title e Descrição -->
+  <title>Terra Bambu | Forros e Pergolados Premium em todo o Brasil</title>
+  <meta name="description" content="Especialistas em forros e pergolados de bambu premium. Conforto térmico, design artesanal e durabilidade garantida. Atendimento em SP e todo Brasil." />
+
+  <!-- Open Graph (Facebook, LinkedIn, etc) -->
+  <meta property="og:title" content="Terra Bambu | Forros e Pergolados Premium em todo o Brasil" />
+  <meta property="og:description" content="Transforme seu espaço externo com forros e pergolados de bambu premium. Conforto térmico garantido, design artesanal e 10 anos de garantia." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://conexaoterrabambu.com.br/lp/forros-bambu/" />
+  <meta property="og:image" content="https://conexaoterrabambu.com.br/lp/forros-bambu/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Varanda com pergolado de bambu premium" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Terra Bambu | Forros e Pergolados Premium em todo o Brasil" />
+  <meta name="twitter:description" content="Transforme seu espaço externo com forros e pergolados de bambu premium. Conforto térmico garantido, design artesanal e 10 anos de garantia." />
+  <meta name="twitter:image" content="https://conexaoterrabambu.com.br/lp/forros-bambu/og-image.png" />
+  <meta name="twitter:image:alt" content="Varanda com pergolado de bambu premium" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://conexaoterrabambu.com.br/lp/forros-bambu/" />
+
+  <!-- Robots e Indexação -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/lp/forros-bambu/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/lp/forros-bambu/favicon.ico" />
+  <meta name="theme-color" content="#7EC850" />
+  <meta name="msapplication-TileColor" content="#0D1810" />
+
+  <!-- Fonte Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Facebook Pixel Code (Base) -->
-  <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    // fbq('init', 'SEU_ID_DO_PIXEL'); 
-    fbq('track', 'PageView');
+  <!-- Sitemap -->
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+  <!-- Schema.org JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Conexão Terra Bambu",
+    "url": "https://conexaoterrabambu.com.br",
+    "logo": "https://conexaoterrabambu.com.br/logo.png",
+    "description": "Especialistas em forros e pergolados de bambu premium em todo o Brasil",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "telephone": "+55-11-99290-8488",
+      "contactOption": "TollFree"
+    },
+    "sameAs": [
+      "https://www.instagram.com/conexaoterrabambu",
+      "https://www.facebook.com/conexaoterrabambu"
+    ]
+  }
   </script>
+
+  <!-- Schema.org JSON-LD: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Conexão Terra Bambu",
+    "image": "https://conexaoterrabambu.com.br/lp/forros-bambu/og-image.png",
+    "description": "Forros e pergolados de bambu premium com conforto térmico garantido",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "BR",
+      "addressRegion": "SP"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "telephone": "+55-11-99290-8488"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "São Paulo"
+    },
+    "priceRange": "$$$"
+  }
+  </script>
+
+  <!-- Schema.org JSON-LD: Product -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Forros e Pergolados de Bambu Premium",
+    "image": "https://conexaoterrabambu.com.br/lp/forros-bambu/og-image.png",
+    "description": "Forros e pergolados de bambu com conforto térmico, design artesanal e durabilidade premium",
+    "brand": {
+      "@type": "Brand",
+      "name": "Conexão Terra Bambu"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "Consulte",
+      "priceCurrency": "BRL",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "ratingCount": "150"
+    }
+  }
+  </script>
+
+  <!-- Facebook Pixel -->
+  <!-- AVISO: Configure o Pixel substituindo SEU_ID_DO_PIXEL_AQUI abaixo -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    // fbq('init', 'SEU_ID_DO_PIXEL_AQUI');
+    // fbq('track', 'PageView');
+  </script>
+
+  <!-- Google Analytics -->
+  <!-- AVISO: Configure o Google Analytics substituindo SEU_GA_ID_AQUI abaixo -->
+  <!-- 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=SEU_GA_ID_AQUI"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'SEU_GA_ID_AQUI');
+  </script> 
+  -->
 </head>
 
 <body>

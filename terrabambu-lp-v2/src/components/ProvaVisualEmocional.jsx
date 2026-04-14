@@ -5,10 +5,10 @@ import { fadeUpPremium, staggerSlow } from "../shared/animations.premium";
 import { Section, Container, Card, Badge } from "./base";
 import ScrollIndicator from "./ScrollIndicator";
 
-import restaurantImg from "@assets/images/gallery-restaurant.jpg";
-import poolImg from "@assets/images/gallery-pool.jpg";
-import spaImg from "@assets/images/gallery-spa.jpg";
-import varandaImg from "@assets/images/gallery-varanda.jpg";
+import restaurantImg from "@assets/images/gallery-restaurant.webp";
+import poolImg from "@assets/images/gallery-pool.webp";
+import spaImg from "@assets/images/gallery-spa.webp";
+import varandaImg from "@assets/images/gallery-varanda.webp";
 
 const AnimatedCounter = ({ target, prefix = "", suffix = "", delay = 0 }) => {
     const count = useMotionValue(0);

@@ -4,7 +4,7 @@ import { trackAndOpenWA } from "../config";
 import { MapPin } from "lucide-react";
 import { Button, Badge, Section, Container } from "./base";
 import ScrollIndicator from "./ScrollIndicator";
-import heroImg from "@assets/images/hero-ultra-luxo.png";
+import heroImg from "@assets/images/hero-ultra-luxo.webp";
 
 export default function HeroEmocional() {
   return (
@@ -21,6 +21,7 @@ export default function HeroEmocional() {
           src={heroImg}
           alt="Ambiente externo acolhedor com bambu"
           className="w-full h-full object-cover"
+          fetchpriority="high"
         />
       </motion.div>
 
