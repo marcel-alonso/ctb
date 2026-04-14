@@ -1,9 +1,29 @@
 # 🌿 Case Study: Spec-Driven Development (SDD) & Agentic AI
 **Terra Bambu Ecosystem — Premium Landing Page v2**
 
-Este repositório é um **Estudo de Caso "Padrão Ouro"** demonstrando a criação de um ecossistema digital usando Spec-Driven Development (SDD) integrado a robôs guiados por inteligência artificial (Agentic AI). 
+Este repositório é um **Estudo de Caso "Padrão Ouro"** demonstrando a criação de um ecossistema digital amplo usando Spec-Driven Development (SDD) integrado a robôs guiados por inteligência artificial (Agentic AI). 
 
-O projeto representa a evolução da **Conexão Terra Bambu** de uma executora de obras para uma **plataforma de autoridade e cultura ecológica**.
+O projeto representa a evolução da **Conexão Terra Bambu** de uma executora de obras para uma **plataforma de autoridade e cultura ecológica**, abrangendo Landing Pages de Alta Performance, Plataforma Institucional e um Blog voltado a SEO de cauda longa.
+
+---
+
+```mermaid
+graph TD
+    A["🌿 Conexão Terra Bambu"] --> B["🏗️ Obras e Projetos"]
+    A --> C["📚 Educação e Autoridade"]
+    A --> D["🛒 Marca e Produtos"]
+    A --> E["👥 Escala e Times"]
+
+    B --> B1["Forros de Bambu (Funil de Alta Performance)"]
+    B --> B2["Parque Ecológico Infantil"]
+    B --> B3["Projetos Sob Medida"]
+
+    C --> C1["Curso: O Caminho do Bambu"]
+    C --> C2["E-books Técnicos"]
+    C --> C3["Blog SEO: Autoridade Local"]
+```
+
+*(O gráfico acima reflete todas as frentes que este repositório visa atender de forma independente, modular, mas unificada)*
 
 ---
 
@@ -53,10 +73,11 @@ Essa estrutura forçou os agentes de IA a entregar **Zero Halucinações** em re
 
 A base tecnológica foi montada pela IA focando em **100/100 Core Web Vitals**:
 
-- **Core & Build**: Vite + React
-- **Estilização**: Tailwind CSS puramente guiado por CSS Variables (+40 `src/styles/tokens.css`).
-- **Animações (UX)**: Framer Motion isolado em `src/shared/animations.premium.js` para carregamento leve e padronizado em todas as telas (`fadeUpPremium`, `staggerSlow`).
-- **Acessibilidade e SEO Base**: Resolução imediata de imagens pesadas usando scripts via `Puppeteer` + `Sharp` da própria IA, transformando tudo massivamente em WebP de altíssima compressão. Otimização das tags Open Graph, LD-JSON e Meta Pixel geridas via build estático do diretório `public`.
+- **Core & Build LPs**: Vite + React
+- **Estilização Global**: Tailwind CSS puramente guiado por CSS Variables (+40 `src/styles/tokens.css`).
+- **Blog & Institucional**: Arquivos indexados e arquiteturas prontas para SSG (Static Site Generation), desenhados para atrair SEO Local e capturar leads no topo do funil. 
+- **Animações (UX)**: Framer Motion isolado em `src/shared/animations.premium.js` para carregamento leve e padronizado nas páginas React.
+- **Ecossistema Otimizado**: Scripts robustos via Node garantindo que artigos do Blog e conversões da Landing Page convivam sem quebrar as hierarquias. Todas as imagens processadas massivamente para WebP em alta velocidade.
 
 ---
 
