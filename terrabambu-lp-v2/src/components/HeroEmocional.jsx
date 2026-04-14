@@ -37,7 +37,7 @@ export default function HeroEmocional() {
           <motion.div variants={fadeUpPremium}>
             <Badge
               icon={MapPin}
-              label="Atendimento em SP e todo Brasil"
+              label="Atendimento em Todo o Brasil"
               variant="light"
               className="mb-8"
             />

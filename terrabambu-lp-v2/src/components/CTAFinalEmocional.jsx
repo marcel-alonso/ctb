@@ -78,7 +78,7 @@ export default function CTAFinalEmocional() {
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 size={16} className="text-[var(--accent)]" />
-              <span>Brasil e Interior de SP</span>
+              <span>Atendimento Nacional</span>
             </div>
             <div className="flex items-center gap-2">
               <Heart size={16} className="text-[var(--accent)]" />
@@ -94,7 +94,7 @@ export default function CTAFinalEmocional() {
             <span className="hidden md:block w-1.5 h-1.5 rounded-full bg-[var(--accent)]/30" />
             <p>CNPJ: 54.340.235/0001-08</p>
           </div>
-          <p className="text-center md:text-right">ATENDIMENTO NACIONAL - FOCO EM SP - ALPHAVILLE - INTERIOR</p>
+          <p className="text-center md:text-right">ATENDIMENTO EM TODO O TERRITÓRIO NACIONAL</p>
         </div>
       </Container>
     </footer>

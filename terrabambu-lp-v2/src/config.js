@@ -10,7 +10,7 @@ export const CONFIG = {
         ctaFinal: "SOLICITAR ANÁLISE TÉCNICA",
     },
     prazo: "imediata",
-    area: "Atendimento em todo o Brasil · Foco em SP",
+    area: "Atendimento em todo o Brasil",
     pixelId: "",
 };
 
