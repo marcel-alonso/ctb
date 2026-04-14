@@ -1,84 +1,74 @@
-# 🌿 Conexão Terra Bambu — Ecossistema Digital de Alta Performance
+# 🌿 Case Study: Spec-Driven Development (SDD) & Agentic AI
+**Terra Bambu Ecosystem — Premium Landing Page v2**
 
-Este projeto representa a evolução da **Conexão Terra Bambu** de uma executora de obras para uma **plataforma de autoridade e cultura ecológica**.
+Este repositório é um **Estudo de Caso "Padrão Ouro"** demonstrando a criação de um ecossistema digital usando Spec-Driven Development (SDD) integrado a robôs guiados por inteligência artificial (Agentic AI). 
 
-Utilizamos uma infraestrutura moderna de **Spec-Driven Development (SDD)** combinada com tecnologias de ponta para garantir escala, design premium e performance.
-
----
-
-## 🏗️ Visão Estratégica do Ecossistema
-
-O projeto foi estruturado para suportar o crescimento modular da marca, integrando obras, educação e produtos.
-
-```mermaid
-graph TD
-    A["🌿 Conexão Terra Bambu"] --> B["🏗️ Obras e Projetos"]
-    A --> C["📚 Educação e Autoridade"]
-    A --> D["🛒 Marca e Produtos"]
-    A --> E["👥 Escala e Times"]
-
-    B --> B1["Forros de Bambu (Funil de Alta Performance)"]
-    B --> B2["Parque Ecológico Infantil (Madeira e Sustentabilidade)"]
-    B --> B3["Projetos de Bioconstrução Sob Medida"]
-
-    C --> C1["Curso: O Caminho do Bambu"]
-    C --> C2["E-books Técnicos de Bioconstrução"]
-    C --> C3["Blog SEO: Autoridade em Materiais Naturais"]
-
-    D --> D1["Venda de Itens da Marca"]
-    D --> D2["Materiais Tratados e Selecionados"]
-
-    E --> E1["Times Regionais e Parceiros Certificados"]
-    E --> E2["Expansão via Modelo de Gestão Agêntica"]
-```
+O projeto representa a evolução da **Conexão Terra Bambu** de uma executora de obras para uma **plataforma de autoridade e cultura ecológica**.
 
 ---
 
-## 🤖 Governança para Agentes (Cérebro do Projeto)
+## 🎨 O Resultado (Vitrine)
 
-Implementamos uma camada de inteligência estruturada na pasta [`.agents/`](.agents/) que governa o desenvolvimento. Isso garante que qualquer agente de IA ou desenvolvedor atue com o **Tom de Voz** e os **Padrões de Qualidade** da marca sem desvios.
+A arquitetura orientada resultou em um design premium ("apple-like"), respeitando diretrizes rígidas de branding e performance.
 
-- **PRD Estratégico**: Define a missão, pilares e roadmap de longo prazo.
-- **Rules (Regras Globais)**: Tom de voz **Aspiracional/Premium**, proibição de foco na "dor" e padrões de UI.
-- **Specs por Domínio**: Especificações técnicas isoladas para a LP de Forros, Blog e Site Institucional.
-- **Skills e Workflows**: Manuais de execução para tarefas recorrentes (novos posts, novos produtos).
+<table>
+  <tr>
+    <td align="center"><b>Hero Header</b></td>
+    <td align="center"><b>Design Emocional (Apresentação)</b></td>
+  </tr>
+  <tr>
+    <td><img src="docs/showcase/hero.png" width="400"></td>
+    <td><img src="docs/showcase/prova-visual.png" width="400"></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Soluções & Interatividade</b></td>
+    <td align="center"><b>FAQ Fluido</b></td>
+  </tr>
+  <tr>
+    <td><img src="docs/showcase/produtos.png" width="400"></td>
+    <td><img src="docs/showcase/faq.png" width="400"></td>
+  </tr>
+</table>
 
----
-
-## 💻 Stack Tecnológica (Nível Premium)
-
-A infraestrutura foi construída com as tecnologias mais rápidas e fluidas do mercado atual:
-
-- **Frontend (LPs)**: React + Vite + Tailwind CSS (Performance extrema e carregamento imediato).
-- **Animações**: Framer Motion (Transições fluidas que elevam a percepção de luxo).
-- **Blog**: Arquitetura SSG (Static Site Generation) com Node.js para SEO máximo e custo zero de servidor.
-- **IA de Atendimento**: Atendimento inteligente integrado que reduz o tempo de resposta de horas para minutos.
-
----
-
-## 📊 Status de Implementação
-
-### Recém Atualizado (Onda 2)
-- ✅ **Nova Headline Aspiracional**: Foco no design que respira e natureza que acolhe.
-- ✅ **Novo Produto**: Lançamento do card **Painel Trançado** com design exclusivo.
-- ✅ **Estatísticas de Escala**: Destaque para +3.000m² transformados e 5 anos de garantia.
-- ✅ **Integração IA**: Prazo de resposta atualizado para minutos.
-
-### Roadmap (Onda 3)
-- 🔜 **LP Parque Ecológico Infantil**: Foco em diversão sustentável.
-- 🔜 **Funil de Infoprodutos**: Lançamento do primeiro e-book.
-- 🔜 **Expansão de Projetos**: Portfólio de consultoria de bioconstrução.
+**URL de Produção Final:** [conexaoterrabambu.com.br/lp/forros-bambu](https://conexaoterrabambu.com.br/lp/forros-bambu/)
 
 ---
 
-## ⚡ Como Navegar no Projeto
+## 🧠 A Filosofia Agentic (The AI Brain)
 
-- 📱 **LP de Conversão (React)**: [`/terrabambu-lp/`](terrabambu-lp/)
-- 🏠 **Home Institucional**: [`index.html`](index.html)
-- 📚 **Blog de Autoridade**: [`/blog/`](blog/)
-- 📁 **Arquivo de Documentação**: [`/docs/_archive/`](docs/_archive/)
+O grande diferencial deste projeto é como a pasta interna estrita governou o trabalho da IA. Diferente de fluxos onde a IA gera "qualquer código", este repositório possui uma "Constituição", garantindo que **a inteligência artificial mantenha controle absoluto sobre a linguagem da marca, UI tokens e regras restritas**.
+
+As especificações vitais para LPs geradas com IA estão estruturadas no diretório escondido [`/.agents/`](.agents/):
+
+- 📜 **[`.agents/prd.md`](.agents/prd.md)**: Product Requirements Document. Ensina o Agente de IA qual é o funil, o ICP e as metas de conversão do ecossistema.
+- ⚖️ **[`.agents/rules.md`](.agents/rules.md)**: Restrições Inquebráveis. Ordem expressa para evitar textos que foquem apenas "na dor" ou que percam a *vibe* premium/orgânica.
+- 🧰 **[`.agents/skills/`](.agents/skills/)**: Habilidades Compartimentadas. A pasta `premium-design` obriga a IA a usar exatos tokens (`var(--accent)`), proibindo flex-align desalinhado e forçando o paradigma Mobile-first.
+- 📄 **[`.agents/specs/`](.agents/specs/)**: Especificações isoladas que servem de bússola para páginas únicas (ex: `.opts` de deploy).
+
+Essa estrutura forçou os agentes de IA a entregar **Zero Halucinações** em relação a cor e código. A IA trabalhou obedecendo ordens específicas e formatando corretamente todas as 48 variáveis CSS de design.
 
 ---
 
-> © {new Date().getFullYear()} Conexão Terra Bambu · Todos os direitos reservados.  
+## 💻 Tech Stack & Performance (Nível Premium)
+
+A base tecnológica foi montada pela IA focando em **100/100 Core Web Vitals**:
+
+- **Core & Build**: Vite + React
+- **Estilização**: Tailwind CSS puramente guiado por CSS Variables (+40 `src/styles/tokens.css`).
+- **Animações (UX)**: Framer Motion isolado em `src/shared/animations.premium.js` para carregamento leve e padronizado em todas as telas (`fadeUpPremium`, `staggerSlow`).
+- **Acessibilidade e SEO Base**: Resolução imediata de imagens pesadas usando scripts via `Puppeteer` + `Sharp` da própria IA, transformando tudo massivamente em WebP de altíssima compressão. Otimização das tags Open Graph, LD-JSON e Meta Pixel geridas via build estático do diretório `public`.
+
+---
+
+## 🚀 Road to Level 5 (O Próximo Passo na Governança Agentic)
+
+Embora o ecossistema atual possua uma base robusta sem utilizar CI/CD complexo (deploy nativo pelo GitHub Pages isolado dos Actions para evitar falhas passadas), um "Full Autonomy System" ainda precisaria de alguns toques no escopo aberto:
+
+1. **Testes de Qualidade Finais Automatizados por Agentes (Lighthouse AI QA)**: Um step em que robôs rodam análise de DOM no deploy provisório antes do merge.
+2. **Master Cursor Rules**: Uma regra base de `.cursorrules` no root da aplicação ativando e conectando todos os arquivos da pasta `.agents` globalmente, dispensando a necessidade de indicar ao bot de onde ler os dados no início do prompt.
+3. **Design Tokens via Style Dictionary**: Em vez da alteração puramente em `.css`, um JSON Master ditando os tokens do projeto (podendo ser injetado facilmente por IA).
+
+---
+
+> © 2026 Conexão Terra Bambu · Todos os direitos reservados.  
 > **CNPJ**: 54.340.235/0001-08
