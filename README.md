@@ -12,14 +12,14 @@
 Projetada para ser impecável na palma da mão. Abaixo, uma apresentação no formato vertical demonstrando a fluidez da navegação mobile, o carrossel de fotos facilitado e o acesso imediato ao WhatsApp.
 
 <p align="center">
-  <img src="docs/showcase/mobile-presentation-916.webp" width="300" alt="Terra Bambu Mobile 9:16 Showcase" style="border-radius: 40px; border: 8px solid #333;">
+  <video src="docs/showcase/mobile-presentation-916.mp4" width="300" autoplay loop muted playsinline style="border-radius: 40px; border: 8px solid #333;"></video>
 </p>
 
 ## ⚡ Live Preview (Experience the Motion)
 Não é apenas estático. Abaixo você vê a fluidez das animações premium geradas via Framer Motion, capturadas diretamente da nossa infraestrutura de produção.
 
 <p align="center">
-  <img src="docs/showcase/live-preview.webp" width="700" alt="Terra Bambu Live Motion">
+  <video src="docs/showcase/live-preview.mp4" width="700" autoplay loop muted playsinline style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);"></video>
 </p>
 
 ---
