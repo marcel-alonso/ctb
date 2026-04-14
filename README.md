@@ -7,6 +7,14 @@
   <img src="docs/showcase/desktop-mockup.png" width="800" alt="Terra Bambu Desktop Showcase">
 </p>
 
+
+## 📱 Mobile Showcase (Vertical 9:16 Presentation)
+Projetada para ser impecável na palma da mão. Abaixo, uma apresentação no formato vertical demonstrando a fluidez da navegação mobile, o carrossel de fotos facilitado e o acesso imediato ao WhatsApp.
+
+<p align="center">
+  <img src="docs/showcase/mobile-presentation-916.webp" width="300" alt="Terra Bambu Mobile 9:16 Showcase" style="border-radius: 40px; border: 8px solid #333;">
+</p>
+
 ## ⚡ Live Preview (Experience the Motion)
 Não é apenas estático. Abaixo você vê a fluidez das animações premium geradas via Framer Motion, capturadas diretamente da nossa infraestrutura de produção.
 
