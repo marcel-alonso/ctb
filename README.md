@@ -12,14 +12,14 @@
 Projetada para ser impecável na palma da mão. Abaixo, uma apresentação no formato vertical demonstrando a fluidez da navegação mobile, o carrossel de fotos facilitado e o acesso imediato ao WhatsApp.
 
 <p align="center">
-  <video src="https://github.com/marcel-alonso/ctb/raw/main/docs/showcase/mobile-presentation-916.mp4" width="300" autoplay loop muted playsinline></video>
+  <video src="docs/showcase/mobile-presentation-916.mp4" width="300" autoplay loop muted playsinline></video>
 </p>
 
 ## ⚡ Live Preview (Experience the Motion)
 Não é apenas estático. Abaixo você vê a fluidez das animações premium geradas via Framer Motion, capturadas diretamente da nossa infraestrutura de produção.
 
 <p align="center">
-  <video src="https://github.com/marcel-alonso/ctb/raw/main/docs/showcase/live-preview.mp4" width="700" autoplay loop muted playsinline></video>
+  <video src="docs/showcase/live-preview.mp4" width="700" autoplay loop muted playsinline></video>
 </p>
 
 ---
@@ -30,23 +30,23 @@ Este projeto não foi "codado", ele foi **especificado**. Abaixo, a planta técn
 
 ```mermaid
 graph TD
-    subgraph "🧠 THE BRAIN (Governance)"
+    subgraph BRAIN ["THE BRAIN (Governance)"]
         R[".agents/rules.md"] --> |Tom de Voz & UI| AI[Agentic Intelligence]
         P[".agents/prd.md"] --> |Metas de Negócio| AI
         S[".agents/skills/"] --> |Design Tokens| AI
     end
 
-    subgraph "🏗️ THE MACHINE (LP v2)"
+    subgraph MACHINE ["THE MACHINE (LP v2)"]
         AI --> |Orquestra| H["HeroEmocional.jsx"]
         AI --> |Valida| PV["ProvaVisualEmocional.jsx"]
         AI --> |Gera| SO["SolucoesEmocional.jsx"]
         AI --> |Resolve| FAQ["FAQEmocional.jsx"]
     end
 
-    subgraph "📱 THE OUTPUT"
-        H --> L1["Head: High Fetch Priority"]
-        PV --> L2["Motion Counters (Stats)"]
-        SO --> L3["Interactive Cards (Hover)"]
+    subgraph OUTPUT ["THE OUTPUT"]
+        H --> L1["Head: High Priority"]
+        PV --> L2["Motion Counters"]
+        SO --> L3["Interactive Cards"]
         FAQ --> L4["Accordion State"]
     end
 
