@@ -12,14 +12,14 @@
 Projetada para ser impecável na palma da mão. Abaixo, uma apresentação no formato vertical demonstrando a fluidez da navegação mobile, o carrossel de fotos facilitado e o acesso imediato ao WhatsApp.
 
 <p align="center">
-  <video src="docs/showcase/mobile-presentation-916.mp4" width="300" autoplay loop muted playsinline style="border-radius: 40px; border: 8px solid #333;"></video>
+  <video src="https://github.com/marcel-alonso/ctb/raw/main/docs/showcase/mobile-presentation-916.mp4" width="300" autoplay loop muted playsinline></video>
 </p>
 
 ## ⚡ Live Preview (Experience the Motion)
 Não é apenas estático. Abaixo você vê a fluidez das animações premium geradas via Framer Motion, capturadas diretamente da nossa infraestrutura de produção.
 
 <p align="center">
-  <video src="docs/showcase/live-preview.mp4" width="700" autoplay loop muted playsinline style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);"></video>
+  <video src="https://github.com/marcel-alonso/ctb/raw/main/docs/showcase/live-preview.mp4" width="700" autoplay loop muted playsinline></video>
 </p>
 
 ---
