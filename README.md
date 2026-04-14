@@ -54,6 +54,47 @@ A arquitetura orientada resultou em um design premium ("apple-like"), respeitand
 
 ---
 
+## 🧬 Framework de Conversão: A Jornada Emocional
+
+A Landing Page não é apenas código; é uma máquina de vendas estruturada por IA em **5 pilares psicológicos (A Jornada Ouro)** projetados para converter tráfego frio em clientes premium.
+
+<details>
+  <summary><b>1️⃣ O Despertar (Hero Emocional)</b> ✨ <i>(Clique para expandir)</i></summary>
+  <blockquote>
+    A primeira tela evita o jargão técnico. Focamos no <b>resultado emocional</b> (<em>"Conforto térmico e design orgânico"</em>) suportado por um fundo imersivo em <i>Parallax</i>. O CTA principal é uma <b>"Semente de Ação"</b> de baixo atrito ("Solicitar Orçamento Grátis").
+  </blockquote>
+</details>
+
+<details>
+  <summary><b>2️⃣ O Desejo (Prova Visual e Status)</b> 🏆 <i>(Clique para expandir)</i></summary>
+  <blockquote>
+    Imediatamente após a dobra, ancoramos a autoridade. Usamos estatísticas animadas (<i>Framer Motion Counters</i>) como "+3.000m² Transformados" seguidos por um carrossel responsivo. O subconsciente do cliente é impactado por galerias de resorts, spas e áreas gourmet de altíssimo padrão.
+  </blockquote>
+</details>
+
+<details>
+  <summary><b>3️⃣ A Lógica (Soluções Pragmáticas)</b> 🧩 <i>(Clique para expandir)</i></summary>
+  <blockquote>
+    Apresentação das ofertas em 4 cards com hover-state. Cada card mostra os diferenciais técnicos exatos ("Painel Trançado", "Forro Reto", etc.) linkados a um <b>WhatsApp Parametrizado</b>. A IA de negócios orquestrou os badges de "Tendência" ou "O Mais Escolhido" para gerar <i>Social Proof</i>.
+  </blockquote>
+</details>
+
+<details>
+  <summary><b>4️⃣ A Quebra de Objeções (FAQ Fluido)</b> 🛡️ <i>(Clique para expandir)</i></summary>
+  <blockquote>
+    O cérebro racional procura motivos para não comprar. O <b>FAQ</b> no estilo Accordion resolve instantaneamente medos clássicos (ex: "Bambu atrai bichos?", "Aguenta Chuva?"), usando animações suaves via React State, mantendo o padrão premium com zero letras miúdas.
+  </blockquote>
+</details>
+
+<details>
+  <summary><b>5️⃣ A Segurança (CTA Final & Trust Signals)</b> 🤝 <i>(Clique para expandir)</i></summary>
+  <blockquote>
+    O fechamento. Em vez de urgência agressiva, usamos garantia estendida (10 anos) e CNPJ no rodapé. Isso estabelece a transição pacífica para o fechamento assistido via WhatsApp, capturando os últimos Leads do funil.
+  </blockquote>
+</details>
+
+---
+
 ## 🧠 A Filosofia Agentic (The AI Brain)
 
 O grande diferencial deste projeto é como a pasta interna estrita governou o trabalho da IA. Diferente de fluxos onde a IA gera "qualquer código", este repositório possui uma "Constituição", garantindo que **a inteligência artificial mantenha controle absoluto sobre a linguagem da marca, UI tokens e regras restritas**.
